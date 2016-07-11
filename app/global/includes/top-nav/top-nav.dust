@@ -1,0 +1,13 @@
+{#topNav}
+    {#topNav}
+        {>"components/sheet/sheet"
+            class="c-top-nav js-top-nav"
+            effect="sheetBottom"
+            coverage="96%"
+            cssClass=""
+            isHeader="true"
+
+            bodyContent=content.data
+        /}
+    {/topNav}
+{/topNav}

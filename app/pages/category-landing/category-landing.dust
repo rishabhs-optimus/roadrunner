@@ -1,0 +1,53 @@
+{>"global/base"/}
+
+{<contentBlock}
+    <div class="c-category">
+        {>"components/breadcrumb/breadcrumb" iconName="right" /}
+
+        <h1 class="c-category-title">{categoryHeader}</h1>
+
+        {categoryProduct}
+
+        <div class="js-category-items"></div>
+
+        {>"components/loading-overlay/loading-overlay" loaderOverlayClass="js-filter-loader u--hide"/}
+
+        {#description}
+            {>"components/expandable/expandable":. class="u-margin-top-lg u-margin-bottom-lg u-border-bottom u-padding-bottom" /}
+        {/description}
+    </div>
+    {! Related products section !}
+    {?isRelatedProductsSectionPresent}
+        <div class="t-product-list__related-product">
+            {#relatedProductsSection}
+                {>"components/carousel/carousel" /}
+            {/relatedProductsSection}
+        </div>
+    {/isRelatedProductsSectionPresent}
+
+    {?isRelatedSearchesPresent}
+        {#relatedSearches}
+            <div class="c-related-search-wrapper">
+                <div class="u-margin-bottom-md c-related-search-term-title u-margin-top-lg">{relatedSearchHeader}</div>
+                <div class="u-padding">{suggestions} </div>
+            </div>
+        {/relatedSearches}
+    {/isRelatedSearchesPresent}
+
+    {>"components/back-to-top/back-to-top" class="c--sticky" icon="top" /}
+
+    {>"components/paypal/paypal" /}
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    // app/pages/category-landing/ui.js
+    (function(require) {
+        require(["global/ui", "pages/category-landing/category-landing-ui"], function(globalUI, categoryLandingUI) {
+            globalUI();
+            categoryLandingUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

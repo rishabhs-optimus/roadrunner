@@ -1,0 +1,182 @@
+// Notifications
+// ===
+//
+// Errors, success messages, other site notifications.
+//
+// 1. Positions close button top right of pinny even when opened
+// 2. Avoid text overlap close button, button size plus 3px
+// 3. Add style here to override pinny__close style
+// 4. Position close button inside notification
+.c-notification-pinny {
+    z-index: 10000 !important;
+}
+
+.c-notification {
+    position: relative; // 4
+
+    padding: $unit*3;
+
+    background-color: #fff;
+    box-shadow: 0 0 6px 0 rgba(0,0,0,0.10);
+
+    [class="pinny__close"] {
+        &:active {
+            background-color: $neutral-30; // 3
+        }
+    }
+
+    .c-list-tile__primary-action {
+        //min-width: $small-tap-size;
+        //min-height: $small-tap-size;
+        padding: 2px 0 0;
+
+        text-align: center;
+    }
+
+
+
+
+    // Notifcation close
+    // ---
+
+    .c-notification-close {
+        bottom: inherit !important;  // 1
+    }
+
+
+    // Notifcation preview
+    // ---
+    //
+    // 1. Add list tile class to override list tile style
+
+    .c-notification-preview.c-list-tile {
+        min-height: 0;
+
+        color: $accent-color;
+
+        // Active notification preview
+        // ---
+        &.c--active {
+            display: flex;
+        }
+
+        .c-icon-svg {
+            transform: rotate(0deg);
+
+            &.c--active {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+
+    // Notification Content
+    // ---
+    //
+    // 1. Add list tile class to override list tile style
+
+    .c-notification-contents.c-list-tile {
+        // Error notification content
+        // ---
+        &.c--error {
+            color: $error-color;
+        }
+
+        // Active notification content
+        // ---
+        &.c--active {
+            display: flex;
+        }
+
+        // Action button icon
+        // ---
+        .c-notification-contents__action-button-icon {
+            font-size: $large-font-size;
+        }
+
+        // Button
+        // ---
+        .c-button.c--outline {
+            &:active {
+                background-color: $neutral-50;
+            }
+        }
+    }
+
+
+    .pinny__close {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        width: 40px;
+        height: 40px;
+        min-height: auto;
+
+        .c-icon {
+            width: 17px;
+            height: 17px;
+
+            fill: $brand-color;
+        }
+    }
+
+    .c-notification-title {
+        color: $neutral-10;
+        font-family: $font-family;
+        font-size: $unit*4;
+        line-height: $unit*5;
+    }
+
+
+    .c-icon.c--error {
+        width: 24px;
+        height: 30px;
+    }
+
+    .c-notification-contents.c-list-tile.c--error {
+        color: $black;
+    }
+
+    .c-multiple-notifications {
+        margin-left: $unit*2;
+    }
+
+    .c-single-notification {
+        .c-list-tile__primary-content {
+            padding-left: 0;
+
+            color: $error-color;
+        }
+    }
+
+    .js-notification__show-hide-text {
+        font-weight: 600;
+        text-transform: capitalize;
+    }
+
+    // .c-notification-preview .js-notification {
+    //     font-family: $lato_bold;
+    // }
+}
+
+.c-notification-preview .c-list-tile__primary-content {
+    padding: $sub-unit $unit $sub-unit 0;
+
+    span {
+        color: $black;
+    }
+    .gwt-HTML {
+        display: list-item;
+        margin-left: $sub-unit*15;
+        padding-right: 28px;
+        padding-left: $unit*2;
+
+        color: $emphasis-color;
+        font-family: $lato_italic;
+        font-style: italic;
+        font-size: $unit*4;
+        line-height: $unit*5;
+        list-style: disc;
+    }
+}

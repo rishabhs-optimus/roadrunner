@@ -1,0 +1,4 @@
+<div class="c-pdp-widget-content">
+    {productWidgetOptions}
+    {productWidgetQantity}
+</div>

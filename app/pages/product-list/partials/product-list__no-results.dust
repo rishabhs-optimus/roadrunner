@@ -1,0 +1,25 @@
+<div class="t-product-list__no-results c--no-result-temp">
+    <div class="t-product-list__no-result-message">
+        <h3>{noResultsMessage}</h3>
+        <div class="mostpopularsearches">
+            <h2>{mostpopularsearch}</h2>
+            {mostpopularsearchlist}
+         </div>
+    </div>
+
+    {#searchForm}
+        {form|openTag|s}
+            <div class="c-input-form__wrapper">
+                {input}
+                <button type="{buttonType}" class="c-input-form-wrapper__button u--disabled">
+                    {@translate key="go"/}
+                    {>"svg-icon" name="arrow-right" class="arrow-right c-email-arrow"/}
+                </button>
+            </div>
+        {form|closeTag|s}
+    {/searchForm}
+
+    {#searchTips}
+        {>"components/bellows/bellows" bellowsHeaderClass="js-bellows-header"/}
+    {/searchTips}
+</div>

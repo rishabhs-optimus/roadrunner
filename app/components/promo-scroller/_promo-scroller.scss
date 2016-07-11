@@ -1,0 +1,28 @@
+.c-promo-scroller {
+    display: block;
+    margin-bottom: $unit * 4;
+}
+
+.c-promo-scroller__heading {
+    margin-bottom: $space-large;
+    padding: 0 $space-xlarge;
+}
+
+.c-promo-scroller__content {
+    padding-left: $space-xlarge;
+    
+    white-space: nowrap;
+}
+
+.c-promo-scroller__item {
+    display: inline-block;
+    width: 75%;
+    margin-right: $space-large;
+
+    vertical-align: top;
+}
+
+.c-promo-scroller__item-image {
+    display: block;
+    width: 100%;
+}

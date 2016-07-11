@@ -1,0 +1,82 @@
+// Carousel
+// ===
+// Styling for Carousel Component
+// ----
+
+.c-carousel-wrapper {
+    padding: $unit 0 $sub-unit*3;
+}
+
+.c-carousel-wrapper.c--carousel-space {
+    border-top: $border;
+}
+
+.c-carousel__inner {
+    text-align: left;
+
+    p {
+        margin-left: $unit;
+    }
+}
+
+.c-carousel__title {
+    margin-left: $unit * 3;
+    padding-bottom: $sub-unit;
+
+    font-size: $largest-font-size;
+}
+
+.c-carousel__items {
+    overflow-x: scroll; // 1
+    overflow-y: hidden; // 1
+    width: 100%;
+    padding-left: $space-xlarge;
+
+    white-space: nowrap; // 1
+}
+
+.c-carousel__item {
+    display: inline-block;
+    width: 40%;
+    height: auto;
+    margin-right: $space-large;
+    margin-bottom: $space-large * 2;
+
+    text-align: center;
+    vertical-align: text-top;
+}
+
+.c-carousel__image-link {
+    display: block;
+}
+
+.c-carousel-item__heading {
+    color: $brand-color;
+    white-space: initial;
+}
+
+
+.t-product-details__suggested-products,
+.t-product-details__related-products {
+    margin: $unit * 5 0 $unit *4;
+    border-top: $border-neutral-40;
+
+    .c-slideshow li {
+        width: 40%;
+        border: 0;
+
+        text-align: left;
+
+
+        li.firstChild {
+            margin-left: 0;
+        }
+    }
+
+    h2 {
+        margin-bottom: 0 !important;
+        padding: $space-xlarge 0 16px $space-xlarge;
+
+        text-transform: capitalize;
+    }
+}

@@ -1,0 +1,39 @@
+{>"global/checkoutBase"/}
+
+{<contentBlock}
+    <div class="c-checkout-gift-options">
+        <h2 class="c-title">{@translate key="gift_wrap" /}</h2>
+        <div class="c-description">{description}</div>
+
+        <div hidden>
+            {giftDisplayContainer}
+        </div>
+
+        {giftOptionsForm|openTag|s}
+
+            {giftOptionsHiddenInputs}
+
+            <div hidden>{removePriceFromPackingSlip}</div>
+            {#giftItems}
+                {>"components/cart-item/cart-item" class="u-padding-sides-md" /}
+            {/giftItems}
+
+            {continueButton}
+
+        {giftOptionsForm|closeTag|s}
+    </div>
+
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    // app/pages/cart/ui.js
+    (function(require) {
+        require(["global/ui", "pages/checkout-gift-options/checkout-gift-options-ui"], function(globalUI, checkoutGiftOptionsUI) {
+            globalUI();
+            checkoutGiftOptionsUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

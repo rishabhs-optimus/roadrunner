@@ -1,0 +1,5 @@
+{beforeBellows}
+
+{#bellows}
+    {>"components/bellows/bellows" class="js-terms-bellows"/}
+{/bellows}

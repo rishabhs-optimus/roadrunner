@@ -1,0 +1,8 @@
+<ins class="c-price__discounted">{priceNewLabel} {priceNew}</ins>
+
+{#priceOld}
+    <del class="c-price__original">{label} {value}</del>
+{/priceOld}
+{#priceRegular}
+    <del class="c-price__original">{label} {value}</del>
+{/priceRegular}

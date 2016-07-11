@@ -1,0 +1,38 @@
+{#totals}
+    <div class="c-cart-sub-total">
+        <div class="c-ledger">
+            {#additionalTotals}
+                {?.heading}
+                    <div class="c-order-payment-title">
+                        {heading}
+                        <span>{itemsNumber}</span>
+                    </div>
+                {/.heading}
+
+                {?.label}
+                    {moreContent}
+                    <div class="c-ledger__entry {additionalTotalsClass}">
+                        <div class="c-ledger__description">
+                            {label}
+                        </div>
+                        <div class="c-ledger__number">
+                            {value}
+                        </div>
+                    </div>
+                {/.label}
+            {/additionalTotals}
+
+            {#grandTotal}
+                <div class="c-ledger__entry c--total">
+                    <div class="c-ledger__description">
+                        {label}
+                    </div>
+
+                    <div class="c-ledger__number">
+                        {value}
+                    </div>
+                </div>
+            {/grandTotal}
+        </div>
+    </div>
+{/totals}

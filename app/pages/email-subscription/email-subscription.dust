@@ -1,0 +1,27 @@
+{>"global/base"/}
+
+{<contentBlock}
+    <div class="t-email-subscription u-margin-top-lg">
+        <div class="c-email-subscription-content">
+            <h1>{heading}</h1>
+            <div class="c-list u-margin-bottom-extra-lg">
+                {subscriptionContent}
+            </div>
+            <div class="t-email-subscription__iframe-wrapper">
+                {subscriptionForm}
+            </div>
+        </div>
+
+    </div>
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    (function(require) {
+        require(["global/ui", "pages/email-subscription/email-subscription-ui"], function(globalUI, emailSubscriptionUI) {
+            globalUI();
+            emailSubscriptionUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

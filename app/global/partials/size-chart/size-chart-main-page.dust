@@ -1,0 +1,13 @@
+{?multiple}
+    {>"components/tabs/tabs"/}
+{:else}
+    {#tabs}
+        {#content}
+            {?contentTemplate}
+                {>"{contentTemplate}"/}
+            {:else}
+                {.}
+            {/contentTemplate}
+        {/content}
+    {/tabs}
+{/multiple}

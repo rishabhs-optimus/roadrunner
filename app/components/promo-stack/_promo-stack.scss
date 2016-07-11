@@ -1,0 +1,25 @@
+.c-promo-stack {
+    display: block;
+    overflow: hidden;
+    margin-bottom: $unit * 6;
+}  
+
+.c-promo-stack__header {
+    display: block;
+    margin-bottom: $space-xlarge;
+}
+
+.c-promo-stack__list {
+    padding: 0 $space-xlarge;
+}
+
+.c-promo-stack__list-item {
+
+    & + & {
+        margin-top: $unit;
+    }
+}
+
+.c-promo-stack__link {
+
+}

@@ -1,0 +1,121 @@
+// My Account Section
+// ===
+//
+// Global drawer comes in from left
+
+.c-my-account {
+    overflow: visible;
+    .pinny__header {
+        padding: 0;
+
+        text-transform: capitalize;
+
+
+        .c-my-account-title {
+            display: block;
+            width: 100%;
+            min-height: $unit*6;
+
+            text-align: center !important;
+
+
+            a {
+                font-size: $smaller-font-size;
+                line-height: $unit * 3;
+                &::after {
+                    width: 7px;
+                    height: 7px;
+                }
+            }
+        }
+    }
+
+    .pinny__content {
+        padding: $unit * 2;
+    }
+
+    .c-sheet__title {
+        display: block;
+        padding-top: $sub-unit * 3;
+
+        color: $brown-1;
+        font-weight: normal;
+        font-size: $larger-font-size !important;
+
+        .c-icon {
+            position: relative;
+            left: 10px;
+            float: left;
+
+            margin-top: $sub-unit;
+
+            color: $brown-2;
+        }
+    }
+
+    .c-sheet__header {
+        background: $taupe-3;
+
+        color: $brown-1;
+    }
+
+    .pinny__close {
+        position: absolute;
+        top: 10px;
+        right: -36px;
+
+        width: 14px;
+        height: 14px;
+
+        &:before,
+        &:after {
+            background: #fff;
+        }
+    }
+
+    .c-my-account-options {
+        span {
+            display: block;
+            padding: $unit 0;
+
+            color: $brown-1;
+            a {
+                color: $brown-1;
+                font-size: $font-size;
+                line-height: $unit * 3;
+            }
+        }
+
+        span:first-child {
+            padding-top: 0;
+        }
+
+        a {
+            color: $black;
+            color: $brown-1;
+            font-size: $large-font-size;
+        }
+
+        [id="myStoreSelector"] {
+            span {
+                display: inline;
+            }
+
+            .gwt-mystore-city,
+            .gwt-mystore-state,
+            .gwt-Anchor {
+                display: none;
+            }
+        }
+    }
+
+    .c-my-account-options__welcome-msg {
+        padding-bottom: $sub-unit;
+
+        color: $neutral-70;
+        font-size: $smaller-font-size;
+    }
+    #welcome {
+        padding-top: $unit;
+    }
+}

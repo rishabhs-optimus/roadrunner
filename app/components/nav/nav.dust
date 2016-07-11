@@ -1,0 +1,98 @@
+<nav class="js-nav c-nav c-navitron">
+    <ul class="c-nav__list">
+        <li class="navitron__header c-nav-item c-nav-item__container c-nav__pinny-close needsclick">
+           {>"components/list-tile/list-tile" primaryAction="true" primaryIconName="menu"
+           primaryContent="Shop" secondaryAction="true"
+           primaryIconClass="c--small" /}
+        </li>
+
+        <li class="c-nav__item__shop c-list-tile">
+            <div class="c-list-tile__primary-tile">
+                <div class="u--bold">{shopText}</div>
+            </div>
+
+            <div class="c-list-tile__secondary-tile">
+                <div class="c-list-tile__secondary-action">
+                    <button class="c-navitron__button pinny__close">
+                        {>"svg-icon" name="delete-noColor" /}
+                    </button>
+                </div>
+            </div>
+        </li>
+
+        {#categories}
+        <li class="c-nav-item__container needsclick">
+
+            {! First Level Navigation Items !}
+            {#categoryLink}
+                {>"components/list-tile/list-tile"
+                    class="navitron__next-pane" primaryIconClass="c--small" /}
+            {/categoryLink}
+
+            {! Second Level Navigation Items !}
+            <ul class="c-nav__list">
+                <li class="navitron__header c-nav-item__container c-nav__back needsclick">
+                    {#categoryLink}
+                        {#back}
+                            {>"components/list-tile/list-tile" primaryClass="navitron__prev-pane"
+                                primaryIconClass="c--small" /}
+                        {/back}
+                    {/categoryLink}
+                </li>
+
+                {#subCategories}
+                    {#subCategoryLink}
+                        <li class="c-nav-item__container needsclick">
+                            {>"components/list-tile/list-tile"
+                                class="navitron__next-pane" primaryIconClass="c--small" /}
+
+                            {! Third Level Navigation Items !}
+                            <ul class="c-nav__list">
+                                <li class="navitron__header c-nav-item needsclick">
+                                    {#subCategoryLink}
+                                        {#back}
+                                            {>"components/list-tile/list-tile"
+                                            primaryClass="navitron__prev-pane"
+                                            primaryIconClass="c--small" /}
+                                        {/back}
+                                    {/subCategoryLink}
+                                </li>
+
+                                {#viewAll}
+                                    <li class="c-nav-item needsclick">
+                                        {>"components/list-tile/list-tile" /}
+                                    </li>
+                                {/viewAll}
+
+                                {#innerLinks}
+                                    <li class="c-nav-item needsclick">
+                                        {>"components/list-tile/list-tile"
+                                        primaryIconClass="c--small" /}
+                                    </li>
+                                {/innerLinks}
+
+                            </ul>
+                        </li>
+                    {/subCategoryLink}
+                {/subCategories}
+            </ul>
+        </li>
+        {/categories}
+        <li>
+            {#bottomLinks}
+                {#signIn}
+                    {>"components/list-tile/list-tile"
+                        class="navitron__next-pane" primaryIconClass="c--small c--sign-icon" /}
+                {/signIn}
+                {#orderStatus}
+                    {>"components/list-tile/list-tile"
+                        class="navitron__next-pane" primaryIconClass="c--small c--order-icon" /}
+                {/orderStatus}
+                {#giftCard}
+                    {>"components/list-tile/list-tile"
+                        class="navitron__next-pane" primaryIconClass="c--small c--gift-icon" /}
+                {/giftCard}
+            {/bottomLinks}
+        </li>
+    </ul>
+</nav>

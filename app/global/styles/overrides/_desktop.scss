@@ -1,0 +1,58 @@
+// Desktop Overrides
+// ====
+
+
+// Hide the desktop content popup
+// ---
+//
+// Note: We pull the content we need from this into a pinny
+
+// scss-lint:disable SelectorFormat
+[class*='gwt-DecoratedPopupPanel'],
+[class*='granify-widget-container'],
+// 2
+[class*='cin-sticky'],
+// 3
+.gwtCountryChangerModalGlass,
+// 4
+.nodisplay,
+#gwt-international-country-changer,
+.gwt_flag_image_header,
+.gwt-PopupPanelGlass {
+    display: none !important;
+}
+// scss-lint:enable SelectorFormat
+
+// Global error style
+// ---
+// 1. We cant use display none as event do not get fired. Hence, hiding it from view
+
+
+[class*='gwt-csb-error-panel'] {
+    margin-bottom: $unit;
+
+    color: $error-color;
+}
+
+#gwt_subcategories_dp,
+#gwt_products_display,
+#gwt_products_display .gwt-products-display-panel-hpanel {
+    display: block !important;
+    overflow: hidden;
+    height: 0;
+}
+
+// Desktop Modal
+// ---
+// 1. Cant use display none as otherwise animation is not triggered. Using hack
+// to hide the panel from visibility
+
+#editAddressModal tbody { // 1
+    opacity: 0;
+    z-index: -100;
+}
+
+#addAddressModal tbody,
+#editAddressModal tbody {
+    opacity: 0; // 1.
+}

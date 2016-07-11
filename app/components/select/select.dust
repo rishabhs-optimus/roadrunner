@@ -1,0 +1,5 @@
+<div class="c-select {class} {?isDisabled}c--is-disabled{/isDisabled}">
+    {select}
+
+    {@icon name="chevron-down" title="Arrow down" class="c-select__icon c--large" /}
+</div>

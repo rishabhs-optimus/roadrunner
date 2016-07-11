@@ -1,0 +1,7 @@
+{?discountPriceBottom}
+    <ins class="c-price__discounted">{discountPriceBottomText} {@translate key="price_each"/}</ins>
+{/discountPriceBottom}
+
+<ins class="c-price__discounted" {?discountPriceBottom}style="text-decoration: line-through;"{/discountPriceBottom}>{priceNewLabel}{priceNew} {^discountPriceBottom}{@translate key="price_each"/}{/discountPriceBottom}</ins>
+
+<del class="c-price__original">{priceOld}</del>

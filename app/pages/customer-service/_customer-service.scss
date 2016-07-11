@@ -1,0 +1,192 @@
+// Customer Service
+// ===
+//
+// Note: [a] This section relies on using template sub-classes to style the text
+//       content area. Because the entire Customer Service section uses the same
+//       template, we are using the sub-classes to specifically style each
+//       individual page.
+//       [b] Because we are parsing the Customer Service template as one large
+//       content area, and since the mocks do arrange titles differently than
+//       their semantic positioning, we need to do some funky things with css in
+//       order to get everything to align with the design. (e.g. an <h3> in the
+//       markup may be styled to look like an <h2> or a blockquote.)
+
+.t-customer-service {
+    .c-sheet__body {
+        a {
+            color: $brand-color;
+        }
+    }
+
+    .shade {
+        opacity: 0.9 !important;
+        background: white !important;
+    }
+}
+
+
+// Contact Us [a], [b]
+// ---
+//
+// http://travelsmith.com/contact-us/
+
+.t-customer-service.t--contact-us {
+    .c-text-content {
+        h2,
+        h3 {
+            color: $neutral-20;
+            font-family: $lato_italic;
+            font-style: italic;
+            font-size: $font-size;
+        }
+
+        h4 {
+            font-family: $font-family;
+            font-weight: normal;
+            font-size: $larger-font-size;
+        }
+    }
+}
+
+
+// Order Information [a], [b]
+// ---
+//
+// http://travelsmith.com/order-form/
+
+.t-customer-service.t--order-form {
+    .c-text-content {
+        h2:first-of-type {
+            color: $neutral-20;
+            font-family: $lato_italic;
+            font-style: italic;
+            font-size: $font-size;
+        }
+
+        h2:last-of-type {
+            font-family: $font-family;
+            font-weight: normal;
+            font-size: $larger-font-size;
+        }
+
+        h2:last-of-type + p {
+            > br {
+                display: none;
+            }
+        }
+
+        p:last-of-type {
+            display: none;
+        }
+    }
+}
+
+
+// Returns & Exchanges [a], [b]
+// ---
+//
+// http://travelsmith.com/returns-and-exchgs/
+
+.t-customer-service.t--returns-and-exchgs {
+    .c-text-content {
+        img {
+            display: none;
+        }
+
+        br {
+            display: none;
+        }
+
+        p br {
+            display: block;
+        }
+
+        h2 {
+            text-transform: capitalize;
+        }
+    }
+}
+
+.t-customer-service__guarantee {
+    color: $neutral-20;
+    font-family: $lato_italic;
+    font-style: italic;
+    font-size: $font-size;
+}
+
+
+// Size Charts [a], [b]
+// ---
+//
+// http://travelsmith.com/sizing-chart/
+
+.t-customer-service.t--sizing-chart {
+    .c-text-content {
+        p + p {
+            margin: $unit*4 0;
+        }
+    }
+}
+
+
+// Shipping & Processing [a], [b]
+// ---
+//
+// http://travelsmith.com/sizing-chart/
+
+.t-customer-service.t--shipping-and-processing {
+    .c-text-content {
+        h2:not(:first-of-type) {
+            margin-top: $unit*6;
+        }
+
+        p br {
+            display: none;
+        }
+    }
+}
+
+
+// Conditions of Use [a], [b]
+// Your Privacy Rights [a], [b]
+// Full Privacy Policy [a], [b]
+// ---
+//
+// http://travelsmith.com/conditions-of-use/
+// http://travelsmith.com/your-privacy-rights/
+// http://travelsmith.com/full-privacy/
+//
+// 1. Reset
+
+.t-customer-service.t--undefined,
+.t-customer-service.t--full-privacy,
+.t-customer-service.t--conditions-of-use,
+.t-customer-service.t--your-privacy-rights {
+    .t-main {
+        .c-bellows {
+            margin: $unit*4 (-$unit*3) 0;
+        }
+
+        .c-bellows__header {
+            margin-left: ($unit*8);
+
+            text-indent: -($unit*8);
+        }
+
+        .c-bellows__content {
+            padding-top: 0;
+            background: $white;
+        }
+
+        .c-bellows__list .c-text-content a {
+            display: inline-block; // 1
+            padding: 0; // 1
+
+            font-size: inherit; // 1
+
+            &:empty {
+                display: none;
+            }
+        }
+    }
+}

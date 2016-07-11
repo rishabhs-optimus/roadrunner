@@ -1,0 +1,314 @@
+// Sign In Page
+// ------
+
+.t-signin-register {
+    .c-tabs {
+        padding-bottom: 12px;
+    }
+    &__head {
+        padding: $unit*4 $unit*3;
+        text-transform: capitalize;
+        color: $neutral-10;
+        font-family: $font-family;
+        font-weight: normal;
+        font-size: $unit*5;
+        line-height: $sub-unit*12;
+    }
+
+    .c-box__mandatory-indicator {
+        color: $emphasis-color;
+    }
+
+    .c-box__mandatory-indicator {
+        display: none;
+    }
+
+    .button {
+        width: 100%;
+        padding: $smallest-font-size;
+
+        box-shadow: 0 -2px 0 0 rgba(0, 0, 0, 0.15) inset;
+        outline: none;
+
+        font-style: normal;
+        text-transform: uppercase;
+    }
+
+    .c-signin__forgot-password {
+        float: right;
+
+        margin-top: $unit*5;
+
+        color: $brand-color;
+        font-family: $font-family;
+        font-size: $small-font-size;
+        line-height: 17px;
+
+
+        // For iOS purpose
+        [id="forgotpw"] a {
+            position: relative;
+
+            color: inherit;
+        }
+    }
+
+    // scss-lint:disable all
+    .c-rememberMe {
+        margin-top: $space-large * 2;
+        margin-bottom: $unit * 5;
+        margin-bottom: $unit*5;
+        &__item {
+            display: inline-block;
+
+        }
+    }
+
+    [id="logonId"] {
+        // color: $grey-1;
+        // font-family: $pluto_sans_cond_regular;
+        // line-height: $unit*3;
+    }
+
+    [id="logonId"],
+    [id="logonPassword"] {
+        // min-height: $unit*5;
+        // padding: 0 $unit;
+        //
+        // outline: none;
+    }
+
+    .c-error-group {
+        padding: $unit 0;
+        // color: $red-1;
+
+        font-size: $smaller-font-size;
+        line-height: $space-large;
+
+        [type="text"],
+        [type="email"] {
+            border: #f00;
+        }
+
+        [id="gwt-error-placement-div"] {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    form {
+        // padding: 0 $unit;
+    }
+
+    .t-sign-in__registration {
+        &-list {
+            margin-left: $unit*3;
+
+            list-style-type: disc;
+
+            li {
+                margin-bottom: $unit*2;
+                margin-left: $unit*6;
+
+                color: $neutral-10;
+                font-family: $font-family;
+                font-size: $font-size;
+                line-height: $unit*5;
+            }
+            li:last-child {
+                margin-bottom: $space-large !important;
+            }
+
+
+            .c-icon {
+                display: none;
+            }
+        }
+
+        &-list-item {
+            position: relative;
+            left: $unit;
+        }
+    }
+
+    .c-register {
+        &__button {
+            margin: $unit*4 0;
+        }
+        button {
+            letter-spacing: 0.5px;
+        }
+
+        &__welcome {
+            margin-bottom: $unit*4;
+
+            color: $neutral-10;
+            font-family: $font-family;
+            font-weight: normal;
+            font-size: $font-size;
+            line-height: $unit*5;
+        }
+    }
+    .rememberMeLink {
+        outline: none;
+
+        color: $neutral-10;
+        font-family: $font-family;
+        font-size: $font-size;
+        line-height: $unit*5;
+        text-decoration: none;
+    }
+}
+
+// pinny styling
+.js-remember-me-panel {
+    .inst-copy {
+        padding: $space-large * 2 $unit * 3;
+    }
+
+    .c-remember-me__header {
+        padding: 0;
+        .pinny__close {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        &:after {
+            content: '';
+
+            clear: both;
+
+            display: table;
+        }
+    }
+    strong {
+        float: left;
+
+        padding: $space-large 0;
+        // font-family: $pluto_sans_cond_regular;
+
+        line-height: $line-height;
+    }
+    .pinny__close {
+        // color: $brown-2;
+        &:before,
+        &:after {
+            width: 15px;
+            height: 2px;
+
+            // background: $brown-2;
+        }
+        &.c-remember-me__footer {
+            &:after,
+            &:before {
+                background: none;
+            }
+        }
+    }
+    p {
+        // font-family: $pluto_sans_cond_light;
+    }
+}
+
+.js-forgot-password-panel {
+    // background: $taupe-4;
+    .c-sheet__header {
+        // background: $taupe-3;
+        &:after {
+            content: '';
+
+            clear: both;
+
+            display: table;
+        }
+    }
+
+
+
+    .c-sheet__header-close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        float: right;
+
+        width: 48px;
+        height: 48px;
+        min-height: 12px;
+
+        &:before,
+        &:after {
+            width: 15px;
+
+            // background: $brown-2;
+        }
+    }
+    .gwt-submit-cancel-dialog-content-panel {
+        padding: $space-large *2 $unit * 3;
+    }
+    .c-form-group {
+        margin-bottom: $space-large;
+    }
+    .note {
+        &-header {
+            // font-family: $pluto_sans_cond_regular;
+            line-height: $line-height;
+        }
+        &-footer {
+            // font-family: $pluto_sans_cond_light;
+            line-height: $line-height;
+        }
+    }
+    .c-button {
+        // border-radius: $space-small;
+        // background-color: $green-1;
+        // box-shadow: 0 -2px 0 0 rgba(0,0,0,0.15) inset;
+    }
+    .c-input-label {
+        margin-top: $space-large + 3;
+
+        font-size: $smaller-font-size;
+
+        + input {
+            // border: 1px solid $taupe-2;
+            box-shadow: 0 $unit / 4 $unit / 2 0 rgba(156, 153, 141, 0.3) inset;
+            // color: $taupe-1;
+
+            font-size: $small-font-size;
+            line-height: $unit * 3;
+        }
+    }
+    .c-btn-close {
+        padding: 11px 0;
+        // border: 1px solid $brown-1;
+
+        border-radius: $unit / 2;
+        background-color: $white;
+        // font-family: $pluto_sans_cond_regular;
+
+        font-size: $small-font-size;
+        text-align: center;
+    }
+    .c-password-reset-pinny {
+        box-shadow: none;
+    }
+}
+.c-arrange__item {
+    #sendMeEmails {
+        margin-top: $sub-unit*7;
+    }
+}
+
+.c-forgot-pinny-close {
+    position: relative;
+    span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 5;
+        line-height: 46px;
+    }
+}

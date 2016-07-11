@@ -1,0 +1,35 @@
+<div id="{id}" class="{promoCodeClass}">
+    {form|openTag|s}
+        {hiddenInputs}
+        <div class="c-box-row">
+            <div class="c-promo-container">
+                <div class="c-promo-lable-area">
+                    <div class="c-sub-total__label js-tooltip-button" data-target=".{tooltipClass}">{label}</div>
+
+                    {?tooltip}
+                        <button class="c-button c--link c--info js-tooltip-button" data-target=".{tooltipClass}">{>"svg-icon" name="info"/}</button>
+                        <div class="{tooltipClass}" hidden>
+                            <div hidden>{cartPromoCode}</div>
+                            {tooltip}
+                        </div>
+                    {/tooltip}
+                </div>
+
+                <div class="c-cart-promo-code-field">
+                    {input}
+                    {applyButton}
+                </div>
+            </div>
+
+            {giftCardCouponMessage}
+
+            {?promoCodeInfoText}
+                <div class="c-cart-promo-code-info-text">{promoCodeInfoText}</div>
+            {/promoCodeInfoText}
+            <div class="t-cart__applied-promo js-applied-promo"></div>
+
+            <!--{pleaseWait}-->
+        </div>
+        {errorContainer}
+    {form|closeTag|s}
+</div>

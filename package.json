@@ -1,0 +1,38 @@
+{
+  "name": "travelsmith-2",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/mobify/travelsmith-2"
+  },
+  "private": true,
+  "siteUrl": "http://www.travelsmith.com/",
+  "version": "0.0.1",
+  "dependencies": {
+    "adaptivejs": "^2.1.0",
+    "chai": "~1.9.0",
+    "connect": "~2.3.4",
+    "grunt": "~0.4.5",
+    "grunt-autoprefixer": "2.0.0",
+    "grunt-concurrent": "~0.4.3",
+    "grunt-eslint": "^17.0.0",
+    "grunt-githooks": "0.4.0",
+    "grunt-iconpack": "0.0.2",
+    "grunt-sass": "^1.1.0",
+    "grunt-scss-lint": "0.3.8",
+    "lodash": "~2.4.1",
+    "mobify-chai-assertions": "^1.1.0",
+    "mobify-code-style": "^2.3.6",
+    "mocha": "~1.14.0",
+    "nightwatch": "0.8.16",
+    "nightwatch-commands": "1.6.1",
+    "node-sass-import-once": "^1.2.0",
+    "pinny": "git://github.com/mobify/pinny.git#option-to-not-block-touchmove"
+  },
+  "scripts": {
+    "postinstall": "grunt githooks"
+  },
+  "devDependencies": {
+    "grunt-sass": "^1.1.0",
+    "grunt-scss-lint": "^0.3.8"
+  }
+}

@@ -1,0 +1,33 @@
+// Related search
+//=====
+
+.t-clp-sale__related-search {
+    margin-right: -$space-xlarge;
+    margin-left: -$space-xlarge;
+    padding-top: $space-xlarge;
+    border-top: $border-neutral-40;
+    .c-related-searches-products {
+        padding: 0 $space-xlarge;
+    }
+    .c-search-suggestions__product {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+
+        .c-search-suggestions__title {
+            margin: $unit $space-large * 2 $unit 0;
+
+            color: $brand-color;
+            font-size: $small-font-size;
+        }
+    }
+    .c-search-suggestions__header {
+        margin-bottom: $space-large;
+        padding: 0;
+
+        background: $neutral-70;
+
+        font-size: $larger-font-size;
+        list-style-type: none;
+    }
+}

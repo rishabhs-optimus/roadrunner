@@ -1,0 +1,138 @@
+// Size chart pinny
+// ===
+// 1. Fills empty table cells with a height
+
+.t-size-chart-pinny {
+    font-size: $font-size;
+
+    .c-tabs__controls {
+        margin: 0 (-$unit*3) $unit*4;
+    }
+
+    .c-tabs__body {
+        padding: 0;
+    }
+
+    a {
+        &:link {
+            color: $brand-color;
+            font-size: $large-font-size;
+        }
+
+    }
+    .js-size-chart-pinny {
+        .c-more-info {
+            strong {
+                display: inline-block;
+                margin-top: $space-xlarge;
+            }
+        }
+    }
+
+    .c-table-cell {
+        padding: 6px;
+    }
+
+    .c-table-cell:empty {
+        &::before {
+            content: '\00a0\00a0'; // 1.
+        }
+    }
+
+    br:nth-child(1) {
+        display: none;
+    }
+
+    [class='borderright'] br {
+        display: none;
+    }
+
+    .c-table {
+        margin: 0;
+
+        font-size: $small-font-size;
+
+        &.c--static {
+            tr:first-child {
+                td:first-child {
+                    display: none;
+                }
+            }
+        }
+
+        td {
+            border-bottom: 0;
+        }
+    }
+
+    p strong {
+        display: inline-block;
+        margin-top: $unit*3;
+    }
+
+
+    .t-size-chart-pinny__how-to-info {
+        br + br {
+            display: none;
+        }
+
+        strong {
+            display: inline-block;
+            margin-top: $unit*5;
+        }
+
+        br:nth-of-type(1) {
+            display: none;
+        }
+
+        u {
+            text-decoration: none;
+        }
+
+        a {
+            color: $brand-color;
+            font-size: $large-font-size;
+        }
+    }
+
+    .c-sheet__body {
+        padding: $unit*3;
+
+        h2 {
+            font-weight: normal !important;
+            font-size: $large-font-size;
+        }
+    }
+
+    .c-sheet__title {
+        padding: $unit*3;
+
+        color: $neutral-10;
+        font-weight: normal;
+        font-size: $larger-font-size;
+        line-height: 24px;
+        text-transform: initial;
+    }
+
+    .c-sheet__header {
+        border-bottom: $border-neutral-40;
+    }
+
+    .c-select {
+        margin-bottom: $unit*5 !important;
+    }
+
+    p.u-text-capitalize {
+        margin-top: $unit*4;
+    }
+
+    // TRAV-196: Adjust size on tabs to fit text in tab item
+    .c-tabs__controls-item.c--current .c-tabs__title,
+    .c-tabs__title {
+        padding-right: $unit;
+        padding-left: $unit;
+
+        font-size: $smaller-font-size;
+        text-transform: capitalize;
+    }
+}

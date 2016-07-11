@@ -1,0 +1,6 @@
+<div class="c-cart-empty">
+    {>"svg-icon" name="cart"/}
+    <h2>{cartTitle}</h2>
+    <p>{cartContent|s}</p>
+    {shoppingBtn}
+</div>

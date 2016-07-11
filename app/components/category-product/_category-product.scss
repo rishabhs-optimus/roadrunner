@@ -1,0 +1,84 @@
+.c-category-product {
+    margin: 0 $space-xlarge $space-xlarge;;
+
+    .c-category-product__item {
+        border: 1px solid $neutral-50;
+        margin-bottom: $space-xlarge;
+        img {
+            padding: $space-large;
+            display: block;
+            width: auto;
+            margin: auto;
+            max-width: 100%;
+        }
+    }
+
+
+    .c-category-product__name {
+        color: $brand-color;
+        margin-bottom: $space-xlarge;
+        margin-top: $unit;
+        display: block;
+    }
+    .c-price-information {
+
+        @include clearfix;
+        margin: 0 $space-xlarge $space-large;
+
+    }
+
+    .c-error-color {
+        color: $red;
+        font-size: $font-size-large-14;
+    }
+
+    .c-category-product__price {
+        display: inline-block;
+        float: left;
+        width: 55%;
+        font-size: $small-font-size;
+
+        .c-category-product__price-only {
+            color: $neutral-10;
+            display: block;
+        }
+
+        .c-category-product__price-now {
+            color: $red;
+            display: block;
+            padding-bottom: $unit;
+        }
+
+        .c-category-product__price-was {
+            color: $neutral-20;
+            display: block;
+            text-decoration: line-through;
+        }
+    }
+    .c-category-product__more {
+        display: inline-block;
+        float: right;
+        width: 45%;
+        text-align: right;
+        font-size: $small-font-size;
+
+        .c-category-product__more-rating {
+            color: $neutral-20;
+            display: inline-block;
+        }
+
+        .c-category-product__more-review {
+            position: relative;
+            top: -3px;
+            color: $neutral-20;
+            display: inline-block;
+        }
+
+        .c-category-product__more-shipping {
+            display: block;
+            color: $neutral-20;
+        }
+    }
+
+
+}

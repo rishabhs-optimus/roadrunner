@@ -1,0 +1,104 @@
+<div class="c-arrange c--align-middle u-margin-bottom-md js-overall-rating">
+    <div class="c-arrange__item">
+        <div class="c-arrange c--align-middle">
+            <div class="u-padding-right-md">Overall </div>
+            {#overallRating}
+                {>"components/star-rating/star-rating"/}
+            {/overallRating}
+        </div>
+    </div>
+    <div class="js-write-review c-write-review c-arrange__item c--shrink needsclick">
+        <strong class="needsclick">{@translate key="write_a_review"/} ></strong>
+    </div>
+</div>
+
+{?.filters}
+    {#refineFilters}
+        {>"components/bellows/bellows"/}
+    {/refineFilters}
+
+    {?.selectOptions}
+        <div class="c-select">
+            <select class="js-product-reviews-select">
+                {#.selectOptions}
+                    <option value={.optVal} {?selected}selected{/selected}>{.text}</option>
+                {/.selectOptions}
+            </select>
+        </div>
+    {/.selectOptions}
+{/.filters}
+
+<div class="c-avg-customer-rating u-padding-all">
+
+    {?.ratingsBreakdown}
+        {#.ratingsBreakdown}
+            {>"pages/product-details/partials/ratings-breakdown"/}
+        {/.ratingsBreakdown}
+    {/.ratingsBreakdown}
+
+    {?.hr}
+        <hr class="c-divider c--full-width u-margin-bottom-md u-margin-top-md">
+    {/.hr}
+    <div class="u-margin-bottom-md u-margin-top"> <strong>Average Customer Ratings </strong> </div>
+    <div class="c-review-rating-bar c-arrange c--align-middle">
+        <div class="c-review-rating__label">Overall </div>
+        {#overallRating}
+            {>"components/star-rating/star-rating"/}
+        {/overallRating}
+    </div>
+    <div class="c-review-rating-bar c-arrange c--align-middle">
+        <div class="c-review-rating__label"> Quality </div>
+        {#qualityRating}
+            {>"components/star-rating/star-rating"/}
+        {/qualityRating}
+    </div>
+    <div class="c-review-rating-bar c-arrange c--align-middle">
+        <div class="c-review-rating__label"> Value </div>
+        {#valueRating}
+            {>"components/star-rating/star-rating"/}
+        {/valueRating}
+    </div>
+    {?sizeSlider}
+        <div class="c-review-rating-bar u-margin-top-lg">
+            <div class="u-margin-bottom-md">Overall Fit & Size </div>
+            <div class="c-arrange c--align-middle c-slider-bar-container">
+            <div class="u-text-size-caption u-margin-end-sm u--bold">Sm</div>
+            <div class="c-slider-bar">
+                <div class="c-slider" style="left:{widthPercent}%"></div>
+            </div>
+            <div class="u-text-size-caption u-margin-start-sm u--bold">Bg</div>
+            </div>
+        </div>
+    {/sizeSlider}
+</div>
+<div class="js-product-reviews">
+    {#.reviews}
+        {>"components/review-card/review-card"/}
+    {/.reviews}
+</div>
+
+{?.pagination}
+    <div class="c-arrange c--align-middle u-margin-top-md u-text-align-center">
+        <div class="c-arrange__item">
+            <button class="c-button c--outline c--rounded c--small u-text-capitalize u--bold js-product-reviews-prev needsclick {?disablePrev}c--is-disabled{/disablePrev}" {?disablePrev}disabled{/disablePrev}>
+                {@translate key="prev"/}
+            </button>
+        </div>
+
+        <div class="c-arrange__item">
+            {.currPage} {@translate key="of"/} {.numPages}
+        </div>
+
+        <div class="c-arrange__item">
+            <button class="c-button c--outline c--rounded c--small u-text-capitalize u--bold js-product-reviews-next needsclick {?disableNext}c--is-disabled{/disableNext}" {?disableNext}disabled{/disableNext}>
+                {@translate key="next"/}
+            </button>
+        </div>
+    </div>
+{/.pagination}
+
+{?.showModalBtn}
+    <div class="u-margin-top-md u-margin-bottom-md u-text-align-center">
+        <button class="c-button c--outline c--rounded c--small u-text-capitalize u--bold js-see-all-reviews c-see-all-reviews">See All Reviews</button>
+    </div>
+{/.showModalBtn}

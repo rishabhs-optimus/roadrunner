@@ -1,0 +1,47 @@
+.c-shipping-restriction {
+    padding: 0 $unit $sub-unit $sub-unit;
+
+    font-size: $smaller-font-size;
+
+    .c-icon {
+        margin-top: -2px;
+        margin-right: -3px;
+
+        vertical-align: middle;
+    }
+
+    .c-tooltip-button {
+        color: $black;
+        font-family: $default-sans;
+        font-weight: 600;
+    }
+}
+
+.c-shopping-popup {
+    .c-extra-message a {
+        color: $black;
+        font-family: $default-sans;
+        font-weight: 600;
+    }
+
+    li {
+        margin: $sub-unit;
+
+        list-style-type: disc;
+    }
+
+    ul {
+        padding-left: $unit;
+    }
+
+    .c-sheet__body {
+        margin-top: -15px;
+        padding-top: $unit*3;
+        padding-right: $unit*3;
+        padding-bottom: $unit;
+    }
+
+    .c-extra-message {
+        margin-bottom: $sub-unit;
+    }
+}

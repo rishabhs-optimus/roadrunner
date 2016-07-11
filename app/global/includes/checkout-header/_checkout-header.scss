@@ -1,0 +1,19 @@
+// Checkout header
+// ====
+
+.t-header__top {
+    border-bottom: 1px solid $neutral-40;
+
+    .c-header-logo {
+    display: flex;
+
+    a {
+        margin-right: $unit*3;
+    }
+
+    > .c-icon {
+        width: 17px;
+        height: 20px;
+    }
+}
+}

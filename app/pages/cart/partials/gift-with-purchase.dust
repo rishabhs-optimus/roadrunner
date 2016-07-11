@@ -1,0 +1,6 @@
+<div class="js-gift-with-purchase-content">
+    {message}
+    {productName}
+    <div class = "c-product-price">{productPrice}</div>
+    {productImage}
+</div>

@@ -1,0 +1,37 @@
+// Review section Styling
+// ---
+
+.c-reviews-bellows {
+    .c-see-all-reviews {
+        border: 1px solid $neutral-30;
+    }
+
+
+    .c-button.c--small.c-see-all-reviews {
+        min-height: 40px;
+
+        font-size: $small-font-size;
+    }
+}
+
+.c-product-review-pinny__body {
+    padding: $unit*3;
+    .c-button.c--outline.c--is-disabled {
+        color: $neutral-40;
+
+        -webkit-text-fill-color: initial;
+    }
+}
+
+.c-write-review {
+    color: $brand-color;
+    font-size: $font-size;
+}
+
+// Giving style to desktop class as required
+
+.BVRRReviewBadge {
+    float: none;
+
+    margin-left: 0;
+}

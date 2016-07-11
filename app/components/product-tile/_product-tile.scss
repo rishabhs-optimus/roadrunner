@@ -1,0 +1,152 @@
+// Product Tile component
+// ===
+
+// Root
+// ---
+
+.c-product-tile {
+    display: flex;
+
+    &:not(.c--vertical) {
+        padding-bottom: $space-xlarge;
+        border-bottom: $border;
+
+        border-color: $neutral-160;
+
+        + .c-product-tile {
+            padding-top: $space-xlarge;
+        }
+    }
+}
+
+
+// Image Container
+// ---
+
+.c-product-tile__image-container {
+    position: relative;
+
+    align-self: flex-start;
+    flex: 0 0 auto;
+    width: calc(50% - #{$space-large});
+
+    img {
+        display: block;
+    }
+}
+
+
+// Image Loading Overlay
+// ---
+
+.c-product-tile__image-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255, 255, 255, 0.8);
+}
+
+// Description Container
+// ---
+
+.c-product-tile__description {
+    flex: 1 1 auto;
+    padding-left: $space-xlarge;
+}
+
+
+// Inner Description Container
+// ---
+
+.c-product-tile__description-inner {
+    font-size: $small-font-size;
+
+    .c-price__each {
+        display: none;
+    }
+}
+
+
+// Product Title
+// ---
+
+.c-product-tile__title {
+    color: $brand-color;
+    font-size: $font-size;
+}
+
+
+// Product Price
+// ---
+
+.c-product-tile__price {
+
+}
+
+
+// Rating Container
+// ---
+
+.c-product__rating {
+    color: $neutral-20;
+}
+
+
+// Swatches Container
+// ---
+
+.c-product-tile__swatches {
+    clear: both;
+
+    ul {
+        overflow: hidden;
+    }
+
+    li {
+        float: left;
+
+        margin-bottom: $space-large;
+    }
+
+    img {
+        display: block;
+        min-width: $unit*9;
+        min-height: $unit*9;
+    }
+}
+
+
+// Short Description
+// ---
+
+.c-product-tile__short-description {
+    margin-top: $unit;
+
+    color: $neutral-20;
+    font-size: $small-font-size;
+}
+
+
+// Modifier: Vertical Tile
+// ---
+
+.c-product-tile.c--vertical {
+    flex-direction: column;
+
+    .c-product-tile__image-container {
+        width: auto;
+        padding: 0;
+    }
+
+    .c-product-tile__description {
+        margin-top: $space-large;
+        padding: 0;
+    }
+}

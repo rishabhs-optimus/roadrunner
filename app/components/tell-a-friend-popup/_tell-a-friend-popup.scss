@@ -1,0 +1,141 @@
+.c-tell-a-friend {
+    font-family: $font-family;
+    .pinny__header {
+        padding: 0;
+    }
+    .pinny__content {
+        padding: $space-xlarge;
+    }
+    .c-sheet__title {
+        padding: $space-xlarge;
+
+        color: $neutral-10;
+        font-weight: normal;
+        font-size: $larger-font-size;
+        text-transform: capitalize;
+    }
+
+    .tell-a-friend-image {
+        width: 142px;
+        height: 142px;
+        border: $border-neutral-40;
+    }
+    td {
+        border: none;
+    }
+    .c-sheet__header-close {
+        .c-icon {
+            padding: 0;
+
+            background: $neutral-70;
+        }
+    }
+
+    .js-taf__recipients {
+        margin: $space-xlarge 0;
+        margin-right: -$space-xlarge;
+        margin-left: -$space-xlarge;
+        padding: $space-xlarge $space-xlarge $space-large * 2;
+
+        background: $neutral-50;
+    }
+
+    .c-field__label {
+        padding-bottom: $space-large;
+
+        color: $neutral-110;
+        font-family: $lato_bold;
+        font-size: $font-size;
+        .c-email {
+            float: right;
+
+            display: inline-block;
+            padding-top: $sub-unit;
+
+            color: $neutral-80;
+            font-family: $font-family;
+            font-size: $small-font-size;
+            font-weight: normal;
+        }
+    }
+
+    .c-field__top > div {
+        display: inline-block;
+    }
+    .c-field {
+        padding-bottom: $space-large * 2;
+    }
+
+    .c-taf__add-recipient {
+        padding-top: $unit;
+        padding-bottom: $unit * 2;
+        display: inline-block;
+        color: $brand-color !important;
+        font-weight: normal;
+        font-size: $font-size;
+        line-height: 20px;
+    }
+
+    .c-taf__remaining-label {
+        padding: $unit 0 $space-xlarge;
+
+        color: $neutral-20;
+        font-size: $small-font-size;
+    }
+
+
+
+    .c-taf__remove {
+        float: right;
+
+        margin-bottom: 3px;
+
+        color: $brand-color;
+
+        background: none;
+        border: 0;
+        display: inline-block;
+        min-height: 0;
+    }
+
+    .c-taf__message {
+
+        min-height: 80px !important;
+    }
+
+    .c-check-box-label {
+        font-family: $font-family;
+        font-size: $font-size;
+    }
+    .c-taf-content {
+        .c--error input {
+            border: 1px solid $neutral-130;
+        }
+
+        .c-remove-button {
+            // .c--error input {
+            //     border: $border;
+            // }
+            //
+            // .errortxt {
+            //     color: $neutral-110 !important; // Required due to desktop functionality
+            // }
+        }
+
+        tbody {
+            // display: flex;
+
+            > tr {
+                display: inline-block;
+            }
+            tr:last-child {
+                float: left;
+
+                margin-right: $space-xlarge;
+            }
+            tr:first-child {
+                width: 40%;
+            }
+        }
+    }
+}

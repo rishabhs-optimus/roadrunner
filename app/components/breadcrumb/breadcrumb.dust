@@ -1,0 +1,6 @@
+{#breadcrumbLink}
+    <a class="c-breadcrumb {breadcrumbClass}" href="{href}">
+        {>"svg-icon" name="{iconName}" class=iconNameClass/}
+        <span class="c-breadcrumb__link">{title}</span>
+    </a>
+{/breadcrumbLink}

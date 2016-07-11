@@ -1,0 +1,43 @@
+<ul class="c-pagination {class}">
+    {#pagination}
+        {#prev}
+            {prevTag|openTag|s}
+                {?prevHref}
+                    <a data-bvjsref="{prevHref}" data-bvcfg="{prevBvcfg}">
+                        {>"svg-icon" name="{iconName}" class=iconNameClass/}
+                    </a>
+                {:else}
+                    <span class="prev-off">
+                        {>"svg-icon" name="{iconName}" class=iconNameClass/}
+                    </span>
+                {/prevHref}
+            {prevTag|closeTag|s}
+        {/prev}
+
+        {#pages}
+            <li{?isCurrent} class="active"{/isCurrent}>
+                {^isCurrent}
+                    <a data-bvjsref="{pageHref}" data-bvcfg="{pageBvcfg}">
+                {/isCurrent}
+                {pageNumber}
+                {^isCurrent}
+                    </a>
+                {/isCurrent}
+            </li>
+        {/pages}
+
+        {#next}
+            {nextTag|openTag|s}
+                {?nextHref}
+                    <a data-bvjsref="{nextHref}" data-bvcfg="{nextBvcfg}">
+                        {>"svg-icon" name="{iconName}" class=iconNameClass/}
+                    </a>
+                {:else}
+                    <span class="next-off">
+                        {>"svg-icon" name="{iconName}" class=iconNameClass/}
+                    </span>
+                {/nextHref}
+            {nextTag|closeTag|s}
+        {/next}
+    {/pagination}
+</ul>

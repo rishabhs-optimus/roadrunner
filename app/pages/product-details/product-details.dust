@@ -1,0 +1,36 @@
+{>"global/base"/}
+
+{<contentBlock}
+    <div class="t-product-details-page">
+        <div class="c-product-title">
+            {productTitle}
+        </div>
+        <div class="c-product-item-id">
+            {productItemId}
+        </div>
+        <div class="c-product-price-section">
+            {priceSection}
+        </div>
+        <div class="c-color">
+            <div class="c-color__heading">
+                {colorHeading}
+            </div>
+            <div class="c-color_choices">
+                {colorChoices}
+            </div>
+        </div>
+    </div>
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    // app/pages/product-details/ui.js
+    (function(require) {
+        require(["global/ui", "pages/product-details/product-details-ui"], function(globalUI, productDetailsUI) {
+            globalUI();
+            productDetailsUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

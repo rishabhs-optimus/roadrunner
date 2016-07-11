@@ -1,0 +1,8 @@
+.c-card {
+    margin: ($unit*2) 0;
+    padding: ($space-large * 2);
+    border: $border-neutral-40;
+
+    border-radius: $border-radius;
+    box-shadow: inset 0 1px 4px rgba($neutral-40, 0.75);
+}

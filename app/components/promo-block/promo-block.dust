@@ -1,0 +1,6 @@
+<a href="{href}" class="c-promo-block {blockClass}">
+    <img src="{imgSrc}" class="c-promo-block__image">
+    <span class="c-promo-stack__link c-button c--yellow u-text-uppercase">
+        {cta}
+    </span>
+</a>

@@ -1,0 +1,36 @@
+{#shippingItems}
+    <li class="js-shipping-item">
+
+        <div class="c-multi-address__list-title">{productName}</div>
+
+        <div class="c-multi-address-product-options c-options">
+            {productOption}
+
+            {#.stock}
+                <div class="{?.inStock} u-text-success {/.inStock}">{.text}</div>
+            {/.stock}
+
+            {personalization}
+        </div>
+
+        <div class="c-multi-address__select-text">{@translate key="ship_to" /}</div>
+
+        <div class="c-multi-address__select-input">
+            <div class="c-field">
+                <div class="js-select">
+                    {>"components/select/select":select /}
+                </div>
+            </div>
+        </div>
+
+        <ul class="c-multi-address__add-edit">
+            <li>
+                {editAddress}
+            </li>
+            <li>
+                {addAddress}
+            </li>
+        </ul>
+
+    </li>
+{/shippingItems}

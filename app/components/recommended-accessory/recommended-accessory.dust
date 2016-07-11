@@ -1,0 +1,14 @@
+<div class="c-recommended-accessory {class}">
+    <div class="c-arrange c--justify-between">
+        <strong>{heading}</strong>
+        <strong class="u-text-black u-text-capitalize js-recommended-accessory-hide">{actionText}</strong>
+    </div>
+
+    <div class="c-arrange u-padding-all u--tight c-recommended-accessory-content js-recommended-accessory-content">
+        <div class="js-recommended-accessory-product-image c--shrink c-arrange__item">{productImage}</div>
+        <div class="c-arrange__item u-padding-left u--tight">
+            <div class="c-recommended-accessory-product-heading">{itemName}</div>
+            <div class="c-price js-price"></div>
+        </div>
+    </div>
+</div>

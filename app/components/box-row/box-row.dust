@@ -1,0 +1,43 @@
+<div class="c-box-row {boxRowclass}">
+    <div class="c-box c-arrange c--align-middle {boxClass}">
+
+        <div class="c-box__label c-arrange__item c--shrink {labelClass}">
+            {?requiredField}
+                <div class="c-arrange c--align-middle {requiredClass}">
+                    {required}
+                    {label}
+                    {?selectField}
+                        <select class="{selectClass}">
+                            {#options}
+                                <option data-href="{value}" {?selected}selected{/selected}>{text}</option>
+                            {/options}
+                        </select>
+                    {/selectField}
+                </div>
+            {:else}
+                {label}
+                {?selectField}
+                    <select class="{selectClass}">
+                        {#options}
+                            <option data-href="{value}" {?selected}selected{/selected}>{text}</option>
+                        {/options}
+                    </select>
+                {/selectField}
+            {/requiredField}
+        </div>
+
+        {?inputField}
+            <div class="c-input c-arrange__item {inputClass}">
+                {?inputScript}
+                    {inputScript}
+                {/inputScript}
+                {input}
+            </div>
+        {/inputField}
+
+        {?customSelect}
+            {>"components/custom-select/custom-select" /}
+        {/customSelect}
+
+    </div>
+</div>

@@ -1,0 +1,204 @@
+// Project-Wide Variables
+// ===
+//
+// Edit these as needed. Some guidelines:
+//
+// - Names should be lowercase and dash-separated;
+// - Qualifiers should be added to the beginning of related variables: use
+//   `$small-font-size`, not `$font-size-small`;
+// - Numeric scales should use increments of 10; these numbers are arbitrary and
+//   should not map to actual values. If really necessary, additional values can
+//   be added in between, e.g. $neutral-15 between 10 and 20.
+
+
+// Layout
+// ---
+
+// Basic unit for spacing and alignment; 6 to 12px recommended. Apply in whole
+// or half multiples.
+$unit: 4px;
+$sub-unit: $unit/2;
+$space-large: $unit*2;
+$space-xlarge: $unit*3;
+
+// z-index
+$z1-depth: 1;    // background
+$z2-depth: 10;   // icon or other ui element
+$z3-depth: 100;  // modal shade or similar
+$z4-depth: 1000; // modal dialog or similar
+
+// Standard tap-target size
+$tap-size: 48px;
+
+// Sit link
+$server-font-path: 'http://stagewcs.travelsmith.com/';
+// Typography
+// ---
+//font family
+$font-family: 'lato-regular', 'Roboto', sans-serif;
+$lato_light: 'lato-light', 'Roboto', sans-serif;
+$lato_bold: 'lato-bold', 'Roboto', sans-serif;
+$lato_black_italic: 'lato-black-italic', 'Roboto', sans-serif;
+$lato_bold_italic: 'lato-bold-italic', 'Roboto', sans-serif;
+$lato_hairline: 'lato-hairline', 'Roboto', sans-serif;
+$lato_hairline_itailic: 'lato-hairline-italic', 'Roboto', sans-serif;
+$lato_italic: 'lato-italic', 'Roboto', sans-serif;
+$lato_light_italic: 'lato-light-italic', 'Roboto', sans-serif;
+
+//Todo: Remove below 2 lines
+// Font Family
+$default-sans: 'Default Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+$default-serif: 'Default Serif', Georgia, Times, 'Times New Roman', serif;
+$normal-font-weight: 400;
+
+
+$header-font-family: $font-family;
+
+$line-height: 20px;
+
+
+$header-font-family: $font-family;
+
+$font-size-large-32: 32px;
+$font-size-large-30: 30px;
+$font-size-large-28: 28px;
+$font-size-large-24: 24px;
+$font-size-large-14: 14px;
+$largest-font-size: 20px;
+$larger-font-size: 18px;
+$large-font-size: 16px;
+$font-size: 15px;
+$small-font-size: 13px;
+$smaller-font-size: 12px;
+$font-size-small-11: 11px;
+$smallest-font-size: 10px;
+// Color palette
+// ---
+
+// Neutrals
+$neutral-10: #444;
+$neutral-20: #919191;
+$neutral-30: #bbb;
+$neutral-40: #ddd;
+$neutral-50: #eee;
+$neutral-60: #f6f6f6;
+$neutral-70: #fff;
+$neutral-80: #888;
+$neutral-110: #4a4a4a;
+$neutral-120: #c32243;
+$neutral-130: #ba050a;
+$neutral-140: #f7f7f7;
+$neutral-150: #3b5997;
+$neutral-160: #dfdfdf;
+
+
+
+// Brand colors
+$brand-color: #3b5997; // blue
+$light-brand-color: lighten($brand-color, 15%);
+$dark-brand-color: darken($brand-color, 15%);
+
+//
+$black: #000;
+$white: $neutral-70;
+
+
+
+// emphasis-color
+$emphasis-color: #ba050a;
+// promo-colors
+$promo-cta: #f7eee1;
+$promo-border: #e1d3c9;
+
+// Accent colors
+$accent-color: #16a085; // turquoise
+$light-accent-color: lighten($accent-color, 15%);
+$dark-accent-color: darken($accent-color, 15%);
+
+// Success colors
+$success-color: #27ae60; // green
+$light-success-color: lighten($success-color, 15%);
+$dark-success-color: darken($success-color, 15%);
+
+// Error colors
+$error-color: $emphasis-color; // red
+$light-error-color: lighten($error-color, 15%);
+$dark-error-color: darken($error-color, 15%);
+
+// black
+$black: #000;
+
+// red
+$red: #c32243;
+
+$disabled-color: #f1f1f1;
+
+// Styleguide Colors
+$grey-1: #666;
+
+$taupe-1: #9c998d;
+
+$taupe-2: #d1ccbc;
+
+$taupe-3: #efede2;
+
+$taupe-4: #f7f7f2;
+
+$brown-1: #624630;
+
+$brown-2: #a6734c;
+
+$blue-1: #066;
+
+$green-1: #82a34b;
+// Gradients
+// ---
+//
+// Note: Spline provides a handy function for reversing a gradient,
+// e.g. `reverse-gradient($neutral-gradient)`;
+
+$neutral-gradient: linear-gradient(white, $neutral-30);
+$brand-gradient: linear-gradient($light-brand-color, $brand-color);
+$accent-gradient: linear-gradient($light-accent-color, $accent-color);
+
+
+// Appearance
+// ---
+
+$font-color: $neutral-10;
+
+$link-color: $accent-color;
+$active-link-color: $dark-accent-color;
+
+$focus-color: $accent-color;
+
+$border-color: $neutral-30;
+$border-radius: 4px;
+
+$input-background-color: #fff;
+$disabled-input-color: $neutral-30;
+$disabled-input-background-color: $neutral-30;
+$horizontal-input-padding: $unit;
+$vertical-input-padding: $unit;
+
+
+// Layer (z-index)
+// ---
+
+// Organizes z-index usage by name. Values can be incremented/decremented
+// slightly as necessary. eg. $stage-layer + 1;
+
+$backdrop-layer: 1;    // background
+$stage-layer: 10;   // icon or other ui element
+$orchestra-layer: 100;  // modal shade or similar
+$frontrow-layer: 1000; // modal dialog or similar
+
+
+// Shorthand
+// ---
+//
+// Quick ways to write properties that you re-use often.
+
+$border: 1px solid $border-color;
+$border-neutral-40: 1px solid $neutral-40;
+$input-padding: $vertical-input-padding $horizontal-input-padding;

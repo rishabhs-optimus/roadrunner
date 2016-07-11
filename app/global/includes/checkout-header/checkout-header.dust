@@ -1,0 +1,35 @@
+{#header}
+    <header class="t-header" role="banner">
+        <div class="t-header__top t-header__row">
+            <div class="t-header__row-item c-logo c-header-logo">
+                <a href="/">
+                    <h1 class="u-visually-hidden">{text}</h1>
+                    <img src="{@getUrl path="img/travelsmith-logo.png" /}">
+                </a>
+
+                {>"svg-icon" name="lockicon"/}
+            </div>
+
+            <div class="t-header__row-item c-cart-container">
+                <button class="t-header__cart js-cart-toggle">
+                    {>"svg-icon" name="cart"/}
+                    <span class="c-cart-text">{@translate key="cart"/}</span><span class="t-header__cart-count js-cart-count">0</span>
+                </button>
+            </div>
+        </div>
+
+        {#progressBar}
+            <div class="t-header__bottom u-margin-top-lg u-margin-bottom-lg">
+                {>"components/checkout-steps/checkout-steps"/}
+            </div>
+        {/progressBar}
+    </header>
+
+    {>"components/sheet/sheet"
+        effect="sheetRight" class="c-cart-pinny js-cart-pinny" headerClass="js-cart-title"
+        bodyClass="js-cart-contents" footerClass="js-cart-checkout-button"
+        footerContent=" " bodyContent=emptyCartContent isHeader="true"
+    /}
+
+    {shoppingCart}
+{/header}

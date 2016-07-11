@@ -1,0 +1,53 @@
+{>"global/base"/}
+
+{<contentBlock}
+    <div class="t-change-data">
+
+        {#breadcrumbLink}
+            {>"components/breadcrumb/breadcrumb" iconName="right" /}
+        {/breadcrumbLink}
+
+        <h1 class="c-title c--upright u-margin-bottom-md">{pageTitle}</h1>
+
+        <p>{introText}</p>
+
+        {#form}
+            {.formWrapper|openTag|s}
+                <div hidden>
+                    {.formInputs}
+                </div>
+
+                {?confirmationText}
+                    <p class="u-text-success">{confirmationText}</p>
+                {/confirmationText}
+
+                <div class="js-form-fields u-margin-bottom-lg">
+                    <div class="c-field-row">
+                        {.emailCurrent}
+                    </div>
+                    <div class="c-field-row">
+                        {.emailNew}
+                    </div>
+                    <div class="c-field-row">
+                        {.emailAgain}
+                    </div>
+                    <div class="c-field-row">
+                        {.continueButton}
+                    </div>
+                </div>
+            {.formWrapper|closeTag|s}
+        {/form}
+    </div>
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    (function(require) {
+        require(["global/ui", "pages/account-change-email/account-change-email-ui"], function(globalUI, AccountChangeEmailUI) {
+            globalUI();
+            AccountChangeEmailUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

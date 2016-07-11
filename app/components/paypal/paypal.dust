@@ -1,0 +1,4 @@
+{! TRAV-444: Hide paypal banners !}
+<div class="c-category-paypal" hidden>
+    <img src="{paypalImg}">
+</div>

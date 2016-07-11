@@ -1,0 +1,9 @@
+<div class="u-margin-top-lg c-add-to-cart-pdp">
+    <div class="js-cta c-cta js-enable-disable-button">
+        <div class="c-add-to-cart-wrapper u-padding-top">
+            <button class="c-button c--primary u-margin-bottom-sm c--full-width js-add-to-cart c--is-disabled c-add-to-cart-button needsclick">
+                {@translate key="add_to_cart" /}
+            </button>
+        </div>
+    </div>
+</div>

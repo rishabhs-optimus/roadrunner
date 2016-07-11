@@ -1,0 +1,218 @@
+.t-address-book-content {
+    padding: 0 $space-xlarge;
+    .c-address-book__address {
+        .gwt-addr-disp {
+            line-height: 20px;
+        }
+    }
+    .c-title {
+        line-height: $unit * 6 + 2;
+        margin-bottom: $space-xlarge;
+        margin-top: $space-large;
+    }
+    .c-address-book {
+        &__intro {
+            margin-bottom: $unit * 6;
+        }
+        &__button {
+            font-family: $lato_bold;
+            color: $brand-color;
+            width: 48%;
+            float: right;
+            min-height: inherit;
+            background-color: $input-background-color;
+            border: 1px solid $neutral-40;
+            text-transform: uppercase;
+            padding: $space-large + 1 0;
+            &-list {
+                margin-bottom: $unit * 7;
+                &:after {
+                    clear: both;
+                    content: '';
+                    display: table;
+                }
+            }
+        }
+        &__button-remove {
+            float: left;
+        }
+        &__default {
+            font-size: $small-font-size;
+            letter-spacing: 0.43px;
+            line-height: $line-height;
+            background-color: $neutral-60;
+            display: inline-block;
+            margin: 0 $unit $unit * 4 0;
+            padding: $unit $space-large;
+        }
+        &__add {
+            border: none;
+            background: none;
+            font-size: $large-font-size;
+            color: $brand-color;
+            line-height: $unit * 6;
+            outline: none;
+            display: inline-block;
+            min-height: inherit;
+            padding: 0;
+            margin-top: $unit * 6;
+            margin-bottom: $unit * 6;
+            + .c-icon {
+                width: $unit * 3;
+                height: $unit * 3;
+                margin-left: $space-large;
+            }
+        }
+        &__list {
+            padding-top: $space-xlarge;
+            border-bottom: 1px solid $neutral-40;
+            border-top: 1px solid $neutral-40;
+        }
+        &__address {
+            margin-bottom: $space-xlarge;
+        }
+    }
+    .c-breadcrumb__link {
+        line-height: $unit * 6;
+        font-size: $large-font-size;
+    }
+}
+
+// Address Pinny Styling
+.js-address-pinny,
+.js-remove-address-pinny {
+    // top: 53% !important;
+    // background: $neutral-70;
+
+
+    .c-sheet__title {
+        font-size: $larger-font-size;
+        color: $neutral-10;
+        line-height: $unit * 6;
+        text-transform: capitalize;
+        padding: $space-xlarge $unit * 4 $space-xlarge $space-xlarge;
+        font-weight: normal;
+    }
+    .c-icon {
+        background: none;
+        padding: 0;
+    }
+    .c-field-row {
+        input[type=checkbox] + label {
+            font-family: $font-family;
+            margin-left: $unit;
+        }
+        label:last-child{
+            margin-bottom: $space-large;
+        }
+    }
+    &__body {
+        padding: $unit * 8 $space-xlarge 0 $space-xlarge;
+    }
+    label {
+        margin: 0;
+    }
+    [type="checkbox"] {
+        top: 0;
+    }
+    input {
+        outline: none;
+    }
+    select {
+        background: none;
+    }
+    .c--link {
+        padding-left: 0;
+    }
+    .c-field {
+        margin-bottom: $unit * 4;
+        display: inline-block;
+        width: 100%;
+        label {
+            margin-bottom: $space-large;
+
+        }
+    }
+    .addrPhone2Spot, .AddrCompanySpot {
+        label {
+            display: block;
+        }
+
+        .c-optional {
+            font-size: $small-font-size;
+            color: $neutral-20;
+
+            font-family: $font-family;
+            float: right;
+            padding-top: $sub-unit;
+        }
+    }
+    .c--3-4 {
+        padding-top: $space-large;
+    }
+    .gwt-csb-error-panel {
+        padding-bottom: $unit * 6;
+    }
+}
+.t-address-book {
+    // [id="gwt-removeConfirmDlog-content_modal"] {
+    //     table {
+    //         border-collapse: collapse;
+    //         margin: $unit 0;
+    //         border: $border;
+    //
+    //         text-align: left;
+    //     }
+    //
+    //     thead {
+    //         background-color: $white;
+    //     }
+    //
+    //     tbody {
+    //         tr {
+    //             background-color: $white;
+    //         }
+    //
+    //         tr:nth-child(odd) {
+    //             background-color: $neutral-30; // 4
+    //         }
+    //     }
+    //
+    //     th,
+    //     td {
+    //         padding: $sub-unit;
+    //     }
+    //
+    //     tr,
+    //     td,
+    //     th {
+    //         vertical-align: middle;
+    //     }
+    //
+    //     .okCancelPanel {
+    //         display: inline-flex;
+    //         button {
+    //             margin: 0 $sub-unit/2;
+    //             span:after {
+    //                 content: ' >';
+    //             }
+    //         }
+    //
+    //         .primary {
+    //             background: $brand-color;
+    //
+    //             color: $white;
+    //         }
+    //     }
+    // }
+    #editAddressModal {
+
+        .secondary {
+            display: none;
+        }
+
+        .c--primary {
+            margin-bottom: $space-large * 4;
+        }
+    }
+}

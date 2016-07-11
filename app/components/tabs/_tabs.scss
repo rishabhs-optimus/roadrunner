@@ -1,0 +1,168 @@
+// Tabs
+// ====
+//
+// Tabs component with tabs controls and tabs body.
+// Horizontal controls tabs items placed in one line.
+
+
+// Configurable Variables
+// ---
+
+$tabs__padding: 12px 0 $unit;
+$tabs__body-space: $unit;
+$tabs__active-background: $white;
+
+
+// Tabs
+// ---
+//
+
+
+
+// Tabs: Controls
+// ---
+//
+// List of tabs buttons
+//
+// Notes:
+//
+// 1. Add overflow scroll to avoid squished tabs
+// 2. Needed for correctly calculating the position to scroll to when the user has selected a tab
+
+.c-tabs__controls {
+    position: relative; // 2
+
+    display: flex;
+
+    &.c--fade::after {
+        content: '';
+
+        position: absolute;
+        bottom: -$unit;
+        left: 0;
+        z-index: $z1-depth;
+
+        width: 100%;
+        height: $unit;
+
+        background: linear-gradient($white, rgba($white, 0));
+    }
+}
+
+
+// Tabs: Controls item
+// ---
+//
+// Items inside controls
+//
+// 1. Same width
+
+.c-tabs__controls-item {
+    display: flex;
+    flex: 1 1 auto;
+    flex-grow: 1; // 1
+    flex-basis: 0; // 1
+    border-bottom: 1px solid $neutral-40;
+
+    background: $neutral-50;
+
+    text-align: center;
+
+    .c-tabs__button {
+        background: transparent;
+    }
+
+    &.c--current {
+        border: 1px solid $neutral-40;
+        border-width: 1px 1px 0 0;
+
+        background: none;
+
+        .c-tabs__button {
+            min-height: 0;
+            padding: $unit * 3 0;
+
+            color: $neutral-10;
+            font-family: $lato_bold;
+            font-size: $font-size;
+            line-height: $unit*5;
+        }
+
+        .c-tabs__title {
+            font-size: $font-size;
+        }
+    }
+}
+
+
+// Tabs: Tabs button
+// ---
+//
+// Tabs button placed inside controls
+
+.c-tabs__button {
+    width: 100%;
+    min-height: 0;
+    padding: $unit*2 0;
+    border: 0;
+
+    outline: none;
+
+    color: $neutral-10;
+    font-family: $lato_bold;
+    font-style: normal;
+    font-size: $font-size;
+    line-height: $unit*5;
+    text-align: center;
+
+    transition: 0.1s background ease-out;
+
+    &:active {
+        background: $white;
+    }
+}
+
+
+.c-tabs__title {
+    color: $neutral-10;
+    font-family: arial;
+    font-family: $lato_bold;
+    font-size: $font-size;
+    line-height: $unit*5;
+    text-transform: uppercase;
+}
+
+.c-tabs__subtitle {
+    color: $neutral-50;
+    font-size: $smaller-font-size;
+    text-transform: initial;
+}
+
+
+// Tabs: Tabs body
+// ---
+//
+// Tabs body content
+//
+
+.c-tabs__body {
+    margin-bottom: $unit * 3;
+    padding: 0 $unit*3;
+
+    background: #fff;
+}
+
+
+// Tabs: Tabs content
+// ---
+//
+// Tabs item inside tabs body, content of tabs
+//
+
+.c-tabs__content {
+    display: none;
+
+    &.c--current {
+        display: block;
+    }
+}

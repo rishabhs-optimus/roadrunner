@@ -1,0 +1,46 @@
+{>"global/base"/}
+
+{<contentBlock}
+    <div class="t-order-history-content">
+
+        {#breadcrumbLink}
+            {>"components/breadcrumb/breadcrumb" iconName="right" /}
+        {/breadcrumbLink}
+
+        <h1 class="c-order-history__header">{pageTitle}</h1>
+
+        {#introText}
+            <div class="c-order-history__intro">
+                {para|s}
+            </div>
+        {/introText}
+
+        <div hidden>
+            {hiddenInputs}
+        </div>
+
+        {#orderHistory}
+            {>"components/loading/loading" class="js-loader"/}
+            <div class="js-order-history">
+                <div hidden>
+                    {orderHistoryContainer}
+                </div>
+                {! placeholder for ui !}
+            </div>
+            {fallbackMessage}
+        {/orderHistory}
+
+    </div>
+{/contentBlock}
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    // app/pages/order-history/ui.js
+    (function(require) {
+        require(["global/ui", "pages/order-history/order-history-ui"], function(globalUI, orderHistoryUI) {
+            globalUI();
+            orderHistoryUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

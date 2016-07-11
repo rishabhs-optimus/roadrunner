@@ -1,0 +1,111 @@
+{>"global/checkoutBase"/}
+
+{<contentBlock}
+    <div class="t-checkout-sign-in-wrapper">
+        <h4 class="c-title">{pageTitle}</h4>
+        <p class="c-desc">{@translate key="checkoutSigninText"/}</p>
+        {errorContainer}
+
+        {#loginForm}
+            <div>
+                {form|openTag|s}
+                    {hiddenInputs}
+                    <div class="c-form-group">
+                        {#email}
+                            <div class="c-box-row">
+                                <div class="c-box c-arrange c--align-middle">
+                                    <div class="c-box__label c-arrange__item c--shrink">
+                                        {label}
+                                    </div>
+
+                                    <div class="c-input c-arrange__item">
+                                        {inputScript}
+                                    </div>
+                                </div>
+                            </div>
+                        {/email}
+
+                        {#password}
+                            <div class="c-box-row">
+                                <div class="c-box c-arrange c--align-middle">
+                                    <div class="c-box__label c-arrange__item c--shrink">
+                                        {label}
+                                    </div>
+
+                                    <div class="c-input c-arrange__item">
+                                        {input}
+                                    </div>
+                                </div>
+                            </div>
+                        {/password}
+                    </div>
+
+                    {#rememberMe}
+                    <div class="c-box-row c-check-me">
+                        <div class="c-arrange c--align-middle">
+                            <div class="c-arrange__item c--shrink">{input}</div>
+                            <div class="c-arrange__item">
+                                <div class="c-box c-arrange">
+                                    <label class="c-field__label" id="rememberMeLink" for="{labelFor}">{text} </label>
+
+                                    <div class="c-arrange__item c--shrink">
+                                        {rememberMeLink|openTag|s}
+                                            {>"svg-icon" name="info"/}
+                                        {rememberMeLink|closeTag|s}
+                                        {>"components/sheet/sheet" class="js-remember-me-panel"
+                                            bodyClass="u-padding-none" coverage="97%"
+                                            bodyContent=tooltipContent effect="sheetBottom" /}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="js-remember-me-tooltip" hidden>{tooltipContent}</div>
+                        </div>
+                    </div>
+                {/rememberMe}
+
+                    <div class="c-field-row js-signin-button">
+                        {loginButton}
+                    </div>
+
+                {form|closeTag|s}
+            </div>
+        {/loginForm}
+
+        {>"components/divider/divider"/}
+
+        {#guestLoginForm}
+            <div>
+                {form|openTag|s}
+                    {hiddenInputs}
+                    {createAccountButton}
+                    <div class="c-descriptionText">
+                        {descriptionText}
+                    </div>
+                {form|closeTag|s}
+            </div>
+        {/guestLoginForm}
+
+        {! The forgot password modal needs this !}
+        <div id="container"></div>
+        {forgotPasswordParams}
+
+        {! Including forgot password in pinny !}
+        {>"components/sheet/sheet" class="js-forgot-password-panel"
+            bodyClass="u-padding-none" coverage="70%" cssClass="c--dialog"
+        /}
+    </div>
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    // app/pages/checkout-sign-in/ui.js
+    (function(require) {
+        require(["global/ui", "pages/checkout-sign-in/checkout-sign-in-ui"], function(globalUI, checkoutSignInUI) {
+            globalUI();
+            checkoutSignInUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

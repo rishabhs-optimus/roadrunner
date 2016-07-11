@@ -1,0 +1,45 @@
+<ul class="c-pagination {class}">
+    {#pagination}
+        {#prev}
+            {prevTag|openTag|s}
+                {?prevHref}
+                    <a href="{prevHref}">
+                        {>"svg-icon" name="{iconName}" class=iconNameClass/}
+                    </a>
+                {:else}
+                    <span>
+                        {>"svg-icon" name="{iconName}" class=iconNameClass/}
+                    </span>
+                {/prevHref}
+            {prevTag|closeTag|s}
+        {/prev}
+
+        {#pages}
+            <li{?isCurrent} class="active"{/isCurrent}>
+                {^isCurrent}
+                    <a href="{pageHref}">
+                {/isCurrent}
+                {pageNumber}
+                {^isCurrent}
+                    </a>
+                {/isCurrent}
+            </li>
+        {/pages}
+
+        {#next}
+            {nextTag|openTag|s}
+                {?nextHref}
+                    <a href="{nextHref}">
+                        {>"svg-icon" name="{iconName}" class=iconNameClass/}
+                    </a>
+                {:else}
+                    <span>
+                        {>"svg-icon" name="{iconName}" class=iconNameClass/}
+                    </span>
+                {/nextHref}
+            {nextTag|closeTag|s}
+        {/next}
+        {^viewAllLink}<li class="c-view-all">{@translate key="view_all"/}</li>{/viewAllLink}
+        {viewAllLink}
+    {/pagination}
+</ul>

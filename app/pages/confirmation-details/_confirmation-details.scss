@@ -1,0 +1,201 @@
+// Confirmation details Page
+// ===
+
+.t-confirmation-details-wrapper {
+    padding: $space-large * 2 $space-xlarge $space-large * 3;
+    font-family: $font-family;
+
+    .c-order-summary__entry {
+        margin-bottom: $unit;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .c-confirmation-details__review-text {
+        margin: 0 0 $unit*3 0;
+        padding: 0;
+        font-family: $font-family;
+        font-size: $font-size;
+        color: $neutral-10;
+        line-height: $line-height;
+        letter-spacing: 0;
+
+        a,
+        [x-apple-data-detectors] {
+            @extend .c-confirmation-details__review-text;
+        }
+    }
+
+    .c-order-summary__description,
+    .c-order-summary__number {
+        display: inline-block;
+    }
+
+    .c-order-summary__description {
+        width: 120px;
+
+        font-family: $lato-bold;
+    }
+
+    .c-ledger__description,
+    .c-ledger__number {
+        display: inline-block;
+    }
+
+    .t-payment-and-review__items {
+        > div:last-child {
+            border-bottom: 0;
+        }
+    }
+
+    .c-title {
+        padding: $sub-unit 0 $unit;
+    }
+
+    .c-carousel__inner {
+        margin-top: $sub-unit;
+    }
+
+    .c-price__discounted {
+        font-weight: normal;
+    }
+
+    .c-cart-item {
+        padding: $space-xlarge 0 $space-large;
+        + .c-cart-item {
+            border-top: $border-neutral-40;
+        }
+    }
+
+    .c-billing-address-text {
+
+        div,
+        a,
+        [x-apple-data-detectors] {
+            color: $neutral-10;
+        }
+
+        .c-billing-edit-address {
+            display: none;
+        }
+    }
+
+    .c-price__original {
+        padding-left: 0;
+    }
+
+    .c-ledger {
+        padding: $space-large * 4 0 0;
+        border-top: $border-neutral-40;
+    }
+
+    .c-ledger__entry {
+        padding-bottom: $space-large;
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: row;
+        font-family: $font-family;
+        font-size: $font-size;
+        color: $neutral-10;
+        letter-spacing: 0;
+        line-height: $line-height;
+
+        .c-ledger__number {
+            min-width: 30%;
+            text-align: right;
+        }
+
+        &.c--total {
+            font-family: $lato_bold;
+        }
+
+    }
+
+    .c-ledger__description {
+
+        a {
+            color: $brand-color;
+        }
+
+        button::after {
+            content: ':';
+        }
+    }
+
+    .c--total {
+        font-family: $lato-bold;
+    }
+
+    h3 {
+        margin-top: $unit;
+
+        font-size: $larger-font-size;
+    }
+
+    .c-cart-item {
+        margin-bottom: 0;
+    }
+
+    .c-qty__wrapper {
+        display: none;
+    }
+
+    .c-order-summary {
+        padding: $space-large * 2 0 $space-large;
+    }
+
+    .c-billing-address-wrapper > h2 {
+        display: none;
+    }
+
+    .c-field__delivery-option {
+        font-size: $font-size;
+        color: $brand-color;
+        line-height: $line-height;
+        border-top: 1px solid $neutral-40;
+        border-bottom: 1px solid $neutral-40;
+        padding: $unit*6 0;
+    }
+}
+
+.t-confirmation-details__billing-address {
+    border-top: 0;
+    border-bottom: $border-neutral-40;
+    padding-bottom: $unit*6;
+
+    > .c-font-size {
+        margin-bottom: $unit*3;
+    }
+
+    .u-border-grey {
+        padding: 0 !important;
+        border: 0;
+
+        border-radius: 0;
+
+        font-weight: bold;
+    }
+}
+
+.t-confirmation-details__payment {
+    padding: $space-large * 2 0 $space-large * 3;
+
+    .t-card__confirmation {
+        display: block;
+        padding-bottom: $space-large;
+    }
+}
+.t-confirmation-details__payment > div {
+    margin-bottom: $space-large;
+    font-size: $larger-font-size;
+}
+
+
+.c-confirmation-detail__shipping_address {
+    margin-left: -$unit*3;
+    margin-right: -$unit*3;
+    background: $neutral-60;
+    padding: $unit*3;
+}

@@ -1,0 +1,11 @@
+{#reviewDetails}
+    <time class="c-review__date">{reviewDate}</time>
+    {?signature}
+        {#signature}
+            <div class="c-review__signature">
+                {by} {userLink}, {location}
+                ({reviewerGender}, {#reviewerAge}{label} {value}{/reviewerAge})
+            </div>
+        {/signature}
+    {/signature}
+{/reviewDetails}

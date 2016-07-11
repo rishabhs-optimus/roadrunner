@@ -1,0 +1,28 @@
+// Custom Select
+// ===
+
+.c-custom-select {
+    padding: $unit;
+
+    background: url('../icons/svg/selectbox-arrow.svg') no-repeat;
+    background-position: right $unit center;
+
+    color: $brand-color;
+    font-family: $default-sans;
+    font-weight: 600;
+
+    -webkit-appearance: none;
+
+    .c-custom-select__inner {
+        img {
+            margin-right: $unit;
+        }
+    }
+
+    .c-icon {
+        position: absolute;
+        right: $space-large * 4;
+
+        fill: $brand-color;
+    }
+}

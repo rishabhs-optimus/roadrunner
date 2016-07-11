@@ -1,0 +1,69 @@
+// Filter Stack
+// ===
+
+.c-filter-header {
+    display: flex;
+    justify-content: space-between;
+
+    .sli_clear_all a {
+        color: $brand-color;
+    }
+}
+.c-filter-stack {
+    .c-box-row {
+        background: $white;
+    }
+
+    .c-filter-stack__title {
+        font-family: $font-family;
+        color: $neutral-10;
+        padding-bottom: $unit;
+        font-size: $larger-font-size;
+    }
+
+    .c-custom-select {
+        width: 60%;
+
+
+    }
+
+
+    .c-custom-select__inner {
+
+        overflow: hidden;
+        font-size: $small-font-size;
+        font-weight: 400;
+
+        color: $neutral-20;
+
+    }
+}
+.c-refine-filter {
+    .c-bellows__content {
+        background: $neutral-60;
+        padding-top: $space-xlarge;
+    }
+}
+.c-filter-stack__show-all {
+    display: none;
+
+    a {
+        color: $black;
+    }
+}
+
+.c-filter-stack__filters {
+    border: $border;
+    background: $neutral-70;
+    .c-box {
+        align-items: flex-start;
+        .c-box__label {
+            margin-top: $sub-unit !important;
+            width: 60px
+        }
+    }
+}
+
+.c-title {
+    padding-top: 0;
+}

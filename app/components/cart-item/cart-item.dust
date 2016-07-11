@@ -1,0 +1,146 @@
+<div class="c-cart-item js-cart-item {cartItemClass}">
+    <div class="c-arrange">
+        <div class="c-arrange__item c--shrink">
+            <div class="js-product-image"></div>
+            <div class="c-edit-button">
+                {?editButton}
+                    <div class="c-qty__button">
+                        {editButton|openTag|s}
+                            {@translate key="cartEditButton"/}
+                        {editButton|closeTag|s}
+                    </div>
+                {/editButton}
+            </div>
+        </div>
+
+        <div class="c-arrange__item c-item-detail">
+            <a href="{itemHref}" class="c-item-title js-item-title">{itemName|s}</a>
+
+            {>"components/cart-item/partials/product-options" /}
+
+            {! Item not available for international shipping message !}
+            {! Some items in stock and rest will be back ordered message !}
+
+            {?isPerzNotAvailMessage}<div class="js-no-personalization-available u-text-grey c-no-personalization-available">{perzNotAvailMessage}</div>{/isPerzNotAvailMessage}
+
+            {#shippingSurcharge}
+                <div class="u-text-dark-grey u-small-font-size">
+                    {label}
+                    {value}
+                </div>
+            {/shippingSurcharge}
+        </div>
+
+        {?removeButton}
+        <div class="c-qty__buttons u-margin-start-md">
+            <div class="c-qty__button">{removeButton}</div>
+        </div>
+        {/removeButton}
+
+        {?isConfirmOrderPage}
+        <div class="c-cart-item__total-price u-margin-start-md">
+            <div class="c-qty__button">{totalPrice}</div>
+        </div>
+        {/isConfirmOrderPage}
+    </div>
+
+    {?isOrderPaymentPage}
+        <div class="c-quantity-price-wrapper">
+            <div class="c-quantity-count-label">
+                {@translate key="qtyLable"/}: {quantityCount}
+            </div>
+            <div class="c-cart-item-price-container">
+                {#price}
+                    {>"components/cart-price/price"/}
+                {/price}
+            </div>
+        </div>
+    {/isOrderPaymentPage}
+
+    {?isOrderPaymentPage}
+        {#giftMessageContent}
+            {>"components/list-tile-cart/list-tile" primaryAction="true" primaryIconName="gift" content=giftMessageContent/}
+        {/giftMessageContent}
+    {/isOrderPaymentPage}
+
+    {?recommendedAccessory}
+        {#recommendedAccessory}
+            <div class="js-recommended-accessory">
+                {>"components/recommended-accessory/recommended-accessory" /}
+            </div>
+        {/recommendedAccessory}
+    {/recommendedAccessory}
+
+    {?giftWrapChoices}
+        {>"components/cart-item/partials/gift-wrap-choices" /}
+    {/giftWrapChoices}
+
+    {?giftMessage}
+        {>"components/cart-item/partials/gift-message" /}
+    {/giftMessage}
+
+    <div class="c-qty__wrapper">
+        {?quantity.container}
+            <div class="c-qty__item c--shrink">
+                {#quantity}
+                    {>"components/stepper-cart/stepper" decreaseIcon="minus" decreaseTitle="Reduce Quantity" increaseIcon="plus" increaseTitle="Increase Quantity" decreaseClass="js-stepper js--minus" increaseClass="js-stepper js--add" countClass="js-val" class="t-cart__stepper js-qty"/}
+                {/quantity}
+            </div>
+        {:else}
+            {?quantity.count}
+                <div>
+                    {@translate key="qtyLable"/}: {quantity.count}
+                </div>
+            {/quantity.count}
+        {/quantity.container}
+
+        {?isCartPage}
+            <div class="c-cart-quantity-price-wrapper">
+                <div class="c-cart-item-price-container">
+                    {#price}
+                        {>"components/cart-price/price"/}
+                    {/price}
+                </div>
+            </div>
+        {/isCartPage}
+
+        {#freeShippingLuggage}
+            <div class="c-free-shipping-on-luggage">
+                <button class="c-button c--link c--info js-tooltip-button" data-target=".js-{tooltipClass}"><span class="c-field__label">{label}</span> {>"svg-icon" name="info"/}</button>
+                <div class="js-{tooltipClass}" hidden>
+                    <div class="js-tooltip-sheet-heading">{label}</div>
+                    <div class="js-content">
+                        {tooltipContent|s}
+                    </div>
+                </div>
+            </div>
+        {/freeShippingLuggage}
+
+        {#gift}
+            <div class="c-field c-cart-checkbox u-margin-bottom-sm">
+                <div class="c-field__checkbox-radio c--has-button">
+                    <label class="c-field__label">
+                        {input}
+                        {labelText}
+                    </label>
+                    <button class="c-button c--link c--info js-tooltip-button" data-target=".js-gift-tooltip">{>"svg-icon" name="info"/}</button>
+                    <div class="js-gift-tooltip" hidden>
+                        <div class="js-tooltip-sheet-heading">{@translate key="gift_item_tooltip"/}</div>
+                        {tooltipContent}
+                    </div>
+                </div>
+            </div>
+        {/gift}
+
+
+    </div>
+
+
+    <div class="js-desktop-cart-item u-visually-hidden">
+        {#originalContent}
+            <div class="{class}">
+                {content|s}
+            </div>
+        {/originalContent}
+    </div>
+</div>

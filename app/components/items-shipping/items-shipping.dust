@@ -1,0 +1,40 @@
+<div class="t-payment-and-review__items">
+    {#items}
+        {>"components/cart-item/cart-item" /}
+
+        {#shippingInfo}
+            <div class="c-field-row">
+                <div class="c-field">
+                    <div class="c-field__top c-field__delivery-option">
+
+                        <h3>{@translate key="shipping_method" /}</h3>
+                        <div class="c-select c-arrange__item">
+                            <!--<label>
+                                {#radioGroup}
+                                     <input type="radio" {?selected}checked{/selected} value="{value}" name="radioGroup" onchange="{onChangeValue}">
+                                     </input>
+                                     {text}
+                                {/radioGroup}
+                            </label>-->
+                            {GRShippingMethod}
+                        </div>
+                        {?isReviewDeliveryOptions}
+                            <a href="{reviewDeliveryOptionsLink}" class="c-field__info js-review-delivery-options-link">
+                                {>"svg-icon" name="info"/}
+                            </a>
+                        {:else}
+                            <div class="c-field__info js-pinny-button" data-target=".{pinnyTargetClass}">
+                                {quantity.detailedShippingInfo|s}
+                                {>"svg-icon" name="info"/}
+                            </div>
+                        {/isReviewDeliveryOptions}
+                    </div>
+                </div>
+            </div>
+        {/shippingInfo}
+
+        {#shippingDetails}
+            {>"components/sheet/sheet" effect="sheetBottom" isHeader="true" coverage="97%" class=pinnyClass bodyClass="t-cart-tooltip-pinny t--shipping-details" bodyContent=content headerContent=title isHeader="true"/}
+        {/shippingDetails}
+    {/items}
+</div>

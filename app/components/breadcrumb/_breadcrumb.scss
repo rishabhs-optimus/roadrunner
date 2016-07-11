@@ -1,0 +1,25 @@
+// Breadcrumb Component
+// ---
+// Styling for breadcrumb Component
+//
+.c-breadcrumb {
+    display: block;
+    margin-top: $unit*3;
+
+    .c-icon {
+        display: inline;
+        width: 7px;
+        height: 11px;
+        margin-right: $unit;
+
+        color: $black;
+
+        transform: rotate(180deg);
+    }
+
+    .c-breadcrumb__link {
+        margin-left: $unit;
+
+        color: $brand-color;
+    }
+}

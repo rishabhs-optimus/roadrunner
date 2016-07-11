@@ -1,0 +1,18 @@
+// Complete look component
+// ===
+// Styling for Complete look component
+// ----
+
+.c-complete-look {
+    padding: $unit 0 0;
+    border-top: 1px solid $neutral-50;
+}
+
+
+.c-category {
+    padding: 0 $unit*3;
+
+    .c-category-title {
+        margin: $unit*3 0 $unit*6;
+    }
+}

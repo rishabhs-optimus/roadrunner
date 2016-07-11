@@ -1,0 +1,100 @@
+<article class="c-review-card {.class}" data-desktop-id="{.desktopId}">
+
+    <header class="c-review-card__header c-arrange">
+        <div class="c-arrange__first">
+            <div class="">
+                <address class="c-review-card__author">
+                    <strong>{.reviewAuthor}</strong>
+                </address>
+                <time class="c-review-card__date" datetime="{.reviewDate}">
+                    {.reviewDate}
+                </time>
+            </div>
+        </div>
+        <div class="c-review-card__reviews">
+        <div class="c-review-rating-bar c-arrange c--align-middle">
+            <div class="c-review-rating-bar__label"> <strong>Overall</strong> </div>
+            {#starRating}
+                {>"components/star-rating/star-rating" modifierClasses="c--shrink" /}
+            {/starRating}
+        </div>
+        <div class="c-review-rating-bar c-arrange c--align-middle">
+            <div class="c-review-rating-bar__label"> Quality </div>
+            {#qualityRating}
+                {>"components/star-rating/star-rating" modifierClasses="c--shrink" /}
+            {/qualityRating}
+        </div>
+        <div class="c-review-rating-bar c-arrange c--align-middle">
+            <div class="c-review-rating-bar__label"> Value </div>
+            {#valueRating}
+                {>"components/star-rating/star-rating" modifierClasses="c--shrink" /}
+            {/valueRating}
+        </div>
+        {?sizeSlider}
+            <div class="c-review-rating-bar c-arrange c--align-middle">
+                <div class="c-review-rating-bar__overall-label">Overall </br>Fit & Size </div>
+                <div class="c-sm-label u-text-smallest u-margin-end-sm u--bold">Sm</div>
+                <div class="c-slider-bar">
+                    <div class="c-slider" style="left:{widthPercent}%"></div>
+                </div>
+                <div class="c-bg-label u-text-smallest u-margin-start-sm u--bold">Bg</div>
+            </div>
+        {/sizeSlider}
+        </div>
+    </header>
+
+    <div class="c-review-card__content">
+        {topContributorsMsg}
+        <h2 class="c-review-card__title u-margin-top-md">{.reviewTitle}</h2>
+        <div class="c-review-card__description">
+            {#desc}
+                {?bodyContent}
+                    {>"components/hide-reveal/hide-reveal"/}
+                {/bodyContent}
+            {/desc}
+            {?.reviewPros}
+                <p>{.reviewPros}</p>
+            {/.reviewPros}
+            {?.reviewCons}
+                <p>{.reviewCons}</p>
+            {/.reviewCons}
+        </div>
+    </div>
+
+    {?.footer}
+        <footer class="c-review-card__footer">
+            <div class="c-review-card__actions c-arrange">
+                <div class="c-arrange__item">
+                    <button class="c-review-card__action c--helpful js-helpful c--active">
+                        {>"svg-icon" name="check-colored" class="c--small c-review-card__action-icon"/}
+                        <span class="c-review-card__action-label">
+                            Helpful{.numberHelpful}
+                        </span>
+                    </button>
+                </div>
+                <div class="c-arrange__item">
+                    <button class="c-review-card__action c--not-helpful js-not-helpful c--active">
+                        {>"svg-icon" name="expand" class="c--small c-review-card__action-icon"/}
+                        <span class="c-review-card__action-label">
+                            Not Helpful{.numberNotHelpful}
+                        </span>
+                    </button>
+                </div>
+                <div class="c-arrange__item">
+                    <button class="c-review-card__action c--offensive js-offensive c--active">
+                        {>"svg-icon" name="offensive" class="c--small c-review-card__action-icon"/}
+                        <span class="c-review-card__action-label">
+                            Offensive{.numberOffensive}
+                        </span>
+                    </button>
+                </div>
+            </div>
+            {#feedback}
+                <div class="c-review-card__feedback">
+                    {.reviewFeedback}
+                </div>
+            {/feedback}
+        </footer>
+    {/.footer}
+
+</article>

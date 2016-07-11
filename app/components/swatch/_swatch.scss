@@ -1,0 +1,30 @@
+// Swatch
+// ===
+
+$swatch-size: 42px;
+
+.c-swatch {
+    width: $swatch-size;
+    height: $swatch-size;
+    margin-bottom: $unit;
+    margin-left: $unit;
+
+    img {
+        padding: 2px;
+
+        border: 2px solid transparent;
+        background-color: #fff;
+    }
+
+    img[class*=selected] {
+        border-color: $brand-color;
+    }
+}
+
+// Swatch: Container
+// ---
+
+.c-swatch__container {
+    display: flex;
+    flex-flow: row wrap;
+}

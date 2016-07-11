@@ -1,0 +1,29 @@
+// Img tables
+// ===
+
+.c-img-tables {
+
+    tr:not(.heading) {
+        > td p {
+            text-align: center;
+        }
+
+        td[colspan="3"] {
+            p {
+                text-align: left;
+            }
+        }
+    }
+
+    td {
+        padding: $unit;
+    }
+
+    strong {
+        font-family: $lato_bold;
+    }
+
+    br {
+        display: none;
+    }
+}

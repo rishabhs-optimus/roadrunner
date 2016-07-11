@@ -1,0 +1,235 @@
+// Search Sugggestions
+// ===
+//
+// Search suggestions found in search results in header
+
+
+// Root
+// ---
+//
+// 1. Override inline style
+
+.c-search-suggestions {
+    width: auto !important; // 1
+
+    background: $white;
+
+    // GH-54 Search - Auto-complete - Search/Product suggestion list cannot be scrolled
+    // 1. Add permanent spacer to fill space under software keyboard
+    .ios & {
+        padding-bottom: 280px;
+    }
+
+    .c-product-tile:not(.c--vertical) {
+        padding-bottom: 0;
+        border-bottom: 0;
+    }
+
+    .c-product-tile__image-container {
+        width: calc(35% - #{$space-large});
+    }
+}
+
+
+// Search Suggestions: Header
+// ---
+
+.c-search-suggestions__header {
+    padding: $unit $unit $sub-unit;
+
+    background-color: $neutral-30;
+
+    h2 {
+        color: $neutral-70;
+        font-size: $smaller-font-size;
+        text-transform: uppercase;
+    }
+}
+
+
+// Search Suggestions: Product
+// ---
+//
+// scss-lint:disable SelectorFormat
+
+.c-search-suggestions__product {
+    margin-top: $unit * 3;
+    margin-bottom: $unit * 3;
+    padding: $sub-unit 0;
+
+
+    &:active {
+        background-color: $neutral-30; // check with Mitch
+    }
+
+    img {
+        vertical-align: top;
+    }
+
+    .priceWas {
+        // No lint reported
+        color: $neutral-50;
+        text-decoration: line-through;
+    }
+
+    .priceNow {
+        // No lint reported
+        color: $brand-color;
+    }
+
+    .c-search-suggestion__image {
+        flex: 0 0 auto;
+        width: auto;
+        border: 1px solid #000;
+        img {
+            width: $unit * 11;
+            height: $unit * 11;
+        }
+    }
+}
+
+
+// Search Suggestions: Title
+// ---
+
+.c-search-suggestions__title {
+    color: #000;
+
+    b {
+        color: #000;
+        font-weight: normal;
+    }
+}
+
+
+// Search Suggestions: Term
+// ---
+
+.c-search-suggestions__term {
+    padding: $space-large 0;
+
+    color: $brand-color;
+
+
+
+
+    b {
+        color: $brand-color;
+        font-weight: 600;
+    }
+
+    .c-icon {
+        width: 10px;
+        height: 10px;
+        margin-right: $unit;
+    }
+}
+
+.c-search-suggestion__box {
+    // background: $taupe-4;
+}
+
+.c-search-pinny {
+    .pinny__content {
+        padding: 0;
+
+        background: none !important;
+
+        &.c--no-result {
+            background-image: url("../images/empty-search.png");
+            background-repeat: no-repeat;
+            background-position: center 100px;
+            background-size: 290px;
+        }
+    }
+
+    .c-sheet__header-close {
+        position: absolute;
+    }
+
+    [id="accountMenu"] {
+        display: none;
+    }
+
+    .pinny__header {
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 $unit*2;
+        padding-right: 0;
+    }
+
+    .pinny__close {
+        &:after {
+            width: 17px;
+
+            background: #000!important;
+        }
+
+        &:before {
+            width: 17px;
+
+            background: #000!important;
+        }
+    }
+}
+
+.c-search-wrapper {
+    position: relative;
+    form {
+        width: 100%;
+    }
+    .c-icon {
+        width: 20px;
+        height: 20px;
+        margin-top: $unit;
+        margin-left: $space-xlarge;
+
+        fill: $neutral-10;
+    }
+    .c-clear-search-box {
+        position: absolute;
+        top: 50%;
+        right: $unit*2;
+
+        display: none;
+        width: 48px;
+        height: 24px;
+        margin-top: -12px;
+        border: 1px solid #000;
+
+        font-size: $smaller-font-size;
+        line-height: 22px;
+        text-align: center;
+    }
+}
+
+.c-search-header {
+    .c-search-icon svg {
+        width: $unit*2;
+        height: $unit*2;
+    }
+
+    h1 {
+        font-weight: normal;
+        font-size: $larger-font-size;
+        line-height: 24px;
+    }
+}
+
+input[id="headerBox"] {
+    height: 44px;
+    padding-top: $unit * 2;
+    padding-right: $unit * 10;
+    padding-bottom: $unit * 2;
+    padding-left: $space-large * 2;
+    border: 0;
+    border-bottom: 1px solid #000;
+
+    border-radius: 0;
+    box-shadow: none;
+    outline: none;
+
+    &:focus {
+        border-color: #000;
+    }
+}

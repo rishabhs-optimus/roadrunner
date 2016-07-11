@@ -1,0 +1,82 @@
+{>"global/base"/}
+
+{<contentBlock}
+    <div class="c-categoryHeader-content u-margin-all">
+    {userState}
+    {hiddenInputs}
+    {>"components/loading-overlay/loading-overlay" loaderOverlayClass="js-filter-loader u--hide"/}
+        {?isBreadCrumbPresent}
+            {>"components/breadcrumb/breadcrumb" iconName="right" /}
+        {/isBreadCrumbPresent}
+
+        {categoryHeader}
+
+        <div class="c-sorting-filter">
+            {filterForm|openTag|s}
+                {filters.filterFormHiddenFields}
+                <span hidden>{topItemsPerPage}{bottomItemsPerPage}</span>
+                <div class="c-sort-by">
+                    <span class="c-sort-by__label">{filters.filterFormSortyByLabel}</span>
+                    <div class="c-select">
+                        {filters.filterFormSortyBy}
+                    </div>
+                </div>
+                {categoryItemsContainer}
+            {filterForm|closeTag|s}
+        </div>
+    </div>
+
+    <ul class="js-category-items u-padding-sides-lg"></ul>
+    <div class="js-clp-pagination u--hide">
+        {?isPaginationPresent}
+            {>"components/pagination/pagination" /}
+        {/isPaginationPresent}
+    </div>
+
+    {?enableViewLess}
+        <div class="c-view-less">
+            <button class="c-button c--link js-view-less" type="button">{@translate key="view_less"/}</a>
+        </div>
+    {/enableViewLess}
+
+    {?isPaginationPresent}
+        <hr class="c-divider c--full-width" />
+    {/isPaginationPresent}
+
+    {! Related products section !}
+    {#isRelatedProductsSectionPresent}
+        <div class="t-product-list__related-product">
+            {#relatedProductsSection}
+                {>"components/carousel/carousel" /}
+            {/relatedProductsSection}
+        </div>
+    {/isRelatedProductsSectionPresent}
+
+    {?isRelatedSearchesPresent}
+        {#relatedSearches}
+            <div class="c-related-search-wrapper">
+                <div class="u-margin-bottom-md c-related-search-term-title u-margin-top-lg">{relatedSearchHeader}</div>
+                <div class="u-padding">{suggestions} </div>
+            </div>
+        {/relatedSearches}
+    {/isRelatedSearchesPresent}
+
+    {>"components/back-to-top/back-to-top" class="c--sticky" icon="top" /}
+
+    {>"components/paypal/paypal" /}
+
+
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    // app/pages/category-landing/ui.js
+    (function(require) {
+        require(["global/ui", "pages/category-landing-2/category-landing-ui"], function(globalUI, categoryLandingUI) {
+            globalUI();
+            categoryLandingUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

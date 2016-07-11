@@ -1,0 +1,11 @@
+{#paypalPaymentOption}
+
+    {?paypalInputContainer}
+        {! TRAV-444: hide paypal section !}
+        <div class="c-payment-paypal-wrapper paymentOption payPal form" hidden>
+            {paypalInput}
+            <img src="{@getUrl path="img/pp_cc_mark_37x23.jpg" /}">
+            {paypalAccountInfo}
+        </div>
+    {/paypalInputContainer}
+{/paypalPaymentOption}

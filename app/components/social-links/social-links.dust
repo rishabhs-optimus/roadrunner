@@ -1,0 +1,8 @@
+{#links}
+    <a href="{href}" class="{className}" target="{target}">
+        {?iconName}
+            {>"svg-icon" name="{iconName}"/}
+        {/iconName}
+        <p>{iconName}</p>
+    </a>
+{/links}

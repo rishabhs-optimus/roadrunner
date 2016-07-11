@@ -1,0 +1,12 @@
+<div class="c-price js-price {class}">
+    <div class="{priceLineClass} c-price__line js-price-line" id="{priceLineID}" hidden></div>
+
+    {?priceDiscount}
+        {>"components/cart-price/partials/price-discount"/}
+    {:else}
+        {?discountPriceBottom}
+            <ins class="c-price__discounted">{discountPriceBottomText} {@translate key="price_each"/}</ins>
+        {/discountPriceBottom}
+        {price} {^freeItemLength}{@translate key="price_each"/}{/freeItemLength}
+    {/priceDiscount}
+</div>

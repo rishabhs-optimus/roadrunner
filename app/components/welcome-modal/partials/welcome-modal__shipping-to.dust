@@ -1,0 +1,15 @@
+<div>
+    {title}
+    {subTitle}
+    {salespoint}
+    <button type="button" class="c-button pinny__close c--full-width c--primary">
+        Continue Shopping
+        <svg class="c-icon" data-fallback="img/png/arrow-right.png">
+            <title>arrow-right</title>
+            <use xlink:href="#icon-arrow-right"></use>
+        </svg>
+    </button>
+    <div class="c-not-shipping">
+        {notshipLink|s}
+    </div>
+</div>

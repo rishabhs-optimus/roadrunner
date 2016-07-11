@@ -1,0 +1,15 @@
+<div class="t-payment-and-review__order-items">
+    {#orderItems}
+        {#address}
+            <div class="c-billing-address-container">
+                <div hidden>{container}</div>
+                {>"components/address-button/address-button"/}
+            </div>
+
+        {/address}
+
+        <div class="t-payment-and-review__order-item">
+            {>"components/items-shipping/items-shipping"/}
+        </div>
+    {/orderItems}
+</div>

@@ -1,0 +1,50 @@
+.t-account-overview-content {
+    padding: 0 $space-xlarge;
+    .c-reset-password-msg {
+        padding-top: $space-xlarge;
+    }
+    .c-account-overview {
+        &__header {
+            padding: $unit * 4 0 $space-xlarge;
+
+            line-height: 26px;
+        }
+        &__user,
+        &__info {
+            line-height: $line-height;
+        }
+        &__info {
+            margin: $unit * 4 + 2 0 $unit * 3;
+        }
+        &__name {
+            text-transform: capitalize;
+        }
+        &__options {
+            &-head {
+                padding-bottom: $unit * 5;
+
+                font-size: $larger-font-size;
+                line-height: $unit * 6;
+            }
+            &-link {
+                margin-bottom: $space-large * 3;
+            }
+            &-list {
+                margin-bottom: $space-large * 4;
+            }
+        }
+        &__href {
+            margin-left: $unit * 3;
+
+            color: $brand-color;
+            font-size: $large-font-size;
+            line-height: $unit * 6;
+        }
+    }
+    .c-icon {
+        width: 20px;
+        height: 19px;
+
+        vertical-align: sub;
+    }
+}

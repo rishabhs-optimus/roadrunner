@@ -1,0 +1,99 @@
+{>"global/base"/}
+
+{<contentBlock}
+    {?isCartEmpty}
+        {#emptyCart}
+            {>"pages/cart/partials/empty-cart"/}
+        {/emptyCart}
+    {:else}
+
+        {>"pages/cart/partials/cart-breadcrumb" iconName="right" /}
+
+        <h2 class="c-title c--upright js-page-title">{pageTitle}</h2>
+
+        {?errorMessages}
+            {errorMessages}
+        {/errorMessages}
+
+        {qtyForm}
+
+        {cartForm|openTag|s}
+
+            {hiddenInputs}
+
+            {analyticsData}
+
+
+            {#cartItems}
+                {>"components/cart-item/cart-item" cartItemClass="c-cart-detail" /}
+            {/cartItems}
+
+
+
+            {>"components/cart-order-summary/cart-order-summary" /}
+
+            {#ctas}
+                <div class="c-chechout-button">
+                    {checkoutButton}
+
+                    <div hidden>
+                        {! TRAV-444: Hide paypal !}
+                        {>"components/divider/divider"/}
+                        {checkoutPaypal}
+                    </div>
+
+                    {continueShoppingButton}
+                </div>
+            {/ctas}
+
+        {cartForm|closeTag|s}
+
+    {/isCartEmpty}
+
+    {! You May Also Like Products are displayed in carousel components !}
+    {! Refer global/ui/carousel-ui.js !}
+    <div class="js-carousel-container u-padding-top u--tight u--hide">
+        <h2 class="c-cart-carousel__title">{@translate key="you_may_also_like"/}</h2>
+
+        {>"components/carousel/carousel" class="u-no-border" /}
+    </div>
+    <div hidden>{mayAlsoLike}</div>
+
+    {#recentlyViewedProducts}
+        <div class="c-products-scroller u-padding-top u--tight">
+            <h2 class="c-carousel__title u-margin-bottom-md">{@translate key="recently_viewed"/}</h2>
+            {>"components/scroller/scroller"/}
+        </div>
+    {/recentlyViewedProducts}
+
+    <div class="t-cart__page-loading js-page-loading" hidden>
+        {>"components/loading/loading" /}
+    </div>
+
+
+    {inputs}
+    {requiredLabels}
+    {promoCodeForm}
+    {estimateShippingForm}
+    {giftFlagForm}
+    {freeGiftLabels}
+    {freeSubsriptionLabels}
+    {freeGiftWithPurchase}
+    {>"components/sheet/sheet" effect="sheetBottom" cssClass="t-cart-tooltip-pinny-css" coverage="97%" class="js-tooltip-pinny" bodyClass="js-tooltip-content t-cart-tooltip-pinny" headerClass="c-sheet__blank-header" isHeader="true"/}
+    {>"components/sheet/sheet" effect="sheetBottom" cssClass="t-gift-with-purchase" coverage="97%" class="js-gift-with-purchase-pinny" bodyClass="js-gift-with-purchase-pinny__body" headerClass="c-sheet__blank-header" isHeader="true"/}
+    {>"components/sheet/sheet" effect="sheetBottom" cssClass="t-gift-with-purchase-product-detail" coverage="97%" class="js-gift-with-purchase-product-detail-pinny" bodyClass="js-gift-with-purchase-product-detail-pinny__body" headerClass="c-sheet__blank-header" isHeader="true"/}
+
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    // app/pages/cart/ui.js
+    (function(require) {
+        require(["global/ui", "pages/cart/cart-ui"], function(globalUI, cartUI) {
+            globalUI();
+            cartUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

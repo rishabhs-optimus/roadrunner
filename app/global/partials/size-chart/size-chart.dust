@@ -1,0 +1,21 @@
+{#sizeChart}
+    <div class="js-size-chart" data-value={value}>
+        <h2 class="c-heading c--4 {headingClass} u-margin-bottom-md u-text-capitalize">
+            {tableTitle|s}
+            {tableTitleModifier}
+        </h3>
+
+        <div class="c-table-scroller c--border-none">
+            <div class="c-arrange">
+                {#staticTable}
+                    {.}
+                {/staticTable}
+
+                {#scrollerTableContent}
+                    {>"components/scroller/scroller" class="c-arrange__item" /}
+                {/scrollerTableContent}
+            </div>
+        </div>
+        {notes}
+    </div>
+{/sizeChart}

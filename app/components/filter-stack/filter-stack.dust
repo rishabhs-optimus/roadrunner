@@ -1,0 +1,33 @@
+{#filterStackItems}
+    {#filterStack}
+        <div class="c-filter-stack {class}">
+            {?filterStackfilters}
+                <div class="c-filter-stack__heading {filterStackHeading}">
+                    <div class="c-filter-header js-filter-header">
+                    <div class="c-filter-stack__title">
+                        {title}
+                    </div>
+                    <div class="c-filter-stack__show-all">
+                        {showAll}
+                    </div>
+                    {?filterStackClearAll}
+                        <div class="c-filter-stack__clear-all {clearFilterClass}">
+                            {clearAll}
+                        </div>
+                    {/filterStackClearAll}
+                    </div>
+                </div>
+            {/filterStackfilters}
+
+            {#filterStackfilters}
+                <div class="c-filter-stack__filters {filterStackfiltersClass} u-margin-top-sm u-margin-bottom-12 u-padding-all">
+                    {>"components/box-row/box-row" /}
+
+                    {?isFilterPanelPinny}
+                        {>"components/filter-panel-pinny/filter-panel-pinny" /}
+                    {/isFilterPanelPinny}
+                </div>
+            {/filterStackfilters}
+        </div>
+    {/filterStack}
+{/filterStackItems}

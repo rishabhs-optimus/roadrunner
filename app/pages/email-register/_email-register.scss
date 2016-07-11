@@ -1,0 +1,34 @@
+// Email Register Form
+// ------
+//
+// 1. Contain c-arrange.c--gutter negative margins extending page width
+
+.t-email-register {
+    .t-main {
+        overflow: hidden; // 1
+    }
+
+    .c-form {
+        label {
+            margin: 0;
+        }
+
+        fieldset + fieldset {
+            margin-top: $space-xlarge;
+            padding-top: $space-xlarge;
+            border-top: $border;
+        }
+    }
+
+    .c-box-row {
+        padding: $unit 0;
+
+        + .c-box-row {
+            margin-top: $space-xlarge;
+        }
+    }
+
+    .c-box__label:first-child {
+        margin-bottom: $unit;
+    }
+}

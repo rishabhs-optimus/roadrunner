@@ -1,0 +1,25 @@
+{?cartItems}
+    {#cartItems}
+        <div class="c-mini-cart-item">
+            <div class="c-mini-cart-item__image">{productImage|s}</div>
+            <div class="c-mini-cart-item-properties">
+                <div class="c-mini-cart-item__name">{productName|s}</div>
+                <div class="c-mini-cart-item__options">
+
+                    {#options}
+                        <div class="c-mini-cart-item__option">{name}: {value}</div>
+                    {/options}
+
+                    <div class="c-mini-cart-item__quantity">{@translate key="qty_label" /} {qty}</div>
+
+                </div>
+            </div>
+        </div>
+    {/cartItems}
+
+    <a class="c-button c--primary c--full-width js-mini-cart-checkout-button c-checkout-button" href="/ShoppingCartView">
+        {@translate key="checkout_button"/}
+    </a>
+{:else}
+    {>"components/mini-cart/partials/mini-cart__empty"/}
+{/cartItems}

@@ -1,0 +1,11 @@
+{#widgetContent}
+    {>"global/includes/pdp-sections/product-information-and-actions" /}
+    <div class="js-product-detail-bellow c-product-detail-bellow">
+        {#productTabs}
+            {>"components/bellows/bellows":.bellows/}
+        {/productTabs}
+    </div>
+
+    <button class="c-button c--outline c-return-to-collection c--full-width pinny__close">Return to collection</button>
+
+{/widgetContent}

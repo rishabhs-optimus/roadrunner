@@ -1,0 +1,12 @@
+<div class="c-category-card ">
+    {#categoryListItem}
+        <div class="c-category-card-wrap">
+            <div class="c-category-card__item">
+                {currentItemLink|openTag|s}
+                    {currentItemImage}
+                    <span class="c-category-card__name">{currentItemText}</span>
+                {currentItemLink|closeTag|s}
+            </div>
+        </div>
+    {/categoryListItem}
+</div>

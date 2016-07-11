@@ -1,0 +1,33 @@
+{>"global/base"/}
+
+{<contentBlock}
+    <div class="t-change-payment-content">
+        {#breadcrumbLink}
+            {>"components/breadcrumb/breadcrumb" iconName="right" /}
+        {/breadcrumbLink}
+        <h1 class="c-change-payment__header">
+            Credit Card Information
+        </h1>
+        {errorContainer}
+        {#fields}
+            <div class="c-change-payment__field">
+                {label}
+                {value}
+            </div>
+        {/fields}
+        {#buttons}
+            {removeBtn}
+            {editBtn}
+        {/buttons}
+    </div>
+{/contentBlock}
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    (function(require) {
+        require(["global/ui"], function(globalUI) {
+            globalUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

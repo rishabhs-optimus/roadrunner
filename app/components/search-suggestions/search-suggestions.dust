@@ -1,0 +1,32 @@
+{#suggestions}
+    <div class="u-padding-all  c-search-suggestion__box">
+        <h6 class="c-search-suggestion__heading u-margin-bottom-md">SEARCH SUGGESTIONS</h6>
+        {#termSuggestions}
+            <li class="c-search-suggestions__term js-suggestion">{.|s}</li>
+        {/termSuggestions}
+
+        {?productSuggestions}
+            <h6 class="c-search-suggestion__heading u-margin-top-lg u-margin-bottom-lg u-text-uppercase">{productHeading}</h6>
+        {/productSuggestions}
+
+        {#productSuggestions}
+            <li class="c-product-tile js-suggestion">
+                <div class="c-product-tile__image-container">
+                    {img}
+                </div>
+
+                <div class="c-product-tile__description">
+                    <div class="c-product-tile__description-inner">
+                        <div class="c-product-tile__title">
+                            {productName|s}
+                        </div>
+
+                        <div class="c-product-tile__price u-margin-top-sm">
+                            {priceContainer}
+                        </div>
+                    </div>
+                </div>
+            </li>
+        {/productSuggestions}
+    </div>
+{/suggestions}

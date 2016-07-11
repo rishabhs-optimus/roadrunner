@@ -1,0 +1,51 @@
+{>"global/base"/}
+
+{<contentBlock}
+    <div class="t-account-overview-content">
+
+        {?resetPasswordSuccessMessage}
+            <div class="c-reset-password-msg">{resetPasswordSuccessMessage}</div>
+        {/resetPasswordSuccessMessage}
+
+        <h1 class="c-account-overview__header">
+            Account Overview
+        </h1>
+        {#pageContent}
+            {?userMessage}
+                <div class="u-margin-bottom-lg">{userMessage}</div>
+            {/userMessage}
+
+            {?welcomeMessage}
+                <div>{welcomeMessage}</div>
+            {/welcomeMessage}
+
+            {accessibleInfo}
+        {/pageContent}
+
+        <div class="c-account-overview__options u-margin-top-lg u-padding-top">
+            {#navigationOptions}
+                <div class="c-account-overview__options-head">
+                    {header}
+                </div>
+                <div class="c-account-overview__options-list">
+                    {#options}
+                        <div class="c-account-overview__options-link">
+                            {>"svg-icon" name="{iconClass}"/}
+                            {link}
+                        </div>
+                    {/options}
+                </div>
+            {/navigationOptions}
+        </div>
+    </div>
+{/contentBlock}
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    (function(require) {
+        require(["global/ui"], function(globalUI) {
+            globalUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

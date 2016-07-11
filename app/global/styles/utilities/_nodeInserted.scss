@@ -1,0 +1,346 @@
+// Node Inserted
+// ===
+
+// These animations are used by our scripts to watch for certain elements being added to the page
+// 1. Used for error messages in Notification component
+@keyframes shippingToPopup {
+    from {
+        opacity: 0.99;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+// scss-lint:disable SelectorFormat
+#tinycontent #modal {
+    // scss-lint:enable SelectorFormat
+    animation-name: shippingToPopup;
+    animation-duration: 0.001s;
+}
+
+@keyframes modalAdded {
+    from {
+        opacity: 0.99;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+// sass-lint:disable class-name-format
+.gwt-defining-attribute-url-content,
+.gwt-DialogBox,
+.gwt-PopupPanelGlass {
+    animation-name: modalAdded;
+    animation-duration: 0.001s;
+}
+
+@keyframes welcomeMatAdded {
+    from {
+        opacity: 0.99;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes categoryItemAdded {
+    from {
+        opacity: 0.99;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+// scss-lint:disable SelectorFormat
+#gwt_welcome_window {
+    // scss-lint:enable SelectorFormat
+    animation-name: welcomeMatAdded !important;
+    animation-duration: 0.001s;
+}
+// scss-lint:disable SelectorFormat
+#gwt_subcategories_dp .gwt-sub-categories-display-panel,
+#gwt_products_display .gwt-products-display-panel {
+    // scss-lint:enable SelectorFormat
+    animation-name: categoryItemAdded;
+    animation-duration: 0.001s;
+}
+
+@keyframes errorAdded {
+    from {
+        opacity: 0.99;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+// scss-lint:disable SelectorFormat
+// TRAV-442: Expand error placement div selector
+[id*=gwt-error-placement-div] .gwt-csb-error-panel,
+#mainContent .gwt-csb-error-panel,
+#guestRegErrorPanel .gwt-csb-error-panel {
+    // scss-lint:enable SelectorFormat
+    animation-name: errorAdded;
+    animation-duration: 0.001s;
+}
+
+// Shopping cart: see app/global/ui.js
+@keyframes shoppingCartAdded {
+    from {
+        opacity: 0.99;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+// scss-lint:disable SelectorFormat
+#gwt_minicart_div a {
+    // scss-lint:enable SelectorFormat
+    animation-name: shoppingCartAdded;
+    animation-duration: 0.001s;
+}
+
+@keyframes noResult {
+    from {
+        opacity: 0.99;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+// scss-lint:disable SelectorFormat
+#sli_noresult {
+    // scss-lint:enable SelectorFormat
+    animation-name: noResult;
+    animation-duration: 1.0s;
+}
+
+@keyframes inputAdded {
+    from {
+        opacity: 0.99;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.c-form-group input {
+    animation-name: inputAdded;
+    animation-duration: 0.001s;
+}
+
+@keyframes addToCartPopup {
+    from {
+        opacity: 0.99;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.gwt_addtocart_div {
+    overflow: hidden !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    border: 0 !important;
+
+    animation-name: addToCartPopup !important;
+    animation-duration: 0.001s;
+}
+
+@keyframes combinationUnavaliablePdp {
+    from {
+        opacity: 0.99;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.gwt-no-combination-message-window {
+    animation-name: combinationUnavaliablePdp;
+    animation-duration: 0.001s;
+}
+
+@keyframes modalAdded {
+    from {
+        opacity: 0.99;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+// sass-lint:disable class-name-format
+.t-product-details .gwt-DialogBox {
+    animation-name: modalAdded !important;
+    animation-duration: 0.001s;
+}
+
+@keyframes personalizationStatic {
+    from {
+        opacity: 0.99;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.gwt-product-detail-widget-personalization-chosen-values .gwt_personalization_options_panel {
+    animation-name: personalizationStatic;
+    animation-duration: 0.001s;
+}
+
+@keyframes pdpNoCombinationMessage {
+    from {
+        opacity: 0.99;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.gwt-no-combination-message-window {
+    animation-name: pdpNoCombinationMessage;
+    animation-duration: 0.001s;
+}
+
+@keyframes pdpTopPriceUpdate {
+    from {
+        opacity: 0.99;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.t-product-details .js-pdp-price .gwt-was-now-price-panel {
+    animation-name: pdpTopPriceUpdate;
+    animation-duration: 0.001s;
+}
+
+@keyframes checkoutMultiAddress {
+    from {
+        opacity: 0.99;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+#gwt_order_item_product_json .gwt-multiple-address-container {
+    animation-name: checkoutMultiAddress;
+    animation-duration: 0.001s;
+}
+
+@keyframes modalAddedForOrderConfirmation {
+    from {
+        opacity: 0.99;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+// sass-lint:disable class-name-format
+.t-checkout-multi-address .gwt-PopupPanelGlass + .gwt-DialogBox,
+.t-order-confirmation .gwt-PopupPanelGlass + .gwt-DialogBox,
+.t-order-review-and-payment .gwt-PopupPanelGlass + .gwt-DialogBox {
+    animation-name: modalAddedForOrderConfirmation;
+    animation-duration: 0.001s;
+}
+
+@keyframes giftWithPurchaseModal {
+    from {
+        opacity: 0.99;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+#gwt-gift-with-purchase-modal {
+    animation-name: giftWithPurchaseModal;
+    animation-duration: 0.001s;
+}
+
+@keyframes giftCardBalance {
+    from {
+        opacity: 0.99;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+#gwt_gift_card_balance .giftCardBalancePanel {
+    animation-name: giftCardBalance;
+    animation-duration: 0.001s;
+}
+
+@keyframes giftCardBalanceLoading {
+    from {
+        opacity: 0.99;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.gwt-please-wait-panel {
+    animation-name: giftCardBalanceLoading;
+    animation-duration: 0.001s;
+}
+
+@keyframes giftWithPurchaseProductDetailInfoModal {
+    from {
+        opacity: 0.99;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.t-cart #gwt-product-detail-info-modal {
+    animation-name: giftWithPurchaseProductDetailInfoModal;
+    animation-duration: 0.001s;
+}
+
+@keyframes reviewsContainer {
+    from {
+        opacity: 0.99;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.t-write-a-review #BVRRFieldContainerReviewContextualDataFieldGenderID {
+    animation-name: reviewsContainer;
+    animation-duration: 0.001s;
+}

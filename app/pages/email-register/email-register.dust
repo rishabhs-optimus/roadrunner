@@ -1,0 +1,92 @@
+{>"global/base"/}
+
+{<bodyBlock}
+    <div id="x-root">
+        {! Holds the definitions for SVG icons. These are referenced elsewhere with fragment links and the `use` tag !}
+        <div hidden="true">{iconSprite|s}</div>
+
+        <main class="t-main" role="main">
+            {+contentBlock}
+                {!-- Form --!}
+                {#signupForm}
+                    {intro}
+
+                    {element|openTag|s}
+                        {hiddenInputs}
+
+                        {#fieldsets}
+                            <fieldset>
+                                {?contents}
+                                    <div class="u-margin-bottom-md">
+                                        {contents}
+                                    </div>
+                                {/contents}
+
+                                {#fieldRows}
+                                    <div class="c-box-row c-arrange c--gutters">
+                                        {#fields}
+                                            <div class="c-box c-arrange__item">
+                                                {?isCheckRadio}
+                                                    <div class="c-arrange c--align-middle">
+                                                        <div class="c-arrange__item c--shrink">{input}</div>
+                                                        <div class="c-arrange__item">{label}</div>
+                                                    </div>
+                                                {:else}
+                                                    {?label}
+                                                        <div class="c-box__label">{label}</div>
+                                                    {/label}
+
+                                                    <div class="c-box__input">
+                                                        {?isSelect}
+                                                            <div class="c-select">
+                                                        {/isSelect}
+
+                                                            {input}
+
+                                                        {?isSelect}
+                                                            </div>
+                                                        {/isSelect}
+                                                    </div>
+                                                {/isCheckRadio}
+
+                                                <div class="c-box__error u-margin-top-sm errortxt" hidden></div>
+                                            </div>
+                                        {/fields}
+                                    </div>
+                                {/fieldRows}
+                            </fieldset>
+                        {/fieldsets}
+
+                        {#footer}
+                            {#buttons}
+                                <button class="c-button c--primary c--image-type c--full-width u-margin-top-lg" type="button" data-button-text="{text}">
+                                    {input}
+                                </button>
+                            {/buttons}
+                        {/footer}
+                    {element|closeTag|s}
+                {/signupForm}
+
+                {!-- Sign Up Thank You --!}
+                {#thankyou}
+                    <div class="u-text-align-center">
+                        {content}
+                    </div>
+                {/thankyou}
+            {/contentBlock}
+        </main>
+    </div>
+{/bodyBlock}
+
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    // app/pages/email-register/email-register-ui.js
+    (function(require) {
+        require(["global/ui", "pages/email-register/email-register-ui"], function(globalUI, emailRegisterUI) {
+            globalUI();
+            emailRegisterUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

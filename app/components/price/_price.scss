@@ -1,0 +1,65 @@
+// Product Price component
+// ===
+
+
+
+.c-price {
+    margin: 0 auto;
+    margin-top: $sub-unit;
+
+    color: $black;
+    font-family: $font-family;
+    font-weight: $normal-font-weight;
+
+    .priceWas {
+        display: block;
+        padding-bottom: $unit;
+
+        color: $neutral-20;
+        text-decoration: line-through;
+
+        + .priceWas {
+            display: none;
+        }
+    }
+
+    .priceNow {
+        display: inherit;
+        margin-bottom: 4px;
+
+        color: $red;
+
+        + .priceNow {
+            display: none;
+        }
+    }
+
+    br {
+        display: none;
+    }
+
+    a {
+        color: $neutral-70;
+    }
+}
+
+.c-price__discounted {
+    margin: 0 $sub-unit/2;
+
+    color: $error-color;
+    font-weight: 600;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.c-price__original {
+    display: block;
+    margin-top: $sub-unit;
+
+    color: $neutral-20;
+    white-space: nowrap;
+}
+
+.c-price__line {
+    color: $black;
+}

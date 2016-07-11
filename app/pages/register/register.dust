@@ -1,0 +1,74 @@
+{>"global/base"/}
+
+{<contentBlock}
+<div class="t-register-page">
+    {getUserState}
+    <div class="c-register-content">
+    <h1 class="c-register-content__title u-margin-top-sm">{pageTitle}</h1>
+    <div class="c-register-content__description">
+    {description}
+    </div>
+
+    {form|openTag|s}
+        {hiddenInputs}
+        <!-- <div hidden>{userState}</div> -->
+        <div class="c-form-group">
+            {#formRows}
+                {?isInput}
+                <div class="c-box-row">
+                    <div class="c-box">
+                        <div class="c-box__label c-arrange__item c--shrink">
+                            <div class="c-arrange c--align-middle">
+                                {label}
+                                {required}
+                            </div>
+                        </div>
+
+                        <div class="c-input js-update-input c-arrange__item">
+                            {inputScript}
+                            {input}
+                        </div>
+                    </div>
+                </div>
+                {:else}
+                    {passwordInfo}
+                {/isInput}
+            {/formRows}
+        </div>
+
+        <div class="c-error-group">
+            {errorContainer}
+        </div>
+
+        {#sendMeEmails}
+            <div class="c-check-me c-box-row c-arrange u-margin-top-md">
+                <div class="c-arrange__item c--shrink u-margin-top-md">{input}</div>
+
+                <label class="c-box__label c-arrange__item" for="{inputId}">{label}</label>
+            </div>
+        {/sendMeEmails}
+
+        {#continueButton}
+            {>"components/button/button" class=buttonClass
+                id=buttonId type=buttonType buttonText=buttonText
+            /}
+        {/continueButton}
+
+    {form|closeTag|s}
+
+    </div>
+</div>
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    // app/pages/register/ui.js
+    (function(require) {
+        require(["global/ui", "pages/register/register-ui"], function(globalUI, registerUI) {
+            globalUI();
+            registerUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

@@ -1,0 +1,13 @@
+{#giftMessage}
+    <div class="c-gift-message">
+        {?input}
+            <h6 class="u-margin-bottom-md">
+                {label}
+                <span class="u-text-light-grey u-small-font-size u-margin-top-tn">{characterLimitMessage}</span>
+            </h6>
+            {input}
+        {:else}
+            <span>{info}</span>
+        {/input}
+    </div>
+{/giftMessage}

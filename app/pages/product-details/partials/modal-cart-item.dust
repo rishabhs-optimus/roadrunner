@@ -1,0 +1,42 @@
+{#items}
+    <div class="t-product-details__cart-modal-item u-padding-bottom-md u-margin-bottom-md">
+        <div class="c-arrange c-product-detail-cart-modal">
+            <div class="c-arrange__item c--shrink">
+                <div class="c-cart-item__product-image js-cart-item__product-image"></div>
+            </div>
+
+            <div class="c-arrange__item u-padding-start-md c-cart-item-content">
+                <p class="u-margin-bottom-md">{name}</p>
+                <div class="c-cart-item-descripion">
+                    {#itemDetail}
+                        {itemLabel} {itemNumber}
+                    {/itemDetail}
+                    {#options}
+                        <div>{name}: {value}</div>
+                    {/options}
+                </div>
+
+                {?qtyValue}
+                    <div class="c-cart-item-descripion">Quantity: {qtyValue}</div>
+                {/qtyValue}
+
+                {?shippingText}
+                    <p> {shippingText} </p>
+                {/shippingText}
+
+                {?personalizationText}
+                    <p> {personalizationText} </p>
+                    <p> {personalizationCost} </p>
+                {/personalizationText}
+
+                {#price}
+                    {>"components/price/price"/}
+                {/price}
+
+                {lowQuantityText}
+                {inventoryMessage}
+
+            </div>
+        </div>
+    </div>
+{/items}

@@ -1,0 +1,777 @@
+//  Order review and payment
+// ======
+// 1. CVV tooltip is in an iframe, which neesd to be clipped
+
+.t-order-review-and-payment-wrapper {
+    margin: 0 $unit*3;
+
+    [id='gwt-error-placement-div-1'] {
+        span {
+            color: $error-color !important;
+            font-weight: normal !important;
+        }
+    }
+
+    .c-credit-card-number-field + .spot {
+        margin-left: $unit*2;
+    }
+
+    #card_id_number_label {
+        display: inline-block;
+        margin-left: $unit*2;
+
+        color: $brand-color;
+        font-size: $font-size;
+        line-height: 20px;
+    }
+
+    .js-cc-payment-card-type {
+        &.c--jcb {
+            .c-credit-card-number-field label {
+                &::after {
+                    height: 21px;
+
+                    background-position: 0 0;
+                }
+            }
+        }
+
+        &.c--discover {
+            .c-credit-card-number-field label {
+                &::after {
+                    height: 20px;
+
+                    background-position: 0 -22px;
+                }
+            }
+        }
+
+        &.c--mastercard {
+            .c-credit-card-number-field label {
+                &::after {
+                    height: 17px;
+
+                    background-position: 0 -42px;
+                }
+            }
+        }
+
+        &.c--visa {
+            .c-credit-card-number-field label {
+                &::after {
+                    height: 10px;
+
+                    background-position: 0 -59px;
+                }
+            }
+        }
+
+        &.c--amex {
+            .c-credit-card-number-field label {
+                &::after {
+                    height: 23px;
+
+                    background-position: 0 -70px;
+                }
+            }
+        }
+        &[class*=' c--'] {
+            .c-credit-card-number-field label .c-icon {
+                display: none; // 1
+            }
+        }
+        .c-credit-card-number-field {
+            position: relative;
+
+            label::after {
+                content: '';
+
+                position: absolute;
+                top: 70%;
+                left: 18px;
+
+                display: block;
+                width: 29px;
+
+                background: url('../img/credit-card-sprite.png') no-repeat;
+                background-position: 0 0;
+                background-size: cover;
+
+                transform: translateY(-50%);
+
+                pointer-events: none;
+            }
+        }
+    }
+
+    .c-credit-card-number-field {
+        position: relative;
+
+        label .c-icon {
+            position: absolute;
+            top: 36px;
+            left: 18px;
+        }
+
+        input {
+            padding-left: $space-large*5;
+        }
+
+        input:disabled {
+            background: $neutral-70;
+        }
+    }
+
+    .orderReviewPromoNote {
+        display: none;
+    }
+
+    > h1 {
+        margin: 0 0 $unit*2 0;
+
+        color: $neutral-10;
+        font-size: $larger-font-size;
+        line-height: $line-height;
+        letter-spacing: -0.1px;
+    }
+
+    > p {
+        margin: 0 0 $unit*6 0;
+
+        color: $neutral-10;
+        font-size: $font-size;
+        line-height: $line-height;
+    }
+
+    .c-item-capitalize {
+        text-transform: capitalize;
+    }
+
+    .c-qty__button {
+        button {
+            display: none;
+        }
+    }
+
+    .c-billing-address-wrapper {
+        margin-top: 0;
+        margin-right: -$unit*3;
+        margin-bottom: $unit*3;
+        margin-left: -$unit*3;
+        padding: $unit*3;
+        border: 1px solid $neutral-60;
+
+        background: $neutral-60;
+
+        h2 {
+            margin: 0 0 $unit*3 0;
+
+            color: $neutral-10;
+            font-size: $larger-font-size;
+            line-height: $unit*6;
+            letter-spacing: -0.09px;
+        }
+    }
+
+
+    .c-billing-address-text {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        div,
+        a,
+        [x-apple-data-detectors] {
+            color: $neutral-10;
+            font-size: $font-size;
+        }
+
+        .c-billing-edit-address {
+            color: $brand-color;
+            font-size: $font-size;
+            line-height: $line-height;
+            text-transform: capitalize;
+        }
+    }
+
+    .c-field-row {
+        + .c-cart-item {
+            padding-top: $unit*3;
+            border-top: 1px solid rgba($neutral-30, 0.43);
+        }
+
+        h3 {
+            margin-bottom: $unit*2;
+
+            color: $neutral-10;
+            font-family: $lato_bold;
+            font-size: $font-size;
+            line-height: $line-height;
+            text-transform: capitalize;
+        }
+
+        .c-select {
+            margin-bottom: $unit*3;
+        }
+
+        .c-field__info {
+            margin-bottom: $unit*5;
+
+            color: $brand-color;
+            font-size: $font-size;
+            line-height: $line-height;
+        }
+
+        .c-field__info svg {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            margin-left: $unit;
+
+            vertical-align: middle;
+
+            fill: $brand-color;
+        }
+    }
+
+    .c-enjoy-free-gift-or-ship {
+        margin-bottom: $unit*4;
+
+        a {
+            color: #3b5997;
+            font-size: 15px;
+            line-height: 20px;
+        }
+
+        svg {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            margin-left: 4px;
+
+            vertical-align: middle;
+
+            fill: #3b5997;
+        }
+    }
+
+    .c-free-shipping-on-luggage {
+        margin: 0 0 $unit*4 0;
+
+        button {
+            min-height: 0;
+            padding: 0;
+        }
+
+        span {
+            color: #3b5997;
+            font-family: $font-family;
+            font-size: 15px;
+            line-height: 20px;
+        }
+
+        svg {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            margin-left: 4px;
+
+            vertical-align: middle;
+
+            fill: #3b5997;
+        }
+    }
+
+    .c-billing-address {
+        margin-bottom: $unit*6;
+        padding-top: $unit*6;
+        border-top: 1px solid rgba($neutral-30, 0.43);
+
+        h3 {
+            margin-bottom: $unit*3;
+
+            color: $neutral-10;
+            font-size: $larger-font-size;
+            line-height: $unit*6;
+            letter-spacing: -0.09px;
+        }
+
+        .c-billing-address-wrapper {
+            margin: 0;
+            padding: 0;
+            border: none;
+
+            background: none;
+        }
+    }
+
+    .c-payment-paypal-wrapper {
+        display: flex;
+        margin-bottom: $unit*6;
+
+        input {
+            margin-right: $unit*4;
+        }
+    }
+
+
+    .c-list-tile {
+        display: block;
+        min-height: 0;
+        margin-bottom: $unit*3;
+    }
+
+    .c-list-tile__primary-action {
+        padding: 0;
+
+        svg {
+            width: 16px;
+            height: 18px;
+            margin-top: -$unit;
+
+            fill: $brand-color;
+        }
+    }
+
+    .c-list-tile__primary-tile {
+        align-items: center;
+    }
+
+    .c-list-tile__primary-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 0 0 $unit*2;
+
+        .c-gift-option-message {
+            color: $neutral-20;
+            font-family: $font-family;
+            font-size: $small-font-size;
+            line-height: $line-height;
+        }
+
+        .edit_gift_option_link a {
+            padding-left: $unit*2;
+
+            color: $brand-color;
+            font-family: $font-family;
+            font-size: $font-size;
+            line-height: $line-height;
+        }
+    }
+
+    // order summary
+    .c-order-payment-title {
+        margin-top: $unit*6;
+        margin-bottom: $unit*4;
+        padding-top: $unit*6;
+        border-top: 1px solid rgba($neutral-30, 0.43);
+
+        color: $neutral-10;
+        font-family: $font-family;
+        font-size: $larger-font-size;
+        line-height: $unit*6;
+        letter-spacing: -0.09px;
+
+        > span {
+            margin-left: $unit*3;
+
+            color: $neutral-20;
+            font-size: $small-font-size;
+            line-height: 18px;
+            letter-spacing: 0;
+        }
+    }
+
+    .c-order-payment-title ~ .c-ledger__entry {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        margin-bottom: 4px;
+
+        color: $neutral-10;
+        font-family: $font-family;
+        font-size: $font-size;
+        line-height: $line-height;
+        letter-spacing: 0;
+
+        .c-ledger__description a {
+            color: $brand-color;
+        }
+
+        .c-ledger__number {
+            width: 28%;
+
+            text-align: right;
+        }
+
+        &.c--total {
+            font-family: $lato_bold;
+        }
+    }
+
+    #cvv-container {
+        height: 40px; // 1.
+    }
+
+    #cvv_Tokenizer {
+        overflow: initial !important;
+        width: 100% !important;
+        height: 40px !important;
+
+        body {
+            height: 40px !important; // 1.
+            margin: 0;
+        }
+    }
+}
+
+
+
+.t-order-review-and-payment-wrapper .c-order-payment-information {
+    margin-top: $unit*6;
+    margin-bottom: $unit*6;
+    padding-top: $unit*6;
+    border-top: 1px solid rgba($neutral-30, 0.43);
+
+    h3 {
+        margin-bottom: $unit*5;
+
+        color: $neutral-10;
+        font-size: $larger-font-size;
+        line-height: $unit*6;
+        letter-spacing: -0.09px;
+    }
+
+    [id="payment-type-holder"] {
+        margin-bottom: $unit*4;
+
+        label {
+            margin: 0;
+            margin-left: $unit*3;
+        }
+        label strong {
+            font-family: $font-family;
+            font-weight: normal;
+        }
+    }
+}
+
+
+
+.t-order-review-and-payment-wrapper [id="creditCardOptions"] {
+    margin-bottom: $unit*6;
+
+    .c-credit-card-options-inner {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+
+        .spot {
+            .c-box__label {
+                margin-bottom: $space-large;
+            }
+        }
+    }
+
+    label {
+        margin: 0;
+        margin-bottom: $unit*2;
+
+        color: $neutral-10;
+        font-family: $lato_bold;
+        font-size: $font-size;
+        line-height: $line-height;
+
+        .required {
+            display: none;
+        }
+    }
+}
+
+
+
+.t-order-review-and-payment-wrapper [id="creditCardOptions"] .c-credit-card-options-inner > div {
+    margin-bottom: $unit*2;
+
+    &:nth-of-type(1) {
+        flex: 1 100%;
+    }
+
+    [id='showCardIdInfoLink'] {
+        vertical-align: middle;
+    }
+
+    &:nth-of-type(2) {
+        flex: 1 40%;
+        input:after {
+            content: url('../icons/svg/card.svg');
+        }
+    }
+
+    &:nth-of-type(3) {
+        flex: 1 0 0;
+        // margin-left: $unit*2;
+
+        label {
+            display: inline-block;
+            margin-left: $unit*2;
+
+            color: $brand-color;
+            font-family: $font-family;
+            font-size: 13px;
+            line-height: $line-height;
+        }
+        [id='showCardIdInfoLink'] {
+            vertical-align: middle;
+        }
+        span {
+            margin-top: -$unit;
+        }
+    }
+
+    &:nth-of-type(2) .c-box,
+    &:nth-of-type(3) .c-box {
+        display: block;
+    }
+
+    &.exp-date-row {
+        display: flex;
+        flex: 1 100%;
+        margin-bottom: $unit*6;
+
+        label,
+        .hidden {
+            display: none;
+        }
+
+        > div {
+            flex: 1 0 0;
+        }
+
+        > div:first-child {
+            margin-right: $unit;
+        }
+
+        > div:last-child {
+            margin-left: $unit;
+        }
+    }
+
+    .js-tooltip-button {
+        min-height: 0;
+        margin: 0 0 0 $unit;
+        padding: 0;
+    }
+
+    .js-tooltip-button svg {
+        width: 14px;
+        height: 14px;
+
+        fill: $brand-color;
+    }
+}
+
+
+
+.t-order-review-and-payment-wrapper [id="creditCardOptions"] [id="ccsave-holder"] .c-ccsave-holder {
+    display: flex;
+    margin-bottom: 0;
+
+    input {
+        margin-right: $unit*2;
+    }
+
+    label,
+    label.c-arrange__item {
+        flex: 1;
+        margin: 0 0 $unit*2 0;
+
+        color: $neutral-10;
+        font-family: $font-family;
+        font-size: $font-size;
+        line-height: $line-height;
+    }
+}
+
+
+.t-order-review-and-payment-wrapper .js-promo-container,
+.t-order-review-and-payment-wrapper .js-gift-card-container {
+    .c-promo-lable-area {
+        margin-bottom: $unit*2;
+    }
+
+    .c-sub-total__label,
+    .c-sub-total__label > a {
+        display: inline-block;
+
+        color: $brand-color;
+        font-family: $lato_bold;
+        font-size: $font-size;
+        line-height: $line-height;
+        vertical-align: middle;
+
+        label {
+            margin-top: 0;
+            margin-bottom: 0;
+
+            pointer-events: none;
+        }
+
+        a {
+            display: inline-block;
+
+            color: $brand-color;
+            font-family: $lato_bold;
+            font-size: $font-size;
+            line-height: $line-height;
+            vertical-align: middle;
+
+            pointer-events: none;
+        }
+    }
+
+    .js-tooltip-button {
+        display: inline-block;
+        min-height: 0;
+        margin-left: $unit;
+        padding: 0;
+
+        vertical-align: middle;
+
+        svg {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+
+            vertical-align: middle;
+
+            fill: #3b5997;
+        }
+    }
+
+    .c-cart-promo-code-field {
+        display: flex;
+
+        input {
+            min-height: 40px;
+        }
+        button {
+            min-height: 40px;
+            margin-left: $unit*3;
+            padding: 0;
+        }
+    }
+
+    .orderReviewPromoNote {
+        margin: $unit*2 0 0;
+
+        color: $neutral-20;
+        font-size: $small-font-size;
+    }
+
+    &.c--promo-selected {
+        .c-promo-container {
+            display: flex;
+        }
+
+        .c-sub-total__label:after {
+            content: ':';
+        }
+
+        .c-promo-lable-area {
+            margin: 0;
+        }
+
+        button.js-tooltip-button,
+        .orderReviewPromoNote {
+            display: none;
+        }
+
+        .edit-promo label {
+            margin: 0;
+            margin-right: $unit*7;
+            margin-left: $unit*3;
+
+            color: $neutral-10;
+            font-family: $font-family;
+            font-size: $font-size;
+            line-height: $line-height;
+            text-transform: uppercase;;
+        }
+
+        .edit-promo  a,
+        .edit-promo  a span {
+            display: inline-block;
+
+            color: $brand-color;
+            font-size: $font-size;
+            line-height: $line-height;
+            text-transform: capitalize;
+
+            cursor: pointer;
+        }
+    }
+}
+
+.t-order-review-and-payment-wrapper .js-promo-container {
+    margin-bottom: $unit*4;
+    padding-top: $unit*6;
+    border-top: 1px solid rgba($neutral-30, 0.43);
+
+    .c-sub-total__label {
+        font-family: $font-family;
+    }
+}
+
+.t-order-review-and-payment {
+    .c-sheet__title {
+        color: $neutral-10;
+    }
+}
+
+.t-cart-tooltip-pinny {
+    padding: 0;
+
+    [id='find-your-ccid'] {
+        margin: 0 $unit *3;
+        padding-bottom: $unit*5;
+
+        p {
+            margin-bottom: $unit*3;
+
+            color: $neutral-10;
+            font-family: $font-family;
+            font-size: $font-size;
+            line-height: $line-height;
+        }
+    }
+}
+
+.t-order-review-and-payment {
+    [id="addAddressModal"] {
+        overflow: hidden !important;
+        width: 0;
+        height: 0;
+    }
+
+    .gwt-payment-selection-please-wait-panel {
+        display: none;
+    }
+}
+
+
+.t-cart-tooltip-pinny {
+    padding-top: $unit*6;
+    padding-right: $unit*3;
+    padding-bottom: $unit*6;
+    padding-left: $unit*3;
+
+    box-shadow: none;
+
+    color: $neutral-10;
+    font-family: $font-family;
+    font-size: $font-size;
+    line-height: $line-height;
+    letter-spacing: 0;
+}

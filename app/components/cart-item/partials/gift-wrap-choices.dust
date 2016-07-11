@@ -1,0 +1,27 @@
+<div class="c-gift-wrap">
+    <h6 class="u-margin-bottom-sm u--bold {?hideGiftWrapChoicesLabel}u--hide{/hideGiftWrapChoicesLabel}">{@translate key="gift_wrapping" /}</h6>
+    {#giftWrapChoices}
+        {?giftWrapMessage}
+            <div class="u-padding-left-right-md-lg c-gift__text u-text-align-center">
+                {giftWrapMessage}
+            </div>
+        {/giftWrapMessage}
+
+        <div class="c-gift-wrap-choice">
+            {#choices}
+                <div class="c-gift-wrap__choice js-gift-wrap-choice">
+                    <div class="c-gift-wrap-silver">
+                        {giftWrapImage}
+                    </div>
+                    <div class="c-gift-wrap-input">
+                        {chekbox}
+                        <div class="c-gift-wrap-price">
+                            <span>{label}</span>
+                            <span><strong>{price}</strong></span>
+                        </div>
+                    </div>
+                </div>
+            {/choices}
+        </div>
+    {/giftWrapChoices}
+</div>

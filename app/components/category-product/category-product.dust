@@ -1,0 +1,41 @@
+<div class="c-category-product">
+    {#categoryListItem}
+        <div class="c-category-product__item">
+            {currentItemLink|openTag|s}
+                {currentItemImage}
+                <span class="c-category-product__name u-margin-left-right-extra-lg">{currentItemText}</span>
+                <div class="c-price-information">
+                    <div class="c-category-product__price">
+                        {?currentItemPriceOnly}
+                            <span class="c-category-product__price-only">{currentItemPriceOnly}</span>
+                        {:else}
+                            {?isThreeTielPrice}
+                                <span class="c-category-product__price-now">{currentItemThreeTierSalePrice}</span>
+                                {!-- TRAV-429: Order pricing --!}
+                                <span class="c-category-product__price-was">{currentItemThreeTierWasPrice}</span>
+                                <span class="c-category-product__price-was">{currentItemThreeTierRegularPrice}</span>
+                            {:else}
+                                <span class="c-category-product__price-now">{currentItemPriceNow}</span>
+                                <span class="c-category-product__price-was">{currentItemPriceWas}</span>
+                            {/isThreeTielPrice}
+
+                        {/currentItemPriceOnly}
+                    </div>
+                    <div class="c-category-product__more">
+                        {?currentItemRating}
+                            <div class="c-category-product__more-rating">{currentItemRating}</div>
+                        {/currentItemRating}
+
+                        {?currentItemReview}
+                            <div class="c-category-product__more-review">{currentItemReview}</div>
+                        {/currentItemReview}
+
+                        {?currentItemShipping}
+                            <div class="c-category-product__more-shipping">{currentItemShipping}</div>
+                        {/currentItemShipping}
+                    </div>
+                </div>
+            {currentItemLink|closeTag|s}
+        </div>
+    {/categoryListItem}
+</div>

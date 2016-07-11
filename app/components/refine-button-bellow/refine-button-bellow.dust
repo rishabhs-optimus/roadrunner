@@ -1,0 +1,8 @@
+{#items}
+    {>"components/bellows/bellows"
+        bellowsHeader=refineButton
+        bellowsContent=refineContent
+        class="c-refine-filter"
+        bellowsHeaderClass="js-bellows-header"
+    /}
+{/items}

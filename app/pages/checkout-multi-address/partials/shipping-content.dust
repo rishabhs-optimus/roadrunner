@@ -1,0 +1,13 @@
+<div class="c-multi-address-content bellows {mainclass}">
+    {#items}
+        {?shippingContent}
+            <div class="c-multi-address-content__detail {multiAddressContentClass}">
+                {?content}
+                    <ul class="c-multi-address__list">
+                        {content}
+                    </ul>
+                {/content}
+            </div>
+        {/shippingContent}
+    {/items}
+</div>

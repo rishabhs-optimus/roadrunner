@@ -1,0 +1,24 @@
+{>"global/base"/}
+
+{<contentBlock}
+    <div class="c-categoryHeader-content u-margin-all">
+        <h1 class="c-plp-br-seo-heading">{heading}</h1>
+    </div>
+
+    <ul class="t-product-list__product-tile">
+        {>"components/product-tile/product-tile"/}
+    </ul>
+
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    (function(require) {
+        require(["global/ui", "pages/plp-br-seo/plp-br-seo-ui"], function(globalUI, plpBrSeoUI) {
+            globalUI();
+            plpBrSeoUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

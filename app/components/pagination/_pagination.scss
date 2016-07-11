@@ -1,0 +1,87 @@
+// Pagination component
+// =====
+
+.c-pagination {
+    font-family: $font-family;
+
+    text-align: center;
+    margin: $unit * 5 $space-large $space-xlarge * 2;
+    display: flex;
+    color: $brand-color;
+    justify-content: space-around;
+
+
+    li {
+        width: 20px;
+        height: 20px;
+    }
+
+    .prev prev-off,
+    .next next-on {
+        font-weight: bold;
+    }
+
+    .active {
+        background: $neutral-50;
+    }
+
+    a {
+        color: $brand-color;
+        display: inline;
+    }
+
+    .c-view-all {
+        width: 56px;
+    }
+
+    .c-pagination__item {
+        display: inline-block;
+    }
+
+    .c-pagination-prev-next {
+        margin: 0 $sub-unit;
+        border: 1px solid $black;
+
+        border-radius: 1px;
+    }
+
+    .c--current {
+        padding: 7px $unit;
+
+        color: $neutral-60;
+    }
+
+    .c-pagination__item a {
+        display: inline-block;
+        padding: 7px $unit;
+
+        background: $white;
+
+        color: $black;
+        line-height: 1.2;
+
+        &:active,
+        &:focus {
+            color: $black;
+        }
+    }
+
+    .c-pagination__count {
+        padding: 0 $unit;
+
+        color: $black;
+    }
+
+    .c-icon {
+        height: 19px;
+    }
+
+
+}
+
+.next-off, .prev-off {
+    pointer-events: none;
+    .c-icon {
+            fill: $neutral-20;
+    }
+}

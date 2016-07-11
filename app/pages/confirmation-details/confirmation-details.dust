@@ -1,0 +1,63 @@
+{>"global/checkoutBase"/}
+
+{<contentBlock}
+
+    <div class="t-confirmation-details-wrapper">
+        <h2 class="u-margin-bottom-lg">{@translate key="order_review_detail_header" /}</h2>
+        <p class="c-confirmation-details__review-text">{reviewText}</p>
+        {?orderInfo}
+            <div class="c-order-summary">
+                {#orderInfo}
+                    <div class="c-order-summary__entry">
+                        <div class="c-order-summary__description">
+                            {label}
+                        </div>
+
+                        <div class="c-order-summary__number">
+                            {value}
+                        </div>
+                    </div>
+                {/orderInfo}
+            </div>
+        {/orderInfo}
+
+        {#billingAddress}
+            <div class="t-confirmation-details__billing-address u-padding-top-lg">
+                <div class="c-font-size">{sectionTitle}</div>
+                {>"components/address-button/address-button"/}
+            </div>
+        {/billingAddress}
+
+        {#paymentDetails}
+            <div class="t-confirmation-details__payment">
+                <div>{sectionTitle}</div>
+                <span class="t-card__confirmation">{cardName}</span>
+                <span>{cardInfo}</span>
+            </div>
+        {/paymentDetails}
+
+        {#orderItems}
+            {>"pages/confirmation-details/partials/items-shipping"/}
+        {/orderItems}
+
+        {#totals}
+            {>"components/ledger/ledger"/}
+        {/totals}
+    </div>
+
+    {>"components/sheet/sheet" effect="modalCenter" isHeader="true" cssClass="c--dialog c--no-header-text" class="js-tooltip-pinny" bodyClass="t-cart-tooltip-pinny js-tooltip-content"/}
+
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    // app/pages/confirmation-details/ui.js
+    (function(require) {
+        require(["global/ui", "pages/confirmation-details/confirmation-details-ui"], function(globalUI, confirmationDetailsUI) {
+            globalUI();
+            confirmationDetailsUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

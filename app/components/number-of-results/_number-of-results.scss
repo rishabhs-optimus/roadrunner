@@ -1,0 +1,18 @@
+// Number of Collection
+// ===
+//
+
+.c-num-collections {
+    padding: $unit;
+
+    text-align: center;
+
+    .c-loading {
+        margin: 0;
+    }
+
+    strong {
+        font-family: $default-sans;
+        font-weight: 600;
+    }
+}

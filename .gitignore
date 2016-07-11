@@ -1,0 +1,13 @@
+node_modules
+localSettings.json
+/build
+.sass-cache/
+tmp/
+.idea/
+.DS_Store
+reports/
+screenshots/
+build.tar
+.bundle
+/travelsmith-2
+Gemfile.lock

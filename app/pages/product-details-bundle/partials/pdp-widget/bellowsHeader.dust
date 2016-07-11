@@ -1,0 +1,19 @@
+<div class="c-pdp-widget-header">
+    <div class="c-checkbox-wrapper">
+        <div class="c-filter-panel__checkbox"></div>
+        <div class="c-image">{productWidgetImage}</div>
+    </div>
+    <div class="c-description">
+        {productDescription}
+        <a class="js-product-detail-pinny" data-widget-id={widgetPinnyClass}>Product Details</a>
+        {>"components/sheet/sheet"
+            isHeader="true"
+            class=widgetPinnyClass
+            effect="sheetBottom"
+            coverage="97%"
+            cssClass="c-product-widget-pinny"
+            headerContent="Description"
+            bodyContent=productWidgetDetailPinny
+        /}
+    </div>
+</div>

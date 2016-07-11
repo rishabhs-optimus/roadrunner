@@ -1,0 +1,35 @@
+{#billingAddress}
+    <div class="c-billing-address js-wtf" id="{billingAddressClass}">
+        <h3>{sectionTitle}</h3>
+        {>"components/address-button/address-button"/}
+    </div>
+{/billingAddress}
+
+{>"components/cart-order-summary/cart-order-summary" /}
+
+{! TODO: not sure why prototype script needs to be loaded here for CVV to work !}
+{prototypeScript}
+
+<div class="c-form-group c-order-payment-information">
+    {#paymentForm}
+        <h3>{sectionTitle}</h3>
+        {form|openTag|s}
+            {hiddenInputs}
+            {cvvScript}
+            {paymentOptions|openTag|s}
+                {>"pages/order-review-and-payment/partials/payment__credit-card" /}
+                {>"pages/order-review-and-payment/partials/payment__paypal" /}
+
+                {otherHiddenFieldInCreditCardForm}
+
+                {#ctas}
+                    {container|openTag|s}
+                        <div class="t-payment-and-review__review-only js-place-order u-text-center js-review-only">
+                            {placeOrder}
+                        </div>
+                    {container|closeTag|s}
+                {/ctas}
+            {paymentOptions|closeTag|s}
+        {form|closeTag|s}
+    {/paymentForm}
+</div>

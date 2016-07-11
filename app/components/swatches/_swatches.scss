@@ -1,0 +1,39 @@
+// Swatches
+// ===
+//
+
+.c-swatches {
+    // position: relative;
+    //
+    // display: -webkit-inline-box;
+    // max-width: 40px;
+    // max-height: 40px;
+}
+
+
+// Swatch Item
+// ---
+
+.c-product-tile__swatches {
+    bottom: $sub-unit;
+    left: $sub-unit;
+
+    border: 1px solid $white;
+}
+
+.c-swatches__swatche {
+    content: '';
+
+    margin-right: $space-large;
+}
+
+
+// Swatch Trigger
+// ---
+
+.c-swatches__trigger {
+    min-width: $unit*9;
+    min-height: $unit*9;
+
+    color: $brand-color;
+}

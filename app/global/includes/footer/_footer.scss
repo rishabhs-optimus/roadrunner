@@ -1,0 +1,113 @@
+.t-footer {
+    font-family: $font-family;
+    .c-footer-email-subscription {
+        padding: $sub-unit*9 $unit*3;
+
+        background: $neutral-60;
+    }
+
+
+    .c-footer-email-subscription-heading {
+        padding-bottom: $space-large;
+
+        color: $neutral-10;
+        font-size: $larger-font-size;
+        text-align: left;
+    }
+
+    .c-footer-email-subscription {
+        form {
+            margin-top: 0;
+        }
+        label {
+            display: inline;;
+        }
+    }
+
+    .c-email-subscription {
+        display: flex;
+    }
+
+
+    .c-email-field {
+        flex: 8;
+
+        input {
+            height: 40px;
+            min-height: 40px;
+            border-right: none;
+
+            border-radius: 0;
+
+
+
+            &::-webkit-input-placeholder {
+                text-transform: capitalize;
+            }
+        }
+    }
+
+    .c-email-button {
+        .c-button {
+            height: 40px;
+            min-height: 40px;
+        }
+
+        .c--primary {
+            width: 40px;
+            margin: 0;
+        }
+        .c-icon {
+            width: 20px;
+            height: 20px;
+
+            color: $neutral-70;
+        }
+    }
+
+    .c-bellows {
+        clear: both;
+        .c-bellows__list {
+            a:not(.c-list-tile__primary-tile):first-child {
+                display: inline-block;
+            }
+        }
+        .c-bracket {
+            color: $neutral-10;
+            font-weight: normal;
+        }
+    }
+
+
+    .c-privacy-links {
+        margin-bottom: $unit*4;
+        a {
+            color: $brand-color;
+            font-size: $small-font-size;
+        }
+    }
+
+    .c-source-code {
+        color: $neutral-80;
+        font-size: $small-font-size;
+        text-align: initial;
+    }
+
+    .c-copyright,
+    .c-footer-source-code {
+        display: inline-block;
+    }
+
+    .c-footer-source-code {
+        float: right;
+    }
+
+    .c-footer-lower-section {
+        padding-bottom: $space-large * 2;
+
+        text-align: center;
+        img {
+            width: 90%;
+        }
+    }
+}

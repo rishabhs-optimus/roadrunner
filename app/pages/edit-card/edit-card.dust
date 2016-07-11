@@ -1,0 +1,50 @@
+{>"global/base"/}
+
+{<contentBlock}
+    <div class="t-edit-card-content">
+        {#breadcrumbLink}
+            {>"components/breadcrumb/breadcrumb" iconName="right" /}
+        {/breadcrumbLink}
+        <h1 class="c-change-payment__header">
+            Credit Card Information
+        </h1>
+        {editMessage}
+        {form|openTag|s}
+            {hiddenFields}
+            {errorContainer}
+            {#fields}
+                <div class="c-change-payment__field">
+                    {label}
+                    {input}
+                    {#select}
+                        <div class="c-select">{select}</div>
+                    {/select}
+                </div>
+            {/fields}
+            {#expirationField}
+                <div class="c-change-payment__field">
+                {label}
+                <div class="c-change-payment__month-wrapper">
+                    <div class="c-select">{monthSelector}</div>
+                </div>
+                <div class="c-change-payment__year-wrapper">
+                    <div class="c-select">{year}</div>
+                </div>
+                <div hidden>{hiddenDiv}</div>
+                </div>
+            {/expirationField}
+            {submitBtn}
+        {form|closeTag|s}
+        {formScript}
+    </div>
+{/contentBlock}
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    (function(require) {
+        require(["global/ui"], function(globalUI) {
+            globalUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

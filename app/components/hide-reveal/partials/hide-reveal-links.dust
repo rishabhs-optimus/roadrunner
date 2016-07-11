@@ -1,0 +1,23 @@
+{! Reveal Link !}
+<div class="c-hide-reveal__reveal-link js-reveal-link">
+    {?revealIconName}
+        {>"svg-icon" name=revealIconName class=revealIconClass/}
+    {/revealIconName}
+    {?revealText}
+        {revealText}
+    {:else}
+        {@translate key="read_more"/}
+    {/revealText}
+</div>
+
+{! Hide Link !}
+<div class="c-hide-reveal__hide-link js-hide-link u--hide">
+    {?hideIconName}
+        {>"svg-icon" name=hideIconName class=hideIconClass/}
+    {/hideIconName}
+    {?hideText}
+        {hideText}
+    {:else}
+        {@translate key="hide"/}
+    {/hideText}
+</div>

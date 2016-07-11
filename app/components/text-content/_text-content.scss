@@ -1,0 +1,48 @@
+// Text Content
+// ===
+//
+// Text content styles tag elements in a way that matches their component
+// equivilent in absence of any component classes, or styles tags to have
+// appropriate levels of margins that they would otherwise be lacking. You can
+// think of the c-text-content component as a way of creating a designated
+// WYSIWYG zone.
+
+.c-text-content {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .c-heading {
+        margin: $unit*4 0 $unit*2;
+    }
+
+    p,
+    ul,
+    ol {
+        margin: 0 0 $unit*2;
+
+        line-height: 1.5;
+    }
+
+    a {
+        color: $brand-color;
+    }
+
+    ul:not([class*='c-']) {
+        margin-left: $unit*3;
+
+        list-style-type: disc;
+    }
+
+    li:not([class*='c-']) {
+        position: relative;
+
+        margin-left: $unit*2 + 2px; // 1
+    }
+
+    li:not([class*='c-']) + li:not([class*='c-']) {
+        margin-top: $unit;
+    }
+}

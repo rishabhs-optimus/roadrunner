@@ -1,0 +1,66 @@
+<div class="c-review">
+    {?ratings}
+        <div class="c-review__roof u-padding-all-md">
+            <div class="c-arrange c--gutters u-border-neutral-40 u-margin-top-md u-margin-bottom-lg u-padding-top u-padding-bottom u-padding">
+                <div class="c-review__ratings ">
+                    {#ratings}
+                        <div class="c-review__rating-container">
+                        {?ratingTitle}
+                        {#.ratingStars}
+                            {>"components/star-rating/star-rating" modifierClasses="" /}
+                        {/.ratingStars}
+                        {/ratingTitle}
+                            <div class="c-review__rating-title  c--shrink u-text-smaller">{.ratingTitle}</div>
+                        </div>
+                    {/ratings}
+                </div>
+                {#reviewerInfo}
+                    <div class="c-review__reviewer-info c-arrange__item">
+                        {?.name}
+                            <div class="c-review__reviewer-info-block u-text-break"> {.name} </div>
+                        {/.name}
+                        {?.location}
+                            <div class="c-review__reviewer-info-block"> {.location} </div>
+                        {/.location}
+                        <div class="c-review__reviewer-info-block">{reviewDate}</div>
+                    </div>
+                {/reviewerInfo}
+            </div>
+
+        </div>
+    {/ratings}
+
+    {#reviewAdditional}
+        <div class="c-review__attic">
+            {#reviewTag}
+                <span class="c-review__tag c-tag c--dark-grey c--large">{.}</span>
+            {/reviewTag}
+
+            {#reviewTitle}
+                <h4 class="u-text-black">{.}</h4>
+            {/reviewTitle}
+
+            {#reviewNoteworthy}
+                <div class="c-review__noteworthy">
+                    {@icon name="star" class="c--large"/}
+                    {.}
+                </div>
+            {/reviewNoteworthy}
+
+        </div>
+    {/reviewAdditional}
+
+    <div class="c-review__main">
+        {reviewContent}
+        {reviewPerson}
+        {#reviewerDetails}
+            <div>
+                {label} {value}
+            </div>
+        {/reviewerDetails}
+    </div>
+
+    <div class="c-review__basement">
+        {>"components/review/partials/review-signature"/}
+    </div>
+</div>

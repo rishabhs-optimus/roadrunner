@@ -1,0 +1,9 @@
+{#filterStackfilters}
+    <div class="c-filter-stack__filters {filterStackfiltersClass} u-margin-top-sm u-margin-bottom-12 u-padding-all">
+        {>"components/box-row/box-row" /}
+
+        {?isFilterPanelPinny}
+            {>"components/filter-panel-pinny/filter-panel-pinny" /}
+        {/isFilterPanelPinny}
+    </div>
+{/filterStackfilters}

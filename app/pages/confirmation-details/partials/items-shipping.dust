@@ -1,0 +1,28 @@
+{#address}
+    <div class="c-confirmation-detail__shipping_address">
+        <h3 class="u-margin-bottom-lg">{sectionTitle}</h3>
+
+        <div class="u-margin-bottom-md">
+            {>"components/address-button/address-button"
+                additionalClass="js-change-dropdown"/}
+
+            <div class="js-change-menu" hidden>{menuBar}</div>
+        </div>
+    </div>
+
+{/address}
+
+<div class="t-payment-and-review__items">
+    {#items}
+        {>"components/cart-item/cart-item" /}
+
+        {#shippingDetails}
+            <div class="c-field__top c-field__delivery-option">
+                <div class="c-field__info js-pinny-button" data-target=".{pinnyTargetClass}">
+                    {title}
+                </div>
+            </div>
+            {>"components/sheet/sheet" effect="sheetBottom" isHeader="true" coverage="97%" class=pinnyClass bodyClass="t-cart-tooltip-pinny t--shipping-details" bodyContent=content headerContent=title isHeader="true"/}
+        {/shippingDetails}
+    {/items}
+</div>

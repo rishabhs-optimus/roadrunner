@@ -1,0 +1,9 @@
+<div class="c-form-group">
+    {form|openTag|s}
+        {hiddenFields}
+        <div class="c-register__welcomeText u-margin-top-lg">{welcomeText}</div>
+        <div class="c-register__button">{registerButton}</div>
+        <div class="c-register__welcome">{welcomeMsg}</div>
+        {registerContent}
+    {form|closeTag|s}
+</div>

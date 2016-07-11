@@ -1,0 +1,410 @@
+// Button
+// ===
+//
+// Style an element as a button. Best applied to native interactive elements
+// such as form controls and links.
+//
+// Example Markup:
+//
+// <button class="c-button" type="[button|submit]">{buttonText}</button>
+// <input class="c-button" type="submit" value="{submitText}">
+// <a class="c-button" href="{url}">{linkText}</a>
+//
+
+
+// Button element
+// ---
+//
+// 1. Normalize border-radius across element types in iOS.
+// 2. Inherit font styles from ancestor.
+// 3. Normalize `line-height` (for `input`, it can't be changed from `normal`
+//    in Firefox 4+).
+// 4. Ensure button text can wrap (`input` defaults to `pre`).
+// 5. Prevent button text from being selectable.
+// 6. Corrects inability to style tappable `input` types in iOS.
+// 7. Inherit font color from ancestor for all states
+// 8. Create positioning context for children/generated content.
+//
+// N.B. “Disabled” state for links must be managed in JavaScript.
+
+.c-button,
+%c-button {
+    position: relative; // 8
+
+    display: inline-block;
+    padding: $space-xlarge;
+    border: 0;
+
+    color: $neutral-70;
+    font-family: $lato_bold;
+    font-size: $font-size; // 2
+    line-height: $line-height; // 3
+    letter-spacing: 0.5px;
+    white-space: normal; // 4
+    text-align: center;
+    text-transform: capitalize;
+    text-decoration: none;
+
+    user-select: none; // 5
+
+    -webkit-appearance: none; // 6
+    -webkit-tap-highlight-color: rgba($black, 0);
+
+    .c-loading {
+        margin: 1px 0 4px;
+    }
+
+    .c-loading__dot {
+        background-color: $neutral-70;
+    }
+
+    &:focus,
+    &:active {
+        color: $neutral-70; // 7
+    }
+
+    .c-icon-svg {
+        fill: currentColor;
+    }
+
+
+    // Disabled
+    // ---
+    //
+    // 1. Add text colour to `disabled` attr style
+
+    &:disabled,
+    &.c--is-disabled {
+        background-color: $neutral-60;
+        box-shadow: none;
+
+        color: $neutral-40;
+
+
+        // -webkit-text-fill-color: $neutral-70; // 1
+    }
+}
+
+
+// Themes
+// ---
+
+
+// Primary
+// ---
+
+.c-button.c--primary {
+    border-radius: 0;
+    background: $brand-color;
+
+    color: $neutral-70;
+    font-style: normal;
+    font-weight: bold;
+    text-transform: uppercase;
+
+
+    &:active {
+        background: $brand-color;
+    }
+
+    // Disabled
+    // ---
+
+    &:disabled,
+    &.c--is-disabled {
+        background-color: $neutral-60;
+
+        color: $neutral-40;
+    }
+
+    .c-icon {
+        width: 10px;
+        height: 17px;
+        margin-left: $sub-unit;
+
+        vertical-align: baseline;
+
+        fill: $neutral-70;
+    }
+}
+
+.c-button.c--secondary {
+    border: 1px solid $neutral-40;
+
+    border-radius: $sub-unit;
+    background-color: $neutral-70;
+
+    color: $brand-color;
+    font-style: normal;
+    text-transform: uppercase;
+}
+
+.c-button.c--yellow {
+    width: 100%;
+
+    background-color: $promo-cta;
+
+    color: $neutral-10;
+}
+
+.c-button.c--yellow:after {
+    content: '';
+
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-left: 4px;
+
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 40 40\'><polygon fill=\'#444\' points=\'7.5 40 7.5 0 32.5 20 7.5 40\'/></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+// Dark
+// ---
+
+.c-button.c--dark {
+    // background: $neutral-80;
+
+    &:active {
+        background: $black;
+    }
+
+    // Disabled
+    // ---
+
+    &:disabled,
+    &.c--is-disabled {
+        background-color: $disabled-color;
+
+        color: $neutral-40;
+    }
+}
+
+
+// Thick border
+// ---
+
+.c-button.c--thick-border {
+    border-width: 2px;
+
+    border-radius: 0;
+}
+
+
+// Button: Short
+// ---
+//
+// 1. Increase tap size
+// 2. Extend to 44px tap size
+
+.c-button.c--short {
+    height: 44px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    &::after {
+        // 1
+        content: '';
+
+        position: absolute;
+        top: -2px; // 2
+        right: 0;
+        bottom: -2px; // 2
+        left: 0;
+    }
+}
+
+
+// Link
+// ---
+
+.c-button.c--link {
+    height: auto;
+    min-height: 0;
+    padding: 0;
+
+    background: transparent;
+
+    color: $brand-color;
+    font-family: $font-family;
+    letter-spacing: 0;
+
+    &:active {
+        background: $neutral-30;
+    }
+
+    // Disabled
+    // ---
+
+    &:disabled,
+    &.c--is-disabled {
+        color: $disabled-color;
+
+        -webkit-text-fill-color: $disabled-color;
+    }
+}
+
+
+// Outline
+// ---
+
+.c-button.c--outline {
+    background: transparent;
+    // border: 1px solid $dark-border-color;
+
+    color: $font-color;
+
+    &:active {
+        background: $neutral-30;
+    }
+
+    // No sides borders
+    // ---
+
+    &.c--no-side-borders {
+        border-right: 0;
+        border-left: 0;
+    }
+
+    // Disabled
+    // ---
+
+    &:disabled,
+    &.c--is-disabled {
+        border-color: $border-color;
+
+        color: $disabled-color;
+
+        -webkit-text-fill-color: $disabled-color;
+    }
+}
+
+
+// Disabled
+// ---
+
+&:disabled,
+&.c--is-disabled {
+    pointer-events: none;
+}
+
+
+// Large
+// ---
+//
+
+.c-button.c--large {
+    min-height: 48px;
+
+    font-size: $large-font-size;
+}
+
+
+// Small
+// ---
+//
+// 1. Increase tap size
+
+.c-button.c--small {
+    position: relative; // 1
+    // min-height: $small-tap-size;
+
+    padding: ($sub-unit+1) $unit;
+
+    font-size: $smaller-font-size;
+
+
+    &::before {
+        content: '';
+
+        position: absolute;
+        top: -4px;
+        right: 0;
+        // 1
+        bottom: -4px;
+        left: 0;
+    }
+}
+
+
+// Full Width
+// ---
+
+.c-button.c--full-width {
+    width: 100%;
+}
+
+
+// No Padding
+// ---
+
+.c-button.c--no-padding {
+    padding: 0;
+}
+
+// Button in email feild
+.c-button-in-email {
+    form {
+        position: relative;
+    }
+
+    button {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+
+        padding: $unit;
+
+        font-size: $larger-font-size;
+    }
+
+    .c-icon {
+        width: 10px;
+        height: 10px;
+        margin-left: $sub-unit;
+    }
+}
+
+
+// Modifier: image button
+// (originally copied from Eddie Bauer)
+// ---
+//
+// Accomodates client buttons that use <input type="image"> or <img> that function as form submit buttons
+//
+// 1. Some situations, we'll use an icon for an image type button
+//    For example, search bar's search icon
+// 2. [Legacy Android] use translate3d to properly certer position the c-icon-svg
+
+.c-button.c--image-type {
+    position: relative;
+
+    &::before {
+        content: attr(data-button-text);
+    }
+
+    input, img:not(.c-button__image) {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+
+        opacity: 0 !important;
+    }
+
+    .c-icon-svg { // 1
+        position: absolute;
+        top: 50%;
+
+        transform: translate3d(0, -50%, 0); // 2
+
+        pointer-events: none;
+    }
+}
+

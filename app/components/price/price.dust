@@ -1,0 +1,9 @@
+<div class="c-price js-price {class}">
+    <div class="{priceLineClass} c-price__line js-price-line" id="{priceLineID}" hidden></div>
+
+    {?priceDiscount}
+        {>"components/price/partials/price-discount"/}
+    {:else}
+        {price} <span class ="c-price__each">{@translate key="price_each"/}</span>
+    {/priceDiscount}
+</div>

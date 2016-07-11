@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.6.1 (26313) - http://www.bohemiancoding.com/sketch -->
+    <title>icons/ui/delete</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Style-Guide" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icons" transform="translate(-23.000000, -377.000000)">
+            <g id="icons/ui/delete" transform="translate(12.000000, 366.000000)">
+                <rect id="Frame" opacity="0.1" x="0" y="0" width="40" height="40"></rect>
+                <path d="M18.6699219,20.0449219 L11.625,27.0898438 L12.9609375,28.4140625 L20,21.375 L27.0390625,28.4140625 L28.375,27.0898438 L21.3300781,20.0449219 L21.375,20 L21.3300781,19.9550781 L28.375,12.9101562 L27.0390625,11.5859375 L20,18.625 L12.9609375,11.5859375 L11.625,12.9101562 L18.6699219,19.9550781 L18.625,20 L18.6699219,20.0449219 L18.6699219,20.0449219 Z" id="Combined-Shape" fill="#3B5997"></path>
+            </g>
+        </g>
+    </g>
+</svg>

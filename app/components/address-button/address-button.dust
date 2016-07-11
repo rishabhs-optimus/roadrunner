@@ -1,0 +1,19 @@
+<div class="c-billing-address-wrapper">
+    {?showShippingLabel}<h2>{@translate key="items_shipping_to"/} <span class="c-item-capitalize">{name}</span></h2>{/showShippingLabel}
+    <div class="c-billing-address-text {additionalClass}">
+        <div class='c-billing-address-items'>
+            <div><span class="c-item-capitalize">{name}</span></div>
+            <div>{street}</div>
+            <div>{city}, {state}, {postalCode}</div>
+            <div>{country},</div>
+            <div>{phoneNumber}</div>
+        </div>
+
+        {?editOnClick}
+            <div class="c-billing-address-items">
+                <a class="c-billing-edit-address" href="javascript:void(0)"
+                    onclick="javascript:{editOnClick}">{@translate key="edit_address"/}</a>
+            </div>
+        {/editOnClick}
+    </div>
+</div>

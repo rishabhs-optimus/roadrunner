@@ -1,0 +1,16 @@
+{#items}
+    <div class="c-carousel__item">
+        <a href="{href}" class="c-carousel__image-link">{img}</a>
+        {?heading}
+            <a href="{href}" class="c-carousel__heading-link">
+                <span class="c-carousel-item__heading">{heading}</span>
+            </a>
+        {/heading}
+        {?productPriceContainer}
+            {#productPrice}
+                {>"components/price/price"/}
+            {/productPrice}
+        {/productPriceContainer}
+    </div>
+
+{/items}

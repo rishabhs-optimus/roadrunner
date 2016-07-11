@@ -1,0 +1,173 @@
+// Header
+// ===
+
+
+
+.t-header {
+    // Link
+    // ---
+    .t-header__cart,
+    .t-header__account {
+        position: relative;
+
+        min-height: 0;
+        padding: 0 $sub-unit $sub-unit;
+        border: 0;
+
+        background: none;
+        // font-family: $header-font-family;
+
+        font-weight: 500;
+        font-size: $small-font-size;
+        line-height: 0;
+        text-align: center;
+
+        &:focus,
+        &:active {
+            // color: $black;
+        }
+    }
+}
+
+// Header: Cart Count
+// --
+//
+// 1. Position cart count in button
+// 2. 11px font size
+// 3. Overwrites Italic
+// 4. Magic number to align to icon, cannot center due to icon shape
+
+.t-header__cart-count {
+    display: inline-block;
+    padding: 3px 6px;
+
+    border-radius: 50%;
+    background: $brand-color;
+
+    color: $neutral-70;
+    font-family: $lato_bold;
+    font-size: $sub-unit*7;
+    line-height: 100%;
+}
+
+// Row Item
+// ---
+.t-header__row {
+    display: flex;
+    justify-content: space-between;
+    padding: $unit * 4  $space-xlarge $space-large;
+
+    .c-icon {
+        display: inline-block;
+        width: 23px;
+        height: 21px;
+        margin-right: $space-large;
+        padding: 0;
+        margin-bottom: $sub-unit;
+        vertical-align: middle;
+        // fill: $neutral-200;
+    }
+    .c-cart-text {
+        display: inline-block;
+        margin-right: $unit;
+
+        color: $neutral-10;
+        font-family: $lato_bold;
+        font-size: $unit*4;
+        line-height: 20px;
+    }
+}
+
+.t-header__row-item {
+    &.c--fluid {
+        flex: 1 1 auto;
+    }
+
+    .c-badge {
+        position: absolute;
+        top: $unit;
+        right: $unit;
+    }
+
+    .c-icon-label__label {
+        // font-family: $header-font-family;
+    }
+}
+
+// Search & menu
+.t-header__search-menu {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    border-bottom: 1px solid $neutral-40;
+    // background: $white;
+
+    box-shadow: 0 -1px 0 0 $neutral-40;
+
+    .c-shop {
+        overflow: visible;
+        width: auto;
+        margin-bottom: 0;
+    }
+
+    .c-icon {
+        width: $unit * 4;
+        height: $unit * 3;
+
+
+        fill: $brand-color;
+    }
+
+    .c-header-seapartor {
+        width: 1px;
+        height: 45px;
+
+        background: $neutral-40;
+
+        // font-size: $font-size-large-17;
+    }
+
+    .c-header-category {
+        margin-top: -$sub-unit;
+
+        color: $neutral-10;
+        font-family: $lato_bold;
+        font-size: $unit*4;
+        line-height: 12px;
+    }
+}
+
+.t-header__search-menu-shop,
+.t-header__search-menu-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    // padding: 9px;
+    // color: $black;
+
+    font-size: $large-font-size;
+
+    .c-search .c-icon {
+        position: relative;
+        top: 1px;
+
+        height: $unit*4;
+    }
+}
+
+.c-logo {
+    .c-icon {
+        width: 156px;
+        height: 32px;
+
+        fill: $brand-color;
+    }
+    img {
+        width: 100%;
+        max-width: 156px;
+        height: auto;
+        max-height: 20px;
+    }
+}

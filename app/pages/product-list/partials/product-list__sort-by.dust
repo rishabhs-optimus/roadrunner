@@ -1,0 +1,10 @@
+{#sortBy}
+<span class="c-sort-by__label">Sort by</span>
+    <div class="c-select">
+        <select class="js-sort-menu">
+            {#options}
+                <option data-href="{value}" {?selected}selected{/selected}>{text}</option>
+            {/options}
+        </select>
+    </div>
+{/sortBy}

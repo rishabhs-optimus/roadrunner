@@ -1,0 +1,8 @@
+<div class="c-number-of-results">
+    {numberOfCollection|openTag|s}
+        {?isLoading}
+            {>"components/loading/loading"/}
+        {/isLoading}
+    {numberOfCollection|closeTag|s}
+
+</div>

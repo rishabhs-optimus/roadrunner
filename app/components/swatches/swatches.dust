@@ -1,0 +1,16 @@
+<ul class="c-swatches {class}">
+    {#swatches}
+        <li class="c-swatches__swatche">
+            <img src="{swatcheSrc}" alt="{altSrc}" class="js-swatche-image" onerror="this.style.display='none'" />
+        </li>
+    {/swatches}
+    {#ifMore}
+        {#moreSwatches}
+            <li class="c-swatches__swatche" hidden>
+                <img src="{swatcheSrc}" alt="{altSrc}" class="js-swatche-image" onerror="this.style.display='none'" />
+            </li>
+        {/moreSwatches}
+
+        <button class="u-unstyle c-swatches__trigger" type="button">more</button>
+    {/ifMore}
+</ul>

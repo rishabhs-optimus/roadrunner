@@ -1,0 +1,62 @@
+.t-edit-card-content {
+    padding: 0 $space-xlarge $space-xlarge * 2;
+    .c-change-payment {
+        &__header {
+            line-height: $unit * 6;
+            margin-bottom: $space-xlarge;
+            margin-top: $space-large;
+        }
+        &__info {
+            margin-bottom: $unit * 6;
+        }
+        &__input, &__month, &__year {
+            background-color: $input-background-color;
+        }
+        &__month {
+            &-wrapper {
+                width: 48%;
+                float: left;
+            }
+        }
+        &__year {
+            &-wrapper {
+                float: right;
+                width: 48%;
+            }
+        }
+        &__submit {
+            background-color: $brand-color;
+            width: 100%;
+            span  {
+                font-family: $lato_bold;
+                color: $input-background-color;
+                letter-spacing: $unit / 4;
+                text-transform: uppercase;
+            }
+        }
+        &__field {
+            margin-bottom: $unit * 4;
+            &:after {
+                clear: both;
+                display: table;
+                content: '';
+            }
+            &:last-of-type {
+                margin-bottom: $unit * 6;
+            }
+            label {
+                width: 100%;
+                margin-top: 0;
+            }
+        }
+    }
+    input {
+        &.c-change-payment__input {
+            box-shadow: 0 2px 2px 0 $neutral-50 inset;
+        }
+    }
+    .c-breadcrumb__link {
+        line-height: $unit * 6;
+        font-size: $large-font-size;
+    }
+}

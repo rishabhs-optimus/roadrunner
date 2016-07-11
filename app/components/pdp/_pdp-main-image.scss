@@ -1,0 +1,117 @@
+// PDP slider
+//
+// 1. override inline styles
+
+.c-main-image {
+    position: relative;
+
+    height: initial !important; // 1
+    margin: 0 -12px;
+    border-top: 1px solid $neutral-40;
+    border-bottom: 1px solid $neutral-40;
+
+    .iwc-main-img-container {
+        border-bottom: $border-neutral-40;
+
+        text-align: center;
+    }
+
+    .iwc-imagePanel {
+        position: relative;
+
+        // height: 330px;
+    }
+
+    .c-product-image__zoom-icon {
+        position: absolute;
+        right: $unit*5;
+        bottom: $unit*3;
+        z-index: 2;
+
+        width: 23px;
+        height: 24px;
+
+        pointer-events: none;
+    }
+
+    .iwc-main-img-wrapper {
+        position: relative;
+        z-index: 2;
+
+        display: inline-block;
+
+        img {
+            position: relative;
+            z-index: 1;
+        }
+
+        img + img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+    }
+}
+
+[id="gwt-video-player-wrapper"] {
+    z-index: 15;
+
+    width: 100%;
+    iframe {
+        width: 100%;
+    }
+}
+
+[id="gwt-video-dialog"] {
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    z-index: 10;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba($black, 0.3);
+
+    td {
+        border: 0 !important;
+    }
+
+    tr:nth-child(n+3) {
+        display: none;
+    }
+
+    table {
+        position: relative;
+    }
+
+    .ok-cancel-close-btn {
+        position: absolute;
+        top: 22px;
+        right: 2px;
+        z-index: 15;
+
+        width: 44px;
+        height: 44px;
+        border: 0;
+
+        background: url(../icons/svg/delete.svg) no-repeat center;
+    }
+}
+
+.transAnimBackerImageWrapper.iwc-backer-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    width: 100%;
+}
+
+#zoomOuter,
+#zoomTracker {
+    display: none;
+}

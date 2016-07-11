@@ -1,0 +1,14 @@
+<div class="c-expandable {class}" {?id}id="{id}"{/id} data-adaptivejs-component="expandable" {?scrollTo}data-scroll-to="{scrollTo}"{/scrollTo}>
+    <div class="c-expandable__content">
+        <div class="c-expandable__inner">
+            {body}
+        </div>
+    </div>
+
+    <div class="c-expandable__toggle" hidden>
+        <button class="c-button c--full-width c--link c--large">
+            <span class="js-view-more">View More</span>
+            <span class="js-view-less" hidden>View Less</span>
+        </button>
+    </div>
+</div>

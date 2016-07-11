@@ -1,0 +1,74 @@
+{>"global/base"/}
+
+{<contentBlock}
+    <div class="u-padding-sides-md">
+
+        {#breadcrumbLink}
+            {>"components/breadcrumb/breadcrumb" iconName="right" /}
+        {/breadcrumbLink}
+
+        <h1 class="c-title">Order Details</h1>
+
+        <div class="c-order-details__header-info">
+            <div class="c-ledger">
+                <div class="c-ledger__entry">
+                    <div class="c-ledger__description">{orderNumberDesc}</div>
+                    <div class="c-ledger__number">{orderNumberNo}</div>
+                </div>
+                <div class="c-ledger__entry">
+                    <div class="c-ledger__description">{orderDateDesc}</div>
+                    <div class="c-ledger__number">{orderDateNo}</div>
+                </div>
+            </div>
+        </div>
+
+        {#order}
+            {#.shippingInfo}
+                <div class="c-order-details__shipping">
+                    <h4>{.shippingTitle}</h4>
+
+                    <div>
+                        <div>{.shippingName}</div>
+                        <div>{.shippingAddr}</div>
+                        <div>{.shippingCity} {.shippingState} {.shippingZip}</div>
+                        <div>{.shippingCountry}</div>
+                    </div>
+                </div>
+            {/.shippingInfo}
+
+            {#.orderItems}
+                <div class="c-order-details__item">
+                    <p class="c-order-details__index">{index}</p>
+                    <div class="c-order-details__item-detail">
+                        <p class="u-margin-bottom-0 c-order-details__product-title">{.title}</p>
+                        <p class="u-margin-bottom-0">Quantity: {.quantity}</p>
+                        <p class="u-margin-bottom-0">Status/Tracking: {.status}</p>
+                        <p>Shipping Method: {shipmethod}</p>
+                    </div>
+                    <p class="c-order-details__price">{.price}</p>
+                </div>
+            {/.orderItems}
+
+            <div class="c-order-details__bill-section">
+                {#.billInfo}
+                    <div class="c-order-details__bill">
+                        <p class="c-order-details__total">{value}</p>
+                        <p class="c-order-details__label">{label}</p>
+                    </div>
+                {/.billInfo}
+            </div>
+        {/order}
+
+    </div>
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    (function(require) {
+        require(["global/ui"], function(globalUI) {
+            globalUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

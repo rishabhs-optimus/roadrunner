@@ -1,0 +1,9 @@
+<div class="c-carousel {class}">
+    <div class="c-carousel__inner">
+        <h2 class="c-carousel__title">{carouselTitle}</h2>
+        {carouselSubTitle}
+        <div class="c-carousel__items js-carousel__items">
+            {>"components/carousel/partials/carousel__products" /}
+        </div>
+    </div>
+</div>

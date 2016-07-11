@@ -1,0 +1,5 @@
+{>"global/base"/}
+
+{<header}
+    {>"global/includes/checkout-header/checkout-header"/}
+{/header}

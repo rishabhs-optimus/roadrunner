@@ -1,0 +1,68 @@
+// Custom check Category
+// =================
+
+.c-filter-panel__list {
+    display: flex;
+    align-items: center;
+    padding: $sub-unit*3 0 0;
+}
+
+.c-filter-panel__label {
+    width: 100%;
+}
+
+.c--custom-check,
+.c--custom-uncheck {
+    width: 17px;
+    height: 16px;
+    margin-right: 9px;
+    border: $border;
+
+    border-radius: $border-radius;
+}
+
+.c--custom-check {
+    border: 1px solid $brand-color;
+
+    background-color: $brand-color;
+    background-image: url("../icons/svg/check-white.svg");
+    background-position: -10px 24px;
+    background-size: 35px;
+}
+
+.c--custom-check + .c-filter-panel__label {
+    button {
+        color: $black;
+        font-family: $default-sans;
+        font-weight: 600;
+    }
+}
+
+.c-filter-panel__label {
+    font-size: $large-font-size;
+
+    &.c--check-active {
+        color: $black;
+        font-family: $default-sans;
+        font-weight: 600;
+    }
+
+    button {
+        width: 100%;
+        padding: 0;
+
+        background: transparent;
+
+        color: $neutral-70;
+        font-family: $default-sans;
+        font-style: normal;
+        font-size: $large-font-size;
+        text-align: left;
+    }
+}
+.c-filter-pinny {
+
+    .c-sheet__body {
+        padding: 0 $unit;
+    }
+}

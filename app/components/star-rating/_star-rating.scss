@@ -1,0 +1,77 @@
+// Star Rating
+// ===
+.c-star-ratings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &.c--shrink {
+        display: block;
+        flex: initial;
+        width: auto;
+    }
+}
+
+.c-star-ratings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+// Star Rating: Star Container
+// ---
+
+.c-star-ratings__container {
+    overflow: hidden;
+}
+
+
+// Star Rating: Individual Star
+// ---
+//
+// 1. Unicode star shape
+// 2. Overlay a second star shape on top
+
+.c-star-ratings__item {
+    float: left;
+
+    display: block;
+    // color: $neutral-70;
+
+    font-size: $largest-font-size;
+
+    &:before {
+        // 1
+    }
+    &:after {
+        content: url('../icons/svg/StarIcon.svg');
+    }
+
+    &.c--filled {
+        &:after {
+            content: url('../icons/svg/StarIcon_Fill.svg');
+        }
+    }
+
+    &.c--filled-half {
+        position: relative;
+
+
+        &:after {
+            content: url('../icons/svg/StarIconHalf_Fill.svg');
+
+            top: 0; // 2
+            left: 0; // 2
+
+            overflow: hidden; //
+            width: $larger-font-size/2;
+
+            background: url('../icons/svg/StarIcon_Fill.svg');
+            background-repeat: no-repeat;
+            background-position: 0;
+
+            color: #f3d000;
+        }
+    }
+}

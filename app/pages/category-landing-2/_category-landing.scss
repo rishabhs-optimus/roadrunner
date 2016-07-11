@@ -1,0 +1,52 @@
+.c-categoryHeader-content {
+    .c-sort-by {
+        position: relative;
+        .c-select {
+            select {
+                box-shadow: none;
+
+                text-indent: 78px;
+            }
+        }
+    }
+    .c-sort-by__label {
+        position: absolute;
+        top: 11px;
+        left: 12px;
+        z-index: 2;
+
+        color: $neutral-10;
+        font-family: $lato-bold;
+
+        pointer-events: none;
+    }
+}
+.c-view-less {
+    margin: $space-xlarge $space-xlarge $space-large;
+
+    color: $brand-color;
+    text-align: center;
+}
+
+.c-related-search-term-title {
+    margin-left: 12px;
+    padding-bottom: 2px;
+
+    font-size: 20px;
+}
+
+.t_product-list__seocopy {
+    a {
+        color: $brand-color;
+    }
+}
+
+.c-related-search-wrapper {
+    a {
+        display: inline-block;
+        margin-right: $space-large;
+        margin-bottom: $space-large;
+
+        color: $brand-color;
+    }
+}

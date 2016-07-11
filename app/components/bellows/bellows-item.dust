@@ -1,0 +1,38 @@
+<div class="c-bellows__item bellows__item {bellowsItemClass} {?.itemOptions.isOpen}bellows--is-open{/.itemOptions.isOpen}">
+    <div class="c-bellows__header {bellowsHeaderClass} bellows__header">
+        {?bellowsHeader}
+            {bellowsHeader}
+        {:else}
+            <span class="c-bellows__icon c-bellows__chevron">
+                {?noContent}
+                    {>"svg-icon" name="chevron-right"/}
+                {:else}
+                    {!
+                        Setting icon class so the bellows class context key doesn't
+                        leak into this component causing issues with styles/eng
+                    !}
+                    {?.itemOptions.isOpen}
+                        {>"svg-icon" name="minus" class="x-null" /}
+                    {:else}
+                        {>"svg-icon" name="plus" class="x-null" /}
+                    {/.itemOptions.isOpen}
+                {/noContent}
+            </span>
+            {sectionTitle}
+        {/bellowsHeader}
+    </div>
+
+    <div class="c-bellows__content bellows__content">
+        {?bellowsContent}
+            {bellowsContent}
+        {:else}
+            {?content}
+                <div class="u-margin-bottom-md u-padding-sides-md">
+                    <ul class="c-bellows__list">
+                        {content}
+                    </ul>
+                </div>
+            {/content}
+        {/bellowsContent}
+    </div>
+</div>

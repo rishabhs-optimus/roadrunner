@@ -1,0 +1,76 @@
+{#footer}
+    <footer class="t-footer" role="contentinfo">
+
+        <div class="c-footer-email-subscription">
+            <div class="c-footer-email-subscription-heading">
+                Sign Up &amp; Join Our List
+            </div>
+
+            {#emailSubscriptionFields}
+                {form|openTag|s}
+                    {hiddenFields}
+                    {emailFieldLabel}
+                    <div class="c-email-subscription js-email-subscription">
+                        <div class="c-email-field">
+                            {emailFieldInput}
+                        </div>
+                        <div class="c-email-button">
+                            {>"components/button/button" class="submitButton  c--primary" buttonIcon="right" type="submit" buttonIconClass="c--small" /}
+                        </div>
+                    </div>
+                {form|closeTag|s}
+            {/emailSubscriptionFields}
+
+        </div>
+
+        <div>
+            {#myAccountAccordion}
+                {>"components/bellows/bellows" bellowsHeaderClass="js-bellows-header"/}
+            {/myAccountAccordion}
+
+            {#footerLinksSection}
+                {>"components/bellows/bellows" bellowsHeaderClass="js-bellows-header" class="u-border-top-remove"/}
+            {/footerLinksSection}
+
+            {#aboutSection}
+                {>"components/bellows/bellows" bellowsHeaderClass="js-bellows-header" class="u-border-top-remove"/}
+            {/aboutSection}
+        </div>
+
+        <div class="c-footer-lower-section u-padding u-padding-top">
+
+            {#footerLogo}
+                <!-- Hardcoding link since the link is not found on desktop -->
+                <a href="{href}">
+                    <img src="{@getUrl path="img/blog-logo.png" /}">
+                </a>
+            {/footerLogo}
+
+            <div class="c-social-link">
+                {#socialLinks}
+                    {>"components/social-links/social-links"/}
+                {/socialLinks}
+            </div>
+
+            {! This div is needed for the email sign up errors !}
+            <div id="mainContent"></div>
+
+            {#footerColumns}
+                    <div class="c-source-code">
+                        <div class="c-copyright">
+                            Copyright {copyright}
+                        </div>
+                        {?sourceCodeWrapper}
+                            <div class="c-footer-source-code">
+                                <ul>{sourceCodeWrapper}</ul>
+                            </div>
+                        {/sourceCodeWrapper}
+                    </div>
+            {/footerColumns}
+
+        </div>
+
+    </footer>
+
+    <div hidden>{fbIframe}</div>
+{/footer}

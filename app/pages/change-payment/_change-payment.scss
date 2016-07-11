@@ -1,0 +1,51 @@
+.t-change-payment-content {
+    padding: 0 $space-xlarge;
+    margin-bottom: $unit * 6;
+    .c-change-payment {
+        &__header {
+            line-height: $unit * 6 + 2;
+            margin-bottom: $unit * 6;
+            margin-top: $space-large;
+        }
+        &__label {
+            margin: 0;
+            width: 50%;
+            line-height: 20px;
+        }
+        &__value  {
+            width: 50%;
+            padding-left: $space-large * 2;
+        }
+        &__field {
+            margin-bottom: $space-xlarge;
+        }
+        &__remove, &__edit {
+            width: 48%;
+            border: 1px solid $neutral-40;
+            text-align: center;
+            padding: $unit *2 + 2 0;
+            span {
+                font-family: $lato_bold;
+                color: $brand-color;
+                text-transform: uppercase;
+            }
+        }
+        &__remove {
+            float: left;
+            height: 40px;
+        }
+        &__edit {
+            float: right;
+            height: 40px;
+        }
+    }
+    &:after {
+        clear: both;
+        content: '';
+        display: table;
+    }
+    .c-breadcrumb__link {
+        line-height: $unit * 6;
+        font-size: $large-font-size;
+    }
+}

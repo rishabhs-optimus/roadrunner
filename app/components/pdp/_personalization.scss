@@ -1,0 +1,368 @@
+// Personalization Content
+// ---
+
+// .c-personalization-content {
+//     margin: -$unit;
+
+//     img.gwt-image-picker-option-image.gwt-image-picker-option-image-selected {
+//         box-shadow: 0 0 0 2px $brand-color;
+//     }
+
+//     .c-bellows__header-selected-option {
+//         position: absolute;
+//         top: 10px;
+//         right: 30px;
+
+//         display: flex;
+//         align-items: center;
+
+//         font-size: $font-size;
+
+//         .gwt-Label {
+//             overflow: hidden;
+//             max-width: 90px;
+
+//             white-space: nowrap;
+//             text-overflow: ellipsis;
+//         }
+//     }
+
+//     .js-personalization-bellows {
+//         .c-bellows__item {
+//             .gwt-tab-header-title {
+//                 display: inline-block;
+//             }
+//             .c-bellows__content {
+//                 background-color: $neutral-70;
+//             }
+//         }
+//     }
+//     .gwt-personalization-modal-total-price-amount {
+//         margin-left: $space-large;
+
+//         font-family: $lato-bold;
+//     }
+
+//     .gwt-personalization-image-picker-option-fill,
+//     .gwt-personalization-swatch-picker-option-fill {
+//         width: 38px;
+//         height: 38px;
+//         margin-right: 6px;
+//         margin-bottom: $sub-unit;
+
+//         img {
+//             opacity: 0;
+//         }
+//     }
+
+//     .c-bellows__header-selected-option {
+//         .gwt-personalization-image-picker-option-fill,
+//         .gwt-personalization-swatch-picker-option-fill {
+//             height: 30px;
+//         }
+//     }
+
+//     .c-total-product-cost {
+//         display: inline-block;
+//         margin-right: $sub-unit/2;
+
+//         font-family: $lato_bold;
+//     }
+
+//     .gwt-Image {
+//         height: 38px;
+//     }
+
+//     .prevArrow,
+//     .nextArrow {
+//         display: none;
+//     }
+
+//     .gwt-image-picker-option {
+//         display: inline-block;
+//         margin-right: $space-large;
+//     }
+
+//     .gwt-personalization-swatch-picker-option.c-grid__span {
+//         display: inline-block;
+//         margin-right: $space-large;
+
+//         img {
+//             height: 36px !important;
+//         }
+//     }
+//     .gwt-personalization-swatch-picker-option-image-selected {
+//         outline: 2px solid $brand-color;
+//     }
+
+//     .gwt-personalization-image-picker-option.c-grid__span {
+//         display: inline-block;
+//         margin-right: $space-large;
+//     }
+
+//     .gwt-personalization-modal-accordions-content-option {
+//         transform: translateZ(0);
+//     }
+
+//     .c-personalization-cancel-button {
+//         margin-top: -$unit;
+
+//         background: 0;
+
+//         color: $black;
+//         font-weight: bold;
+//         font-size: $font-size;
+//         text-transform: capitalize;
+//     }
+
+//     .c-personalization-image {
+//         width: 100%;
+
+//         text-align: center;
+//     }
+
+//     .c-bellows__header .gwt-personalization-image-picker-option-fill-selected {
+//         display: none;
+//     }
+
+//     .c-button.c--full-width {
+//         margin-top: $space-large * 2;
+//     }
+
+//     .c-personalization-cancel-button.c-button.c--full-width {
+//         margin-top: $space-large;
+
+//         font-family: $default-sans;
+//         font-style: normal;
+//     }
+
+//     .c-bellows__header-selected-option .gwt-image-picker-option-image.gwt-image-picker-option-image-selected,
+//     .gwt-HTML .gwt-personalization-swatch-picker-option-fill-selected .gwt-Image,
+//     .gwt-HTML .gwt-personalization-image-picker-option-image-selected,
+//     .gwt-personalization-textbox-description.c-field__caption,
+//     .gwt-product-option-panel-chosen-selection,
+//     .gwt-personalization-image-picker-description,
+//     .gwt-personalization-swatch-picker-description,
+//     .tabs-button-panel {
+//         display: none;
+//     }
+
+//     .gwt-tab-header-title {
+//         font-family: $lato_bold;
+//     }
+
+//     .c-inner-container {
+//         .gwt-tab-header-selected-option {
+//             margin-bottom: $unit*2;
+
+//             .gwt-HTML {
+//                 display: none;
+//             }
+
+//             .gwt-Label:not(:empty) {
+//                 margin-top: $unit*-5;
+
+//                 text-align: end;
+//             }
+//         }
+//     }
+// }
+
+// img.gwt-personalization-image-picker-option-image {
+//     width: 38px;
+// }
+
+
+// // Personalization done by user - Edit or Remove
+
+// .c-personalization-trigger {
+//     position: relative;
+
+//     .gwt-personalize-edit-remove-link-panel-style,
+//     .gwt-product-detail-widget-personalization-chosen-values {
+//         font-size: 13px;
+//     }
+
+//     .gwt-product-detail-widget-personalization-chosen-values {
+//         display: none;
+//     }
+
+//     .gwt-personalize-link-style.gwt-personalize-edit-link-style,
+//     .gwt-Label.gwt-personalize-link-separator-style,
+//     .gwt-personalize-remove-link-style {
+//         font-weight: bold;
+//     }
+
+//     .gwt-Label.gwt-personalize-link-separator-style {
+//         position: absolute;
+//         right: 57px;
+
+//         font-weight: bold;
+//     }
+
+//     .gwt-personalize-remove-link-style {
+//         position: absolute;
+//         right: 4px;
+//     }
+
+//     .gwt-HTML.gwt-personalize-link-style.gwt-personalize-edit-link-style {
+//         position: absolute;
+//         right: $unit;
+//     }
+// }
+// // Personalize Item
+// // ---
+// //
+// // 1. Override inline style
+
+// .t-product-details__personalize-item {
+//     .gwt-personalize-link-style {
+//         color: $font-color !important; // 1
+//         font-size: 14px;
+//         text-decoration: none !important; // 1
+//     }
+
+//     .gwt-product-detail-widget-personalization-panel {
+//         margin-bottom: $sub-unit;
+//         padding-left: $unit;
+
+//         font-size: $large-font-size;
+//     }
+
+
+//     label {
+//         width: 75%;
+//         padding: $unit 0 $unit $unit;
+//     }
+// }
+
+// // .gwt-personalize-edit-remove-link-panel-style,
+// // .gwt-product-detail-widget-personalization-chosen-values {
+// //     padding: 0 $unit;
+// //     border: 0 solid $neutral-50;
+// //     border-width: 0 1px;
+// //
+// //     > * {
+// //         display: inline-block;
+// //         margin-right: $sub-unit;
+// //     }
+// // }
+
+// .c-personalization-trigger {
+//     position: relative;
+
+//     border-bottom: none;
+
+//     .c-add-personalization-label.c-button.c--outline {
+//         position: absolute;
+//         top: 1px;
+//         right: 6px;
+
+//         max-height: 39px;
+//         padding: $unit $sub-unit*3 $sub-unit $unit;
+//         border: 0;
+
+//         color: $neutral-110;
+//         font-weight: bold;
+//         text-transform: capitalize;
+
+//         &.c--is-disabled .c-icon {
+//             opacity: .2;
+//         }
+
+//         .c-icon {
+//             position: absolute;
+//             top: 14px;
+//             right: 0;
+
+//             width: 10px;
+//             height: 10px;
+//         }
+//     }
+// }
+
+// .js-personalize-wrapper {
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+
+//     height: 100%;
+
+//     .gwt-product-detail-widget-personalization-panel {
+//         overflow: hidden;
+//         width: 60px;
+//         height: 100%;
+//         margin: 0;
+//         padding: 0;
+
+//         opacity: 0;
+//     }
+// }
+
+// .gwt-product-detail-widget-personalization-chosen-values {
+//     .c-box-row {
+//         margin-bottom: -1px;
+//     }
+
+//     .gwt_personalization_options_panel {
+//         .c-box-row {
+//             margin-top: $space-xlarge;
+//             margin-bottom: $space-xlarge;
+//             .gwt-personalization-textbox-label {
+//                 font-family: $lato-bold;
+//             }
+//         }
+//     }
+//     .gwt_personalization_options_panel .c-box-row:first-of-type {
+//         // background: red;
+//     }
+// }
+
+// img.gwt-personalization-image-picker-option-image.gwt-personalization-image-picker-option-image-selected,
+// .gwt-personalization-swatch-picker-option-fill-selected img {
+//     box-shadow: 0 0 0 2px $brand-color;
+// }
+
+// .c-personalization-message-container {
+//     overflow: inherit !important;
+//     width: auto !important;
+//     height: auto !important;
+
+//     opacity: 1 !important;
+// }
+
+// .c-personalize-message-section {
+//     position: inherit !important;
+
+//     width: 100% !important;
+// }
+// .c-personalization-chosen-values {
+//     padding-bottom: $unit;
+//     padding-left: $unit;
+//     border-right: 1px solid $neutral-50;
+//     border-left: 1px solid $neutral-50;
+// }
+
+
+
+// .t-personalization-pinny {
+//     .c-header-title {
+//         .pinny__header {
+//             padding: 0;
+//         }
+
+//         .c-sheet__title {
+//             padding: $space-xlarge $space-large * 2;
+
+//             text-transform: none;
+//             font-family: $lato_bold;
+//         }
+//     }
+//     .c-sheet__title {
+//         color: $neutral-10;
+//     }
+// }
+
+// .gwt-personalize-link-separator-style {
+//     display: none;
+// }

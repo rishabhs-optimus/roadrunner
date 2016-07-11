@@ -1,0 +1,86 @@
+// shipping detail popup
+// ===========
+
+.shipping-details-pinny {
+    .c-sheet__header {
+        border-top: 1px solid $neutral-40;
+    }
+
+    .c-sheet__title {
+        padding-bottom: $sub-unit*3;
+
+        color: $neutral-10;
+        line-height: 24px;
+        letter-spacing: -0.09px;
+    }
+
+    .needsclick {
+        padding-top: $unit*3;
+    }
+}
+
+
+.detailed_shipping_info {
+    p {
+        margin: $space-large;
+        padding: 0;
+
+        color: $neutral-10;
+        font-family: $font-family;
+        font-size: $font-size;
+        line-height: $line-height;
+        br {
+            display: block !important;
+        }
+    }
+
+    p:empty,
+    br {
+        display: none;
+    }
+
+    table {
+        margin: $unit*6 0;
+        border: none;
+
+        background: $white;
+    }
+
+    tbody tr:nth-child(odd) {
+        background: $neutral-140;
+    }
+
+    thead th {
+        padding: 0 0 $unit*3 0;
+        border: none;
+
+        color: $neutral-10;
+        font-family: $font-family;
+        font-size: $large-font-size;
+        line-height: 24px;
+        letter-spacing: -0.11px;
+
+        b {
+            font-family: $font-family;
+            font-weight: normal;
+            font-size: $large-font-size;
+        }
+    }
+
+    td {
+        padding: $unit*2 $unit*3;
+        border: none;
+
+        color: $black;
+        font-family: $font-family;
+        font-size: $font-size;
+        line-height: 17.5px;
+        letter-spacing: 0;
+        text-align: left;
+    }
+    ul {
+        margin-left: $space-large * 2;
+
+        list-style-type: disc;
+    }
+}

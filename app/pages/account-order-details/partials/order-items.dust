@@ -1,0 +1,9 @@
+{#orderItem}
+    <div class="u-margin-bottom-md">
+        <p>{title}</p>
+        <p class="u-margin-bottom-0">{option1} / {option2} / Qty: {quantity}</p>
+        <p class="c-aux-text">{status}</p>
+        <p class="u-text-weight-bold">{price}</p>
+        <hr class="c-divider c--full-width">
+    </div>
+{/orderItem}

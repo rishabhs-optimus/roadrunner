@@ -1,0 +1,15 @@
+<div class="c-promo-scroller {scrollerClass}">
+    <h2 class="c-promo-scroller__heading">{heading}</h2>
+    <div class="c-scroller">
+        <div class="c-scroller__content c-promo-scroller__content">
+            {#items}
+            <a href="{href}" class="c-promo-scroller__item">
+                <img src="{imgSrc}" class="c-promo-scroller__item-image">
+                <span class="c-button c--yellow u-text-uppercase c-promo-scroller__item-button">
+                    {cta}
+                </span>
+            </a>
+            {/items}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,89 @@
+{>"global/base"/}
+
+{<contentBlock}
+    <div class="t-product-details-bundle">
+        {#breadcrumbs}
+            {>"components/breadcrumb/breadcrumb" iconName="right"/}
+        {/breadcrumbs}
+
+        {>"pages/product-details-bundle/partials/product-info"/}
+
+
+        {#productImage}
+            <div class="c-product-image-wrapper">
+            </div>
+        {/productImage}
+
+        {#detailsContent}
+
+        {/detailsContent}
+
+        {reviewContainer}
+
+        <div class="js-product-widget u-padding-top u--tight">
+            <!-- PDP Bundle Collection Items -->
+        </div>
+        {>"global/includes/pdp-sections/related-product-section" /}
+
+        <div class="js-widget-container"></div>
+    </div>
+
+    <div class="js-desktop-pdp u-visually-hidden">
+        {#hiddenData}
+            {.container}
+
+            {.pdp}
+
+            {?videoData.url}
+            {#videoData}
+                <div class="js-video-data" data-video-image="{image}" data-video-url="{url}"></div>
+            {/videoData}
+            {/videoData.url}
+        {/hiddenData}
+    </div>
+
+    {>"components/sheet/sheet" effect="sheetBottom" class="js-taf-pinny" bodyContent=tellAFriendContainer  isHeader="true"/}
+
+    {>"components/sheet/sheet" effect="sheetBottom" class="js-more-information-pinny" bodyContent=moreInformationContainer  isHeader="true"/}
+
+    {>"components/sheet/sheet" effect="sheetBottom" cssClass="t-size-chart-pinny" class="js-size-chart-pinny" bodyClass="js-size-chart-body" coverage="97%" isHeader="true"/}
+
+    {>"components/sheet/sheet"
+    effect="sheetBottom"
+    cssClass="t-product-details__personalize-pinny"
+    class="js-personalization-pinny"
+    bodyClass="u-padding-all-lg"
+    bodyContent=personalizationContainer
+    coverage="97%"
+    isHeader="true" /}
+
+    {>"components/sheet/sheet" effect="modalCenter"  cssClass="c--dialog" class="js-wishlist-pinny" bodyClass="js-wishlist-pinny__body" isHeader="true"/}
+
+    {>"components/sheet/sheet" effect="modalCenter"  cssClass="c--dialog" class="js-sign-in-pinny" bodyClass="js-sign-in-pinny__body"  isHeader="true"/}
+
+    {>"components/sheet/sheet" effect="sheetBottom" class="js-ask-a-specialist-pinny c-ask-a-specialist-pinny" bodyClass="js-ask-a-specialist-pinny__body" coverage="100%"  isHeader="true"/}
+
+    {>"components/sheet/sheet" effect="modalCenter" class="js-product-detail-widget-pinny c-product-detail-widget-pinny" bodyClass="js-product-detail-widget-pinny__body" coverage="100%"  isHeader="true"/}
+
+
+    {#magnifikImage}
+    {>"components/sheet/sheet" effect="sheetBottom" class="js-magnifik" bodyClass="c-magnifik" coverage="97%"  isHeader="true"/}
+    {/magnifikImage}
+
+    {>"components/sheet/sheet" effect="sheetBottom" class="js-product-review-pinny c-product-review-pinny" headerClass="u-border-bottom-light-grey" bodyClass="js-product-review-pinny__body c-product-review-pinny__body" coverage="100%"  isHeader="true"/}
+
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    // app/pages/product-details-bundle/ui.js
+    (function(require) {
+        require(["global/ui", "pages/product-details-bundle/product-details-bundle-ui"],
+        function(globalUI, productDetailsBundleUI) {
+            globalUI();
+            productDetailsBundleUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

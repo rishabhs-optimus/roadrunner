@@ -1,0 +1,30 @@
+{>"global/base"/}
+
+{<contentBlock}
+    <div class="u-padding u-margin-bottom-lg">
+
+        <h1 class="u-padding-top u-margin-bottom">{pageTitle}</h1>
+
+        <div class="u-text-align-center">
+            {#contents}
+                {.}
+            {/contents}
+        </div>
+
+    </div>
+{/contentBlock}
+
+</div>
+
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    // app/pages/gift-card/gift-card-ui.js
+    (function(require) {
+        require(["global/ui", "pages/gift-card/gift-card-ui"], function(globalUI, giftCardUI) {
+            globalUI();
+            giftCardUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

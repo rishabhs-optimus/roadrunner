@@ -1,0 +1,6 @@
+<div class="c-custom-select c-arrange__item {customSelectClass}">
+    <div class="c-custom-select__inner u-margin-start-lg">
+        {customSelectText|s}
+    </div>
+</div>
+{>"svg-icon" name="right" class="c--small"/}

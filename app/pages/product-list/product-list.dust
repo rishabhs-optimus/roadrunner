@@ -1,0 +1,134 @@
+{>"global/base"/}
+
+{<contentBlock}
+    <div class="t-product-list-wrapper">
+        <div hidden>{hiddenFilters}</div>
+        {?breadcrumbLink}
+            {>"components/breadcrumb/breadcrumb" iconName="arrow-right" /}
+        {/breadcrumbLink}
+            {^pageMainTitle}
+            <h1 class="c-title js-title"><small>{pageTitle}</small></h1>
+            {/pageMainTitle}
+            {pageMainTitle}
+
+        <div class="js-no-results" hidden></div>
+
+        <div class="c-tabs js-product-article c-tabs-article c-tab-bod-none" hidden></div>
+        <div id="intShipping" class="u-visually-hidden"></div>
+        {! Shipping Restriction Message !}
+        <div class="js-shipping-restriction">
+            {>"components/shipping-restriction/shipping-restriction"/}
+        </div>
+
+        {?refineResult}
+            {#refineResult}
+                <div class="t-product-list__refine-results js-refine-results u-margin-all">
+                    {>"components/refine-button-bellow/refine-button-bellow"/}
+                </div>
+            {/refineResult}
+        {/refineResult}
+
+        {portaForma.form|openTag|s}
+            {?sortByPlpTwo}
+                <div class="c-plp2-sortby">
+                    <div class="t-product-list__sort-menu">
+                        <div class="c-icon-top-bottom">
+                            {>"svg-icon" name="updownArrow" class="updownArrow"/}
+                        </div>
+                        {#sortByPlpTwo} {.} {/sortByPlpTwo}
+                    </div>
+                </div>
+                <div hidden>{portaForma.hiddenField}</div>
+            {:else}
+                <div class="t-product-list__results-sort  js-results-sort">
+                    <div class="t-product-list__number-of-results js-number-of-results">
+                        {>"components/number-of-results/number-of-results"/}
+                    </div>
+
+                    <div class="t-product-list__sort-menu c-select--custom js-product-list__sort-by">
+
+                        {>"pages/product-list/partials/product-list__sort-by"/}
+                    </div>
+                </div>
+            {/sortByPlpTwo}
+
+
+            {! Product Card Component !}
+            <div class="js-product-tile u-padding-sides-lg u-margin-top">
+                <ul class="t-product-list__product-tile">
+                    {>"components/product-tile/product-tile"/}
+                </ul>
+            </div>
+        {portaForma.form|closeTag|s}
+
+        <div class="u-visually-hidden js-product-tile-hidden">{products}</div>
+
+
+        <div class="js-pagination" id="sli_footer">
+            {pagination}
+        </div>
+
+
+        {! Related products section !}
+        {#isRelatedProductsSectionPresent}
+            <div class="t-product-list__related-product">
+                {#relatedProductsSection}
+                    {>"components/carousel/carousel" /}
+                {/relatedProductsSection}
+            </div>
+        {/isRelatedProductsSectionPresent}
+
+        {?isRelatedSearchesPresent}
+            {#relatedSearches}
+                <div class="c-related-search-wrapper u-margin-top-lg">
+                    <div class="u-margin-bottom-md c-related-search-term-title u-margin-top-lg">{relatedSearchHeader}</div>
+                    <div class="u-padding">{suggestions} </div>
+                </div>
+            {/relatedSearches}
+        {/isRelatedSearchesPresent}
+
+
+        <div class="t-product-list__related-search">
+            <!-- Related Search Component -->
+        </div>
+        {>"components/paypal/paypal" /}
+        {! Sheet for Tooltip !}
+        {>"components/sheet/sheet" effect="modalCenter"
+            cssClass="c-shopping-popup c--no-header-text c--dialog" class="js-tooltip-pinny"
+            bodyClass="js-tooltip-content"
+        /}
+
+        {>"components/loading-overlay/loading-overlay" loaderOverlayClass="js-filter-loader u--hide"/}
+
+    </div>
+
+    {>"components/back-to-top/back-to-top" class="c--sticky" icon="top" /}
+
+    {! ID is used for desktop functionality !}
+    {leftNavHidden}
+    <div id="sli_bct" class="js-desktop-sli-bct u-visually-hidden"></div>
+    <div id="sli_tab_bar" class="js-desktop-sli-tab" hidden></div>
+    <div id="sli_head" hidden></div>
+	<div id="sli_tab_section" hidden></div>
+    <div id="sli_head_facets" hidden></div>
+    <div id="sli_footer" hidden></div>
+    {requiredScripts}
+
+    {>"components/sheet/sheet"
+        class="c-full-size-pinny c-filter-pinny js-filter-main {filterPanelClass} c-full-size-pinny c-filter-pinny"
+        effect="sheetBottom"
+        coverage="96%"
+        cssClass="js-filter-single-pinny c-header-content c-filter-pinny js-filter-pinny"
+    /}
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    (function(require) {
+        require(["global/ui", "pages/product-list/product-list-ui"], function(globalUI, productListUI) {
+            globalUI();
+            productListUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

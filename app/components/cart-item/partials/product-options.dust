@@ -1,0 +1,71 @@
+<ul class="js-options u-text-grey c-options">
+    <li class="js-item-number-option">{@translate key="cart_item_text" /}: {itemNumber}</li>
+
+    {#giftMessageOptions}
+        <li class="js-item-gift-message-option">{labelText} (<span>{priceText}</span>)</li>
+    {/giftMessageOptions}
+
+    <li class="js-item-color-option u--hide"></li>
+
+    <li class="js-gift-wrap-personalize-option u--hide"></li>
+
+    {^quantity.container}
+        {?quantity.count}<li class="c-quantity-container">{@translate key="qty_label" /}{quantity.count}</li>{/quantity.count}
+    {/quantity.container}
+
+    {?isConfirmOrderPage}
+        <li>
+            <div class="c-quantity-count-label">
+                {@translate key="qtyLable"/}: {quantityCount}
+            </div>
+        </li>
+    {/isConfirmOrderPage}
+
+    {?personalizationPrice}
+        <li class="{personalizationContentClass} js-personalize-list">
+            {>"components/cart-item/partials/personalization-popup" /}
+        </li>
+    {/personalizationPrice}
+
+    <li class="{?isStockLow}u-text-error{/isStockLow} {?isInStock}u-text-success{/isInStock} {?hideStock}u--hide{/hideStock}">
+        {?isConfirmOrderPage}
+            <span>{@translate key="availability" /}</span>
+            {?availabilityContainer}
+                {availabilityContainer}
+            {/availabilityContainer}
+        {:else}
+            {?availableRestrictionMsg}
+                {availableRestrictionMsg}
+            {/availableRestrictionMsg}
+            {?availabilityContainer}
+                {availabilityContainer}
+            {/availabilityContainer}
+        {/isConfirmOrderPage}
+    </li>
+
+    {?isConfirmOrderPage}
+        <li>
+            <span>{@translate key="delivery_method"/}</span>
+            <span>
+                {deliveryMethodMessage}
+            </span>
+        </li>
+    {/isConfirmOrderPage}
+
+    {?isConfirmOrderPage}
+        <li class="u-margin-top-md">
+            <div class="c-cart-item__price-container">
+                {#price}
+                    {>"components/cart-price/price"/}
+                {/price}
+            </div>
+        </li>
+    {/isConfirmOrderPage}
+
+    {!
+    {?shippingDate}
+        <li>{@translate key="ships" /}{shippingDate}</li>
+    {/shippingDate}
+    !}
+
+</ul>

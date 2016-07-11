@@ -1,0 +1,16 @@
+<table class="js-order-list-container">
+    <thead class="c-table__header">
+        <tr class="c-table__body">
+            <th>Order Number</th>
+            <th>Order Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        {#orderList}
+            <tr class="js-order-list">
+                {.orderNumber}
+                {.orderDate}
+            </tr>
+        {/orderList}
+    </tbody>
+</table>

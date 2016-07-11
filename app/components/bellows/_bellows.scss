@@ -1,0 +1,234 @@
+// Bellows
+// ===
+
+.c-bellows {
+    border-top: 1px solid $neutral-40;
+
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+
+// Bellows Item
+// ---
+//
+
+.c-bellows__item {
+    border-bottom: 1px solid $neutral-40;
+
+    &.bellows--is-open,
+    &.bellows--is-opening {
+        .c-bellows__chevron {
+            transform: translateY(-50%) rotate(180deg);
+
+            fill: #000;
+        }
+
+        .c-bellows__header {
+            background-color: $neutral-70;
+        }
+    }
+}
+
+
+// Bellows Chevron
+// ---
+//
+
+// 1. Center icon
+
+.c-bellows__chevron {
+    top: 50%; // 1
+    right: 0;
+
+    transform: translateY(-50%) rotate(0); // 2
+
+    transition: 0.1s transform ease;
+
+    .c-icon {
+        width: 17px;
+        height: 17px;
+    }
+}
+
+
+// Bellows Header
+// ---
+//
+// 1. Position chevron
+// 2. Padding on right to avoid overlap chevron with text
+
+.c-bellows__header,
+%c-bellows__header {
+    position: relative; // 1
+
+    padding: $space-xlarge $space-large * 2; // 2
+
+    background-color: $neutral-70;
+
+    color: $neutral-10;
+    font-family: $font-family;
+    font-size: $large-font-size;
+    line-height: 22px;
+
+    p {
+        display: inline-block;
+        margin-bottom: 0;
+
+        strong {
+            font-weight: normal;
+        }
+    }
+
+    .c-bellows__icon {
+        margin-right: $unit * 3;
+
+        vertical-align: middle;
+    }
+
+    &:active,
+    &:focus {
+        //color: $black;
+
+        .c-bellows__chevron {
+            //fill: $black;
+        }
+    }
+
+    .c-flag-icon {
+        top: -3px;
+
+        margin-left: $sub-unit;
+
+        vertical-align: middle;
+    }
+
+    .c-flag-icon::before {
+        height: 16px;
+    }
+}
+
+
+// Bellows List
+// ---
+
+.c-bellows__list {
+    a:not(.c-list-tile__primary-tile) {
+        display: block;
+        padding: $space-large $space-large $space-xlarge 0;
+
+        color: $brand-color;
+        font-size: $font-size;
+
+        &:active,
+        &:focus {
+            color: $neutral-20;
+        }
+    }
+}
+
+.c-bellows__content {
+    padding: 0 $space-xlarge $unit;
+
+    color: $neutral-10;
+}
+
+// Theme:
+// ---
+
+// Dark theme
+// ---
+
+.c-bellows.c--dark {
+    border-top: 0;
+
+    background-color: $neutral-30;
+
+    .c-bellows__item {
+        border-bottom: 1px solid $neutral-40;
+
+        &.bellows--is-open,
+        &.bellows--is-opening {
+            .c-bellows__header {
+                color: $neutral-10;
+            }
+
+            .c-bellows__chevron {
+                fill: $neutral-10;
+            }
+        }
+    }
+
+    .c-bellows__header {
+        color: $neutral-20;
+
+        &:active,
+        &:focus {
+            color: $neutral-10;
+
+            .c-bellows__chevron {
+                fill: $neutral-10;
+            }
+        }
+    }
+
+    .c-bellows__list {
+        a {
+            color: $neutral-30;
+
+            &:active,
+            &:focus {
+                color: $neutral-10;
+            }
+        }
+    }
+
+    .c-bellows__chevron {
+        fill: $neutral-30;
+    }
+}
+
+
+// Blue theme
+// ---
+//
+// 1. Remove icon, doesnt include in blue theme bellows
+
+.c-bellows.c--blue {
+    border-top: 0;
+
+    .c-bellows__item {
+        &:last-child {
+            border-bottom: 0;
+        }
+
+        &.bellows--is-open,
+        &.bellows--is-opening {
+            .c-bellows__header {
+                color: $dark-accent-color;
+            }
+
+            .c-bellows__chevron {
+                fill: $dark-accent-color;
+            }
+        }
+    }
+
+    .c-bellows__header {
+        color: $accent-color;
+        font-size: $large-font-size;
+        text-transform: inherit;
+
+        &:active,
+        &:focus {
+            color: $dark-accent-color;
+
+            .c-bellows__chevron {
+                fill: $dark-accent-color;
+            }
+        }
+    }
+
+    .c-bellows__chevron {
+        display: none; // 1
+    }
+}

@@ -1,0 +1,70 @@
+{>"global/checkoutBase"/}
+
+{<contentBlock}
+
+    <div class="c-order-confirmation">
+        <h4 class="c-order-confirmation-title">{@translate key="order_detail"/}</h4>
+        {?orderError}<div class="c-order-confirmation-error">{orderError}</div>{/orderError}
+        {successMessage}
+
+        {?orderInfo}
+            <div class="c-order-summary">
+                {#orderInfo}
+                    <div class="c-order-summary__entry">
+                        <div class="c-order-summary__description">
+                            {label}
+                        </div>
+
+                        <div class="c-order-summary__number">
+                            {value}
+                        </div>
+                    </div>
+                {/orderInfo}
+            </div>
+        {/orderInfo}
+
+        <div class="c-view-order-link">{viewOrderLink}</div>
+
+        <div class="c-seperator u-margin-start-lg-neg u-margin-end-lg-neg u--hide"></div>
+
+        <div class="u-margin-top-md c-form-group js-registration-container c-registration-container bellows c-bellows u-border-top-remove u--hide">
+            <div class="bellows__item c-bellows__item js-bellows__registration-form">
+                <div class="bellows__header c-bellows__header js-bellows-header u-padding-left-0 u-padding-right-0">
+                    <span class="c-bellows__icon c-bellows__chevron">
+                        {>"svg-icon" name="minus"/}
+                    </span>
+                    {@translate key="registration"/}
+                </div>
+                <div class="bellows__content">
+                </div>
+            </div>
+        </div>
+
+        <div class="c-seperator u-margin-start-lg-neg u-margin-end-lg-neg u--hide"></div>
+
+        <div class="t-order-confirmation__fine-print">
+            {finePrint}
+        </div>
+
+        {continueShopping}
+
+    </div>
+
+    {hiddenForms}
+    {hiddenInputs}
+    {analyticsContainer}
+    {guestRegistrationContainer}
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    // app/pages/order-confirmation/ui.js
+    (function(require) {
+        require(["global/ui", "pages/order-confirmation/order-confirmation-ui"], function(globalUI, orderConfirmationUI) {
+            globalUI();
+            orderConfirmationUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

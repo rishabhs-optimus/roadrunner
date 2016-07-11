@@ -1,0 +1,26 @@
+<div class="c-cart-keycode">
+
+    {keyCodeTag|openTag|s}
+        {keyCodeLabel}
+    {keyCodeTag|closeTag|s}
+
+
+    {showPromoCodeInfoPopup}
+
+    {promoCode}
+
+    {promoButton}
+
+    {?emptyPromoCodeError}
+        {emptyPromoCodeError}
+    {/emptyPromoCodeError}
+
+    {?invalidPromoCodeError}
+        {invalidPromoCodeError}
+    {/invalidPromoCodeError}
+
+    <p>{keycodeNote}</p>
+
+    </div>
+
+</div>

@@ -1,0 +1,48 @@
+// Email Subscription page
+// ------
+.t-email-subscription {
+    .c-email-subscription-content {
+        padding: $unit $space-xlarge $unit * 5;
+
+        color: $neutral-10;
+
+
+        h1 {
+            padding: $unit;
+            padding-bottom: $space-large * 2;
+            padding-left: 0;
+
+            font-weight: normal;
+            line-height: $sub-unit*7;
+        }
+
+        p {
+            padding-bottom: $unit;
+            padding-left: $unit;
+
+            font-size: $unit*2;
+            line-height: $sub-unit*5;
+        }
+
+        .c-list {
+            p:last-child {
+                padding-bottom: 0;
+            }
+            p:first-child {
+                padding-bottom: $sub-unit * 3;
+            }
+        }
+    }
+
+}
+
+
+// Email Subscribe Iframe Wrapper
+// ---
+
+.t-email-subscription__iframe-wrapper {
+    iframe {
+        width: 100%;
+        border: none;
+    }
+}

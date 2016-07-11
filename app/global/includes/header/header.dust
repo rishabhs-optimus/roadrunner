@@ -1,0 +1,64 @@
+{#header}
+    <header class="t-header" role="banner">
+        <ul class="t-header__row">
+            <div hidden id="recommendationBox1"></div>
+            {#websiteLink}
+                <li class="t-header__row-item c-logo c-header-logo">
+                    <a href="{href}" class="t-header__tab">
+                        <span class="u-visually-hidden">{text}</span>
+                        <img src="{@getUrl path="img/travelsmith-logo.png" /}">
+                    </a>
+                </li>
+            {/websiteLink}
+
+            <li class="t-header__row-item">
+                <button class="t-header__cart js-cart-toggle">
+                    {>"svg-icon" name="cart"/}
+                    <span class="c-cart-text">{@translate key="cart"/}</span><span class="t-header__cart-count js-cart-count">0</span>
+                </button>
+            </li>
+        </ul>
+        <div class="t-header__my-account">
+
+            {>"components/sheet/sheet"
+            class="js-my-account c-my-account"
+            effect="sheetLeft"
+            isHeader="true"
+
+            bodyContent=myAccountItems
+            headerContent="My account"
+            /}
+
+        </div>
+        <div class="t-header__search-menu">
+            <a class="t-header__search-menu-shop u-padding-bottom u-padding-top u--less js-shop-nav">
+                <div class="c-shop u-margin-end-md u-margin-top-extra-sm">{>"svg-icon" name="nav"/}</div>
+                <span class="c-header-category">{@translate key="shop"/}</span>
+            </a>
+            <a class="c-header-seapartor"></a>
+            <a class="t-header__search-menu-search  u-padding-bottom u-padding-top u--less js-search-box">
+                <div class="c-search u-margin-top-extra-sm u-margin-end-md">{>"svg-icon" name="search-lg"/}</div>
+                <span class="c-header-category">{@translate key="search"/}</span>
+            </a>
+        </div>
+
+    </header>
+
+    {>"components/sheet/sheet"
+        effect="sheetRight" class="c-cart-pinny js-cart-pinny" headerClass="js-cart-title"
+        bodyClass="js-cart-contents" footerClass="js-cart-checkout-button"
+        footerContent=" " bodyContent=emptyCartContent isHeader="true"
+    /}
+
+    <div class="t-header__menu js-search" hidden>
+        <div class="c-search-wrapper">
+            <i class="c-search-icon">
+                {>"svg-icon" name="search-lg"/}
+            </i>
+            {searchBox}
+            {requiredScriptForSearchBox}
+        </div>
+    </div>
+
+    {shoppingCart}
+{/header}

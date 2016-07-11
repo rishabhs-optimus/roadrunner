@@ -1,0 +1,54 @@
+.c-category-card {
+    display: flex;
+    flex-flow: row wrap;
+
+    .c-category-card-wrap {
+        display: flex;
+        width: 50%;
+        margin-bottom: $sub-unit*6;
+        //to arrange two containers in one row
+        &:nth-child(even) {
+            padding-left: 6px;
+        }
+        &:nth-child(odd) {
+            padding-right: 6px;
+        }
+    }
+
+    .c-category-card__item {
+        width: 100%;
+        border: 1px solid $neutral-40;
+
+        text-align: center;
+        vertical-align: text-top;
+
+        a {
+            display: block;
+            padding: $unit*2;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            max-width: 126px;
+            height: auto;
+            max-height: 126px;
+            margin: auto;
+        }
+        .c-category-card__name {
+            display: block;
+            margin: $unit * 3 0 0;
+
+            color: $brand-color;
+        }
+
+
+        &:nth-child(odd) {
+            margin-right: auto;
+        }
+
+        &:nth-child(even) {
+            margin-left: $unit*3;
+        }
+    }
+}

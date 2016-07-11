@@ -1,0 +1,27 @@
+// Gift Card
+// ===
+
+.t-gift-card {
+
+    .c-sheet__body a {
+        display: block;
+        padding-left: $unit*3;
+
+        color: $brand-color;
+    }
+
+
+}
+
+// Last small image
+// ---
+//
+// Client requested to increase image size
+
+.t-gift-card__last-small-img {
+
+    img {
+        max-width: 150%;
+        margin: 0 -25%;
+    }
+}

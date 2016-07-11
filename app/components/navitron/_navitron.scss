@@ -1,0 +1,227 @@
+// Navitron
+// ===
+//
+// Sliding panes for drilldown navigation
+//scss-lint:disable all
+.c-navitron {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    border-right: 1px solid $neutral-40;
+
+    box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.1);
+
+    overflow: hidden;
+
+
+    // Navitron Previous Pane Trigger
+    // ---
+
+    .navitron__prev-pane {
+        // margin: $unit*-2; // Bleed c-list-tile__primary's padding
+    }
+
+
+    // Navitron Next Pane Trigger
+    // ---
+
+    .navitron__next-pane {
+        @include ripple;
+        &:not(.navitron__item) .c-list-tile__primary-content {
+            color: $brand-color;
+            font-family: $font-family;
+        }
+    }
+
+
+    // Navitron Sliding Panes
+    // ---
+    //
+    // Note:
+    //
+    // I'm nesting it inside c-navitron for self
+    // documenting selector
+
+    .navitron__pane {
+        background: $neutral-70;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+
+    // Navitron Content
+    // ---
+    //
+    // 1. We need to make this a flex container in order to stretch the "Hot Footer",
+    //    a.k.a. `.c-nav__list.c--hot-footer`
+
+    .navitron__content {
+        display: flex; // 1
+        flex-direction: column; // 1
+
+        &:focus {
+            outline: none;
+        }
+
+        .c-list-tile__primary-tile {
+            padding: $unit*3;
+        }
+
+        .c-list-tile__primary-action {
+            padding: 0;
+
+            line-height: 0;
+            .c-icon.c--small {
+                width: $sub-unit*5;
+                height: $unit*4;
+                margin: 0 $unit*5 0 $sub-unit*3;
+
+                fill: $neutral-10;
+
+                &.c--sign-icon,
+                &.c--order-icon,
+                &.c--gift-icon {
+                    width: $unit*5;
+                    height: $unit*5;
+                    margin: 0 $unit*4 0 0;
+                }
+            }
+        }
+
+        .c-list-tile__primary-content {
+            padding: 0;
+
+            color: $neutral-10;
+            font-family: $lato_bold;
+            font-size: $unit*4;
+            line-height: $unit*6;
+        }
+
+        // scss-lint:disable all
+        a.c-list-tile__primary-tile {
+            .c-icon.c--small {
+                fill: $brand-color;
+            }
+            .c-list-tile__primary-content {
+                color: $brand-color;
+                font-family: $font-family;
+            }
+        }
+        // scss-lint:enable all
+    }
+    // Navitron Header
+    // ---
+    //
+    // 1. Position title
+
+    .navitron__header {
+        position: relative; // 1
+
+        .c-list-tile__primary-content {
+            position: absolute; // 1
+            top: 50%;
+            right: 0;
+            left: 0;
+
+            display: block;
+            padding: 0 50px;
+            color: $brand-color;
+            font-family: $lato_bold;
+            font-size: $large-font-size;
+            line-height: $unit*6;
+
+            transform: translateY(-50%);
+        }
+
+        .c-list-tile__primary-content .u--bold {
+            width: auto;
+
+            color: $neutral-70;
+            font-family: $lato_bold;
+            font-weight: normal;
+            text-align: center;
+        }
+
+        .c-list-tile__secondary-action {
+            align-self: auto;
+            margin: 0;
+
+            background: $brand-color;
+
+            line-height: 0;
+            text-align: center;
+        }
+        // scss-lint:disable SelectorDepth
+
+        .c-list-tile__secondary-action .c-icon {
+            width: 18px;
+            height: 18px;
+            margin-top: $unit;
+
+            fill: $white;
+        }
+
+        // scss-lint:enable SelectorDepth
+
+        .c-list-tile__primary-tile {
+            padding: $sub-unit*5 $unit*3;
+
+            background: $brand-color;
+        }
+
+        .c-list-tile__primary-action {
+            padding: 0;
+
+            line-height: 0;
+        }
+        .c-icon.c--small {
+            width: $sub-unit*5;
+            height: $unit*4;
+            margin: 0 $unit*5 0 $sub-unit*3;
+
+            fill: $neutral-70;
+        }
+    }
+
+    .c-list-tile__primary-content > div {
+        display: block;
+        overflow: hidden;
+        width: 85%;
+
+        white-space: nowrap;
+        text-overflow: ellipsis;
+
+        &.u--bold {
+            font-weight: normal;
+        }
+    }
+}
+
+.c-navitron__button {
+    &:active {
+        background: transparent;
+    }
+}
+
+.navitron__header.c-nav__pinny-close {
+    position: absolute;
+    left: 100%;
+    .c-list-tile__primary-tile {
+        display: none;
+    }
+    .pinny__close {
+        display: block;
+    }
+    .c-list-tile__secondary-action .c-icon {
+        background: none;
+        fill: $brand-color;
+        width: $unit*4;
+        height: $unit*4;
+        padding: 0;
+    }
+}

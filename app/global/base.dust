@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+{html|openTag|s}
+{head|openTag|s}
+    {urgentScript}
+    {config.adaptiveBuildScript}{! Re-inserts Adaptive.js into page. Do not modify or remove!}
+    {+head}
+        {head|innerHTML|s}
+
+        {+style}
+            {?config.isLocal}
+                <link rel="stylesheet" type="text/css" href="{@getUrl path="css/stylesheet.css" /}" />
+            {:else}
+                <link rel="stylesheet" type="text/css" href="{@getUrl path="css/stylesheet.min.css" /}" />
+            {/config.isLocal}
+        {/style}
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        {! Add JS variable for client !}
+        <script type="text/javascript">
+            var isMobify = true;
+        </script>
+
+        {! Do not modify or remove the following Mobify Analytics script tags: !}
+        {config.ajs|s}
+        <script>
+            var analytics = Mobify.analytics = Mobify.analytics || {};
+            analytics.ga = analytics.ga || [];
+            analytics.ua = analytics.ua || function() {
+                (analytics.ua.q = analytics.ua.q || []).push(arguments);
+            };
+        </script>
+    {/head}
+</head>
+{body|openTag|s}
+    {+bodyBlock}
+        <div id="x-root">
+            {! Holds the definitions for SVG icons. These are referenced elswehere with fragment links and the `use` tag !}
+            <div hidden="true">{iconSprite|s}</div>
+            <div class="required-data" hidden>
+                {hiddenForm}
+                {hiddenViewForm}
+                {perzContentBoxg}
+                {bvRatingDependency}
+                {productInfoDependency}
+                {sourceCode}
+            </div>
+
+            {! Including the global footer template here !}
+            {+header}
+                {>"global/includes/header/header"/}
+
+                {! Including the global left-sidebar that contains nav template here !}
+                {>"global/includes/left-sidebar/left-sidebar"/}
+            {/header}
+
+            <main class="t-main" role="main">
+                {+contentBlock}
+                    {body|innerHTML|s}
+                {/contentBlock}
+            </main>
+
+            {! Including the global footer template here !}
+            {+footer}
+                {>"global/includes/footer/footer"/}
+            {/footer}
+
+            {! Including notifications (error messages, success messages) in pinny  !}
+            {>"components/notification/notification" /}
+        </div>
+    {/bodyBlock}
+    {+scripts}
+        {desktopScripts}
+
+        {! Site UI scripts !}
+        {?config.isLocal}
+            <script src="{@getUrl path="js/ui.js" /}"></script>
+        {:else}
+            <script src="{@getUrl path="js/ui.min.js" /}"></script>
+        {/config.isLocal}
+
+        {+uiScripts}{/uiScripts}
+    {/scripts}
+</body>
+</html>

@@ -1,0 +1,92 @@
+// Loading Loader
+// ===
+//
+// A single element CSS loading spinner that can be displayed while content is loading.
+
+
+// Component Variables
+// ---
+
+$loading__size: 15px !default;
+$loading__small-size: 10px !default;
+$loading__color: $neutral-110 !default;
+
+
+// Loading root
+// ---
+//
+
+.c-loading {
+    position: relative;
+    z-index: 1000000;
+
+    width: auto;
+    height: $loading__size;
+    margin: ($loading__size*2) auto;
+
+    text-align: center;
+}
+
+
+// Loading dot
+// ---
+
+.c-loading__dot {
+    display: inline-block;
+    width: $loading__size;
+    height: $loading__size;
+    margin-right: 4px;
+
+    opacity: 0;
+    border-radius: 100%;
+    background-color: $loading__color;
+
+    animation: loading 1.4s infinite ease-in-out both;
+
+    &:last-of-type {
+        margin-right: 0;
+    }
+}
+
+
+// Loading dot numbers
+// ---
+
+.c-loading__dot.c--1 {
+    animation-delay: -0.32s;
+}
+
+.c-loading__dot.c--2 {
+    animation-delay: -0.16s;
+}
+
+
+// Loading small size
+// ---
+
+.c-loading.c--small {
+    .c-loading__dot {
+        width: $loading__small-size;
+        height: $loading__small-size;
+    }
+}
+
+
+// Loading animation
+// ---
+
+@keyframes loading {
+    0%,
+    80%,
+    100% {
+        opacity: 0;
+
+        transform: scale(0);
+    }
+
+    40% {
+        opacity: 1;
+
+        transform: scale(1);
+    }
+}

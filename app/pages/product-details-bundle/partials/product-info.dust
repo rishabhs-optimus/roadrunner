@@ -1,0 +1,54 @@
+
+{#productInfo}
+    <div class="c-product-info">
+
+    {?.title}
+        <h1>{.title|s}</h1>
+    {/.title}
+
+    <div class="c-pdp-price-star-description c-pdp-price">
+        <div class="js-pdp-price u-margin-bottom-sm"></div>
+
+        <div class="c--center c-star-ratings-container">
+                <div class="js-view-reviews c-view-reviews">
+                    {#.starRating}
+                        {>"components/star-rating/star-rating":./}
+                    {/.starRating}
+                </div>
+            <div class="c-review-this js-review-this"> <span class="js-review-count">{starRating.reviews}</span> {@translate key="review_this"/}</div>
+        </div>
+    </div>
+
+    {!TODO: Check if this is required in another scenario!}
+
+    {?shortDesciption}
+        <div class="c-price-short-description">{shortDesciption}</div>
+    {/shortDesciption}
+
+    <div class="c-arrange c--align-middle c--justify-center c-tag-text-heading">
+        <div class="c-tag c--blue-outline c--small js-tag c-tag-text" hidden>
+            {! Tag component placeholder!}
+        </div>
+    </div>
+    <div class="js-product-image c-main-image u-margin-bottom-md u-margin-top-md">
+        {>"svg-icon" name="zoom" class="c--bottom-right c--zoom"/}
+        <img src="{mainImage}"/>
+        {?hiddenData.videoData.url}
+            {#hiddenData.videoData}
+            <iframe src="{url}" hidden></iframe>
+            {/hiddenData.videoData}
+        {/hiddenData.videoData.url}
+
+    </div>
+
+    <div class="js-product-image-thumbnails">
+        {>"components/scroller/scroller":thumbnails /}
+    </div>
+
+    </div>
+{/productInfo}
+<div class="c-select-items-label">Select Items</div>
+<div class="c-product-widget-wrapper" hidden>
+    <div class="c-product-widget"></div>
+    {>"global/includes/pdp-sections/add-to-cart-button"/}
+</div>

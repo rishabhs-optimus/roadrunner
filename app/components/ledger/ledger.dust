@@ -1,0 +1,18 @@
+<div class="c-ledger {modifierClass}">
+    {#ledgerEntries}
+        <div class="c-ledger__entry {entryModifierClass}">
+            <div class="c-ledger__description">
+                {?tooltipContent}
+                    <button class="c-button c--link js-tooltip-button" data-target=".js-totals-tooltip">
+                        {description}
+                    </button>
+
+                    <div class="js-totals-tooltip" hidden>{tooltipContent}</div>
+                {:else}
+                    {description}
+                {/tooltipContent}
+            </div>
+            <div class="c-ledger__number">{number}</div>
+        </div>
+    {/ledgerEntries}
+</div>

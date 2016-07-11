@@ -1,0 +1,11 @@
+{#creditCardPaymentOption}
+
+    <div class="paymentOption creditCard form js-cc-payment-card-type">
+        {! TRAV-444: Hiding the paypal section makes this radio button unnecessary !}
+        <div hidden>{paymentType}</div>
+
+        {creditCardLogoOptions}
+
+        {creditCardOption}
+    </div>
+{/creditCardPaymentOption}

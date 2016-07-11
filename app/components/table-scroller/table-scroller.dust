@@ -1,0 +1,10 @@
+<div class="c-table-scroller">
+    <div class="c-arrange">
+        {#staticContent}
+            {! {>"components/table/table" modifierClass="c-arrange__item c--shrink c--static" /} !}
+            {.}
+        {/staticContent}
+
+        {>"components/scroller/scroller" table=tableContent class="c-arrange__item" /}
+    </div>
+</div>

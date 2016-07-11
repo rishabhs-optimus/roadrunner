@@ -1,0 +1,23 @@
+{>"global/base"/}
+{<contentBlock}
+
+    {#allPromos}
+        {#content}
+        {>"components/{promoType}/{promoType}"/}
+        {/content}
+    {/allPromos}
+
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    // app/pages/home/ui.js
+    (function(require) {
+        require(["global/ui", "pages/home/home-ui"], function(globalUI, homeUI) {
+            globalUI();
+            homeUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

@@ -1,0 +1,34 @@
+<div class="js-swap-container">
+    <div class="js-product-detail-bellow c-product-detail-bellow">
+        {#productTabs}
+            {>"components/bellows/bellows":.bellows/}
+        {/productTabs}
+    </div>
+
+    <div class="t-product-details__suggested-products c-you-may-also-like js-suggested-products">
+        {! Placeholder for suggested products, parsed in ui.js !}
+    </div>
+</div>
+
+{#recentlyViewedProducts}
+    <div class="t-product-details__suggested-products c-recently-viewed-products js-recent-products u-margin-top-md">
+        <h2 class="c-suggested-products-title c--small">Recently Viewed</h2>
+        {>"components/scroller/scroller"/}
+    </div>
+{/recentlyViewedProducts}
+
+{?isRelatedProductsSectionPresent}
+    {#relatedProductsSection}
+        <div class="t-product-details__related-products c-related-products u-margin-top-md">
+            <h2 class="c-related-products-title c--small u-margin-bottom-md">Related Products</h2>
+            {>"components/carousel/carousel" /}
+        </div>
+    {/relatedProductsSection}
+{/isRelatedProductsSectionPresent}
+
+
+<div class="t-clp-sale__related-search u-margin-top-md">
+        {>"pages/product-details/partials/related_searches"
+        relatedSearchesHeadingClass="c-related-searches__heading"
+        relatedSearchesclass="c-related-searches-products" /}
+ </div>

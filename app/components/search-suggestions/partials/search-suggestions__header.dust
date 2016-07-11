@@ -1,0 +1,6 @@
+<div class="c-search-header">
+    <h1>{search}</h1>
+</div>
+<button class="pinny__close c-sheet__header-close">
+    {>"svg-icon" name="delete"/}
+</button>

@@ -1,0 +1,7 @@
+<div class="c-list-tile c-notification-contents c--error {className}">
+    <div class="c-list-tile__primary-tile">
+        <div class="c-list-tile__primary-content">
+            <div class="js-notification">{errors}</div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,139 @@
+// Cart item style
+// ===
+// 1. Override component default marging
+
+.c-cart-item {
+
+    > .c-arrange {
+        margin-bottom: $unit*3;
+    }
+
+    .js-product-image {
+        width: 96px;
+    }
+
+    + .c-cart-item {
+        border-top: 1px solid $neutral-40;
+    }
+
+    .c-item-image {
+        img {
+            width: 96px;
+            height: auto;
+        }
+    }
+
+    .c-item-detail {
+        margin-left: $unit*5;
+    }
+
+    .c-free-shipping-on-luggage {
+        margin-top: $space-xlarge;
+    }
+
+    .c-item-title {
+        margin-bottom: $unit;
+        display: block;
+        color: $neutral-10;
+        font-family: $font-family;
+        font-size: $font-size;
+        line-height: $line-height;
+    }
+
+    .c-options {
+        li {
+            color: $neutral-20;
+            font-size: $small-font-size;
+            line-height: 18px;
+        }
+    }
+
+    .c-qty__button a {
+        font-family: $font-family;
+        color: $brand-color;
+        font-size: $font-size;
+        line-height: $line-height;
+    }
+}
+
+
+.c-qty__wrapper {
+    display: flex;
+
+    .c-stepper {
+        margin-left: 0 !important; // 1
+    }
+
+    .c-qty__item {
+        width: 108px;
+        border: 1px solid $neutral-50;
+
+        border-radius: 2px;
+
+        button {
+            flex: 0 0 30px;
+            min-height: 36px;
+        }
+
+        .c-stepper__count {
+            // color: $neutral-200;
+        }
+    }
+
+    .c-qty__buttons {
+        display: flex;
+        align-items: center;
+        height: 36px;
+
+        border-radius: 2px;
+    }
+
+    .c-qty__button {
+        padding: 0 $sub-unit;
+
+        button {
+            color: $black;
+            font-weight: bold;
+            font-size: $smaller-font-size;
+            text-transform: capitalize;
+        }
+    }
+
+    .c-separator {
+        color: $neutral-50;
+    }
+}
+
+
+.c-quantity-price-wrapper {
+    margin-bottom: $unit*3;
+    display: flex;
+    justify-content: flex-start;
+
+    .t-payment-and-review__items & .c-price {
+        margin: 0;
+    }
+
+    .c-quantity-count-label {
+        font-family: $font-family;
+        font-size: $font-size-large-14;
+        color: $neutral-20;
+        line-height: $line-height;
+        width: 96px;
+    }
+
+    .c-cart-item-price-container {
+        margin-left: $unit*2;
+    }
+
+    .c-price__discounted {
+        font-weight: normal;
+        color: $neutral-120;
+        font-size: $font-size-large-14;
+    }
+
+    .c-price__original {
+        font-size: $font-size-large-14;
+        color: $neutral-20;
+    }
+}

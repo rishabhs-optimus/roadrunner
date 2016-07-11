@@ -1,0 +1,173 @@
+// Text Utilities
+// ===
+
+// Accent-style text
+// ---
+//
+// Ideally use $dark-accent-color but that has an alpha value
+// of 0.5 which is way too light for text to render. Setting it to 100% alpha here
+
+.u-text-dark-accent {
+    color: hsla(45, 89%, 39%, 1) !important;
+
+    fill: hsla(45, 89%, 39%, 1) !important;
+}
+
+
+// Error-style text
+// ---
+
+.u-text-error {
+    color: $error-color !important;
+
+    fill: $error-color !important;
+}
+
+.u-white {
+    background: $neutral-70 !important;
+}
+
+// Link-style text
+// ---
+
+.u-text-link {
+    color: $link-color !important;
+
+    fill: $link-color !important;
+}
+
+
+// Brand-style text
+// ---
+
+.u-text-brand {
+    color: $brand-color !important;
+
+    fill: $brand-color !important;
+}
+
+
+// Text White
+// ---
+
+.u-text-white {
+    color: $neutral-70 !important;
+
+    fill: $neutral-70 !important;
+}
+
+.u-text-gray {
+    color: $neutral-20 !important;
+
+    fill: $neutral-20 !important;
+}
+
+// Alignment
+// ---
+
+.u-text-center,
+.u-text-align-center {
+    text-align: center !important;
+}
+
+.u-text-align-end {
+    text-align: right !important;
+}
+
+.u-text-align-start {
+    text-align: left !important;
+}
+
+
+// Caption-size text
+// ---
+
+.u-text-size-caption {
+    font-size: $smaller-font-size !important;
+    line-height: 1.4 !important;
+}
+
+
+// Text break
+// ---
+//
+// Could be used to wrap long email addresses
+
+.u-text-break {
+    word-break: break-word !important;
+}
+
+
+// Text transforms
+// ---
+
+.u-text-capitalize {
+    text-transform: capitalize !important;
+}
+
+.u-text-uppercase {
+    text-transform: uppercase !important;
+}
+
+.u-text-lowercase {
+    text-transform: lowercase !important;
+}
+
+.u-text-truncate {
+    overflow: hidden;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+// Text decorations
+// ---
+
+.u-text-underline {
+    text-decoration: underline !important;
+}
+
+.u-text-line-thru {
+    text-decoration: line-through !important;
+}
+
+// Text Transformations
+// ---
+
+.u--bold {
+    font-weight: bold;
+}
+
+.u--italics,
+.u--italic {
+    font-family: $lato_italic !important;
+    font-style: italic !important;
+}
+
+.u--disabled {
+    opacity: 0.2;
+}
+
+// Text size
+// ---
+
+.u-text-smaller {
+    font-size: $smaller-font-size !important;
+}
+
+.u-text-small {
+    font-size: $small-font-size !important;
+}
+
+.u-text-large {
+    font-size: $large-font-size !important;
+}
+
+.u-text-larger {
+    font-size: $larger-font-size !important;
+}
+
+.u-text-smallest {
+    font-size: $smallest-font-size !important;
+}

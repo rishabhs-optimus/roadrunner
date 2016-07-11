@@ -1,0 +1,37 @@
+{>"global/base"/}
+
+{<contentBlock}
+    <div class="u-padding u-margin-bottom-lg">
+
+        <h1 class="u-padding-top u-margin-bottom">{pageTitle}</h1>
+
+        <a class="c-button c--secondary c--full-width js-top-nav-button">Customer Service</a>
+
+        {?isSizeChart}
+            <div class="c-text-content u-margin-top-lg">
+                {sizeChartInfo}
+            </div>
+            {>"components/sheet/sheet" effect="sheetBottom" cssClass="t-size-chart-pinny" class="js-size-chart-pinny" bodyClass="js-size-chart-body" coverage="96%" isHeader="true" /}
+        {:else}
+            <div class="c-text-content u-margin-top-lg">
+                {leftContent}
+            </div>
+        {/isSizeChart}
+
+        {>"global/includes/top-nav/top-nav"/}
+
+    </div>
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    // app/pages/customer-service/customer-service-ui.js
+    (function(require) {
+        require(["global/ui", "pages/customer-service/customer-service-ui"], function(globalUI, customerServiceUI) {
+            globalUI();
+            customerServiceUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

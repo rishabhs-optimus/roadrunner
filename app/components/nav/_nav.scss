@@ -1,0 +1,94 @@
+// Nav Section
+// ===
+//
+// 1. Use important to overide the pinny styling
+// 2. Center text
+// 3. Position text
+
+.c-navigation-sheet {
+    top: 0 !important; // 1
+
+    box-shadow: none;
+
+    .pinny__content {
+        -webkit-overflow-scrolling: initial !important;
+    }
+}
+
+.c-navigation-sheet + .shade {
+    background: $white !important;
+}
+
+.c-nav__header-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    width: $tap-size;
+    height: $tap-size;
+    padding: 0;
+    border: 0;
+
+    border-radius: 0;
+    background: transparent;
+}
+
+.c-nav__item__shop {
+    position: relative; // 3
+
+    padding: 0;
+
+    background: $brand-color;
+
+    color: $neutral-10;
+    font-family: $lato_bold;
+    font-size: $unit*4;
+    line-height: $unit*6;
+
+    .c-list-tile__primary-tile {
+        justify-content: center;
+
+        color: $white; // override style
+
+        .u--bold { // 2
+            position: absolute; // 3
+            top: 50%;
+            right: 0;
+            left: 0;
+
+            width: 100%;
+            padding: 0 50px;
+
+            text-align: center;
+
+            transform: translateY(-50%);
+        }
+    }
+
+    .c-list-tile__secondary-action {
+        .c-icon {
+            width: 18px;
+            height: 18px;
+            margin-top: $unit;
+
+            fill: $white;
+        }
+    }
+}
+
+.c-cross-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 16px;
+    height: 16px;
+
+    color: inherit;
+
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    fill: currentColor;
+}

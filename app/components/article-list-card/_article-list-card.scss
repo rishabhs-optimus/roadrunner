@@ -1,0 +1,29 @@
+.c-article-list-card {
+
+    a img {
+        width: 100%;
+    }
+
+    .c-article-list-card__details {
+        margin-bottom: $unit*2;
+
+        .c-article-list-card__heading {
+            padding: $space-xlarge 0 $space-large;
+
+            font-family: $font-family;
+            font-size: $font-size;
+            text-align: left;
+            text-transform: capitalize;
+        }
+
+        .c-article-list-card__description {
+            font-size: $small-font-size;
+            line-height: 20px;
+            text-align: left;
+
+            b {
+                font-weight: 300;
+            }
+        }
+    }
+}

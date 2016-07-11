@@ -1,0 +1,62 @@
+// Expandable Container
+// ===
+
+.c-expandable {
+
+
+    a {
+        color: $brand-color;
+    }
+}
+
+
+// Expandable Content Area
+// ---
+
+.c-expandable__content {
+    overflow: hidden;
+    max-height: 150px;
+}
+
+
+// Expandable Toggle
+// ---
+
+.c-expandable__toggle {
+    margin-top: $unit*2;
+}
+
+
+// State: Overflow inner
+// ---
+//
+// 1. Used to absolute position the fade overlay
+// 2. Fade overlay
+
+.c-expandable__content.c--overflow {
+    position: relative; // 1
+
+    &::after {
+        // 2
+        content: '';
+
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        display: block;
+        width: 100%;
+        height: $tap-size;
+
+        background: linear-gradient(to top, #fff, rgba(255, 255, 255, 0));
+    }
+}
+
+
+// State: Expanded content
+// ---
+
+.c-expandable__content.c--expand {
+    max-height: initial;
+}

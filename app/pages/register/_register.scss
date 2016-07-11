@@ -1,0 +1,118 @@
+// Register Page
+// ===
+.t-register-page {
+    > div {
+        color: $neutral-10;
+    }
+
+    h2 {
+        line-height: 1;
+    }
+    .c-register-content__description {
+        p:first-child {
+            margin-bottom: 16px;
+        }
+    }
+    .c-register-content {
+        &__description {
+            font-family: $font-family;
+            line-height: $line-height;
+        }
+        &__title {
+            padding-bottom: $space-xlarge;
+
+            font-weight: normal;
+        }
+
+        .required {
+            margin-top: $space-large * 2;
+
+            color: $error-color;
+        }
+    }
+
+    .c-password-info {
+        margin-bottom: $space-large;
+
+    }
+    .c-input input {
+        color: $black;
+        font-family: $font-family;
+        font-size: $font-size;
+        line-height: $space-xlarge;
+    }
+    #continue {
+        width: 100%;
+        margin-top: $space-large * 2;
+        padding-top: $smallest-font-size;
+        padding-bottom: $smallest-font-size;
+
+        background-color: $brand-color;
+        //border-radius: $space-small;
+        box-shadow: 0 -2px 0 0 rgba(0,0,0,0.15) inset;
+
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    #sendMeEmails {
+        margin-right: $space-xlarge;
+
+         margin-top: $space-large;
+        outline: none;
+        &:after {
+            font-size: $larger-font-size;
+        }
+    }
+    .c-check-me .c-arrange__item {
+        display: inline-block;
+
+        font-family: $font-family;
+        font-size: $font-size;
+        line-height: $line-height;
+    }
+    .c-icon {
+        height: $font-size;
+    }
+
+    .c-error-group {
+        [id="gwt-error-placement-div"] {
+            position: absolute;
+            top: 0;
+        }
+    }
+    .required {
+        display: none;
+    }
+    .errortxt {
+        color: $error-color;
+    }
+    .c-arrange {
+        display: flex;
+    }
+}
+
+.c-register-content {
+    padding: $space-xlarge $space-xlarge $space-xlarge * 2;
+}
+
+// perks pinny styling
+.c-register-content__perks {
+    li {
+        font-family: $font-family;
+        list-style-type: disc;
+    }
+    ul {
+        padding-left: $space-large - 2;
+    }
+    .pinny__content {
+        padding: $unit * 2  $unit * 3;
+
+        background: $white;
+
+        color: $black;
+    }
+    .c-perks-list-item {
+        position: relative;
+        left: $unit;
+    }
+}

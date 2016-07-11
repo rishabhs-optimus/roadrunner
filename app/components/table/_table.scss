@@ -1,0 +1,94 @@
+// Table
+// ===
+//
+// Note: Static tables are *generally* used as fixed vertical columns next to
+//       scrollable tables. When using them, remember to link the contents with
+//       aria-describedby (see example below)
+
+// 1. When tables are not static, allow them to take up as much space as possible,
+//    if they are static, collapse them so they can act as a fixed column.
+// 2. Remove left border from scrollable tables so that a double border doesn't
+//    exist between the fixed and the scrollable tables.
+// 3. Set min-width to allow scrollable table content to breathe
+// 4. 🐝 Stripe alternate rows
+
+.c-table,
+%c-table {
+    border-collapse: collapse;
+    margin: $unit 0;
+
+    text-align: left;
+
+    white-space: nowrap;
+    text-align: left;
+
+    &.c--static {
+        width: auto; // 1
+    }
+
+    &:not(.c--static) {
+        width: 100%; // 1
+    }
+
+    &:not(.c--borderless) {
+        border: $border;
+    }
+
+    &.c--scrolling {
+        border-left: 0; // 2
+
+        .c-table__data,
+        %c-table__data {
+            min-width: $sub-unit*10; // 3
+        }
+    }
+
+    p {
+        margin: 0 !important;
+    }
+
+    tr {
+        &:first-child {
+            color: $neutral-110;
+            font-family: 'lato-bold', 'Roboto', sans-serif;
+        }
+
+        &:nth-child(odd) {
+            background-color: $white;
+        }
+
+        &:nth-child(even) {
+            background-color: $neutral-140;
+        }
+    }
+}
+
+.c-table__header,
+%c-table__header {
+    background-color: $white;
+
+    font-weight: bold;
+}
+
+.c-table__body,
+%c-table__body {
+
+    tr {
+        background-color: $white;
+    }
+
+    tr:nth-child(even) {
+        background-color: $neutral-60; // 4
+    }
+
+    th,
+    td {
+        padding: $unit*2;
+        border: 0;
+    }
+}
+
+.c-table__data,
+%c-table__data {
+    padding: $sub-unit;
+}

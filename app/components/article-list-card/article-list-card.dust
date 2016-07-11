@@ -1,0 +1,18 @@
+{#articleListCard}
+    <li class="c-article-list-card">
+        {articleLink|openTag|s}
+            {?articleImage}
+                {articleImage}
+            {/articleImage}
+
+            <div class="c-article-list-card__details">
+                {?articleHeading}
+                    <h4 class="c-article-list-card__heading">{articleHeading}</h4>
+                {/articleHeading}
+                {?articleDescription}
+                    <div class="c-article-list-card__description">{articleDescription|s}</div>
+                {/articleDescription}
+            </div>
+        {articleLink|closeTag|s}
+    </li>
+{/articleListCard}

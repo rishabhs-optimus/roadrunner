@@ -1,0 +1,82 @@
+{#breadcrumbs}
+    {>"components/breadcrumb/breadcrumb" iconName="right"/}
+{/breadcrumbs}
+
+{#productInfo}
+    <div class="c-product-info">
+
+    {?.title}
+        <h1>{.title|s}</h1>
+    {/.title}
+
+    <div class="c-pdp-price-star-description c-pdp-price u-margin-bottom-md">
+        <div class="js-pdp-price"></div>
+
+        <div class="c--center c-star-ratings-container">
+                <div class="js-view-reviews c-view-reviews">
+                    {#.starRating}
+                        {>"components/star-rating/star-rating":./}
+                    {/.starRating}
+                </div>
+            <div class="c-review-this js-review-this"> <span class="js-review-count">{starRating.reviews}</span> {@translate key="review_this"/}</div>
+        </div>
+    </div>
+
+    {!TODO: Check if this is required in another scenario!}
+
+    {?shortDesciption}
+        <div class="c-price-short-description">{shortDesciption}</div>
+    {/shortDesciption}
+
+    <div class="c-arrange c--align-middle c--justify-center c-tag-text-heading">
+        <div class="c-tag c--blue-outline c--small js-tag c-tag-text" hidden>
+            {! Tag component placeholder!}
+        </div>
+    </div>
+{/productInfo}
+
+    <div class="js-product-image c-main-image u-margin-bottom-md u-margin-top-md">
+
+        {>"svg-icon" name="zoom" class="c--bottom-right c--zoom"/}
+        <img src="{mainImage}"/>
+        {?hiddenData.videoData.url}
+            {#hiddenData.videoData}
+            <iframe src="{url}" hidden></iframe>
+            {/hiddenData.videoData}
+        {/hiddenData.videoData.url}
+    </div>
+
+</div>
+
+<div class="js-product-image-thumbnails">
+    {>"components/scroller/scroller":thumbnails /}
+</div>
+
+<div class="js-international-shipping-msg c-international-shipping-msg" hidden></div>
+
+<div class="c-matrix-product-detail js-matrix-product-detail"></div>
+
+
+<div class="c-swatch-selection-section">
+    {!-- TRAV-274: Dynamic section for second product title and price --!}
+    <div class="js-second-title-price">
+        {?productInfo.title}
+            <div class="js-second-title-price__title">
+                <h2>{productInfo.title|s}</h2>
+            </div>
+        {/productInfo.title}
+
+        <div class="js-second-title-price__price c-arrange c--gutters u-margin-top-md"></div>
+    </div>
+
+    <div class="c-swatch-color-description-container js-options-panel"></div>
+    <div class="c-product-qty-and-price u-margin-top-extra-lg">
+        <div class="t-product-details__product-options u-padding-top-sm js-product-options">
+            {! Placeholder for product options, parsed in ui.js !}
+        </div>
+    </div>
+
+    <div class="c-availability-info js-availability-info"></div>
+    {>"global/includes/pdp-sections/add-to-cart-button"/}
+    <div class="js-truck-msg"></div>
+</div>

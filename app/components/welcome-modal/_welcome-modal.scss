@@ -1,0 +1,144 @@
+// Welcome Modal component
+// ===
+
+// 1. Hide welcome dialogbox but retain animationStart event.
+
+// scss-lint:disable SelectorFormat
+#tinymask,
+#tinybox {
+    // scss-lint:enable SelectorFormat
+    visibility: hidden !important; // 1
+
+    pointer-events: none !important;
+}
+
+#gwt_welcome_window {
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    z-index: 1000;
+
+    display: block;
+    width: auto;
+    height: auto;
+
+    background: rgba($black, 0.25);
+
+    transform: scale(1);
+
+    pointer-events: auto;
+
+    .c-welcome-subscribe {
+        position: absolute;
+        top: 50%;
+        right: $unit;
+        left: $unit;
+
+        width: auto;
+        height: auto;
+        max-height: 100%;
+        padding: $unit;
+
+        background: $white;
+
+        transform: translateY(-50%);
+
+        pointer-events: auto;
+    }
+
+    .gwt_content_spot_2 {
+        font-family: $default-sans;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    .c-sheet__header-close {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 44px;
+        height: 44px;
+
+        .c-icon {
+            margin: 0;
+        }
+    }
+
+    .gwt_welcome_window {
+        display: inline-block;
+        width: 100%;
+
+        background-position: center 12px;
+        background-size: 290px;
+    }
+
+    .gwt_welcome_window_subscription_div input {
+        margin: 10px 0;
+    }
+
+    .c-button.c--full-width {
+        margin: 0;
+    }
+}
+
+.c-welcome-panel {
+    .u-text-center {
+        a {
+            color: $black;
+            font-family: $default-sans;
+            font-weight: 600;
+            text-transform: lowercase;
+        }
+    }
+
+    .c-sheet__title {
+        font-size: $font-size-large-24;
+    }
+
+    div[id='headline'] {
+        margin-bottom: $sub-unit;
+
+        color: $black;
+        font-family: $default-serif;
+        font-size: $font-size-large-24;
+    }
+
+    div[id='subheadline'] {
+        margin-bottom: $sub-unit;
+
+        font-family: $default-sans;
+    }
+
+    ul {
+        margin-bottom: $unit;
+        margin-left: $sub-unit*3;
+    }
+
+    li {
+        list-style-type: disc;
+    }
+    .c-frontgate-logo {
+        width: 165px;
+        height: 16px;
+
+        fill: $black;
+    }
+}
+
+.c-not-shipping {
+    text-align: center;
+
+    a {
+        color: $black;
+        font-family: $default-sans;
+        font-weight: 600;
+    }
+}
+p strong {
+    font-weight: 600;
+}
+.c-email-field {
+    border-radius: 2px;
+}

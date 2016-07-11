@@ -1,0 +1,121 @@
+// Order Confirmation
+// ===
+
+.c-order-confirmation {
+    margin: 0 $unit*3;
+    margin-bottom: $unit*6;
+
+    .c-order-confirmation-title {
+        margin: 0 0 $unit*3 0;
+        font-family: $font-family;
+        font-size: $largest-font-size;
+        font-weight: normal;
+        color: $neutral-10;
+        line-height: 26px;
+        letter-spacing: -0.1px;
+    }
+
+    .c-order-confirmation-error,
+    .order_confirmation_message {
+        margin: 0 0 $unit*3 0;
+        font-family: $font-family;
+        font-size: $font-size;
+        color: $neutral-10;
+        line-height: $line-height;
+    }
+
+    .c-order-confirmation-error {
+        color: $red;
+    }
+
+    .c-order-summary {
+        margin: 0 0 $unit*3 0;
+    }
+
+    .c-order-summary__entry {
+        display: flex;
+        margin: 0 0 $unit 0;
+    }
+
+    .c-order-summary__description,
+    .c-order-summary__number {
+        font-family: $font-family;
+        font-size: $font-size;
+        color: $neutral-10;
+        line-height: $line-height;
+    }
+
+    .c-order-summary__description {
+        width: 40%;
+        font-family: $lato_bold;
+    }
+
+    .c-view-order-link {
+        margin-bottom: $unit*6;
+
+        a {
+            font-family: $font-family;
+            font-size: $font-size;
+            color: $brand-color;
+            line-height: $line-height;
+        }
+    }
+
+    .t-order-confirmation__fine-print {
+        margin-bottom: $unit*6;
+        margin-top: $unit*6;
+         p,
+         a,
+         [x-apple-data-detectors] {
+             font-family: $font-family;
+             font-size: $font-size;
+             color: $neutral-10;
+             line-height: $line-height;
+         }
+    }
+
+    // scss-lint:disable SelectorFormat
+    .gwt-CheckBox.sendMeEmailsCB {
+        // scss-lint:enable SelectorFormat
+        display: flex;
+
+        > input {
+            flex: 0 0 auto;
+            margin-right: 12px;
+        }
+
+        > label {
+            flex: 1 1 auto;
+            margin-top: 0;
+            margin-bottom: 0;
+            font-family: $font-family;
+        }
+    }
+
+    .c-register-button {
+        margin-top: $unit*6;
+        margin-bottom: $unit*6;
+    }
+
+    .c-seperator {
+        border-bottom: 1px solid $neutral-40;
+    }
+
+    .c-registration-container  {
+        .c-bellows__item {
+            border-bottom: 0;
+        }
+    }
+
+    .c-box-row .errortxt ~ .c-input input {
+        border-color: $neutral-130;
+    }
+}
+
+.t-order-confirmation {
+    .gwt-PopupPanelGlass + .guest-checkout-reg-modal {
+        height: 0;
+        width: 0;
+        overflow: hidden !important;
+    }
+}

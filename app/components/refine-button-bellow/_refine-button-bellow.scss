@@ -1,0 +1,79 @@
+// Refine Button
+// ===
+//
+// Found Sub-Category Page.
+//
+
+.c-filter-stack__heading {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 3px; // FRGT-182
+
+    font-family: $default-sans;
+    font-weight: 600;
+}
+
+.c-filter-stack.c-form-group {
+    margin-bottom: 6px;
+}
+
+.c-filter-stack__show-all {
+    color: $black;
+    text-align: right;
+}
+
+.c-refine-filter,
+.c-porta-refine {
+    .c-bellows__header {
+        padding: 0 $unit;
+
+        background: transparent;
+
+        .c-button {
+            border: 1px solid $black;
+
+            color: $black;
+            font-size: $larger-font-size;
+        }
+
+        .c-icon {
+            width: 10px;
+            height: 20px;
+
+            vertical-align: text-bottom;
+
+            transform: rotate(90deg);
+        }
+    }
+
+    .c-bellows__item.bellows--is-opening,
+    .c-bellows__item.bellows--is-open {
+        .c-icon {
+            transform: rotate(-90deg);
+        }
+
+        .c-bellows__header {
+            padding: 0;
+        }
+
+        .c-button {
+            border: 0;
+            border-top: 1px solid transparent;
+            border-bottom: 1px solid transparent;
+
+            background: $brand-color;
+
+            color: $white;
+        }
+    }
+
+    .bellows__content-wrapper {
+        background: $neutral-40;
+    }
+
+    .c-bellows__content {
+        padding: $unit $unit $unit;
+
+        box-shadow: none;
+    }
+}

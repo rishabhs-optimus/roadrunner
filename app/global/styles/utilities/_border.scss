@@ -1,0 +1,42 @@
+// Border Utilities
+// ===
+
+.u-border {
+    border: $border;
+}
+
+.u-border-neutral-40 {
+    border: $border-neutral-40;
+}
+
+.u-border-top {
+    border-top: $border;
+}
+
+.u-border-right {
+    border-right: $border;
+}
+
+.u-border-left {
+    border-left: $border;
+}
+
+.u-border-bottom {
+    border-bottom: $border;
+}
+
+.u-no-border {
+    border: 0;
+}
+
+.c-border-top__dotted-red {
+    border-top: 2px dotted red;
+}
+
+.u-border-top-remove {
+    border-top: 0 !important;
+}
+
+.u-border-top-neutral-40 {
+    border-top: $border-neutral-40;
+}

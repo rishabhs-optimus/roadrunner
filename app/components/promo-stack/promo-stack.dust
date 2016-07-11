@@ -1,0 +1,12 @@
+<div class="c-promo-stack {stackClass}">
+    <img src="{headerSrc}" alt="{headerText}" class="c-promo-stack__header">
+    <ul class="c-promo-stack__list">
+        {#links}
+        <li class="c-promo-stack__list-item">
+            <a href="{href}" class="c-promo-stack__link c-button c--yellow u-text-uppercase">
+                {cta}
+            </a>
+        </li>
+        {/links}
+    </ul>
+</div>

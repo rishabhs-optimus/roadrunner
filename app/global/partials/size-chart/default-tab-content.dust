@@ -1,0 +1,23 @@
+{>"global/partials/size-chart/size-chart"/}
+
+{?additionalTableInfo}
+    <div>{additionalTableInfo}</div>
+{/additionalTableInfo}
+
+{?howToText}
+    <p class="u-text-capitalize u--bold">{howToText}</p>
+{/howToText}
+
+{?howToMoreInfo}
+    <div class="c-more-info">{howToMoreInfo|s}</div>
+{/howToMoreInfo}
+
+{#imgTables}
+    <div class="c-img-tables js-img-tables">
+        {.}
+    </div>
+{/imgTables}
+
+<div class="u-text-align-center u-margin-top-md u-margin-bottom-md">
+    {sizeChartImage}
+</div>

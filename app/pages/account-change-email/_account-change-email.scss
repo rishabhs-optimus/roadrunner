@@ -1,0 +1,34 @@
+.t-change-data {
+    padding: 0 $space-xlarge;
+    .c-breadcrumb__link {
+        line-height: $unit * 6;
+        font-size: $large-font-size;
+    }
+    .c-title {
+        line-height: $unit * 6 + 2;
+        margin-top: $unit;
+    }
+
+    p {
+        margin: 0;
+        line-height: 20px;
+    }
+
+    .u-text-success {
+        padding-bottom: $space-large * 2;
+    }
+    form {
+        margin-top: $space-xlarge;
+    }
+    .c-field {
+        label {
+            margin: 0 0 $space-large 0;
+        }
+    }
+    .c-field-row {
+        margin-bottom: $unit * 4;
+    }
+    .c-button {
+        margin: $space-large 0;
+    }
+}

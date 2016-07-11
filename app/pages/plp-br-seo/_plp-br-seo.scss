@@ -1,0 +1,25 @@
+.t-plp-br-seo {
+    .c-box > .c-box__label {
+        width: 100%;
+    }
+
+    .c-plp-br-seo-heading {
+        padding: $sub-unit*3 $unit $unit;
+    }
+
+    .c-product-tile {
+        text-align: center;
+    }
+
+    .c-price {
+        color: $black;
+    }
+
+    .c-bellows {
+        margin-bottom: $sub-unit*3;
+    }
+
+    .c-filter-stack:last-of-type {
+        margin-top: $unit;
+    }
+}

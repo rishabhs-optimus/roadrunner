@@ -1,0 +1,108 @@
+// PDP thumnail styling
+//
+
+.iwc-thumbs-panel {
+    border-bottom: 1px solid $neutral-40;
+
+    .carouselTile {
+        margin-right: $unit*3;
+
+        img {
+            display: block;
+
+            outline: 1px solid $neutral-40;
+        }
+    }
+
+    .carouselTile {
+        display: inline-block;
+        height: 75px;
+        margin-top: 0;
+
+        font-size: $font-size;
+        white-space: normal;
+        vertical-align: top;
+        &.selected {
+            img {
+                outline: 2px solid $brand-color;
+            }
+        }
+
+        input[type="text"] {
+            display: none;
+        }
+
+        img {
+            height: 100%;
+        }
+    }
+
+    .c-slideshow {
+        margin-left: 0 !important;
+        padding: $unit*3 $unit*3 $unit*6;
+    }
+}
+
+.c-swatch-selection-section {
+    .gwt-product-option-panel-swatchbox {
+        position: relative;
+    }
+
+    .gwt-product-options-panel-option-title {
+        display: inline-block;
+        width: 35%;
+        margin-top: $unit*3;
+    }
+
+    .gwt-product-option-panel-chosen-selection {
+        display: inline-block;
+        width: 65%;
+        margin-top: $unit*3;
+
+        text-align: right;
+        vertical-align: top;
+
+        > * {
+            display: inline;
+        }
+    }
+
+    .gwt-product-option-panel-custom-link {
+        position: absolute;
+        top: 0;
+        right: 4px;
+
+        text-align: right;
+
+        a {
+            display: inline-block;
+            margin-top: $unit*3;
+            margin-bottom: $unit*3;
+
+            color: $brand-color;
+        }
+    }
+}
+
+.c-lugguage-guidelines {
+    .gwt-product-option-panel-custom-link {
+        position: inherit;
+
+        text-align: center;
+        a {
+            display: block;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+    }
+}
+
+// Not required
+.iwc-arrow,
+.gwt-product-detail-widget-quantity-price-panel,
+.gwt-product-detail-widget-col3-pricequantityrow,
+.gwt-selection-picker-detailed-panel,
+.gwt-image-picker-detailed-panel,
+.csb-zoom-viewer {
+    display: none !important;
+}

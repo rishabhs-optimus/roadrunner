@@ -1,0 +1,89 @@
+{>"global/checkoutBase"/}
+
+{<contentBlock}
+    <div class="t-shipping-address-wrapper">
+        <div class="c-form-group">
+
+            {#form}
+                {?errorContainer}
+                    {errorContainer}
+                {/errorContainer}
+
+                <h3 class="c-heading c-billing-title js-billing-title">{billingTitle}</h3>
+                <p class="c-billing-text">{billingText}</p>
+
+                <div class="bellows c-bellows js-checkout-billing-address">
+                    <div class="bellows__item c-bellows__item js-bellows__billing-address">
+                        <div class="bellows__header c-bellows__header js-bellows-header">
+                            <span class="c-bellows__icon c-bellows__chevron">
+                                {>"svg-icon" name="minus"/}
+                            </span>
+                            Billing Address
+                        </div>
+
+                        {! Billing Section !}
+                        <div class="bellows__content">
+                            <div class="c-checkout-billing-address-panel">
+                                {billingContainer|openTag|s}
+                                {billingContainer|closeTag|s}
+                                {emailContainer}
+                                {confirmEmailContainer}
+                                {sendEmailsContainer}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bellows__item c-bellows__item js-bellows__shipping-address">
+                        <div class="bellows__header c-bellows__header js-bellows-header">
+                            <span class="c-bellows__icon c-bellows__chevron">
+                                {>"svg-icon" name="minus"/}
+                            </span>
+                            {shippingTitle}
+                        </div>
+
+                        {! Shipping Section !}
+                        <div class="bellows__content">
+                            {shippingAddressOptions}
+                            {shippingContainer|openTag|s}
+                            {shippingContainer|closeTag|s}
+                        </div>
+                    </div>
+                    {#registrationContainer}
+                        {?title}
+                            <div class="bellows__item c-bellows__item">
+                                {! Registration Section !}
+                                    <div class="bellows__header c-bellows__header js-bellows-header">
+                                        <span class="c-bellows__icon c-bellows__chevron">
+                                            {>"svg-icon" name="plus"/}
+                                        </span>
+                                        {title}
+                                    </div>
+                                    <div class="bellows__content">
+                                        <p>{copy}</p>
+                                        {container}
+                                    </div>
+                            </div>
+                        {/title}
+                        {ctaContainer}
+                    {/registrationContainer}
+                </div>
+            {/form}
+
+        </div>
+
+        {hiddenLabels}
+    </div>
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    // app/pages/shipping-address/ui.js
+    (function(require) {
+        require(["global/ui", "pages/shipping-address/shipping-address-ui"], function(globalUI, shippingAddressUI) {
+            globalUI();
+            shippingAddressUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

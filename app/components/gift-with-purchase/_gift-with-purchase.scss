@@ -1,0 +1,79 @@
+.js-gift-with-purchase-pinny {
+    .c-sheet__title {
+        color: $neutral-10;
+    }
+
+    .c-sheet__body {
+        padding: 0;
+    }
+
+    .js-gift-with-purchase-pinny__body {
+        padding: $space-xlarge;
+    }
+
+    .gwt-gwp-modal-descriptive-text {
+        font-size: $small-font-size;
+        padding-bottom: $space-large * 2;
+    }
+
+    .gwt-product-detail-widget-title {
+        padding-bottom: $space-xlarge;
+    }
+
+    .c-product-price {
+        color: $black;
+    }
+
+    .gwt-quickshop-image {
+        width: 100%;
+    }
+
+    .c-stepper {
+    display: flex !important;
+    }
+
+    .c-stepper__action-increase,
+    .c-stepper__action-decrease {
+        min-height: 40px;
+    }
+
+    .t-product-details__quantity {
+        padding-top: $unit * 5;
+    }
+
+    .c-swatch-selection-section {
+        padding: 0;
+    }
+
+    .gwt-submit-cancel-dialog-button-panel {
+        margin-bottom: $space-xlarge;
+        margin-top: $space-xlarge * 2;
+    }
+
+    .gwt-product-detail-widget-quantity-panel-container {
+        width: 40px;
+    }
+
+    .csb-quantity-listbox {
+        border-color: $neutral-40;
+        border-right: 0;
+        border-left: 0;
+    }
+
+    .c--disabled {
+        color: $neutral-30;
+        pointer-events: none;
+    }
+
+    .c-view-more-button {
+        border: 1px solid $neutral-40;
+        color: $brand-color;
+        a {
+            color: $brand-color;
+        }
+    }
+
+    .c-product-price .gwt-HTML {
+        text-decoration: line-through;
+    }
+}
