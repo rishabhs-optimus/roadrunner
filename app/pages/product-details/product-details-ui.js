@@ -11,7 +11,9 @@ define([
 
 ], function($, Utils, Magnifik, translator, Hijax, bellows, sheet, ScrollerTmpl) {
     //productTileParser
-
+    var displayTabs = function() {
+        $('#grp_1,#grp_2,#grp_3,#grp_4').show();
+    };
 
     var youMayAlsoLike = function() {
         var $container = $('.js-suggested-products');
@@ -48,6 +50,8 @@ define([
     };
 
     var productDetailsUI = function() {
+        displayTabs();
+        //reviewSection();
         youMayAlsoLike();
     };
 
