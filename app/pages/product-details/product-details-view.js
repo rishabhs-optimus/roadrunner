@@ -31,6 +31,9 @@ function($, Translator, BaseView, template, Breadcrumb) {
             },
             colorChoices: function() {
                 return $('#ref2QIColorCont');
+            },
+            productSize: function() {
+                return $('#selSizeTitle').text();
             }
             // magnifikImage: functi on(context) {
             //     var $container;
