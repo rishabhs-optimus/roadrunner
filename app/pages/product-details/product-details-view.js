@@ -7,6 +7,17 @@ define([
 ],
 function($, Translator, BaseView, template, Breadcrumb) {
 
+    var getFormFields = function($container) {
+        return $container.find('.prod_select_con').map(function(_, item) {
+            var $item = $(item);
+            return {
+                heading: $item.find('.prod_select_title').text(),
+                selected: $item.find('.prod_select_title2').text(),
+                choices: $item.find('.prodSelectRefCon')
+            };
+        });
+    };
+
     return {
         template: template,
         extend: BaseView,
@@ -26,14 +37,13 @@ function($, Translator, BaseView, template, Breadcrumb) {
             priceSection: function() {
                 return $('.prod_select_title3');
             },
-            colorHeading: function() {
-                return $('.prod_select_title').first().text();
-            },
-            colorChoices: function() {
-                return $('#ref2QIColorCont');
-            },
-            productSize: function() {
-                return $('#selSizeTitle').text();
+            addToCartForm: function() {
+                var $addToCartForm = $('#addToCartForm');
+                return {
+                    form: $addToCartForm,
+                    hiddenFields: $addToCartForm.find('[type="hidden"]'),
+                    swatches: getFormFields($addToCartForm)
+                };
             }
             // magnifikImage: functi on(context) {
             //     var $container;

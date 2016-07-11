@@ -13,17 +13,23 @@
         <div class="c-product-price-section">
             {priceSection}
         </div>
-        <div class="c-color">
-            <div class="c-color__heading">
-                {colorHeading}
-            </div>
-            <div class="c-color_choices">
-                {colorChoices}
-            </div>
-        </div>
-        <div class="c-product-size">
-            {productSize}
-        </div>
+
+        {#addToCartForm}
+            {form|openTag|s}
+            {hiddenFields}
+            {#swatches}
+                <div class="c-heading">
+                    {heading}
+                </div>
+                <div class="c-selected">
+                    {selected}
+                </div>
+                <div class="c-choices">
+                    {choices}
+                </div>
+            {/swatches}
+            {form|closeTag|s}
+        {/addToCartForm}
     </div>
 {/contentBlock}
 
