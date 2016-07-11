@@ -1,5 +1,7 @@
 {>"global/base"/}
 
+{>"global/base"/}
+
 {<contentBlock}
     <div class="t-product-details-page">
         <div class="c-product-title">
@@ -19,9 +21,9 @@
                 {colorChoices}
             </div>
         </div>
-
-        <div class="t-clp-sale__related-search u-margin-top-md">
-         </div>
+        <div class="c-product-size">
+            {productSize}
+        </div>
     </div>
 {/contentBlock}
 
