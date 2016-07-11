@@ -13,6 +13,7 @@
         <div class="c-product-price-section">
             {priceSection}
         </div>
+<<<<<<< HEAD
         <div class="c-color">
             <div class="c-color__heading">
                 {colorHeading}
@@ -24,6 +25,23 @@
         <div class="c-product-size">
             {productSize}
         </div>
+
+        {#addToCartForm}
+            {form|openTag|s}
+            {hiddenFields}
+            {#swatches}
+                <div class="c-heading">
+                    {heading}
+                </div>
+                <div class="c-selected">
+                    {selected}
+                </div>
+                <div class="c-choices">
+                    {choices}
+                </div>
+            {/swatches}
+            {form|closeTag|s}
+        {/addToCartForm}
         {#productTabs}
             {>"components/bellows/bellows":.bellows/}
         {/productTabs}
