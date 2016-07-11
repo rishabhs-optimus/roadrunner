@@ -47,9 +47,15 @@ function($, Translator, BaseView, template, Breadcrumb) {
             },
             productTabs: function() {
                 var _items = [];
-                _items.push({
-                    sectionTitle: $('#grp_1Tab'),
-                    content: $('#grp_1')
+                $('#product_desc_tabs').children().map(function(i, item) {
+                    var index = i + 1;
+                    var titleContainer = '#grp_' + index + 'Tab';
+                    var contentContainer = '#grp_' + index;
+                    var $content = $(contentContainer).removeAttr('style');
+                    _items.push({
+                        sectionTitle: $(titleContainer).removeAttr('style'),
+                        content: $('<div>').append($content.html())
+                    });
                 });
 
                 // _items.push({
