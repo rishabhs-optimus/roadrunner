@@ -46,7 +46,6 @@ function($, Translator, BaseView, template, Breadcrumb) {
                 };
             },
             productTabs: function() {
-                debugger;
                 var _items = [];
                 _items.push({
                     sectionTitle: $('#grp_1Tab'),

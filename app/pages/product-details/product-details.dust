@@ -13,18 +13,6 @@
         <div class="c-product-price-section">
             {priceSection}
         </div>
-<<<<<<< HEAD
-        <div class="c-color">
-            <div class="c-color__heading">
-                {colorHeading}
-            </div>
-            <div class="c-color_choices">
-                {colorChoices}
-            </div>
-        </div>
-        <div class="c-product-size">
-            {productSize}
-        </div>
 
         {#addToCartForm}
             {form|openTag|s}
