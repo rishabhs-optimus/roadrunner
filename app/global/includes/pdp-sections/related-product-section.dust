@@ -25,10 +25,3 @@
         </div>
     {/relatedProductsSection}
 {/isRelatedProductsSectionPresent}
-
-
-<div class="t-clp-sale__related-search u-margin-top-md">
-        {>"pages/product-details/partials/related_searches"
-        relatedSearchesHeadingClass="c-related-searches__heading"
-        relatedSearchesclass="c-related-searches-products" /}
- </div>

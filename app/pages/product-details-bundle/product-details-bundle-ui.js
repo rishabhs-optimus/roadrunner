@@ -1,38 +1,38 @@
 define([
     '$',
     'global/utils',
-    'global/includes/pdp-sections/ui/pdp-utils',
-    'magnifik',
-    'translator',
-    'hijax',
-    'bellows',
-    'components/sheet/sheet-ui',
-    'pages/product-details/ui/tell-a-friend-ui',
-    'pages/product-details/ui/size-chart-ui',
-    'pages/product-details/ui/personalization-ui',
-    'pages/product-details/ui/international-shipping-msg-ui',
-    'components/hide-reveal/hide-reveal-ui',
-    'global/ui/suggested-products',
-    'components/notification/notification-ui',
-    'pages/product-details/ui/handle-modals-ui',
-    'pages/product-details/ui/pdp-helpers-ui',
-    'pages/product-details/ui/pdp-animation-handler-ui',
-    'pages/product-details/ui/pdp-build-helpers-ui',
-    'pages/product-details/ui/pdp-bind-events-helpers-ui',
-    'pages/product-details-bundle/parsers/product-widget-parser',
-    'dust!components/bellows/bellows',
-    'dust!components/stepper/stepper',
-    'pages/product-details/parsers/product-reviews-parser',
-    'global/parsers/global-star-rating-parser',
-    'components/pagination/parsers/reviews-pagination',
-    'dust!components/pagination/partial/review-pagination',
-    'dust!components/bellows/bellows',
-    'dust!components/review/review',
-    'dust!components/review/partials/review-signature',
-    'global/parsers/bazaarvoice-signature-parser',
-    'dust!components/star-rating/star-rating',
-    'pages/product-details/ui/product-image-ui',
-    'pages/product-details/ui/bazaar-voice-handler-ui'
+    // 'global/includes/pdp-sections/ui/pdp-utils',
+    // 'magnifik',
+    // 'translator',
+    // 'hijax',
+    // 'bellows',
+    // 'components/sheet/sheet-ui',
+    // 'pages/product-details/ui/tell-a-friend-ui',
+    // 'pages/product-details/ui/size-chart-ui',
+    // 'pages/product-details/ui/personalization-ui',
+    // 'pages/product-details/ui/international-shipping-msg-ui',
+    // 'components/hide-reveal/hide-reveal-ui',
+    // 'global/ui/suggested-products',
+    // 'components/notification/notification-ui',
+    // 'pages/product-details/ui/handle-modals-ui',
+    // 'pages/product-details/ui/pdp-helpers-ui',
+    // 'pages/product-details/ui/pdp-animation-handler-ui',
+    // 'pages/product-details/ui/pdp-build-helpers-ui',
+    // 'pages/product-details/ui/pdp-bind-events-helpers-ui',
+    // 'pages/product-details-bundle/parsers/product-widget-parser',
+    // 'dust!components/bellows/bellows',
+    // 'dust!components/stepper/stepper',
+    // 'pages/product-details/parsers/product-reviews-parser',
+    // 'global/parsers/global-star-rating-parser',
+    // 'components/pagination/parsers/reviews-pagination',
+    // 'dust!components/pagination/partial/review-pagination',
+    // 'dust!components/bellows/bellows',
+    // 'dust!components/review/review',
+    // 'dust!components/review/partials/review-signature',
+    // 'global/parsers/bazaarvoice-signature-parser',
+    // 'dust!components/star-rating/star-rating',
+    // 'pages/product-details/ui/product-image-ui',
+    // 'pages/product-details/ui/bazaar-voice-handler-ui'
 ], function($, Utils, pdpUtils, Magnifik, translator, Hijax, bellows, sheet,
     // UI
     TellAFriendUI, sizeChartUI, PersonalizationUI, HideRevealUI, InternationalShippingMsgUI, SuggestedProductsUI,
@@ -644,35 +644,35 @@ define([
     };
 
     var productDetailsUI = function() {
-
-        bindThumbnails();
-        productImageUI.init();
-        changeRadioEvent();
-        pdpUtils.transformImageThumbnail();
-        pollForProductImage();
-        initHijax();
-        initBellows();
-
-        HideRevealUI.init();
-
-        var reviewSheet = sheet.init($('.js-product-review-pinny'));
-        var questionSheet = sheet.init($('.js-product-question-pinny'));
-        AnimationHandlerUI.bindAnimationListener();
-        HandleModalsUI.initSheets();
-        SuggestedProductsUI.init();
-        PersonalizationUI.init();
-        InternationalShippingMsgUI.init();
-        NotificationUI.init(true);
-        // TRAV-413: Leverage BindEventsHelperUI to populate second price
-        BindEventsHelperUI.bindProductImageOptionClick();
-        BindEventsHelperUI.bindCustomEvents();
-        bindAddToCart();
-        // paginationUI.init();
-
-
-        // Desktop Override
-        overrideShowErrors();
-        BazaarVoiceHandlerUI.init(reviewSheet, questionSheet);
+        //
+        // bindThumbnails();
+        // productImageUI.init();
+        // changeRadioEvent();
+        // pdpUtils.transformImageThumbnail();
+        // pollForProductImage();
+        // initHijax();
+        // initBellows();
+        //
+        // HideRevealUI.init();
+        //
+        // var reviewSheet = sheet.init($('.js-product-review-pinny'));
+        // var questionSheet = sheet.init($('.js-product-question-pinny'));
+        // AnimationHandlerUI.bindAnimationListener();
+        // HandleModalsUI.initSheets();
+        // SuggestedProductsUI.init();
+        // PersonalizationUI.init();
+        // InternationalShippingMsgUI.init();
+        // NotificationUI.init(true);
+        // // TRAV-413: Leverage BindEventsHelperUI to populate second price
+        // BindEventsHelperUI.bindProductImageOptionClick();
+        // BindEventsHelperUI.bindCustomEvents();
+        // bindAddToCart();
+        // // paginationUI.init();
+        //
+        //
+        // // Desktop Override
+        // overrideShowErrors();
+        // BazaarVoiceHandlerUI.init(reviewSheet, questionSheet);
     };
 
     return productDetailsUI;
