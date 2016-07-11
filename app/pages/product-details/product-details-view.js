@@ -34,7 +34,30 @@ function($, Translator, BaseView, template, Breadcrumb) {
             },
             productSize: function() {
                 return $('#selSizeTitle').text();
-            }
+            },
+            productTabs: function() {
+                debugger;
+                var _items = [];
+                _items.push({
+                sectionTitle: $('#grp_1Tab'),
+                content: $('#grp_1')
+                });
+
+                // _items.push({
+                // sectionTitle: $('<div class="c-review-head js-review-head">Product Reviews</div>'),
+                // bellowsItemClass: 'js-reviews-bellows c-reviews-bellows'
+                // });
+
+                var _bellows = {
+                class: 'js-product-bellows',
+                items: _items
+                };
+
+                return {
+                bellows: _bellows
+                };
+
+            },
             // magnifikImage: functi on(context) {
             //     var $container;
             //     new LoadingTemplate(true, function(err, html) {

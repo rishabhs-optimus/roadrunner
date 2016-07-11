@@ -24,6 +24,11 @@
         <div class="c-product-size">
             {productSize}
         </div>
+        {#productTabs}
+            {>"components/bellows/bellows":.bellows/}
+        {/productTabs}
+        <div class="t-product-details__suggested-products c-you-may-also-like js-suggested-products">
+        </div>
     </div>
 {/contentBlock}
 
