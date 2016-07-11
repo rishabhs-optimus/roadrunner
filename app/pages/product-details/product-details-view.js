@@ -49,8 +49,8 @@ function($, Translator, BaseView, template, Breadcrumb) {
                 debugger;
                 var _items = [];
                 _items.push({
-                sectionTitle: $('#grp_1Tab'),
-                content: $('#grp_1')
+                    sectionTitle: $('#grp_1Tab'),
+                    content: $('#grp_1')
                 });
 
                 // _items.push({
@@ -59,12 +59,12 @@ function($, Translator, BaseView, template, Breadcrumb) {
                 // });
 
                 var _bellows = {
-                class: 'js-product-bellows',
-                items: _items
+                    class: 'js-product-bellows',
+                    items: _items
                 };
 
                 return {
-                bellows: _bellows
+                    bellows: _bellows
                 };
 
             },

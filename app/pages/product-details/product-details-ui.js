@@ -13,7 +13,7 @@ define([
     //productTileParser
 
 
-    var youMayAlsoLike = function() {;
+    var youMayAlsoLike = function() {
         var $container = $('.js-suggested-products');
         var $heading = $('<h2 class="c-title c--small u-margin-bottom-md">').text('You Might Also Like');
         var productTileData = [];
