@@ -49,7 +49,7 @@ function($, Translator, BaseView, template, Breadcrumb) {
                 var _items = [];
                 _items.push({
                     sectionTitle: $('#grp_3Tab').text(),
-                    content: $('#grp_3')
+                    content: $('#grp_3').addClass('c-video-tab')
                 });
                 _items.push({
                     sectionTitle: $('#grp_1Tab').text(),

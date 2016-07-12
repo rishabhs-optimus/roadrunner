@@ -3,4 +3,7 @@
 
 .t-product-details-page {
     padding: $space-xlarge 0;
+    .c-video-tab center {
+        overflow: hidden;
+    }
 }
