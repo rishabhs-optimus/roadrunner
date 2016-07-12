@@ -29,19 +29,12 @@ define([
                 youMayAlsoLike();
             } else {
                 var $items = $('.pdetailsSuggestionsCon');
-
-                // ROAD-244: Change titles (<strong>) to <h6>
                 var $titles = $items.find('strong').each(function() {
                     var $this = $(this);
-                    var $html = $this.html().replace('&nbsp;', ' ');
-                    $this.replaceWith('<div class="ellipsis-container clamped clamped-2">' +
-                                    '<h6><span class="ellipsis">' + $html +
-                                    '</span></h6>' +
-                               '</div>');
                 });
                 var scrollerData = {
                     // slideshow: {
-                    //     productTiles: parsedProducts
+                    //     slides: parsedProducts
                     // }
                 };
 
