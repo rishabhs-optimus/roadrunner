@@ -60,7 +60,8 @@ function($, Translator, BaseView, template, Breadcrumb) {
                 });
                 _items.push({
                     sectionTitle: $('#grp_2Tab').text(),
-                    content: $('#grp_2')
+                    content: $('#grp_2'),
+                    bellowsItemClass: 'c-reviews-bellow'
                 });
                 _items.push({
                     sectionTitle: $('#grp_4Tab').text(),
