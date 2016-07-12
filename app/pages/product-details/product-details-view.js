@@ -59,20 +59,20 @@ function($, Translator, BaseView, template, Breadcrumb) {
                 // });
 
                 _items.push({
-                sectionTitle: $('#grp_3Tab'),
-                content: $('#grp_3')
+                    sectionTitle: $('#grp_3Tab'),
+                    content: $('#grp_3')
                 });
                 _items.push({
-                sectionTitle: $('#grp_1Tab'),
-                content: $('#grp_1')
+                    sectionTitle: $('#grp_1Tab'),
+                    content: $('#grp_1')
                 });
                 _items.push({
-                sectionTitle: $('#grp_2Tab'),
-                content: $('#grp_2')
+                    sectionTitle: $('#grp_2Tab'),
+                    content: $('#grp_2')
                 });
                 _items.push({
-                sectionTitle: $('#grp_4Tab'),
-                content: $('#grp_4')
+                    sectionTitle: $('#grp_4Tab'),
+                    content: $('#grp_4')
                 });
 
 
