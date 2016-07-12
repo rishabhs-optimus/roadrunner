@@ -46,7 +46,7 @@ function($, Translator, BaseView, template, Breadcrumb) {
                 };
             },
             hiddenContainer: function() {
-                return $('.prodLeftCon');
+                return $('.prodLeftCon, .prodRightCon2');
             },
             productTabs: function() {
                 var _items = [];
