@@ -15,15 +15,9 @@ define([
     var displayTabs = function() {
         $('#grp_1,#grp_2,#grp_3,#grp_4').show();
     };
-    var reviewSection = function reviewSection() {
-        // Pdp Reviews section
-        pdpReviews.addNoRatingsSection();
+    var reviewSection = function() {
         pdpReviews.setHeadings();
-        pdpReviews.updatePaginationButtons();
-        pdpReviews.createPaginationDropDown();
-        pdpReviews.createRangeInReview();
-        pdpReviews.reviewPaginationDropDownChangeFunc();
-        pdpReviews.sortByDropDown();
+
     };
 
     var youMayAlsoLike = function() {
