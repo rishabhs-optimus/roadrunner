@@ -7,12 +7,23 @@ define([
     'bellows',
     'components/sheet/sheet-ui',
     'dust!components/scroller/scroller',
+    'pages/product-details/ui/pdp-reviews'
     // 'global/parsers/product-tile-parser'
 
-], function($, Utils, Magnifik, translator, Hijax, bellows, sheet, ScrollerTmpl) {
+], function($, Utils, Magnifik, translator, Hijax, bellows, sheet, ScrollerTmpl, pdpReviews) {
     //productTileParser
     var displayTabs = function() {
         $('#grp_1,#grp_2,#grp_3,#grp_4').show();
+    };
+    var reviewSection = function reviewSection() {
+        // Pdp Reviews section
+        pdpReviews.addNoRatingsSection();
+        pdpReviews.setHeadings();
+        pdpReviews.updatePaginationButtons();
+        pdpReviews.createPaginationDropDown();
+        pdpReviews.createRangeInReview();
+        pdpReviews.reviewPaginationDropDownChangeFunc();
+        pdpReviews.sortByDropDown();
     };
 
     var youMayAlsoLike = function() {
@@ -51,6 +62,7 @@ define([
 
     var productDetailsUI = function() {
         displayTabs();
+        reviewSection();
         //reviewSection();
         youMayAlsoLike();
     };
