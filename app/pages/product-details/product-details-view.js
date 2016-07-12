@@ -45,6 +45,9 @@ function($, Translator, BaseView, template, Breadcrumb) {
                     swatches: getFormFields($addToCartForm)
                 };
             },
+            hiddenContainer: function() {
+                return $('.prodLeftCon');
+            },
             productTabs: function() {
                 var _items = [];
                 _items.push({

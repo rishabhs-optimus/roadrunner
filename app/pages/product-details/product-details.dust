@@ -33,7 +33,8 @@
         {/productTabs}
         <div class="t-product-details__suggested-products c-you-may-also-like js-suggested-products">
         </div>
-        <div class="prod_container" hidden>
+        <div hidden>
+            {hiddenContainer}
         </div>
     </div>
 {/contentBlock}
