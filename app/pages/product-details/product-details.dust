@@ -19,10 +19,11 @@
                 <div class="c-select-wrapper">
                     <div class="c-heading">
                         {heading}
+                        <span class="c-selected">
+                            {selected}
+                        </span>
                     </div>
-                    <div class="c-selected">
-                        {selected}
-                    </div>
+
                     <div class="c-choices">
                         {choices}
                     </div>

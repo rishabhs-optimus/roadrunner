@@ -47,6 +47,7 @@
     }
 
     #ref2QISizeCont {
+        margin-top: -12px;
         .ref2QISwatch {
             float: left;
 
@@ -65,9 +66,19 @@
                 width: 100%;
                 height: 100%;
                 border: 1px solid #ccc;
-
-                color: #333;
             }
+        }
+    }
+
+    .mSizeChart {
+        float: none !important;
+
+        margin: 10px 0 0 0 !important;
+        a {
+            color: #ff8413;
+            font-family: verdana;
+            font-weight: bold;
+            font-size: 11px;
         }
     }
 
