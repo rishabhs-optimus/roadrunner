@@ -85,6 +85,12 @@ function($, Translator, BaseView, template, Breadcrumb) {
             },
             youMayLikeSection: function() {
                 return $('#pdetails_suggestions');
+            },
+            overallRating: function() {
+                var $rating = $('.pr-snippet');
+                $rating.find('.pr-snippet-link').text('Read reviews');
+                $rating.find('.pr-snippet-write-review').addClass('u-visually-hidden');
+                return $rating;
             }
             // magnifikImage: functi on(context) {
             //     var $container;

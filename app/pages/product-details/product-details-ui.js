@@ -19,6 +19,7 @@ define([
         pdpReviews.addNoRatingsSection();
         pdpReviews.setHeadings();
         pdpReviews.updatePaginationButtons();
+        pdpReviews.createRangeInReview();
 
     };
     var bindEvents = function() {
