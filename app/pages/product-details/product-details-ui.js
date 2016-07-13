@@ -50,7 +50,6 @@ define([
     var productDetailsUI = function() {
         displayTabs();
         reviewSection();
-        //reviewSection();
         youMayAlsoLike();
     };
 

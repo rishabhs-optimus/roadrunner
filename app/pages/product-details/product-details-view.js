@@ -79,6 +79,9 @@ function($, Translator, BaseView, template, Breadcrumb) {
                 };
 
             },
+            youMayLikeSection: function() {
+                return $('#pdetails_suggestions');
+            }
             // magnifikImage: functi on(context) {
             //     var $container;
             //     new LoadingTemplate(true, function(err, html) {
