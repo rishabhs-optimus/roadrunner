@@ -85,6 +85,9 @@ function($, Translator, BaseView, template, Breadcrumb) {
             },
             youMayLikeSection: function() {
                 return $('#pdetails_suggestions');
+            },
+            addToCartButton: function() {
+                return $('.addToCartCon');
             }
             // magnifikImage: functi on(context) {
             //     var $container;

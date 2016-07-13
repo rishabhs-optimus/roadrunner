@@ -42,6 +42,9 @@
         <div class="c-you-may-like">
             {youMayLikeSection}
         </div>
+        <div class="">
+            {addToCartButton}
+        </div>
     </div>
 {/contentBlock}
 
