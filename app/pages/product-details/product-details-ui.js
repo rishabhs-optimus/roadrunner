@@ -17,6 +17,7 @@ define([
     };
     var reviewSection = function() {
         pdpReviews.setHeadings();
+        pdpReviews.updatePaginationButtons();
 
     };
 
