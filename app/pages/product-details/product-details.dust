@@ -16,14 +16,16 @@
             {form|openTag|s}
             {hiddenFields}
             {#swatches}
-                <div class="c-heading">
-                    {heading}
-                </div>
-                <div class="c-selected">
-                    {selected}
-                </div>
-                <div class="c-choices">
-                    {choices}
+                <div class="c-select-wrapper">
+                    <div class="c-heading">
+                        {heading}
+                    </div>
+                    <div class="c-selected">
+                        {selected}
+                    </div>
+                    <div class="c-choices">
+                        {choices}
+                    </div>
                 </div>
             {/swatches}
             {form|closeTag|s}
@@ -35,6 +37,9 @@
         </div>
         <div hidden>
             {hiddenContainer}
+        </div>
+        <div class="c-you-may-like">
+            {youMayLikeSection}
         </div>
     </div>
 {/contentBlock}

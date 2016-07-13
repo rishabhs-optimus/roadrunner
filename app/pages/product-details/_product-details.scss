@@ -2,9 +2,32 @@
 // ===
 
 .t-product-details-page {
-    padding: $space-xlarge 0;
+    padding: $space-xlarge;
+
+    background-color: #dadada;
     .c-video-tab center {
         overflow: hidden;
+    }
+    .c-select-wrapper {
+        background: #fff;
+    }
+    .ref2QIOnSale,
+    .ref2QISwatch,
+    .ref2QISwatch {
+        display: inline-block;
+        margin-right: 6px;
+        margin-bottom: 8px;
+    }
+
+    .c-you-may-like {
+        background: #fff;
+    }
+    .c-heading {
+        background: #eee;
+
+        color: #464749;
+        font-weight: bold;
+        font-size: 15px;
     }
     .c-reviews-bellow {
         .pr-snapshot-head,
@@ -299,52 +322,6 @@
             .pr-review-footer {
                 display: none;
             }
-        }
-        .pr-pagination-bottom {
-            text-align: inherit;
-        }
-        .pr-page-count-wrapper,
-        span.pr-divider {
-            display: none!important;
-        }
-        .pr-page-nav-wrapper,
-        .pr-page-nav {
-            display: inline-block;
-            width: 100%;
-        }
-        .c-prev-disabled,
-        .c-next-disabled {
-            opacity: .2;
-        }
-
-        span.pr-page-prev,
-        span.pr-page-next {
-            width: 49.3%;
-            height: 40px;
-            margin-top: 0!important;
-            margin-bottom: 0!important;
-            border: 1px solid #bbb;
-
-            border-radius: 2.5px;
-            background: linear-gradient(to bottom, #f7f7f7, #eee);
-
-            color: #464749!important;
-            font-weight: bold;
-            font-size: 16px!important;
-            line-height: 40px;
-            text-align: center;
-
-            a {
-                display: inline-block;
-                width: 100%;
-                padding: 0;
-
-                color: #464749;
-                text-shadow: 0 1px 0 #fff;
-            }
-        }
-        span.pr-page-next {
-            float: right;
         }
     }
 }
