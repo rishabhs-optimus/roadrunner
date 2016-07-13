@@ -8,12 +8,15 @@ define([
 function($, Translator, BaseView, template, Breadcrumb) {
 
     var getFormFields = function($container) {
+        var $sizeChart = $container.find('.mSizeChart');
+        $sizeChart.addClass('ref2QISwatch');
+        $sizeChart.find('a').text('Size Chart');
         return $container.find('.prod_select_con').map(function(_, item) {
             var $item = $(item);
             return {
-                heading: $item.find('.prod_select_title').text(),
-                selected: $item.find('.prod_select_title2').text(),
-                choices: $item.find('.prodSelectRefCon')
+                heading: $item.find('.prod_select_title'),
+                selected: $item.find('.prod_select_title2'),
+                choices: $item.find('.prodSelectRefCon:not(.prodSelectRefCon2)')
             };
         });
     };
