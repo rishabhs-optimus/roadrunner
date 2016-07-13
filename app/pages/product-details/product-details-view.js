@@ -11,6 +11,7 @@ function($, Translator, BaseView, template, Breadcrumb) {
         var $sizeChart = $container.find('.mSizeChart');
         $sizeChart.addClass('ref2QISwatch');
         $sizeChart.find('a').text('Size Chart');
+        $('.fit_tip').addClass('c-fit-tip');
         return $container.find('.prod_select_con').map(function(_, item) {
             var $item = $(item);
             return {
