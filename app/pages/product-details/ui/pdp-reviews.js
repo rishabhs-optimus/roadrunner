@@ -43,10 +43,46 @@ function($) {
             }
         }, 500);
     };
+    var createRangeInReview = function() {
+        var $container = $('<div class="c-review-ranges"></div>');
+
+        var $rangeContainer = $('.pr-other-attributes-histogram .pr-other-attributes-list:first-child');
+        $rangeContainer.find('.pr-other-attributes-group').each(function() {
+            // clone template
+            var $itemClone = $('.c-review-range').find('.c-range-item').clone();
+
+            // title
+            $itemClone.find('.c-review-heading').append($(this).find('.pr-other-attribute-label').text());
+
+            // max range
+            $(this).find('.pr-other-attribute-value-histogram-element-max td').each(function() {
+                var $maxClone = $(this).clone();
+                $itemClone.find('.c-max-range').append($maxClone.children());
+            });
+
+            // all ranges
+            $(this).find('.pr-other-attribute-value-histogram-element td').each(function() {
+                if ($(this).hasClass('pr-other-attribute-value-histogram-label') && $(this).parent().hasClass('pr-other-attribute-value-histogram-element-max')) {
+                    $(this).find('p').addClass('c-main-review-heading');
+                }
+                $itemClone.find('.c-all-range').append($(this).children());
+            });
+
+            $container.append($itemClone);
+        });
+
+        $container.insertAfter($('.pr-snapshot-rating-wrapper'));
+
+        $('.c-range-see-all, .c-range-see-less').on('click', function() {
+            var $parent = $(this).parent();
+            $parent.find('.c-all-range, .c-max-range, .c-range-see-all, .c-range-see-less').toggle();
+        });
+    };
 
     return {
         setHeadings: setHeadings,
         updatePaginationButtons: updatePaginationButtons,
-        addNoRatingsSection: addNoRatingsSection
+        addNoRatingsSection: addNoRatingsSection,
+        createRangeInReview: createRangeInReview
     };
 });

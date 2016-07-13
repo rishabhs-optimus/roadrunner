@@ -452,5 +452,253 @@
         .pr-page-nav span {
             display: inline-block;
         }
+        .c-review-ranges {
+            // li.pr-other-attribute-label {
+            //     list-style: none;
+            //     font-weight: bold;
+            //     color: $black-10;
+            //     font-family: $verdana;
+            //     float: left;
+            //     margin-right: 5px;
+            //     margin-top: 21px;
+            //
+            //     + p {
+            //         margin-top: 21px;
+            //     }
+            // }
+            .pr-snippet-review-count {
+                + p + p {
+                    display: block;
+                    margin-top: 5px;
+                }
+            }
+
+            .c-review-heading {
+                float: left;
+
+                margin-top: 21px;
+                margin-right: 5px;
+
+                color: $black;
+                font-weight: bold;
+                list-style: none;
+            }
+            .c-range-item:first-child {
+                .c--hide {
+                    p:first-child {
+                        margin-top: 23px;
+                    }
+                    .pr-snippet-review-count {
+                        font-size: 14px;
+                    }
+                    p:nth-of-type(3) {
+                        font-size: 12px;
+                    }
+                    p {
+                        font-size: 12px;
+                    }
+                }
+            }
+            .c-range-item:last-child {
+                .c--hide {
+                    p:first-child {
+                        margin-top: 23px;
+                    }
+                    .pr-snippet-review-count {
+                        font-size: $font-size;
+                    }
+                    p {
+                        font-size: 12px;
+                    }
+                    p:nth-of-type(6) {
+                        font-size: 12px;
+                        //float: none;
+                    }
+                }
+            }
+            .c-range-item {
+                p:first-child {
+                    margin-top: 21px;
+                }
+            }
+            .c-main-review-heading {
+                font-size: $font-size !important;
+            }
+
+            .pr-other-attribute-value-histogram-wrapper {
+                display: inline-block;
+                width: 100%;
+                height: 10px;
+                margin-top: 6px;
+                margin-bottom: 3px;
+
+                + p {
+                    //font-size: 89%;
+                }
+            }
+
+            .pr-other-attribute-value-histogram-barValue {
+                height: 100%;
+
+                background-color: #5dad30;
+            }
+            p {
+                display: inline-block;
+                //sfloat: left;
+
+                line-height: normal;
+            }
+            .pr-other-attribute-value-histogram-stats-pct {
+                float: left;
+
+                margin: 0;
+
+                color: #333;
+                font-weight: bold;
+            }
+            .c-range-see-all {
+                float: right;
+                clear: both;
+
+                display: inline-block;
+                margin-top: -18px;
+
+                color: $black;
+                &:after {
+                    content: '';
+
+                    display: inline-block;
+                    width: 10px;
+                    height: 8px;
+                    margin-left: 5px;
+
+                    background-repeat: no-repeat;
+                    background-position: 0 center;
+                    background-size: 11px 7px;
+
+                    transform: rotate(180deg);
+                }
+            }
+            .c-range-see-all {
+                &:after {
+                    background-image: url("../images/UpArrowSeeMore.png");
+                }
+            }
+            .c-range-see-less {
+                float: right;
+                clear: both;
+
+                color: $black;
+                &:after {
+                    content: '';
+
+                    display: inline-block;
+                    width: 10px;
+                    height: 8px;
+                    margin-left: 5px;
+
+                    background-image: url("../images/UpArrowSeeMore.png");
+                    background-repeat: no-repeat;
+                    background-position: 0 center;
+                    background-size: 10px 7px;
+                }
+            }
+        }
+    }
+    .c-overallRating {
+        float: right;
+
+        margin-top: 4px;
+
+        .pr-snippet-link {
+            color: #0a64a3;
+            font-size: 11px;
+        }
+
+        .pr-snippet-wrapper {
+            padding: 0;
+            border: 0;
+
+            background: none;
+
+            text-align: center;
+        }
+
+        .pr-snippet-stars {
+            float: none;
+
+            display: inline-block;
+            margin: 0;
+            padding: 2px 0 2px 4px;
+            border: 0;
+
+            background-color: #f2f2f2;
+        }
+
+        .pr-snippet-read-write {
+            margin: 0;
+            padding: 0;
+            border: 0;
+
+            background: none;
+
+            font-size: inherit;
+        }
+
+        .pr-snippet-read-reviews {
+            float: none;
+
+            margin-top: -4px;
+            padding: 0;
+            border: 0;
+
+            .pr-snippet-link {
+                display: inline-block;
+                border-bottom: 1px solid #0a64a3;
+            }
+        }
+        .pr-stars {
+            float: none;
+
+            display: inline-block;
+            width: 136px;
+            height: 25px;
+
+            background-position: 0 !important;
+            background-size: 136px 25px;
+        }
+        .pr-stars-0-sm {
+            background-image: url('../img/0.0_star.gif');
+        }
+        .pr-stars-0_5-sm {
+            background-image: url('../img/0.5_star.gif');
+        }
+        .pr-stars-1-sm {
+            background-image: url('../img/1.0_star.gif');
+        }
+        .pr-stars-1_5-sm {
+            background-image: url('../img/1.5_star.gif');
+        }
+        .pr-stars-2-sm {
+            background-image: url('../img/2.0_star.gif');
+        }
+        .pr-stars-2_5-sm {
+            background-image: url('../img/2.5_star.gif');
+        }
+        .pr-stars-3-sm {
+            background-image: url('../img/3.0_star.gif');
+        }
+        .pr-stars-3_5-sm {
+            background-image: url('../img/3.5_star.gif');
+        }
+        .pr-stars-4-sm {
+            background-image: url('../img/4.0_star.gif');
+        }
+        .pr-stars-4_5-sm {
+            background-image: url('../img/4.5_star.gif');
+        }
+        .pr-stars-5-sm {
+            background-image: url('../img/5.0_star.gif');
+        }
     }
 }

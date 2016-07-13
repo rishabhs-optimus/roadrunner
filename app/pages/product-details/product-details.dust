@@ -8,6 +8,9 @@
         <div class="c-product-item-id">
             {productItemId}
         </div>
+        <div class="c-overallRating">
+            {overallRating}
+        </div>
         <div class="c-product-price-section">
             {priceSection}
         </div>
