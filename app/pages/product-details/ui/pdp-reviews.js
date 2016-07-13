@@ -34,9 +34,19 @@ function($) {
             $previous.find('a').text('Back');
         }
     };
+    var addNoRatingsSection = function() {
+        setTimeout(function() {
+            if ($('.pr-snapshot-no-ratings') === null) {
+                addNoRatingsSection();
+            } else {
+                $('#reviewsTabCon').append($('.pr-snapshot-no-ratings'));
+            }
+        }, 500);
+    };
 
     return {
         setHeadings: setHeadings,
-        updatePaginationButtons: updatePaginationButtons
+        updatePaginationButtons: updatePaginationButtons,
+        addNoRatingsSection: addNoRatingsSection
     };
 });

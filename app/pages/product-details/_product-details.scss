@@ -361,7 +361,6 @@
             background: linear-gradient(to bottom, #f7f7f7, #eee);
 
             color: #464749!important;
-            font-family: $helvetica!important;
             font-weight: bold;
             font-size: 16px!important;
             line-height: 40px;
@@ -370,16 +369,17 @@
             a {
                 display: inline-block;
                 width: 100%;
+                padding: 0;
 
                 color: #464749;
                 text-shadow: 0 1px 0 #fff;
             }
         }
-        span.pr-page-prev {
-            //margin-right: 4px;
-        }
         span.pr-page-next {
             float: right;
+        }
+        .pr-page-nav span {
+            display: inline-block;
         }
     }
 }
