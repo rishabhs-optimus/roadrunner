@@ -47,6 +47,7 @@ define([
 
     var youMayAlsoLike = function() {
         var $container = $('.js-suggested-products');
+        var $parsedProducts = [];
         var $heading = $('<h2 class="c-title c--small u-margin-bottom-md">').text('You Might Also Like');
         var productTileData = [];
         setTimeout(function() {
@@ -57,10 +58,17 @@ define([
                 var $titles = $items.find('strong').each(function() {
                     var $this = $(this);
                 });
+                $items.map(function(_, item) {
+                    var $item = $(item);
+                    var $content = {
+                        slideContent :$item
+                    };
+                    $parsedProducts.push($content);
+                });
                 var scrollerData = {
-                    // slideshow: {
-                    //     slides: parsedProducts
-                    // }
+                    slideshow: {
+                        slides: $parsedProducts
+                    }
                 };
 
                 new ScrollerTmpl(scrollerData, function(err, html) {
@@ -70,6 +78,7 @@ define([
                 $container.prepend($heading);
             }
         }, 500);
+        $('#pdetails_suggestions').addClass('u-visually-hidden');
     };
 
     var productDetailsUI = function() {
