@@ -16,6 +16,7 @@ define([
         $('#grp_1,#grp_2,#grp_3,#grp_4').show();
     };
     var reviewSection = function() {
+        pdpReviews.addNoRatingsSection();
         pdpReviews.setHeadings();
         pdpReviews.updatePaginationButtons();
 
