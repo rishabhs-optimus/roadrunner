@@ -32,6 +32,23 @@
         background: $white;
     }
 
+
+    .ref2QIColor {
+        float: left;
+
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        padding: 2px;
+        border: 1px solid #aaa;
+
+        background-color: #f5f5f5;
+        img {
+            width: 33px;
+            height: 29px;
+        }
+    }
+
     .c-you-may-like {
         background: $white;
     }
@@ -106,6 +123,10 @@
             font-weight: bold;
             font-size: 11px;
         }
+    }
+
+    #ref2QIColorCont {
+        padding-bottom: 12px;
     }
 
     .c-reviews-bellow {
