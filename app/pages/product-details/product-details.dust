@@ -32,6 +32,9 @@
                     </div>
                 </div>
             {/swatches}
+            <div class="">
+                {addToCartButton}
+            </div>
             {form|closeTag|s}
         {/addToCartForm}
         {#productTabs}
@@ -45,9 +48,7 @@
         <div class="c-you-may-like">
             {youMayLikeSection}
         </div>
-        <div class="">
-            {addToCartButton}
-        </div>
+
     </div>
 {/contentBlock}
 
