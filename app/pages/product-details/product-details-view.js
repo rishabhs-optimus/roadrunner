@@ -21,6 +21,26 @@ function($, Translator, BaseView, template, Breadcrumb) {
             };
         });
     };
+    var _addedToCartPinny = function _addedToCartPinny(container) {
+        var $container = container;
+        var $title = $container.find('.addToCartTitle').clone();
+        $container.find('.addToCartVIPMsg').append($title);
+        var $vipFamily = $container.find('.nonvip').find('> strong').find('font');
+        $vipFamily.clone().insertAfter($container.find('.nonvip').find('span').find('strong').find('font:nth-child(2)'));
+        $vipFamily.remove();
+        var $continueLink = $container.find('[id=continueShoppingLink]');
+        $continueLink.clone().insertAfter($container.find('[id=continueShopping]'));
+        $continueLink.remove();
+        var $anchor = $container.find('.addToCartVIPMsgCont  strong  a');
+        if ($anchor.html() !== null) {
+            var anchorText = $anchor.text();
+            anchorText = anchorText.trim();
+            anchorText = anchorText.substr(0, anchorText.length - 2);
+            anchorText = anchorText.replace('add', 'Add');
+            $container.find('.addToCartVIPMsgCont  strong  a').text(anchorText);
+        }
+        return $container;
+    };
 
     return {
         template: template,
@@ -43,10 +63,17 @@ function($, Translator, BaseView, template, Breadcrumb) {
             },
             addToCartForm: function() {
                 var $addToCartForm = $('#addToCartForm');
+                var addToCartPinny = function() {
+                    var $container = $('#addToCartInfo');
+                    _addedToCartPinny($container);
+                    return $container;
+                };
                 return {
                     form: $addToCartForm,
                     hiddenFields: $addToCartForm.find('[type="hidden"]'),
-                    swatches: getFormFields($addToCartForm)
+                    swatches: getFormFields($addToCartForm),
+                    addToCartInfo: addToCartPinny()
+
                 };
             },
             hiddenContainer: function() {

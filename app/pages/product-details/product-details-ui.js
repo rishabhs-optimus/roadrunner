@@ -81,12 +81,68 @@ define([
         }, 500);
         $('#pdetails_suggestions').addClass('u-visually-hidden');
     };
+    var interceptAddToCart = function interceptAddToCart() {
+
+        var _updateShoppingCartSummary = window.updateShoppingCartSummary;
+        window.updateShoppingCartSummary = function() {
+            var isValid = !$('.prod_errortext, .ref2Selected.refNotAvailable').length;
+            var result = _updateShoppingCartSummary.apply(this, arguments);
+            var html = $('.addToCartTitle').html();
+
+            $('.c-add-to-cart').toggleClass('m--disabled', isValid);
+
+            if (isValid) {
+                /*
+                TODO: Don't hardcode this. Either find the element and wrap
+                it, or store this in dictionary.json if this is the only text
+                we need to target (not recommended).
+                */
+                $('.addToCartTitle').html(
+                    html.replace('Great Choice!', '<b>Great Choice!</b>')
+                );
+
+                var $container = $('.c-addToCartPinny');
+                if ($container.find('.prod_detail_sale_price').length && $container.find('.prod_detail_sale_price').text().length > 0) {
+                    $container.find('.prod_detail_reg_price').addClass('m--lineThrough');
+                }
+
+                $('.c-add-to-cart').removeClass('m--disabled');
+                if (!$('.c-addedToCartPinnyWrapper').hasClass('pinny--is-open')) {
+                    $('.c-addToCartPinny').pinny('open');
+                }
+            }
+
+            return result;
+        };
+
+    };
+
+    var updateCartMessage = function updateCartMessage() {
+        var hijax = new Hijax();
+        // Intercept AJAX requests
+        hijax.set(
+            'UpdateCartMessageHijaxProxy',
+            function(url) {
+                return /quickInfoAjaxAddToCart/.test(url);
+            },
+            {
+                complete: function(data, xhr) {
+                    interceptAddToCart();
+                    if ($('#addToCartInfoCont').find('#addToCartInfoTitle').html() === null ) {
+                        $('#addToCartInfoTitle').insertAfter($('#addToCartVIPMsg'));
+                    }
+                    $('#addToCartInfoTitle').append($('<span class="addToCartTitle"></span>'));
+                }
+            }
+        );
+    };
 
     var productDetailsUI = function() {
         displayTabs();
         reviewSection();
         youMayAlsoLike();
         bindEvents();
+        updateCartMessage();
     };
 
     return productDetailsUI;

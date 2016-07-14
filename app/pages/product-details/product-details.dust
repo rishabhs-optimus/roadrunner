@@ -18,6 +18,9 @@
         {#addToCartForm}
             {form|openTag|s}
             {hiddenFields}
+            <div class="c-addToCartPinny">
+                {addToCartInfo}
+            </div>
             {#swatches}
                 <div class="c-select-wrapper">
                     <div class="c-heading">
@@ -45,6 +48,7 @@
         <div hidden>
             {hiddenContainer}
         </div>
+        <div id="addToCartInfoMsg"></div>
         <div class="c-you-may-like">
             {youMayLikeSection}
         </div>
