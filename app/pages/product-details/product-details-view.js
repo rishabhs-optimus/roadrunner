@@ -6,13 +6,14 @@ define([
 function($, BaseView, template) {
 
 
-    var getProductSwatches = function($container) {
+    var getFormFields = function($container) {
         return $container.find('.prod_select_con').map(function(_, item) {
             var $item = $(item);
             $item.find('.mSizeChart').find('a').text('Size Chart');
+            $container.find('.mSizeChart').addClass('ref2QISwatch');
             $item.find('.prod_select_title, .prod_select_title2').wrapAll('<div class="c-swatches-heading" />');
             return {
-                label: $(item).find('.prodSelectRefCon2').find('.c-swatches-heading'),
+                label: $item.find('.prodSelectRefCon2').find('.c-swatches-heading'),
                 swatches: $item.find('.prodSelectRefCon:not(.prodSelectRefCon2)')
             };
         });
@@ -64,12 +65,12 @@ function($, BaseView, template) {
                 };
 
             },
-            steps: function() {
+            addToCartForm: function() {
                 var $form = $('#addToCartForm');
                 return {
                     form: $form,
                     hiddenData: $form.find('#addToCartAttributes'),
-                    swatchesContainer: getProductSwatches($form),
+                    swatches: getFormFields($form),
                     addToCart: $form.find('.addToCartCon')
                 };
             },
@@ -98,10 +99,5 @@ function($, BaseView, template) {
                 return $rating;
             }
         }
-
-        /**
-         * If you wish to override preProcess/postProcess in this view, have a look at the documentation:
-         * http://adaptivejs.mobify.com/v1.0/docs/views
-         */
     };
 });
