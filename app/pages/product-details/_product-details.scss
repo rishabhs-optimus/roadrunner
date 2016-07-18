@@ -135,6 +135,30 @@
         color: #fff;
     }
 
+    #quickInfoQty {
+        position: relative;
+        float: left;
+
+        width: 33%;
+        padding: 0 10px 0 10px;
+        padding-right: 5px;
+        border: 1px solid #d7d7d7;
+
+        border-radius: 3px;
+        background-image: url('../img/expdate-dropdown.png');
+        background-repeat: no-repeat;
+        background-position: 90% center;
+        background-position: right 10px center;
+        background-size: 12px 8px;
+
+        font-weight: bold;
+        font-size: 15px;
+    }
+
+    .prod_select_title {
+        display: none;
+    }
+
     .mSizeChart {
         float: none !important;
 
