@@ -11,6 +11,11 @@
         <div class="c-overallRating">
             {overallRating}
         </div>
+
+        <div id="content" class="container_nh">
+            <div hidden>{overViewHidden}</div>
+            <div class="prod_container">{imageSection}</div>
+        </div>
         <div class="c-product-price-section">
             {priceSection}
         </div>
@@ -18,25 +23,24 @@
         {#addToCartForm}
             {form|openTag|s}
             {hiddenFields}
-            <div class="c-addToCartPinny">
-                {addToCartInfo}
-            </div>
-            {#swatches}
-                <div class="c-select-wrapper">
-                    <div class="c-heading">
-                        {heading}
-                        <span class="c-selected">
-                            {selected}
-                        </span>
-                    </div>
+            {addToCartDiv}
+            <div id="product_select_container" class="prodSelectCon">
+                {#swatches}
+                    <div class="c-select-wrapper">
+                        <div class="c-heading">
+                            {heading}
+                            <span class="c-selected">
+                                {selected}
+                            </span>
+                        </div>
 
-                    <div class="c-choices">
-                        {choices}
+                        <div class="c-choices">
+                            {choices}
+                        </div>
                     </div>
-                </div>
-            {/swatches}
-            <div class="">
-                {addToCartButton}
+                {/swatches}
+                <div hidden>{cartSummary}</div>
+                {addToCart}
             </div>
             {form|closeTag|s}
         {/addToCartForm}

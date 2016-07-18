@@ -21,26 +21,26 @@ function($, Translator, BaseView, template, Breadcrumb) {
             };
         });
     };
-    var _addedToCartPinny = function _addedToCartPinny(container) {
-        var $container = container;
-        var $title = $container.find('.addToCartTitle').clone();
-        $container.find('.addToCartVIPMsg').append($title);
-        var $vipFamily = $container.find('.nonvip').find('> strong').find('font');
-        $vipFamily.clone().insertAfter($container.find('.nonvip').find('span').find('strong').find('font:nth-child(2)'));
-        $vipFamily.remove();
-        var $continueLink = $container.find('[id=continueShoppingLink]');
-        $continueLink.clone().insertAfter($container.find('[id=continueShopping]'));
-        $continueLink.remove();
-        var $anchor = $container.find('.addToCartVIPMsgCont  strong  a');
-        if ($anchor.html() !== null) {
-            var anchorText = $anchor.text();
-            anchorText = anchorText.trim();
-            anchorText = anchorText.substr(0, anchorText.length - 2);
-            anchorText = anchorText.replace('add', 'Add');
-            $container.find('.addToCartVIPMsgCont  strong  a').text(anchorText);
-        }
-        return $container;
-    };
+    // var _addedToCartPinny = function _addedToCartPinny(container) {
+    //     var $container = container;
+    //     var $title = $container.find('.addToCartTitle').clone();
+    //     $container.find('.addToCartVIPMsg').append($title);
+    //     var $vipFamily = $container.find('.nonvip').find('> strong').find('font');
+    //     $vipFamily.clone().insertAfter($container.find('.nonvip').find('span').find('strong').find('font:nth-child(2)'));
+    //     $vipFamily.remove();
+    //     var $continueLink = $container.find('[id=continueShoppingLink]');
+    //     $continueLink.clone().insertAfter($container.find('[id=continueShopping]'));
+    //     $continueLink.remove();
+    //     var $anchor = $container.find('.addToCartVIPMsgCont  strong  a');
+    //     if ($anchor.html() !== null) {
+    //         var anchorText = $anchor.text();
+    //         anchorText = anchorText.trim();
+    //         anchorText = anchorText.substr(0, anchorText.length - 2);
+    //         anchorText = anchorText.replace('add', 'Add');
+    //         $container.find('.addToCartVIPMsgCont  strong  a').text(anchorText);
+    //     }
+    //     return $container;
+    // };
 
     return {
         template: template,
@@ -55,29 +55,42 @@ function($, Translator, BaseView, template, Breadcrumb) {
             productTitle: function() {
                 return $('.prod_title h1').text();
             },
+            addToCartDiv: function() {
+                return $('#addToCartInfo');
+            },
             productItemId: function() {
                 return $('.prod_itemid').text();
+            },
+            cartSummary: function() {
+                return $('#shoppingCartSummaryNew');
             },
             priceSection: function() {
                 return $('.prod_select_title3');
             },
+            imageSection: function() {
+                return $('#scene7DHTMLViewerFlyout').parent();
+            },
             addToCartForm: function() {
                 var $addToCartForm = $('#addToCartForm');
-                var addToCartPinny = function() {
-                    var $container = $('#addToCartInfo');
-                    _addedToCartPinny($container);
-                    return $container;
-                };
+                // var addToCartPinny = function() {
+                //     var $container = $('#addToCartInfo');
+                //     _addedToCartPinny($container);
+                //     return $container;
+                // };
                 return {
                     form: $addToCartForm,
-                    hiddenFields: $addToCartForm.find('[type="hidden"]'),
+                    hiddenFields: $addToCartForm.find('#addToCartAttributes'),
                     swatches: getFormFields($addToCartForm),
-                    addToCartInfo: addToCartPinny()
+                    addToCart: $addToCartForm.find('.addToCartCon')
+                    // addToCartInfo: addToCartPinny()
 
                 };
             },
             hiddenContainer: function() {
                 return $('.prodLeftCon, .prodRightCon2');
+            },
+            overViewHidden: function() {
+                return $('.prodOverview1, .prodOverview2');
             },
             productTabs: function() {
                 var _items = [];
