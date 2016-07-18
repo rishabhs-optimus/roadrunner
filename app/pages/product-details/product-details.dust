@@ -59,7 +59,7 @@
         </div>
 
         <div class="js-back-to-top c-back-to-top-button">
-            Back to top
+            Back to top <img src="{@getUrl path="img/UpArrowSeeMore.png" /}
         </div>
 
     </div>
