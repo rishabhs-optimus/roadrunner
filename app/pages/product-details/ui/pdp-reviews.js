@@ -4,11 +4,11 @@ define([
 function($) {
 
 
-    var setHeadings = function() {
+    var changeHeadingPosition = function() {
         var $heading, $container;
         $container = $('#reviewsTabCon').find('.pr-review-wrap');
         if ($container === null) {
-            setHeadings();
+            changeHeadingPosition();
         } else {
             $container.each(function() {
                 $heading = $(this).find('.pr-review-rating-headline');
@@ -80,7 +80,7 @@ function($) {
     };
 
     return {
-        setHeadings: setHeadings,
+        changeHeadingPosition: changeHeadingPosition,
         updatePaginationButtons: updatePaginationButtons,
         addNoRatingsSection: addNoRatingsSection,
         createRangeInReview: createRangeInReview

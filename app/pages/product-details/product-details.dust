@@ -45,12 +45,17 @@
         {/productTabs}
         <div class="t-product-details__suggested-products c-you-may-also-like js-suggested-products">
         </div>
+
         <div hidden>
             {hiddenContainer}
         </div>
         <div id="addToCartInfoMsg"></div>
         <div class="c-you-may-like">
             {youMayLikeSection}
+        </div>
+
+        <div class="js-back-to-top c-back-to-top-button">
+            Back to top
         </div>
 
     </div>

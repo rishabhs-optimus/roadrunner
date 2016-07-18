@@ -17,7 +17,7 @@ define([
     };
     var reviewSection = function() {
         pdpReviews.addNoRatingsSection();
-        pdpReviews.setHeadings();
+        pdpReviews.changeHeadingPosition();
         pdpReviews.updatePaginationButtons();
         pdpReviews.createRangeInReview();
 
@@ -26,21 +26,21 @@ define([
         $('body').on('click', '.pr-page-next', function() {
             setTimeout(function() {
                 pdpReviews.addNoRatingsSection();
-                pdpReviews.setHeadings();
+                pdpReviews.changeHeadingPosition();
                 pdpReviews.updatePaginationButtons();
             }, 1000);
         });
         $('body').on('click', '.pr-page-prev', function() {
             setTimeout(function() {
                 pdpReviews.addNoRatingsSection();
-                pdpReviews.setHeadings();
+                pdpReviews.changeHeadingPosition();
                 pdpReviews.updatePaginationButtons();
             }, 1000);
         });
         $('body').on('change', '#pr-sort-reviews', function() {
             setTimeout(function() {
                 pdpReviews.addNoRatingsSection();
-                pdpReviews.setHeadings();
+                pdpReviews.changeHeadingPosition();
                 pdpReviews.updatePaginationButtons();
             }, 1000);
         });
@@ -81,6 +81,8 @@ define([
         }, 500);
         $('#pdetails_suggestions').addClass('u-visually-hidden');
     };
+
+
     var interceptAddToCart = function interceptAddToCart() {
 
         var _updateShoppingCartSummary = window.updateShoppingCartSummary;
@@ -137,12 +139,19 @@ define([
         );
     };
 
+    var scrollToTop = function() {
+        $('.js-back-to-top').on('click', function() {
+            $('html, body').animate({ scrollTop: 0 }, 'slow');
+        });
+    };
+
     var productDetailsUI = function() {
         displayTabs();
         reviewSection();
         youMayAlsoLike();
         bindEvents();
         updateCartMessage();
+        scrollToTop();
     };
 
     return productDetailsUI;
