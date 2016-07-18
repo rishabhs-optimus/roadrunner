@@ -1,96 +1,37 @@
 define([
     '$',
-    'translator',
     'global/baseView',
-    'dust!pages/product-details/product-details',
-    'global/parsers/breadcrumb-parser',
+    'dust!pages/product-details/product-details'
 ],
-function($, Translator, BaseView, template, Breadcrumb) {
+function($, BaseView, template) {
 
-    var getFormFields = function($container) {
-        var $sizeChart = $container.find('.mSizeChart');
-        $sizeChart.addClass('ref2QISwatch');
-        $sizeChart.find('a').text('Size Chart');
-        $('.fit_tip').addClass('c-fit-tip');
+
+    var getProductSwatches = function($container) {
         return $container.find('.prod_select_con').map(function(_, item) {
             var $item = $(item);
+            $item.find('.mSizeChart').find('a').text('Size Chart');
+            $item.find('.prod_select_title, .prod_select_title2').wrapAll('<div class="c-swatches-heading" />');
             return {
-                heading: $item.find('.prod_select_title'),
-                selected: $item.find('.prod_select_title2'),
-                choices: $item.find('.prodSelectRefCon:not(.prodSelectRefCon2)')
+                label: $(item).find('.prodSelectRefCon2').find('.c-swatches-heading'),
+                swatches: $item.find('.prodSelectRefCon:not(.prodSelectRefCon2)')
             };
         });
     };
-    // var _addedToCartPinny = function _addedToCartPinny(container) {
-    //     var $container = container;
-    //     var $title = $container.find('.addToCartTitle').clone();
-    //     $container.find('.addToCartVIPMsg').append($title);
-    //     var $vipFamily = $container.find('.nonvip').find('> strong').find('font');
-    //     $vipFamily.clone().insertAfter($container.find('.nonvip').find('span').find('strong').find('font:nth-child(2)'));
-    //     $vipFamily.remove();
-    //     var $continueLink = $container.find('[id=continueShoppingLink]');
-    //     $continueLink.clone().insertAfter($container.find('[id=continueShopping]'));
-    //     $continueLink.remove();
-    //     var $anchor = $container.find('.addToCartVIPMsgCont  strong  a');
-    //     if ($anchor.html() !== null) {
-    //         var anchorText = $anchor.text();
-    //         anchorText = anchorText.trim();
-    //         anchorText = anchorText.substr(0, anchorText.length - 2);
-    //         anchorText = anchorText.replace('add', 'Add');
-    //         $container.find('.addToCartVIPMsgCont  strong  a').text(anchorText);
-    //     }
-    //     return $container;
-    // };
 
     return {
         template: template,
         extend: BaseView,
+
         context: {
             templateName: 'product-details',
-            breadcrumbs: function(context) {
-                return {
-                    breadcrumbLink: Breadcrumb.parseTranslated(context.hiddenData.container.find('#breadcrumbs_ul'))
-                };
-            },
             productTitle: function() {
                 return $('.prod_title h1').text();
             },
-            addToCartDiv: function() {
-                return $('#addToCartInfo');
-            },
-            productItemId: function() {
+            productId: function() {
                 return $('.prod_itemid').text();
-            },
-            cartSummary: function() {
-                return $('#shoppingCartSummaryNew');
             },
             priceSection: function() {
                 return $('.prod_select_title3');
-            },
-            imageSection: function() {
-                return $('#scene7DHTMLViewerFlyout').parent();
-            },
-            addToCartForm: function() {
-                var $addToCartForm = $('#addToCartForm');
-                // var addToCartPinny = function() {
-                //     var $container = $('#addToCartInfo');
-                //     _addedToCartPinny($container);
-                //     return $container;
-                // };
-                return {
-                    form: $addToCartForm,
-                    hiddenFields: $addToCartForm.find('#addToCartAttributes'),
-                    swatches: getFormFields($addToCartForm),
-                    addToCart: $addToCartForm.find('.addToCartCon')
-                    // addToCartInfo: addToCartPinny()
-
-                };
-            },
-            hiddenContainer: function() {
-                return $('.prodLeftCon, .prodRightCon2');
-            },
-            overViewHidden: function() {
-                return $('.prodOverview1, .prodOverview2');
             },
             productTabs: function() {
                 var _items = [];
@@ -123,11 +64,32 @@ function($, Translator, BaseView, template, Breadcrumb) {
                 };
 
             },
+            steps: function() {
+                var $form = $('#addToCartForm');
+                return {
+                    form: $form,
+                    hiddenData: $form.find('#addToCartAttributes'),
+                    swatchesContainer: getProductSwatches($form),
+                    addToCart: $form.find('.addToCartCon')
+                };
+            },
+            imageSection: function() {
+                return $('#scene7DHTMLViewerFlyout').parent();
+            },
+            price: function() {
+                return $('#ref2QIPriceTitleS');
+            },
+            overViewHidden: function() {
+                return $('.prodOverview1, .prodOverview2');
+            },
+            addToCartDiv: function() {
+                return $('#addToCartInfo');
+            },
+            cartSummary: function() {
+                return $('#shoppingCartSummaryNew');
+            },
             youMayLikeSection: function() {
                 return $('#pdetails_suggestions');
-            },
-            addToCartButton: function() {
-                return $('.addToCartCon');
             },
             overallRating: function() {
                 var $rating = $('.pr-snippet');
@@ -135,15 +97,11 @@ function($, Translator, BaseView, template, Breadcrumb) {
                 $rating.find('.pr-snippet-write-review').addClass('u-visually-hidden');
                 return $rating;
             }
-            // magnifikImage: functi on(context) {
-            //     var $container;
-            //     new LoadingTemplate(true, function(err, html) {
-            //         $container = $(html);
-            //     });
-            //     return {
-            //         bodyContent: $($container[0].outerHTML + '<img class="js-magnifik-image c-magnifik-image" src=""/>')
-            //     };
-            // }
         }
+
+        /**
+         * If you wish to override preProcess/postProcess in this view, have a look at the documentation:
+         * http://adaptivejs.mobify.com/v1.0/docs/views
+         */
     };
 });
