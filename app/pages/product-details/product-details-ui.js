@@ -11,7 +11,7 @@ define([
     // 'global/parsers/product-tile-parser'
 
 ], function($, Utils, Magnifik, translator, Hijax, bellows, sheet, ScrollerTmpl, pdpReviews) {
-    //productTileParser
+     var $addToCartPinny = $('.js-added-to-cart-pinny');
     var displayTabs = function() {
         $('#grp_1,#grp_2,#grp_3,#grp_4').show();
     };
@@ -85,39 +85,23 @@ define([
 
     var interceptAddToCart = function interceptAddToCart() {
 
-        var _updateShoppingCartSummary = window.updateShoppingCartSummary;
-        window.updateShoppingCartSummary = function() {
-            var isValid = !$('.prod_errortext, .ref2Selected.refNotAvailable').length;
-            var result = _updateShoppingCartSummary.apply(this, arguments);
-            var html = $('.addToCartTitle').html();
+      var _updateShoppingCartSummary = window.updateShoppingCartSummary;
+      window.updateShoppingCartSummary = function() {
+          var result = _updateShoppingCartSummary.apply(this, arguments);
+          var $modal = $('#addToCartInfo');
+          var title = $('.addToCartTitle').html();
+          var $content = $('#addToCartInfoCont');
+          $content.find('#monetate_selectorBanner_b9e875a3_00').remove();
+          $modal.addClass('u-visually-hidden');
+          $addToCartPinny.find('.c-sheet__title').html(title);
+          $addToCartPinny.find('.js-added-to-cart-pinny__body').html($content);
+          $addToCartPinny.find('.pinny__close').addClass('container-close');
+          $addToCartPinny.pinny('open');
 
-            $('.c-add-to-cart').toggleClass('m--disabled', isValid);
+          return result;
+      };
 
-            if (isValid) {
-                /*
-                TODO: Don't hardcode this. Either find the element and wrap
-                it, or store this in dictionary.json if this is the only text
-                we need to target (not recommended).
-                */
-                $('.addToCartTitle').html(
-                    html.replace('Great Choice!', '<b>Great Choice!</b>')
-                );
-
-                var $container = $('.c-addToCartPinny');
-                if ($container.find('.prod_detail_sale_price').length && $container.find('.prod_detail_sale_price').text().length > 0) {
-                    $container.find('.prod_detail_reg_price').addClass('m--lineThrough');
-                }
-
-                $('.c-add-to-cart').removeClass('m--disabled');
-                if (!$('.c-addedToCartPinnyWrapper').hasClass('pinny--is-open')) {
-                    $('.c-addToCartPinny').pinny('open');
-                }
-            }
-
-            return result;
-        };
-
-    };
+  };
 
     var updateCartMessage = function updateCartMessage() {
         var hijax = new Hijax();
@@ -152,6 +136,21 @@ define([
         bindEvents();
         updateCartMessage();
         scrollToTop();
+        interceptAddToCart();
+       $('body').on('click', '#continueShoppingLink', function() {
+           var $closeButton = $addToCartPinny.find('.pinny__close');
+           $closeButton.click();
+       });
+       sheet.init($addToCartPinny, {
+           zIndex: 2000,
+           shade: {
+               zIndex: 1999,
+               cssClass: 'js-wishlist-shade'
+           },
+           closed: function() {
+               $('#addToCartInfo_mask').css('display', 'none');
+           }
+       });
     };
 
     return productDetailsUI;
