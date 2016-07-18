@@ -28,6 +28,21 @@
     .prodSelectRefCon {
         padding: 0 12px;
     }
+
+    .ref2QISize.ref2NActive {
+        border: 1px solid #ccc;
+
+        color: #ccc;
+    }
+
+    .ref2QIWidth.refNotAvailable.ref2Selected {
+        border: 1px solid #ccc;
+
+        background-color: #eee88c !important;
+
+        color: #600 !important;
+    }
+
     .c-bellows__content {
         background: $white;
     }
