@@ -90,6 +90,7 @@ define([
             var override = _override.apply(this, arguments);
             var $modal = $('#addToCartInfo');
             var $content = $('#addToCartInfoCont');
+            $content.find('#continueShoppingLink').insertAfter('#viewCartLink');
             //   $content.find('#monetate_selectorBanner_b9e875a3_00').remove();
             $modal.addClass('u-visually-hidden');
             $addToCartPinny.find('.c-sheet__title').html('Added to Cart');

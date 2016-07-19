@@ -80,7 +80,7 @@ function($, BaseView, template) {
             price: function() {
                 return $('#ref2QIPriceTitleS');
             },
-            overViewHidden: function() {
+            imageSectionHiddenData: function() {
                 return $('.prodOverview1, .prodOverview2');
             },
             addToCartDiv: function() {
@@ -97,7 +97,10 @@ function($, BaseView, template) {
                 $rating.find('.pr-snippet-link').text('Read reviews');
                 $rating.find('.pr-snippet-write-review').addClass('u-visually-hidden');
                 return $rating;
-            }
+            },
+            hiddenData: function() {
+                return $('.prodLeftCon, .prodRightCon2');
+            },
         }
     };
 });

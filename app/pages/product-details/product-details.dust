@@ -12,7 +12,6 @@
            {overallRating}
         </div>
         <div id="content" class="container_nh">
-            <div hidden>{overViewHidden}</div>
             <div class="prod_container">{imageSection}</div>
         </div>
 
@@ -54,6 +53,7 @@
         <div class="js-back-to-top c-back-to-top-button">
             Back to top <img src="{@getUrl path="img/UpArrowSeeMore.png" /}
         </div>
+
 
     </div>
 
