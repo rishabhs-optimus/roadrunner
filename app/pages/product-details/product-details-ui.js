@@ -26,24 +26,27 @@ define([
         pdpReviews.updatePaginationButtons();
         pdpReviews.createRangeInReview();
         pdpReviews.transformSortBy();
+        pdpReviews.createPaginationDropDown();
+        pdpReviews.reviewPaginationDropDownChangeFunc();
 
+    };
+    var updateReviewsSection = function() {
+        pdpReviews.addNoRatingsSection();
+        pdpReviews.changeHeadingPosition();
+        pdpReviews.updatePaginationButtons();
+        pdpReviews.transformSortBy();
+        pdpReviews.reviewPaginationDropDownChangeFunc();
     };
     var bindEvents = function() {
         $('body').on('click', '.pr-page-next', function() {
             setTimeout(function() {
-                pdpReviews.addNoRatingsSection();
-                pdpReviews.changeHeadingPosition();
-                pdpReviews.updatePaginationButtons();
-                pdpReviews.transformSortBy();
+                updateReviewsSection();
                 $.scrollTo($reviewBellow);
             }, 1000);
         });
         $('body').on('click', '.pr-page-prev', function() {
             setTimeout(function() {
-                pdpReviews.addNoRatingsSection();
-                pdpReviews.changeHeadingPosition();
-                pdpReviews.updatePaginationButtons();
-                pdpReviews.transformSortBy();
+                updateReviewsSection();
                 $.scrollTo($reviewBellow);
             }, 1000);
         });
@@ -53,12 +56,20 @@ define([
                 $container.empty().append($(html));
             });
             setTimeout(function() {
-                pdpReviews.changeHeadingPosition();
-                pdpReviews.addNoRatingsSection();
-                pdpReviews.updatePaginationButtons();
-                pdpReviews.transformSortBy();
+                updateReviewsSection();
                 $.scrollTo($reviewBellow);
             }, 500);
+        });
+        $('.c-review-page-dropdown').on('change', function() {
+            var value = $(this).val();
+            var $paginationWrapper = $('.pr-pagination-bottom');
+            var text = $paginationWrapper.find('.pr-page-nav a').attr('onclick');
+            var parts = text.split('getReviewsFromMeta(');
+            var secondpart = parts[1].split(/,(.+)?/)[1];
+            var newLink = parts[0] + 'getReviewsFromMeta(' + value + ',' + secondpart;
+            $('.c-temp-review-pagination-anchor').attr('onclick', newLink);
+            $('.c-temp-review-pagination-anchor').click();
+            updateReviewsSection();
         });
     };
 
