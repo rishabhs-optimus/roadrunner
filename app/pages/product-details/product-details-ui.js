@@ -31,10 +31,11 @@ define([
 
     };
     var updateReviewsSection = function() {
-        pdpReviews.addNoRatingsSection();
+        debugger;
         pdpReviews.changeHeadingPosition();
         pdpReviews.updatePaginationButtons();
         pdpReviews.transformSortBy();
+        pdpReviews.createPaginationDropDown();
         pdpReviews.reviewPaginationDropDownChangeFunc();
     };
     var bindEvents = function() {
@@ -69,7 +70,10 @@ define([
             var newLink = parts[0] + 'getReviewsFromMeta(' + value + ',' + secondpart;
             $('.c-temp-review-pagination-anchor').attr('onclick', newLink);
             $('.c-temp-review-pagination-anchor').click();
-            updateReviewsSection();
+            setTimeout(function() {
+                updateReviewsSection();
+                $.scrollTo($reviewBellow);
+            }, 500);
         });
     };
 
