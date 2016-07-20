@@ -49,10 +49,11 @@
         <div class="c-you-may-like">
             {youMayLikeSection}
         </div>
-
+        <a class="c-temp-review-pagination-anchor" hidden></a>
         <div class="js-back-to-top c-back-to-top-button">
             Back to top <img src="{@getUrl path="img/UpArrowSeeMore.png" /}
         </div>
+
 
 
     </div>
