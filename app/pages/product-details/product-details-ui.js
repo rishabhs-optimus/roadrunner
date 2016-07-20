@@ -153,6 +153,7 @@ define([
         updateCartMessage();
         scrollToTop();
         interceptAddToCart();
+        $('.js-product-bellows').find('.bellows__item.c-video-bellows').addClass('bellows--is-open');
         $('body').on('click', '#continueShoppingLink', function() {
             var $closeButton = $addToCartPinny.find('.pinny__close');
             $closeButton.click();
