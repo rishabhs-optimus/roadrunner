@@ -7,7 +7,9 @@ define([
     'bellows',
     'components/sheet/sheet-ui',
     'dust!components/scroller/scroller',
-    'pages/product-details/ui/pdp-reviews'
+    'pages/product-details/ui/pdp-reviews',
+    'scrollTo'
+
     // 'global/parsers/product-tile-parser'
 
 ], function($, Utils, Magnifik, translator, Hijax, bellows, sheet, ScrollerTmpl, pdpReviews) {
@@ -125,6 +127,17 @@ define([
             }
         );
     };
+
+    $('body').on('click', '#videoLinkButton', function() {
+        var $reviewsBellows = $('.c-video-bellows');
+        // Scroll to Reviews Bellows
+        $.scrollTo($reviewsBellows);
+        // Open Bellows for Reviews and Rating
+        // This is required as SVG icon was not changing on call of Bellows open method
+        if (!$reviewsBellows.hasClass('bellows--is-open')) {
+            $reviewsBellows.find('.bellows__header').click();
+        }
+    });
 
     var scrollToTop = function() {
         $('.js-back-to-top').on('click', function() {
