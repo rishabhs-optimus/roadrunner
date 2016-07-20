@@ -5,8 +5,9 @@
     padding: $space-xlarge;
 
     background-color: #dadada;
-    .c-video-tab center {
-        overflow: hidden;
+    .c-video-tab center > div {
+        width: 100% !important;
+        // height: auto !important;
     }
     .c-select-wrapper {
         background: $white;
