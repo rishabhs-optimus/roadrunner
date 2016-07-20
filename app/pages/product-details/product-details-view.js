@@ -57,7 +57,8 @@ function($, BaseView, template) {
                 _items.push({
                     sectionTitle: $('#grp_4Tab').text(),
                     content: $('#grp_4'),
-                    bellowsHeaderClass: 'c-need-help-bellow'
+                    bellowsItemClass: 'c-need-help-bellow',
+                    bellowsHeaderClass: 'c-need-help-heading'
 
                 });
 
