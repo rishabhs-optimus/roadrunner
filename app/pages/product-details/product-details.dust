@@ -4,13 +4,14 @@
 
         <div class="c-product-title">
            {productTitle}
+           <div class="c-overallRating">
+              {overallRating}
+           </div>
         </div>
         <div class="c-product-item-id">
-           {productItemId}
+           {productId}
         </div>
-        <div class="c-overallRating">
-           {overallRating}
-        </div>
+
         <div id="content" class="container_nh">
             <div class="prod_container c-product-container">{imageSection}</div>
         </div>
@@ -38,6 +39,11 @@
             {form|closeTag|s}
         {/addToCartForm}
 
+
+        <div id="sr_productDetailDiv" name="sr_productDetailDiv" class="c-shipping-info">
+            {shopRunner}
+        </div>
+
         {#productTabs}
             {>"components/bellows/bellows":.bellows/}
         {/productTabs}
@@ -49,12 +55,10 @@
         <div class="c-you-may-like">
             {youMayLikeSection}
         </div>
-        <a class="c-temp-review-pagination-anchor" hidden></a>
+
         <div class="js-back-to-top c-back-to-top-button">
-            Back to top <img src="{@getUrl path="img/UpArrowSeeMore.png" /}
+            Back to top <img src="{@getUrl path="img/back-to-top.png" /}
         </div>
-
-
 
     </div>
 

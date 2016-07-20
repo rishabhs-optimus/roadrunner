@@ -34,6 +34,10 @@ function($, BaseView, template) {
             priceSection: function() {
                 return $('.prod_select_title3');
             },
+            shopRunner: function() {
+                var $shopRunnerSection = $('#srd_pd');
+                return $shopRunnerSection;
+            },
             productTabs: function() {
                 var _items = [];
                 _items.push({
@@ -52,7 +56,9 @@ function($, BaseView, template) {
                 });
                 _items.push({
                     sectionTitle: $('#grp_4Tab').text(),
-                    content: $('#grp_4')
+                    content: $('#grp_4'),
+                    bellowsHeaderClass: 'c-need-help-bellow'
+
                 });
 
 
@@ -76,7 +82,10 @@ function($, BaseView, template) {
                 };
             },
             imageSection: function() {
-                return $('#scene7DHTMLViewerFlyout').parent();
+                var $imageSection = $('#scene7DHTMLViewerFlyout').parent();
+                $imageSection.find('.prod_shoe_type').addClass('c-tool-tip').html($imageSection.find('.prod_shoe_type').html().replace(/[a-zA-Z\' ]/g, ''));
+                $imageSection.find('br').remove();
+                return $imageSection;
             },
             price: function() {
                 return $('#ref2QIPriceTitleS');
