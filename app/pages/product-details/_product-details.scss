@@ -24,62 +24,13 @@
         color: #464749;
         font-weight: bold;
         text-align: center;
-        img {
-            position: relative;
-            top: 4px;
-
-            max-width: 17px;
-        }
-    }
-
-    .c-tool-tip {
-        color: #464749;
-        font-weight: bold;
-        font-size: 12px;
-        vertical-align: top;
-    }
-
-    .c-shipping-info {
-        display: block;
-        padding: 12px;
-
-        background: $white;
-    }
-
-    .bellows__content h2 .prod_redtext {
-        display: inline-block;
-        margin-top: 5px;
-        margin-bottom: 25px;
-
-        color: #ff2812;
-        font-weight: 600;
-    }
-
-    .bellows__content h2 {
-        color: #333;
-    }
-
-    .bellows__content a {
-        color: #0052ae;
     }
 
     .prodSelectRefCon {
         padding: 0 12px;
     }
 
-    #grp_1 > h2:first-child {
-        display: none;
-    }
-
-    .c-need-help-bellow {
-        color: #078ac0;
-        img {
-            height: 23px;
-        }
-    }
-
-    .ref2QISize.ref2NActive,
-    .ref2QIWidth.ref2NActive {
+    .ref2QISize.ref2NActive {
         border: 1px solid #ccc;
 
         color: #ccc;
@@ -93,45 +44,8 @@
         color: #600 !important;
     }
 
-    .prod_errortext {
-        color: #ff2812;
-    }
-    span.prod_select_title2 img {
-        width: 17px;
-    }
-
-    .c-swatches-heading > span {
-        margin-right: 4px;
-    }
-
-    .ref2QIWidth.refNotAvailable.ref2Selected {
-        border: 1px solid #ccc;
-
-        background-color: #eee88c !important;
-
-        color: #600 !important;
-    }
-
     .c-bellows__content {
         background: $white;
-    }
-
-    .c-product-title {
-        position: relative;
-    }
-
-    .c-overallRating {
-        position: absolute;
-        top: 0;
-        right: -4px;
-    }
-
-    .prod_detail_preorder_inventory {
-        display: block;
-        padding-top: 12px;
-        padding-bottom: 8px;
-
-        color: #ff3112;
     }
 
     .c-product-price-section {
@@ -170,22 +84,6 @@
         font-weight: bold;
         font-size: 15px;
     }
-
-    .c-product-container {
-        background: $white;
-    }
-
-    #videoLinkButton {
-        position: absolute;
-        top: 0;
-        right: 0;
-        z-index: 100;
-        img {
-            max-width: 85px;
-            max-height: 85px;
-        }
-    }
-
 
     #ref2QISizeCont,
     #ref2QIWidthCont {
@@ -280,69 +178,9 @@
     }
 
     .c-product-container > div {
-        display: inline-block;
+        overflow: hidden;
         width: 100% !important;
         height: auto !important;
-    }
-
-
-    .s7flyoutSwatches {
-        position: static;
-        top: 324px;
-        float: left;
-
-        display: inline-block;
-        width: 100%;
-        height: auto !important;
-        margin-bottom: 5px;
-
-        text-align: left;
-    }
-
-    .s7flyoutStaticImage div {
-        width: 100%;
-    }
-
-    #scene7DHTMLViewerFlyout {
-        position: relative;
-
-        display: inline-block;
-        width: 438px;
-        width: 100% !important;
-        height: auto !important;
-
-        text-align: center;
-    }
-
-    .s7flyoutStaticImage {
-        position: static;
-        top: 48px;
-
-        display: inline-block;
-        width: 295px;
-        height: 235px;
-        margin-top: 13px;
-    }
-
-    .s7flyoutSwatches .s7flyoutSwatch {
-        position: relative !important;
-
-        width: 54px !important;
-        height: 72px !important;
-    }
-
-    .s7flyoutSwatches div {
-        position: relative !important;
-        left: 0 !important;
-
-        display: inline-block !important;
-        height: auto !important;
-    }
-    .s7flyoutSwatches .s7flyoutSwatch {
-        position: relative !important;
-
-        width: 54px !important;
-        height: 72px !important;
     }
 
     .c-reviews-bellow {
@@ -476,6 +314,7 @@
             position: relative;
 
             width: 100%;
+            margin-bottom: 15px;
 
             select {
                 height: 41px;
@@ -486,7 +325,8 @@
                 background: linear-gradient(to bottom, #f7f7f7, #eee);
                 outline: none;
 
-                line-height: 20px;
+                line-height: 20px;
+                text-indent: 23%;
 
                 -webkit-appearance: none;
 
@@ -496,6 +336,12 @@
 
                     outline: none;
                 }
+            }
+            label {
+                position: absolute;
+
+                margin-top: 10px;
+                margin-left: 6px;
             }
         }
         .pr-review-points,

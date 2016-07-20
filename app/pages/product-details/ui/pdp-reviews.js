@@ -78,11 +78,16 @@ function($) {
             $parent.find('.c-all-range, .c-max-range, .c-range-see-all, .c-range-see-less').toggle();
         });
     };
+    var transformSortBy = function() {
+        var $sortBy = $('.pr-review-sort-box');
+        $sortBy.find('label').text('Sort By:');
+    };
 
     return {
         changeHeadingPosition: changeHeadingPosition,
         updatePaginationButtons: updatePaginationButtons,
         addNoRatingsSection: addNoRatingsSection,
-        createRangeInReview: createRangeInReview
+        createRangeInReview: createRangeInReview,
+        transformSortBy: transformSortBy
     };
 });
