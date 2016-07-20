@@ -176,6 +176,12 @@
         padding-bottom: 12px;
     }
 
+    .c-product-container > div {
+        overflow: hidden;
+        width: 100% !important;
+        height: auto !important;
+    }
+
     .c-reviews-bellow {
         .pr-snapshot-head,
         p.pr-snapshot-average-based-on-text,

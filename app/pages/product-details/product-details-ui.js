@@ -129,7 +129,18 @@ define([
     };
 
     $('body').on('click', '#videoLinkButton', function() {
-        var $reviewsBellows = $('.c-video-bellows');
+        var $videoBellows = $('.c-video-bellows');
+        // Scroll to Reviews Bellows
+        $.scrollTo($videoBellows);
+        // Open Bellows for Reviews and Rating
+        // This is required as SVG icon was not changing on call of Bellows open method
+        if (!$videoBellows.hasClass('bellows--is-open')) {
+            $videoBellows.find('.bellows__header').click();
+        }
+    });
+
+    $('body').on('click', '.c-overallRating', function() {
+        var $reviewsBellows = $('.c-reviews-bellow');
         // Scroll to Reviews Bellows
         $.scrollTo($reviewsBellows);
         // Open Bellows for Reviews and Rating

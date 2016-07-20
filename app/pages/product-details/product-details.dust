@@ -12,7 +12,7 @@
            {overallRating}
         </div>
         <div id="content" class="container_nh">
-            <div class="prod_container">{imageSection}</div>
+            <div class="prod_container c-product-container">{imageSection}</div>
         </div>
 
         <div class="c-product-price-section">
