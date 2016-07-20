@@ -155,6 +155,14 @@ define([
             $('html, body').animate({ scrollTop: 0 }, 'slow');
         });
     };
+    var videoBellowState = function() {
+        var $bellow = $('.js-product-bellows').find('.bellows__item.c-video-bellows');
+        var $icon = $bellow.find('.c-bellows__header .c-icon');
+        $icon.attr('data-fallback', 'img/png/minus.png');
+        $icon.find('title').text('minus');
+        $icon.find('use').attr('xlink:href', '#icon-minus');
+        $bellow.addClass('bellows--is-open');
+    };
 
     var productDetailsUI = function() {
         displayTabs();
@@ -164,7 +172,7 @@ define([
         updateCartMessage();
         scrollToTop();
         interceptAddToCart();
-        $('.js-product-bellows').find('.bellows__item.c-video-bellows').addClass('bellows--is-open');
+        videoBellowState();
         $('body').on('click', '#continueShoppingLink', function() {
             var $closeButton = $addToCartPinny.find('.pinny__close');
             $closeButton.click();
