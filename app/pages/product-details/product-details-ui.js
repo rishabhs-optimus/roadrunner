@@ -8,12 +8,15 @@ define([
     'components/sheet/sheet-ui',
     'dust!components/scroller/scroller',
     'pages/product-details/ui/pdp-reviews',
+    'dust!components/loading/loading',
     'scrollTo'
 
     // 'global/parsers/product-tile-parser'
 
-], function($, Utils, Magnifik, translator, Hijax, bellows, sheet, ScrollerTmpl, pdpReviews) {
+], function($, Utils, Magnifik, translator, Hijax, bellows, sheet, ScrollerTmpl, pdpReviews, LoadingTemplate) {
     var $addToCartPinny = $('.js-added-to-cart-pinny');
+    var $videoBellows = $('.c-video-bellows');
+    var $reviewBellow = $('.c-reviews-bellow');
     var displayTabs = function() {
         $('#grp_1,#grp_2,#grp_3,#grp_4').show();
     };
@@ -32,7 +35,7 @@ define([
                 pdpReviews.changeHeadingPosition();
                 pdpReviews.updatePaginationButtons();
                 pdpReviews.transformSortBy();
-                $.scrollTo($videoBellows);
+                $.scrollTo($reviewBellow);
             }, 1000);
         });
         $('body').on('click', '.pr-page-prev', function() {
@@ -41,17 +44,21 @@ define([
                 pdpReviews.changeHeadingPosition();
                 pdpReviews.updatePaginationButtons();
                 pdpReviews.transformSortBy();
-                $.scrollTo($videoBellows);
+                $.scrollTo($reviewBellow);
             }, 1000);
         });
         $('body').on('change', '#pr-sort-reviews', function() {
+            var $container = $('.pr-contents-wrapper');
+            new LoadingTemplate(true, function(err, html) {
+                $container.empty().append($(html));
+            });
             setTimeout(function() {
-                pdpReviews.addNoRatingsSection();
                 pdpReviews.changeHeadingPosition();
+                pdpReviews.addNoRatingsSection();
                 pdpReviews.updatePaginationButtons();
                 pdpReviews.transformSortBy();
-                $.scrollTo($videoBellows);
-            }, 1000);
+                $.scrollTo($reviewBellow);
+            }, 500);
         });
     };
 
@@ -136,7 +143,6 @@ define([
     };
 
     $('body').on('click', '#videoLinkButton', function() {
-        var $videoBellows = $('.c-video-bellows');
         // Scroll to Reviews Bellows
         $.scrollTo($videoBellows);
         // Open Bellows for Reviews and Rating
