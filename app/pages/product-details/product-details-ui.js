@@ -22,6 +22,7 @@ define([
         pdpReviews.changeHeadingPosition();
         pdpReviews.updatePaginationButtons();
         pdpReviews.createRangeInReview();
+        pdpReviews.transformSortBy();
 
     };
     var bindEvents = function() {
@@ -30,6 +31,8 @@ define([
                 pdpReviews.addNoRatingsSection();
                 pdpReviews.changeHeadingPosition();
                 pdpReviews.updatePaginationButtons();
+                pdpReviews.transformSortBy();
+                $.scrollTo($videoBellows);
             }, 1000);
         });
         $('body').on('click', '.pr-page-prev', function() {
@@ -37,6 +40,8 @@ define([
                 pdpReviews.addNoRatingsSection();
                 pdpReviews.changeHeadingPosition();
                 pdpReviews.updatePaginationButtons();
+                pdpReviews.transformSortBy();
+                $.scrollTo($videoBellows);
             }, 1000);
         });
         $('body').on('change', '#pr-sort-reviews', function() {
@@ -44,6 +49,8 @@ define([
                 pdpReviews.addNoRatingsSection();
                 pdpReviews.changeHeadingPosition();
                 pdpReviews.updatePaginationButtons();
+                pdpReviews.transformSortBy();
+                $.scrollTo($videoBellows);
             }, 1000);
         });
     };
