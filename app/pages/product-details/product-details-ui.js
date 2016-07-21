@@ -231,7 +231,7 @@ define([
         scrollToTop();
         interceptAddToCart();
         videoBellowState();
-        insertScroller();
+        //insertScroller();
         $('body').on('click', '#continueShoppingLink', function() {
             var $closeButton = $addToCartPinny.find('.pinny__close');
             $closeButton.click();
