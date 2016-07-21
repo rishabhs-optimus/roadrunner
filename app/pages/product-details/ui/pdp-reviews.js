@@ -106,6 +106,9 @@ function($) {
         var perPageCount = $paginationWrapper.find('.pr-pagination-top .pr-page-count strong').text();
         perPageCount = perPageCount.split('-')[1];
         var totalPages = Math.ceil(totalReviewCount / 30);
+        if (totalPages == 1) {
+            return;
+        }
         var options = [];
         var $select = $('<select class="c-review-page-dropdown"></select>');
         var currentPage = getCurentPage($paginationWrapper);
