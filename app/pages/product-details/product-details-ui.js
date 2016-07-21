@@ -221,7 +221,6 @@ define([
         interceptAddToCart();
         videoBellowState();
         interceptSwatchCreation();
-
         $('body').on('click', '#continueShoppingLink', function() {
             var $closeButton = $addToCartPinny.find('.pinny__close');
             $closeButton.click();
