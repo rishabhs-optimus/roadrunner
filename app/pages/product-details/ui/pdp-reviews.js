@@ -53,12 +53,13 @@ function($) {
             var $itemClone = $('.c-review-range').find('.c-range-item').clone();
 
             // title
-            $itemClone.find('.c-review-heading').append($(this).find('.pr-other-attribute-label').text());
-
+            //$itemClone.find('.c-review-heading').append($(this).find('.pr-other-attribute-label').text());
+            $(this).find('.pr-other-attribute-label').addClass('c-review-heading');
             // max range
             $(this).find('.pr-other-attribute-value-histogram-element-max td').each(function() {
                 var $maxClone = $(this).clone();
-                $itemClone.find('.c-max-range').append($maxClone.children());
+                //$itemClone.find('.c-max-range').append($maxClone.children());
+                $maxClone.children().addClass('c-max-range');
             });
 
             // all ranges
@@ -66,7 +67,8 @@ function($) {
                 if ($(this).hasClass('pr-other-attribute-value-histogram-label') && $(this).parent().hasClass('pr-other-attribute-value-histogram-element-max')) {
                     $(this).find('p').addClass('c-main-review-heading');
                 }
-                $itemClone.find('.c-all-range').append($(this).children());
+                //$itemClone.find('.c-all-range').append($(this).children());
+                $(this).children().addClass('c-all-range');
             });
 
             $container.append($itemClone);
