@@ -11,15 +11,16 @@ define([
     'dust!components/loading/loading',
     'scrollTo'
 
-    // 'global/parsers/product-tile-parser'
-
 ], function($, Utils, Magnifik, translator, Hijax, bellows, sheet, ScrollerTmpl, pdpReviews, LoadingTemplate) {
     var $addToCartPinny = $('.js-added-to-cart-pinny');
     var $videoBellows = $('.c-video-bellows');
     var $reviewBellow = $('.c-reviews-bellow');
+    // Displaying desktop tabs
     var displayTabs = function() {
         $('#grp_1,#grp_2,#grp_3,#grp_4').show();
     };
+
+    // Creating review section
     var reviewSection = function() {
         pdpReviews.addNoRatingsSection();
         pdpReviews.changeHeadingPosition();
@@ -30,6 +31,8 @@ define([
         pdpReviews.reviewPaginationDropDownChangeFunc();
 
     };
+
+    // Updating reviews section on handling pagination and sort by
     var updateReviewsSection = function() {
         pdpReviews.changeHeadingPosition();
         pdpReviews.updatePaginationButtons();
@@ -37,19 +40,21 @@ define([
         pdpReviews.createPaginationDropDown();
         pdpReviews.reviewPaginationDropDownChangeFunc();
     };
+
+    // Handling click functionality
     var bindEvents = function() {
-        $('body').on('click', '.pr-page-next', function() {
+        $('body').on('click', '.pr-page-next, .pr-page-prev', function() {
             setTimeout(function() {
                 updateReviewsSection();
                 $.scrollTo($reviewBellow);
             }, 1000);
         });
-        $('body').on('click', '.pr-page-prev', function() {
-            setTimeout(function() {
-                updateReviewsSection();
-                $.scrollTo($reviewBellow);
-            }, 1000);
-        });
+        // $('body').on('click', '.pr-page-prev', function() {
+        //     setTimeout(function() {
+        //         updateReviewsSection();
+        //         $.scrollTo($reviewBellow);
+        //     }, 1000);
+        // });
         $('body').on('change', '#pr-sort-reviews', function() {
             var $container = $('.pr-contents-wrapper');
             new LoadingTemplate(true, function(err, html) {
@@ -73,6 +78,26 @@ define([
                 updateReviewsSection();
                 $.scrollTo($reviewBellow);
             }, 500);
+        });
+        $('body').on('click', '#videoLinkButton', function() {
+            // Scroll to Reviews Bellows
+            $.scrollTo($videoBellows);
+            // Open Bellows for Video
+            // This is required as SVG icon was not changing on call of Bellows open method
+            if (!$videoBellows.hasClass('bellows--is-open')) {
+                $videoBellows.find('.bellows__header').click();
+            }
+        });
+
+        $('body').on('click', '.c-overallRating', function() {
+            var $reviewsBellows = $('.c-reviews-bellow');
+            // Scroll to Reviews Bellows
+            $.scrollTo($reviewsBellows);
+            // Open Bellows for Reviews
+            // This is required as SVG icon was not changing on call of Bellows open method
+            if (!$reviewsBellows.hasClass('bellows--is-open')) {
+                $reviewsBellows.find('.bellows__header').click();
+            }
         });
     };
 
@@ -112,17 +137,14 @@ define([
         $('#pdetails_suggestions').addClass('u-visually-hidden');
     };
 
-
     var interceptAddToCart = function interceptAddToCart() {
-
         var _override  = window.updateShoppingCartSummary;
         window.updateShoppingCartSummary = function() {
             var override = _override.apply(this, arguments);
-            var $modal = $('#addToCartInfo');
+            var $desktopContainer = $('#addToCartInfo');
             var $content = $('#addToCartInfoCont');
             $content.find('#continueShoppingLink').insertAfter('#viewCartLink');
-            //   $content.find('#monetate_selectorBanner_b9e875a3_00').remove();
-            $modal.addClass('u-visually-hidden');
+            $desktopContainer.addClass('u-visually-hidden');
             $addToCartPinny.find('.c-sheet__title').html('Added to Cart');
             $addToCartPinny.find('.js-added-to-cart-pinny__body').html($content);
             $addToCartPinny.find('.pinny__close').addClass('container-close');
@@ -130,15 +152,12 @@ define([
                 $addToCartPinny.pinny('open');
             }
             $('.js-added-to-cart-pinny').addClass('js-rendered');
-
             return _override;
         };
-
     };
 
     var updateCartMessage = function updateCartMessage() {
         var hijax = new Hijax();
-        // Intercept AJAX requests
         hijax.set(
             'UpdateCartMessageHijaxProxy',
             function(url) {
@@ -155,27 +174,6 @@ define([
             }
         );
     };
-
-    $('body').on('click', '#videoLinkButton', function() {
-        // Scroll to Reviews Bellows
-        $.scrollTo($videoBellows);
-        // Open Bellows for Reviews and Rating
-        // This is required as SVG icon was not changing on call of Bellows open method
-        if (!$videoBellows.hasClass('bellows--is-open')) {
-            $videoBellows.find('.bellows__header').click();
-        }
-    });
-
-    $('body').on('click', '.c-overallRating', function() {
-        var $reviewsBellows = $('.c-reviews-bellow');
-        // Scroll to Reviews Bellows
-        $.scrollTo($reviewsBellows);
-        // Open Bellows for Reviews and Rating
-        // This is required as SVG icon was not changing on call of Bellows open method
-        if (!$reviewsBellows.hasClass('bellows--is-open')) {
-            $reviewsBellows.find('.bellows__header').click();
-        }
-    });
 
     var scrollToTop = function() {
         $('.js-back-to-top').on('click', function() {
