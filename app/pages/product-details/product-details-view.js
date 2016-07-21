@@ -75,6 +75,7 @@ function($, BaseView, template) {
             },
             addToCartForm: function() {
                 var $form = $('#addToCartForm');
+                $form.find('#addToCartLink').append('add to cart');
                 return {
                     form: $form,
                     hiddenData: $form.find('#addToCartAttributes'),
@@ -84,7 +85,9 @@ function($, BaseView, template) {
             },
             imageSection: function() {
                 var $imageSection = $('#scene7DHTMLViewerFlyout').parent();
-                $imageSection.find('.prod_shoe_type').addClass('c-tool-tip').html($imageSection.find('.prod_shoe_type').html().replace(/[a-zA-Z\' ]/g, ''));
+                if ($imageSection.find('.prod_shoe_type').length) {
+                    $imageSection.find('.prod_shoe_type').addClass('c-tool-tip').html($imageSection.find('.prod_shoe_type').html().replace(/[a-zA-Z\' ]/g, ''));
+                }
                 $imageSection.find('br').remove();
                 return $imageSection;
             },

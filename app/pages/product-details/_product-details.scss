@@ -78,7 +78,6 @@
 
     .c-need-help-heading {
         color: #078ac0;
-
     }
 
     .ref2QISize.ref2NActive,
@@ -109,6 +108,15 @@
         background-color: #eee88c !important;
 
         color: #600 !important;
+    }
+
+    .addToCartCon {
+        padding: 0 12px;
+        padding-top: 12px;
+        border-top: 1px solid #dedede;
+        border-bottom: 1px solid #dedede;
+
+        background: #fff;
     }
 
 
@@ -251,6 +259,7 @@
         float: left;
 
         width: 33%;
+        height: 40px;
         padding: 0 10px 0 10px;
         padding-right: 5px;
         border: 1px solid #d7d7d7;
@@ -264,6 +273,35 @@
 
         font-weight: bold;
         font-size: 15px;
+    }
+
+    .prod_add_to_cart {
+        float: right;
+
+        width: 66%;
+        padding-left: 3px;
+        a {
+            float: right;
+
+            width: 100%;
+
+            border-radius: 3px;
+            background: linear-gradient(to bottom, #52b21c, #4aa914);
+            box-shadow: 0 1px 0 #2a8300;
+
+            color: #fff;
+            font-family: verdana;
+            font-weight: bold;
+            font-size: 15px;
+            line-height: 38px;
+            text-align: center;
+            text-transform: uppercase;
+            text-shadow: 0 2px 0 #267700;
+        }
+
+        a img {
+            display: none;
+        }
     }
 
 
