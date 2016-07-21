@@ -508,9 +508,13 @@
 }
 
 .c-you-may-also-like {
+    margin-top: 0;
     .c-title {
-        padding-bottom: 0;
+        padding-bottom: 4px;
         border-bottom: 1px solid #bfbfbf;
+    }
+    .pdetailsSuggestionsCon {
+        margin-top: 12px;
     }
 }
 
