@@ -191,35 +191,24 @@ define([
         $bellow.addClass('bellows--is-open');
     };
 
-    var insertScroller =  function() {
-        var $container = $('.s7flyoutSwatches');
-        setTimeout(function() {
-            if ($container.length === 0) {
-                insertScroller();
-            } else {
-                var $parsedProducts = [];
-                var $items = $('.s7flyoutSwatch');
-                var $images = $items.find('img').each(function() {
-                    var $this = $(this);
-                });
-                $items.map(function(_, item) {
-                    var $item = $(item);
-                    var $content = {
-                        slideContent :$item
-                    };
-                    $parsedProducts.push($content);
-                });
-                var scrollerData = {
-                    slideshow: {
-                        slides: $parsedProducts
-                    }
-                };
+    var createSwatchesSection = function() {
+        $('.s7flyoutSwatches').addClass('c-scroller');
+        $('.s7flyoutSwatches').find('div').first().addClass('c-scroller__content').removeAttr('style');
+        $('.s7flyoutSwatches').find('div').first().find('> div').last().addClass('c-slideshow').removeAttr('style');
+        $('.c-slideshow').find('> div > div').removeAttr('style');
+        $('.s7flyoutSwatch').each(function() {
+            $(this).addClass('c-slideshow__slide');
+        });
+    };
 
-                new ScrollerTmpl(scrollerData, function(err, html) {
-                    $container.empty().html(html);
-                });
-            }
-        }, 500);
+    var interceptSwatchCreation = function interceptSwatchCreation() {
+
+        var _override  = window.s7js.flyout.Swatch.prototype.onLoadComplete;
+        window.s7js.flyout.Swatch.prototype.onLoadComplete = function() {
+            var override = _override.apply(this, arguments);
+            createSwatchesSection();
+            return _override;
+        };
     };
 
     var productDetailsUI = function() {
@@ -231,7 +220,8 @@ define([
         scrollToTop();
         interceptAddToCart();
         videoBellowState();
-        //insertScroller();
+        interceptSwatchCreation();
+
         $('body').on('click', '#continueShoppingLink', function() {
             var $closeButton = $addToCartPinny.find('.pinny__close');
             $closeButton.click();

@@ -411,19 +411,15 @@
 
         width: 54px !important;
         height: 72px !important;
+        border: 0;
     }
 
     .s7flyoutSwatches div {
         position: relative !important;
         left: 0 !important;
 
+        display: inline-block !important;
         height: auto !important;
-    }
-    .s7flyoutSwatches .s7flyoutSwatch {
-        position: relative !important;
-
-        width: 54px !important;
-        height: 72px !important;
     }
 
     .c-overallRating {
