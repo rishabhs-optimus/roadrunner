@@ -31,7 +31,6 @@ define([
 
     };
     var updateReviewsSection = function() {
-        debugger;
         pdpReviews.changeHeadingPosition();
         pdpReviews.updatePaginationButtons();
         pdpReviews.transformSortBy();
@@ -192,6 +191,37 @@ define([
         $bellow.addClass('bellows--is-open');
     };
 
+    var insertScroller =  function() {
+        var $container = $('.s7flyoutSwatches');
+        setTimeout(function() {
+            if ($container.length == 0) {
+                insertScroller();
+            } else {
+                var $parsedProducts = [];
+                var $items = $('.s7flyoutSwatch');
+                var $images = $items.find('img').each(function() {
+                    var $this = $(this);
+                });
+                $items.map(function(_, item) {
+                    var $item = $(item);
+                    var $content = {
+                        slideContent :$item
+                    };
+                    $parsedProducts.push($content);
+                });
+                var scrollerData = {
+                    slideshow: {
+                        slides: $parsedProducts
+                    }
+                };
+
+                new ScrollerTmpl(scrollerData, function(err, html) {
+                    $container.empty().html(html);
+                });
+            }
+        }, 500);
+    };
+
     var productDetailsUI = function() {
         displayTabs();
         reviewSection();
@@ -201,6 +231,7 @@ define([
         scrollToTop();
         interceptAddToCart();
         videoBellowState();
+        insertScroller();
         $('body').on('click', '#continueShoppingLink', function() {
             var $closeButton = $addToCartPinny.find('.pinny__close');
             $closeButton.click();
