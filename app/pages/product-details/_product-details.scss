@@ -19,6 +19,30 @@
         margin-bottom: 8px;
     }
 
+    [class*="prod_detail_reg_price"],
+    .celebros_list_price {
+        padding-right: 6px;
+
+        color: #333;
+        font-weight: bold;
+        font-size: 15px;
+    }
+
+    .prod_detail_sale_price,
+    .celebros_sale_price {
+        padding-right: 6px;
+
+        color: #ff2812;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    [class*="prod_detail_vip_price"],
+    .celebros_umap {
+        color: #005cae;
+        font-weight: bold;
+        font-size: 15px;
+    }
+
     .c-back-to-top-button {
         color: #464749;
         font-weight: bold;
@@ -28,6 +52,17 @@
             top: 4px;
 
             max-width: 17px;
+        }
+    }
+
+    .pdetailsSuggestionsTitle {
+        margin-bottom: 8px;
+    }
+
+    .pdetailsSuggestionsPrice {
+        a {
+            color: #333;
+            font-size: 14px;
         }
     }
 
@@ -508,9 +543,13 @@
 }
 
 .c-you-may-also-like {
+    margin-top: 0;
     .c-title {
-        padding-bottom: 0;
+        padding-bottom: 4px;
         border-bottom: 1px solid #bfbfbf;
+    }
+    .pdetailsSuggestionsCon {
+        margin-top: 12px;
     }
 }
 

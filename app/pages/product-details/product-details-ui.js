@@ -194,7 +194,7 @@ define([
     var insertScroller =  function() {
         var $container = $('.s7flyoutSwatches');
         setTimeout(function() {
-            if ($container.length == 0) {
+            if ($container.length === 0) {
                 insertScroller();
             } else {
                 var $parsedProducts = [];
