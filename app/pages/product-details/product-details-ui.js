@@ -211,17 +211,17 @@ define([
 
     var interceptCheckAddToCart = function interceptCheckAddToCart() {
 
-       var _override  = window.checkAddToCart;
-       window.checkAddToCart = function() {
-           var override = _override.apply(this, arguments);
-           if ($('#addToCartButton').attr('src').indexOf('_gr.gif') >= 0) {
-               $('.prod_add_to_cart').addClass('c--disabled');
-           } else {
-               $('.prod_add_to_cart').removeClass('c--disabled');
-           }
-           return _override;
-       };
-   };
+        var _override  = window.checkAddToCart;
+        window.checkAddToCart = function() {
+            var override = _override.apply(this, arguments);
+            if ($('#addToCartButton').attr('src').indexOf('_gr.gif') >= 0) {
+                $('.prod_add_to_cart').addClass('c--disabled');
+            } else {
+                $('.prod_add_to_cart').removeClass('c--disabled');
+            }
+            return _override;
+        };
+    };
 
     var productDetailsUI = function() {
         displayTabs();
