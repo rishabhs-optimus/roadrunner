@@ -4,13 +4,16 @@
 .t-product-details-page {
     padding: $space-xlarge;
 
-    background-color: #dadada;
+    background-color: $neutral-230;
+
     .c-video-tab center > div {
         width: 100% !important;
     }
+
     .c-select-wrapper {
         background: $white;
     }
+
     .ref2QIOnSale,
     .ref2QISwatch {
         display: inline-block;
@@ -36,6 +39,7 @@
         font-weight: bold;
         text-transform: uppercase;
     }
+
     [class*="prod_detail_vip_price"],
     .celebros_umap {
         color: #005cae;
@@ -153,8 +157,6 @@
         background: $white;
     }
 
-
-
     .ref2QIWidth.refNotAvailable.ref2Selected {
         border: 1px solid $neutral-220;
 
@@ -192,8 +194,6 @@
         color: #ff3112;
     }
 
-
-
     .ref2QIColor {
         float: left;
 
@@ -210,9 +210,6 @@
         }
     }
 
-    .c-you-may-like {
-        background: $white;
-    }
     .c-swatches-heading {
         margin: 0 $space-xlarge $space-xlarge;
         padding: $unit-10;
@@ -367,7 +364,6 @@
             margin-top: $space-xlarge;
         }
     }
-
 }
 
 #addToCartInfoMsg {
