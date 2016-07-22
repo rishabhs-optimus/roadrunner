@@ -246,6 +246,13 @@
         }
     }
 
+    #ref2QISizeCont + .prodSelectRefCon {
+        font-size: $font-size-large-14;
+        img {
+           padding-left: $unit*3 !important;
+
+       }
+    }
     .ref2OnSaleTitle {
         position: relative;
         top: $unit;
