@@ -265,6 +265,14 @@
         img {
             padding-left: $unit*3 !important;
         }
+        span {
+            display: inline-block;
+            margin-bottom: $unit*2;
+            padding-left: $unit;
+        }
+        span + div {
+            display: none;
+        }
     }
     .ref2OnSaleTitle {
         position: relative;
@@ -356,8 +364,11 @@
     .mSizeChart {
         float: none !important;
 
-        margin: $unit-10 0 0 0 !important;
+        margin: $unit*2 0 !important;
+
         a {
+            margin-bottom: $unit*2;
+
             color: $neutral-240;
             font-family: verdana;
             font-weight: bold;
