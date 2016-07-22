@@ -1,0 +1,67 @@
+.c-product-container {
+    background: $white;
+    .s7flyoutSwatches {
+        position: static;
+        top: 324px;
+        float: left;
+
+        display: inline-block;
+        width: 100%;
+        height: auto !important;
+        margin-bottom: $unit+1;
+
+        text-align: left;
+    }
+
+    .s7flyoutStaticImage div {
+        width: 100%;
+    }
+
+    #scene7DHTMLViewerFlyout {
+        position: relative;
+
+        display: inline-block;
+        width: 438px;
+        width: 100% !important;
+        height: auto !important;
+
+        text-align: center;
+    }
+
+    .s7flyoutStaticImage {
+        position: static;
+        top: $unit*12;
+
+        display: inline-block;
+        width: 295px;
+        height: 235px;
+        margin-top: $unit*3;
+    }
+
+    .s7flyoutSwatches .s7flyoutSwatch {
+        position: relative !important;
+
+        width: 54px !important;
+        height: 72px !important;
+        border: 0;
+    }
+
+    .s7flyoutSwatches div {
+        position: relative !important;
+        left: 0 !important;
+
+        display: inline-block !important;
+        height: auto !important;
+    }
+
+    #videoLinkButton {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 100;
+        img {
+            max-width: 85px;
+            max-height: 85px;
+        }
+    }
+}
