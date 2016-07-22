@@ -26,7 +26,7 @@
     .celebros_list_price {
         padding-right: $unit+2;
 
-        color: #333;
+        color: $neutral-350;
         font-weight: bold;
         font-size: $font-size;
     }
@@ -35,20 +35,20 @@
     .celebros_sale_price {
         padding-right: $unit+2;
 
-        color: #ff2812;
+        color: $neutral-330;
         font-weight: bold;
         text-transform: uppercase;
     }
 
     [class*="prod_detail_vip_price"],
     .celebros_umap {
-        color: #005cae;
+        color: $neutral-370;
         font-weight: bold;
         font-size: $font-size;
     }
 
     .c-back-to-top-button {
-        color: #464749;
+        color: $neutral-290;
         font-weight: bold;
         text-align: center;
         img {
@@ -65,13 +65,13 @@
 
     .pdetailsSuggestionsPrice {
         a {
-            color: #333;
+            color: $neutral-350;
             font-size: $font-size-large-14;
         }
     }
 
     .c-tool-tip {
-        color: #464749;
+        color: $neutral-290;
         font-weight: bold;
         font-size: $smaller-font-size;
         vertical-align: top;
@@ -86,19 +86,19 @@
 
     .bellows__content h2 .prod_redtext {
         display: inline-block;
-        margin-top: 5px;
-        margin-bottom: 25px;
+        margin-top: $unit+1;
+        margin-bottom: $unit*6;
 
-        color: #ff2812;
+        color: $neutral-330;
         font-weight: 600;
     }
 
     .bellows__content h2 {
-        color: #333;
+        color: $neutral-350;
     }
 
     .bellows__content a {
-        color: #0052ae;
+        color: $neutral-360;
     }
 
     .prodSelectRefCon {
@@ -116,7 +116,7 @@
     }
 
     .c-need-help-heading {
-        color: #078ac0;
+        color: $neutral-340;
     }
 
     .ref2QISize.ref2NActive,
@@ -131,7 +131,7 @@
     }
 
     .prod_errortext {
-        color: #ff2812;
+        color: $neutral-330;
     }
     span.prod_select_title2 img {
         width: 17px;
@@ -151,8 +151,8 @@
 
     .addToCartCon {
         padding: $space-xlarge;
-        border-top: 1px solid #dedede;
-        border-bottom: 1px solid #dedede;
+        border-top: 1px solid $neutral-320;
+        border-bottom: 1px solid $neutral-320;
 
         background: $white;
     }
@@ -171,7 +171,7 @@
 
     .c-product-price-section {
         padding: $space-large;
-        border-top: 1px solid #dedede;
+        border-top: 1px solid $neutral-320;
 
         background: $white;
     }
@@ -191,7 +191,7 @@
         padding-top: $space-xlarge;
         padding-bottom: $space-large;
 
-        color: #ff3112;
+        color: $neutral-280;
     }
 
     .ref2QIColor {
@@ -200,10 +200,10 @@
         display: inline-block;
         width: 35px;
         height: 35px;
-        padding: 2px;
-        border: 1px solid #aaa;
+        padding: $unit/2;
+        border: 1px solid $neutral-310;
 
-        background-color: #f5f5f5;
+        background-color: $neutral-300;
         img {
             width: 33px;
             height: 29px;
@@ -216,7 +216,7 @@
 
         background: $neutral-50;
 
-        color: #464749;
+        color: $neutral-290;
         font-weight: bold;
         font-size: $font-size;
     }
@@ -230,7 +230,7 @@
             width: 30%;
             height: 35px;
             margin-top: $unit-10;
-            padding: 0 5px 0 5px;
+            padding: 0 $unit+1 0 $unit+1;
 
             font-family: verdana;
             font-weight: bold;
@@ -248,26 +248,26 @@
 
     .ref2OnSaleTitle {
         position: relative;
-        top: 3px;
+        top: $unit;
         clear: both;
 
-        color: #ff3112;
+        color: $neutral-280;
         font-weight: bold;
         font-size: $smallest-font-size;
         text-align: center;
     }
 
     .c-product-item-id {
-        margin-bottom: 20px;
+        margin-bottom: $unit*5;
 
         font-size: $small-font-size;
     }
 
     .ref2QIWidth.ref2Selected,
     .ref2QISize.ref2Selected {
-        border: 1px solid #f60;
+        border: 1px solid $neutral-270;
 
-        background-color: #ff8413;
+        background-color: $neutral-240;
 
         color: $white;
     }
@@ -279,7 +279,7 @@
         width: 33%;
         height: 40px;
         padding: 0 $unit-10 0 $unit-10;
-        padding-right: 5px;
+        padding-right: $unit+1;
         border: 1px solid #d7d7d7;
 
         border-radius: 3px;
@@ -287,7 +287,7 @@
         background-repeat: no-repeat;
         background-position: 90% center;
         background-position: right $unit-10 center;
-        background-size: 12px 8px;
+        background-size: $unit*3 $unit*2;
 
         font-weight: bold;
         font-size: $font-size;
@@ -298,6 +298,7 @@
 
         width: 66%;
         padding-left: $unit;
+
         a {
             float: right;
 
@@ -305,7 +306,7 @@
 
             border-radius: 3px;
             background: linear-gradient(to bottom, #52b21c, #4aa914);
-            box-shadow: 0 1px 0 #2a8300;
+            box-shadow: 0 1px 0 $neutral-260;
 
             color: $white;
             font-family: verdana;
@@ -314,7 +315,7 @@
             line-height: 38px;
             text-align: center;
             text-transform: uppercase;
-            text-shadow: 0 2px 0 #267700;
+            text-shadow: 0 2px 0 $neutral-250;
         }
 
         a img {
@@ -337,7 +338,7 @@
 
         margin: $unit-10 0 0 0 !important;
         a {
-            color: #ff8413;
+            color: $neutral-240;
             font-family: verdana;
             font-weight: bold;
             font-size: $font-size-small-11;
@@ -346,6 +347,14 @@
 
     #ref2QIColorCont {
         padding-bottom: $space-xlarge;
+    }
+
+    .ref2QISize.refNotAvailable.ref2Selected {
+        border: 1px solid $neutral-220;
+
+        background-color: $neutral-200 !important;
+
+        color: $neutral-210 !important;
     }
 
     .c-product-container > div {
