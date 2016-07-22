@@ -1,0 +1,114 @@
+.c-overallRating {
+    float: right;
+
+    margin-top: $unit;
+
+    .pr-snippet-link {
+        color: $neutral-190;
+        font-size: $font-size-small-11;
+    }
+
+    .pr-snippet-wrapper {
+        padding: 0;
+        border: 0;
+
+        background: none;
+
+        text-align: center;
+    }
+
+    .pr-snippet-stars {
+        float: none;
+
+        display: inline-block;
+        margin: 0;
+        padding: 2px 0 2px $unit;
+        border: 0;
+
+        background-color: $neutral-180;
+    }
+
+    .pr-snippet-read-write {
+        margin: 0;
+        padding: 0;
+        border: 0;
+
+        background: none;
+
+        font-size: inherit;
+    }
+
+    .pr-snippet-read-reviews {
+        float: none;
+
+        margin-top: -$unit;
+        padding: 0;
+        border: 0;
+
+        .pr-snippet-link {
+            display: inline-block;
+            border-bottom: 1px solid $neutral-190;
+        }
+    }
+    .pr-stars {
+        float: none;
+
+        display: inline-block;
+        width: 136px;
+        height: 25px;
+    }
+
+    .pr-snippet-stars.rating {
+        width: 72px;
+    }
+
+    [class*='pr-stars-'] {
+        background-repeat: no-repeat;
+        background-position: 0 2px;
+        background-size: 65px;
+    }
+
+    .pr-stars-small {
+        width: 83px;
+        height: 15px;
+
+        line-height: 15px;
+    }
+
+    .pr-snippet-rating-decimal {
+        display: none;
+    }
+    .pr-stars-0-sm {
+        background-image: url('../img/0.0_star.gif');
+    }
+    .pr-stars-0_5-sm {
+        background-image: url('../img/0.5_star.gif');
+    }
+    .pr-stars-1-sm {
+        background-image: url('../img/1.0_star.gif');
+    }
+    .pr-stars-1_5-sm {
+        background-image: url('../img/1.5_star.gif');
+    }
+    .pr-stars-2-sm {
+        background-image: url('../img/2.0_star.gif');
+    }
+    .pr-stars-2_5-sm {
+        background-image: url('../img/2.5_star.gif');
+    }
+    .pr-stars-3-sm {
+        background-image: url('../img/3.0_star.gif');
+    }
+    .pr-stars-3_5-sm {
+        background-image: url('../img/3.5_star.gif');
+    }
+    .pr-stars-4-sm {
+        background-image: url('../img/4.0_star.gif');
+    }
+    .pr-stars-4_5-sm {
+        background-image: url('../img/4.5_star.gif');
+    }
+    .pr-stars-5-sm {
+        background-image: url('../img/5.0_star.gif');
+    }
+}
