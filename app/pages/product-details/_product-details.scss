@@ -14,9 +14,9 @@
     .ref2QIOnSale,
     .ref2QISwatch {
         display: inline-block;
-        margin-top: 8px;
+        margin-top: $space-large;
         margin-right: 6px;
-        margin-bottom: 8px;
+        margin-bottom: $space-large;
     }
 
     [class*="prod_detail_reg_price"],
@@ -25,7 +25,7 @@
 
         color: #333;
         font-weight: bold;
-        font-size: 15px;
+        font-size: $font-size;
     }
 
     .prod_detail_sale_price,
@@ -40,7 +40,7 @@
     .celebros_umap {
         color: #005cae;
         font-weight: bold;
-        font-size: 15px;
+        font-size: $font-size;
     }
 
     .c-back-to-top-button {
@@ -49,33 +49,33 @@
         text-align: center;
         img {
             position: relative;
-            top: 4px;
+            top: $unit;
 
             max-width: 17px;
         }
     }
 
     .pdetailsSuggestionsTitle {
-        margin-bottom: 8px;
+        margin-bottom: $space-large;
     }
 
     .pdetailsSuggestionsPrice {
         a {
             color: #333;
-            font-size: 14px;
+            font-size: $font-size-large-14;
         }
     }
 
     .c-tool-tip {
         color: #464749;
         font-weight: bold;
-        font-size: 12px;
+        font-size: $smaller-font-size;
         vertical-align: top;
     }
 
     .c-shipping-info {
         display: block;
-        padding: 12px;
+        padding: $space-xlarge;
 
         background: $white;
     }
@@ -98,7 +98,7 @@
     }
 
     .prodSelectRefCon {
-        padding: 0 12px;
+        padding: 0 $space-xlarge;
     }
 
     #grp_1 > h2:first-child {
@@ -123,7 +123,7 @@
     }
 
     .prodSelectRefCon {
-        padding: 0 12px;
+        padding: 0 $space-xlarge;
     }
 
     .prod_errortext {
@@ -134,7 +134,7 @@
     }
 
     .c-swatches-heading > span {
-        margin-right: 4px;
+        margin-right: $unit;
     }
 
     .ref2QIWidth.refNotAvailable.ref2Selected {
@@ -146,12 +146,11 @@
     }
 
     .addToCartCon {
-        padding: 0 12px;
-        padding-top: 12px;
+        padding: $space-xlarge;
         border-top: 1px solid #dedede;
         border-bottom: 1px solid #dedede;
 
-        background: #fff;
+        background: $white;
     }
 
 
@@ -169,7 +168,7 @@
     }
 
     .c-product-price-section {
-        padding: 8px;
+        padding: $space-large;
         border-top: 1px solid #dedede;
 
         background: $white;
@@ -182,13 +181,13 @@
     .c-overallRating {
         position: absolute;
         top: 0;
-        right: -4px;
+        right: -$unit;
     }
 
     .prod_detail_preorder_inventory {
         display: block;
-        padding-top: 12px;
-        padding-bottom: 8px;
+        padding-top: $space-xlarge;
+        padding-bottom: $space-large;
 
         color: #ff3112;
     }
@@ -229,19 +228,19 @@
         background: $white;
     }
     .c-swatches-heading {
-        margin: 0 12px 12px;
+        margin: 0 $space-xlarge $space-xlarge;
         padding: 10px;
 
         background: #eee;
 
         color: #464749;
         font-weight: bold;
-        font-size: 15px;
+        font-size: $font-size;
     }
 
     #ref2QISizeCont,
     #ref2QIWidthCont {
-        margin-top: -12px;
+        margin-top: -$space-xlarge;
         .ref2QISwatch {
             float: left;
 
@@ -252,7 +251,7 @@
 
             font-family: verdana;
             font-weight: bold;
-            font-size: 12px;
+            font-size: $smaller-font-size;
             line-height: 35px;
             text-align: center;
             a {
@@ -278,7 +277,7 @@
     .c-product-item-id {
         margin-bottom: 20px;
 
-        font-size: 13px;
+        font-size: $small-font-size;
     }
 
     .ref2QIWidth.ref2Selected,
@@ -287,7 +286,7 @@
 
         background-color: #ff8413;
 
-        color: #fff;
+        color: $white;
     }
 
     #quickInfoQty {
@@ -308,7 +307,7 @@
         background-size: 12px 8px;
 
         font-weight: bold;
-        font-size: 15px;
+        font-size: $font-size;
     }
 
     .prod_add_to_cart {
@@ -325,10 +324,10 @@
             background: linear-gradient(to bottom, #52b21c, #4aa914);
             box-shadow: 0 1px 0 #2a8300;
 
-            color: #fff;
+            color: $white;
             font-family: verdana;
             font-weight: bold;
-            font-size: 15px;
+            font-size: $font-size;
             line-height: 38px;
             text-align: center;
             text-transform: uppercase;
@@ -337,6 +336,11 @@
 
         a img {
             display: none;
+        }
+
+
+        &.c--disabled {
+            opacity: 0.4;
         }
     }
 
@@ -353,12 +357,12 @@
             color: #ff8413;
             font-family: verdana;
             font-weight: bold;
-            font-size: 11px;
+            font-size: $font-size-small-11;
         }
     }
 
     #ref2QIColorCont {
-        padding-bottom: 12px;
+        padding-bottom: $space-xlarge;
     }
 
     .c-product-container > div {
@@ -403,21 +407,8 @@
         display: inline-block;
         width: 295px;
         height: 235px;
-        margin-top: 13px;
+        margin-top: $unit*3;
     }
-
-    // .c-scroller__content {
-    //     height: auto !important;
-    // }
-    //
-    // .c-slideshow > div {
-    //     position: initial !important;
-    //
-    //     > div {
-    //         position: relative !important;
-    //           display: inline;
-    //     }
-    // }
 
     .s7flyoutSwatches .s7flyoutSwatch {
         position: relative !important;
@@ -438,11 +429,11 @@
     .c-overallRating {
         float: right;
 
-        margin-top: 4px;
+        margin-top: $unit;
 
         .pr-snippet-link {
             color: #0a64a3;
-            font-size: 11px;
+            font-size: $font-size-small-11;
         }
 
         .pr-snippet-wrapper {
@@ -459,7 +450,7 @@
 
             display: inline-block;
             margin: 0;
-            padding: 2px 0 2px 4px;
+            padding: 2px 0 2px $unit;
             border: 0;
 
             background-color: #f2f2f2;
@@ -478,7 +469,7 @@
         .pr-snippet-read-reviews {
             float: none;
 
-            margin-top: -4px;
+            margin-top: -$unit;
             padding: 0;
             border: 0;
 
@@ -554,11 +545,11 @@
 .c-you-may-also-like {
     margin-top: 0;
     .c-title {
-        padding-bottom: 4px;
+        padding-bottom: $unit;
         border-bottom: 1px solid #bfbfbf;
     }
     .pdetailsSuggestionsCon {
-        margin-top: 12px;
+        margin-top: $space-xlarge;
     }
 }
 
@@ -572,12 +563,12 @@
 
         width: 75%;
 
-        font-size: 12px;
+        font-size: $smaller-font-size;
     }
 
     .addToCartVIPMsgCont {
         overflow: hidden;
-        padding: 12px 0;
+        padding: $space-xlarge 0;
     }
 
     #continueShoppingLink {
@@ -619,13 +610,13 @@
     [id="viewCartLink"] div a {
         display: block;
 
-        color: #fff;
+        color: $white;
         text-align: center;
     }
 
     #continueShoppingLink .prod_body {
         display: block;
-        margin-top: 8px;
+        margin-top: $space-large;
 
         text-decoration: underline;
     }
@@ -639,6 +630,6 @@
     width: 38%;
 }
 
-..prod_detail_inventory {
+.prod_detail_inventory {
     display: none;
 }

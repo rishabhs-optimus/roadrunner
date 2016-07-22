@@ -54,12 +54,11 @@ function($) {
 
             // title
             $itemClone.find('.c-review-heading').append($(this).find('.pr-other-attribute-label').text());
-        //$(this).find('.pr-other-attribute-label').addClass('c-review-heading');
+
             // max range
             $(this).find('.pr-other-attribute-value-histogram-element-max td').each(function() {
                 var $maxClone = $(this).clone();
                 $itemClone.find('.c-max-range').append($maxClone.children());
-                //$maxClone.children().addClass('c-max-range');
             });
 
             // all ranges
@@ -68,13 +67,17 @@ function($) {
                     $(this).find('p').addClass('c-main-review-heading');
                 }
                 $itemClone.find('.c-all-range').append($(this).children());
-                //$(this).children().addClass('c-all-range');
             });
 
             $container.append($itemClone);
         });
 
         $container.insertAfter($('.pr-snapshot-rating-wrapper'));
+
+        $('.c-range-see-all, .c-range-see-less').on('click', function() {
+            var $parent = $(this).parent();
+            $parent.find('.c-all-range, .c-max-range, .c-range-see-all, .c-range-see-less').toggle();
+        });
     };
     var transformSortBy = function() {
         var $sortBy = $('.pr-review-sort-box');
