@@ -138,22 +138,28 @@ define([
     };
 
     var interceptAddToCart = function interceptAddToCart() {
+
         var _override  = window.updateShoppingCartSummary;
         window.updateShoppingCartSummary = function() {
             var override = _override.apply(this, arguments);
             var $desktopContainer = $('#addToCartInfo');
             var $content = $('#addToCartInfoCont');
             $content.find('#continueShoppingLink').insertAfter('#viewCartLink');
+            $desktopContainer.find('#addToCartInfoTitle').addClass('c-added-to-cart-msg')
+                .insertBefore($content.find('#addToCartInfoMsg'));
             $desktopContainer.addClass('u-visually-hidden');
-            $addToCartPinny.find('.c-sheet__title').html('Added to Cart');
+            $addToCartPinny.find('.c-sheet__title').html(translator.translate('added_to_cart'));
             $addToCartPinny.find('.js-added-to-cart-pinny__body').html($content);
             $addToCartPinny.find('.pinny__close').addClass('container-close');
-            if (!$('.js-added-to-cart-pinny').hasClass('js-rendered')) {
+            if (!$addToCartPinny.hasClass('js-rendered')) {
+                $addToCartPinny.find('#addToCartInfoTitle')
+                    .html($addToCartPinny.find('#addToCartInfoTitle').html().replace('Great Choice!', '<b>Great Choice!</b>'));
                 $addToCartPinny.pinny('open');
             }
-            $('.js-added-to-cart-pinny').addClass('js-rendered');
+            $addToCartPinny.addClass('js-rendered');
             return _override;
         };
+
     };
 
     var updateCartMessage = function updateCartMessage() {

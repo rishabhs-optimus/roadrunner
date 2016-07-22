@@ -51,7 +51,7 @@
         <div class="t-product-details__suggested-products c-you-may-also-like js-suggested-products">
         </div>
 
-        {>"components/sheet/sheet" effect="sheetBottom" class="js-added-to-cart-pinny" headerClass="u-border-bottom-light-grey" bodyClass="js-added-to-cart-pinny__body c-added-to-cart-pinny__body" coverage="100%"  isHeader="true"/}
+        {>"components/sheet/sheet" effect="modalCenter" class="js-added-to-cart-pinny" headerClass="u-border-bottom-light-grey" bodyClass="js-added-to-cart-pinny__body c-added-to-cart-pinny__body" coverage="100%"  isHeader="true"/}
 
         <div class="c-you-may-like">
             {youMayLikeSection}

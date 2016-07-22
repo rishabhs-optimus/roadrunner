@@ -138,6 +138,7 @@
         "registration": "Registration",
         "details": "Details",
         "write_a_review": "write a review",
-        "ratings_breakdown": "Ratings Breakdown"
+        "ratings_breakdown": "Ratings Breakdown",
+        "added_to_cart": "Added to Cart"
     }
 }
