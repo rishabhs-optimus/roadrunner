@@ -46,12 +46,15 @@
         border: 0;
     }
 
+    .c-slideshow > div {
+        position: inherit !important;
+    }
+
     .s7flyoutSwatches div {
-        position: relative !important;
         left: 0 !important;
 
         display: inline-block !important;
-        height: auto !important;
+        margin-bottom: $unit*2;
     }
 
     #videoLinkButton {

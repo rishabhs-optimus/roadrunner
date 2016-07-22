@@ -246,6 +246,13 @@
         }
     }
 
+    .c-slideshow .s7flyoutSwatchActiveBorder {
+        border-width: 2px;
+        border-style: solid;
+        border-color: #0097c1;
+        opacity: 0.9;
+    }   
+
     #ref2QISizeCont + .prodSelectRefCon {
         font-size: $font-size-large-14;
         img {
