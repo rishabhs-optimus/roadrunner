@@ -228,6 +228,44 @@ define([
             return _override;
         };
     };
+    var centerZoomImg = function() {
+        var $zoomImg = $('.js-magnifik-image');
+        var loaded = function() {
+            var width = $('.c-magnifik').prop('offsetWidth') / 2;
+            $('.c-loading').hide();
+            $zoomImg.fadeIn();
+            $('.c-magnifik').prop('scrollLeft', width);
+        };
+
+        if ($zoomImg[0].complete) {
+            loaded();
+        } else {
+            $zoomImg[0].addEventListener('load', loaded);
+        }
+    };
+    var magnifikPinny = function() {
+        var $magnificPinnyEl = $('.js-magnifik');
+        var magnificPinny = sheet.init($magnificPinnyEl, {
+            shade: {
+                opacity: 0.95,
+                color: '#fff',
+                zIndex: 2
+            },
+            open: function() {
+                var imgSrc = $('.s7flyoutFlyoutView img').attr('src');
+                $('.js-magnifik-image').attr('src', imgSrc);
+                $('.js-magnifik-image').hide();
+                $('.c-loading').show();
+            },
+            opened: function() {
+                centerZoomImg();
+            }
+        });
+
+        $('body').on('click', '.c-zoom-icon', function(e) {
+            magnificPinny.open();
+        });
+    };
 
     var productDetailsUI = function() {
         displayTabs();
@@ -240,6 +278,10 @@ define([
         videoBellowState();
         interceptSwatchCreation();
         interceptCheckAddToCart();
+        setTimeout(function() {
+            magnifikPinny();
+        }, 500);
+
         $('body').on('click', '#continueShoppingLink', function() {
             var $closeButton = $addToCartPinny.find('.pinny__close');
             $closeButton.click();

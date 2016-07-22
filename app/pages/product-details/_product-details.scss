@@ -12,8 +12,15 @@
 
     .c-zoom-icon {
         position: absolute;
-        top: 60%;
+        top: 47%;
         right: 24px;
+
+        padding-left: 20px;
+
+        background-image: url('../img/zoomIconBlue.png');
+        background-repeat: no-repeat;
+        background-position: 2px 2px;
+        background-size: 12px 12px;
     }
 
     .c-select-wrapper {
@@ -416,4 +423,7 @@
 
 .prod_detail_inventory {
     display: none;
+}
+.c-magnifik-image {
+    max-width: 200% !important;
 }

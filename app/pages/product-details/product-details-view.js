@@ -1,9 +1,10 @@
 define([
     '$',
     'global/baseView',
-    'dust!pages/product-details/product-details'
+    'dust!pages/product-details/product-details',
+    'dust!components/loading/loading'
 ],
-function($, BaseView, template) {
+function($, BaseView, template, LoadingTemplate) {
 
 
     var getFormFields = function($container) {
@@ -115,6 +116,15 @@ function($, BaseView, template) {
             hiddenData: function() {
                 return $('.prodLeftCon, .prodRightCon2');
             },
+            magnifikImage: function(context) {
+                var $container;
+                new LoadingTemplate(true, function(err, html) {
+                    $container = $(html);
+                });
+                return {
+                    bodyContent: $($container[0].outerHTML + '<img class="js-magnifik-image c-magnifik-image" src=""/>')
+                };
+            }
         }
     };
 });

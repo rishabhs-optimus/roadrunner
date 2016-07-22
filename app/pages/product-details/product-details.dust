@@ -3,7 +3,7 @@
     <div class="t-product-details-page">
 
         <div class="c-product-title">
-           {productTitle}
+           <span class="c-product_title">{productTitle}</span>
            <div class="c-overallRating">
               {overallRating}
            </div>
@@ -57,9 +57,13 @@
             {youMayLikeSection}
         </div>
         <a class="c-temp-review-pagination-anchor" hidden></a>
+        {#magnifikImage}
+            {>"components/sheet/sheet" effect="sheetBottom" class="js-magnifik" bodyClass="c-magnifik" coverage="97%"  isHeader="true"/}
+        {/magnifikImage}
         <div class="js-back-to-top c-back-to-top-button">
             Back to top <img src="{@getUrl path="img/back-to-top.png" /}
         </div>
+
 
     </div>
 
