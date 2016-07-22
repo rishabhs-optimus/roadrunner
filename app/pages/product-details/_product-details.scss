@@ -10,6 +10,12 @@
         width: 100% !important;
     }
 
+    .c-zoom-icon {
+        position: absolute;
+        top: 60%;
+        right: 24px;
+    }
+
     .c-select-wrapper {
         background: $white;
     }
@@ -250,15 +256,15 @@
         border-width: 2px;
         border-style: solid;
         border-color: #0097c1;
+
         opacity: 0.9;
-    }   
+    }
 
     #ref2QISizeCont + .prodSelectRefCon {
         font-size: $font-size-large-14;
         img {
-           padding-left: $unit*3 !important;
-
-       }
+            padding-left: $unit*3 !important;
+        }
     }
     .ref2OnSaleTitle {
         position: relative;

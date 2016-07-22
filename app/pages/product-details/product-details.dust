@@ -14,6 +14,7 @@
 
         <div id="content" class="container_nh">
             <div class="prod_container c-product-container">{imageSection}</div>
+            <div class="c-zoom-icon">Zoom</div>
         </div>
 
         <div class="c-product-price-section">
