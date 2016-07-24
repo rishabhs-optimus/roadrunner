@@ -44,7 +44,12 @@
         <div id="sr_productDetailDiv" name="sr_productDetailDiv" class="c-shipping-info">
             {shopRunner}
         </div>
-        {>"pages/product-details/partials/reviews-ranges" /}
+        <div class="c-review-range">
+            <div class="c-range-item">
+                <div class="c-review-heading"></div>
+                <div class="c-max-range"></div>
+            </div>
+        </div>
         {#productTabs}
             {>"components/bellows/bellows":.bellows/}
         {/productTabs}

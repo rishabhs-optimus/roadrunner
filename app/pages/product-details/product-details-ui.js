@@ -15,6 +15,7 @@ define([
     var $addToCartPinny = $('.js-added-to-cart-pinny');
     var $videoBellows = $('.c-video-bellows');
     var $reviewBellow = $('.c-reviews-bellow');
+
     // Displaying desktop tabs
     var displayTabs = function() {
         $('#grp_1,#grp_2,#grp_3,#grp_4').show();
@@ -22,10 +23,10 @@ define([
 
     // Creating review section
     var reviewSection = function() {
-        pdpReviews.addNoRatingsSection();
+        pdpReviews.noReviewsSection();
         pdpReviews.changeHeadingPosition();
         pdpReviews.updatePaginationButtons();
-        pdpReviews.createRangeInReview();
+        pdpReviews.updatingRangeSection();
         pdpReviews.transformSortBy();
         pdpReviews.createPaginationDropDown();
         pdpReviews.reviewPaginationDropDownChangeFunc();
@@ -80,7 +81,7 @@ define([
             }, 500);
         });
         $('body').on('click', '#videoLinkButton', function() {
-            // Scroll to Reviews Bellows
+            // Scroll to Video Bellows
             $.scrollTo($videoBellows);
             // Open Bellows for Video
             // This is required as SVG icon was not changing on call of Bellows open method

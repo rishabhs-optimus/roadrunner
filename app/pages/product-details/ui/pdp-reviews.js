@@ -3,8 +3,9 @@ define([
 ],
 function($) {
 
-
     var $reviewBellow = $('.c-reviews-bellow');
+
+    // Changing Header position in reviews container
     var changeHeadingPosition = function() {
         var $heading, $container;
         $container = $('#reviewsTabCon').find('.pr-review-wrap');
@@ -18,6 +19,8 @@ function($) {
             });
         }
     };
+
+    // Creating pagination Buttons
     var updatePaginationButtons = function() {
         var $pagination = $('.pr-pagination-bottom');
         var $next = $pagination.find('.pr-page-next');
@@ -35,38 +38,34 @@ function($) {
             $previous.find('a').text('Back');
         }
     };
-    var addNoRatingsSection = function() {
+
+    // Creating no reviews section
+    var noReviewsSection = function() {
         setTimeout(function() {
             if ($('.pr-snapshot-no-ratings') === null) {
-                addNoRatingsSection();
+                noReviewsSection();
             } else {
                 $('#reviewsTabCon').append($('.pr-snapshot-no-ratings'));
             }
         }, 500);
     };
-    var createRangeInReview = function() {
-        var $container = $('<div class="c-review-ranges"></div>');
 
+    // Range Section Styling
+    var updatingRangeSection = function() {
+        var $container = $('<div class="c-review-ranges"></div>');
         var $rangeContainer = $('.pr-other-attributes-histogram .pr-other-attributes-list:first-child');
         $rangeContainer.find('.pr-other-attributes-group').each(function() {
-            // clone template
             var $itemClone = $('.c-review-range').find('.c-range-item').clone();
-
-            // title
             $itemClone.find('.c-review-heading').append($(this).find('.pr-other-attribute-label').text());
-
-            // max range
             $(this).find('.pr-other-attribute-value-histogram-element-max td').each(function() {
                 var $maxClone = $(this).clone();
                 $itemClone.find('.c-max-range').append($maxClone.children());
             });
-
-            // all ranges
             $(this).find('.pr-other-attribute-value-histogram-element td').each(function() {
                 if ($(this).hasClass('pr-other-attribute-value-histogram-label') && $(this).parent().hasClass('pr-other-attribute-value-histogram-element-max')) {
                     $(this).find('p').addClass('c-main-review-heading');
                 }
-                $itemClone.find('.c-all-range').append($(this).children());
+                $itemClone.find('.c-max-range').append($(this).children());
             });
 
             $container.append($itemClone);
@@ -74,44 +73,40 @@ function($) {
 
         $container.insertAfter($('.pr-snapshot-rating-wrapper'));
 
-        $('.c-range-see-all, .c-range-see-less').on('click', function() {
-            var $parent = $(this).parent();
-            $parent.find('.c-all-range, .c-max-range, .c-range-see-all, .c-range-see-less').toggle();
-        });
     };
+
+    // Review's Sort by styling
     var transformSortBy = function() {
         var $sortBy = $('.pr-review-sort-box');
         $sortBy.find('label').text('Sort By:');
     };
+
     var getCurentPage = function(paginationWrapper) {
         var $paginationWrapper = paginationWrapper.find('.pr-pagination-bottom');
         var $prev = $paginationWrapper.find('.pr-page-prev');
         var $next = $paginationWrapper.find('.pr-page-next');
         var currentPage = 1;
         if ($prev.find('a').length > 0) {
-            var text = $prev.find('a').attr('onclick');
-            var pageNo = text.slice(text.indexOf('(') + 1, text.indexOf(','));
-            currentPage =  parseInt(pageNo) + 1;
+            var $text = $prev.find('a').attr('onclick');
+            var $pageNo = $text.slice($text.indexOf('(') + 1, $text.indexOf(','));
+            currentPage =  parseInt($pageNo) + 1;
         }
         return currentPage;
     };
     var createPaginationDropDown = function() {
+        var totalReviewCount, $paginationWrapper, totalPages, options = [], currentPage, $select, $dropDownContainer;
         if ($('.pr-page-nav').html() === null) {
             return;
         }
-        var totalReviewCount = $reviewBellow.find('.c-bellows__header').text();
-        totalReviewCount = totalReviewCount.slice(totalReviewCount.indexOf('(') + 1, totalReviewCount.indexOf(')'));
-
-        var $paginationWrapper = $('#reviewsTabCon');
-        var perPageCount = $paginationWrapper.find('.pr-pagination-top .pr-page-count strong').text();
-        perPageCount = perPageCount.split('-')[1];
-        var totalPages = Math.ceil(totalReviewCount / 30);
+        totalReviewCount = $reviewBellow.find('.pr-review-count').text();
+        totalReviewCount = (/\d+/g).exec(totalReviewCount)[0];
+        $paginationWrapper = $('#reviewsTabCon');
+        totalPages = Math.ceil(totalReviewCount / 30);
         if (totalPages === 1) {
             return;
-        }
-        var options = [];
-        var $select = $('<select class="c-review-page-dropdown"></select>');
-        var currentPage = getCurentPage($paginationWrapper);
+        }options = [];
+        $select = $('<select class="c-review-page-dropdown"></select>');
+        currentPage = getCurentPage($paginationWrapper);
         for (var i = 1; i <= totalPages; i++) {
             var text = 'Page ' + i + ' of ' + totalPages;
             if (currentPage === i) {
@@ -120,10 +115,11 @@ function($) {
                 $select.append('<option value=' + i + '>' + text + '</option>');
             }
         }
-        var $dropDownContainer = $('<div class="c-review-dropdown"></div>');
+        $dropDownContainer = $('<div class="c-review-dropdown"></div>');
         $dropDownContainer.append($select);
         $('.pr-pagination-bottom').append($dropDownContainer);
     };
+
     var reviewPaginationDropDownChangeFunc = function() {
         $('.c-review-page-dropdown').on('change', function() {
             var value = $(this).val();
@@ -140,8 +136,8 @@ function($) {
     return {
         changeHeadingPosition: changeHeadingPosition,
         updatePaginationButtons: updatePaginationButtons,
-        addNoRatingsSection: addNoRatingsSection,
-        createRangeInReview: createRangeInReview,
+        noReviewsSection: noReviewsSection,
+        updatingRangeSection: updatingRangeSection,
         transformSortBy: transformSortBy,
         createPaginationDropDown: createPaginationDropDown,
         getCurentPage: getCurentPage,
