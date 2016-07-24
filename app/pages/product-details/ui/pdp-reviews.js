@@ -130,6 +130,12 @@ function($) {
             var newLink = parts[0] + 'getReviewsFromMeta(' + value + ',' + secondpart;
             $('.c-temp-review-pagination-anchor').attr('onclick', newLink);
             $('.c-temp-review-pagination-anchor').click();
+            setTimeout(function() {
+                changeHeadingPosition();
+                updatePaginationButtons();
+                transformSortBy();
+                createPaginationDropDown();
+            }, 1000);
         });
     };
 

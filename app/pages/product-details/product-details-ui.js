@@ -50,12 +50,7 @@ define([
                 $.scrollTo($reviewBellow);
             }, 1000);
         });
-        // $('body').on('click', '.pr-page-prev', function() {
-        //     setTimeout(function() {
-        //         updateReviewsSection();
-        //         $.scrollTo($reviewBellow);
-        //     }, 1000);
-        // });
+
         $('body').on('change', '#pr-sort-reviews', function() {
             var $container = $('.pr-contents-wrapper');
             new LoadingTemplate(true, function(err, html) {
@@ -67,18 +62,11 @@ define([
             }, 500);
         });
         $('.c-review-page-dropdown').on('change', function() {
-            var value = $(this).val();
-            var $paginationWrapper = $('.pr-pagination-bottom');
-            var text = $paginationWrapper.find('.pr-page-nav a').attr('onclick');
-            var parts = text.split('getReviewsFromMeta(');
-            var secondpart = parts[1].split(/,(.+)?/)[1];
-            var newLink = parts[0] + 'getReviewsFromMeta(' + value + ',' + secondpart;
-            $('.c-temp-review-pagination-anchor').attr('onclick', newLink);
-            $('.c-temp-review-pagination-anchor').click();
+            debugger;
+            pdpReviews.reviewPaginationDropDownChangeFunc();
             setTimeout(function() {
-                updateReviewsSection();
                 $.scrollTo($reviewBellow);
-            }, 500);
+            }, 1000);
         });
         $('body').on('click', '#videoLinkButton', function() {
             // Scroll to Video Bellows
