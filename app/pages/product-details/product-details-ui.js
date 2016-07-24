@@ -40,6 +40,7 @@ define([
         pdpReviews.transformSortBy();
         pdpReviews.createPaginationDropDown();
         pdpReviews.reviewPaginationDropDownChangeFunc();
+        pdpReviews.reviewPaginationDropDownChangeFunc();
     };
 
     // Handling click functionality
@@ -62,7 +63,6 @@ define([
             }, 500);
         });
         $('.c-review-page-dropdown').on('change', function() {
-            debugger;
             pdpReviews.reviewPaginationDropDownChangeFunc();
             setTimeout(function() {
                 $.scrollTo($reviewBellow);
