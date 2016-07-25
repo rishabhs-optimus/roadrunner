@@ -12,17 +12,17 @@
 
     .c-zoom-icon {
         position: absolute;
-        top: 50%;
-        right: 24px;
+        right: $unit*6;
+        bottom: 26%;
 
-        padding-left: 20px;
+        padding-left: $unit*5;
 
         background-image: url('../img/zoomIconBlue.png');
         background-repeat: no-repeat;
-        background-position: 2px 4px;
-        background-size: 12px 12px;
+        background-position: $unit/2 $unit;
+        background-size: $unit*3 $unit*3;
 
-        color: #0961b0;
+        color: $neutral-400;
         font-weight: bold;
     }
 
