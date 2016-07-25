@@ -139,6 +139,10 @@
         "details": "Details",
         "write_a_review": "write a review",
         "ratings_breakdown": "Ratings Breakdown",
-        "added_to_cart": "Added to Cart"
+        "added_to_cart": "Added to Cart",
+        "zoom": "Zoom",
+        "back_to_top": "Back to top",
+        "add_to_cart": "add to cart",
+        "read_reviews": "Read Reviews"
     }
 }

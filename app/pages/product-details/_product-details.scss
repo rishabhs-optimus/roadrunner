@@ -12,7 +12,7 @@
 
     .c-zoom-icon {
         position: absolute;
-        top: 47%;
+        top: 50%;
         right: 24px;
 
         padding-left: 20px;
@@ -193,13 +193,15 @@
     }
 
     .c-product-title {
-        position: relative;
+        display: flex;
+    }
+    .c-product_title {
+        width: 50%;
     }
 
     .c-overallRating {
         position: absolute;
-        top: 0;
-        right: -$unit;
+        right: $unit*3;
     }
 
     .prod_detail_preorder_inventory {

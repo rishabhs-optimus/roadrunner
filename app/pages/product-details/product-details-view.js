@@ -1,16 +1,17 @@
 define([
     '$',
+    'translator',
     'global/baseView',
     'dust!pages/product-details/product-details',
     'dust!components/loading/loading'
 ],
-function($, BaseView, template, LoadingTemplate) {
+function($, Translator, BaseView, template, LoadingTemplate) {
 
 
     var getFormFields = function($container) {
         return $container.find('.prod_select_con').map(function(_, item) {
             var $item = $(item);
-            $item.find('.mSizeChart').find('a').text('Size Chart');
+            $item.find('.mSizeChart').find('a').text(Translator.translate('size_chart'));
             $container.find('.mSizeChart').addClass('ref2QISwatch');
             $item.find('.prod_select_title, .prod_select_title2').wrapAll('<div class="c-swatches-heading" />');
             return {
@@ -76,7 +77,7 @@ function($, BaseView, template, LoadingTemplate) {
             },
             addToCartForm: function() {
                 var $form = $('#addToCartForm');
-                $form.find('#addToCartLink').append('add to cart');
+                $form.find('#addToCartLink').append(Translator.translate('add_to_cart'));
                 return {
                     form: $form,
                     hiddenData: $form.find('#addToCartAttributes'),
@@ -109,7 +110,7 @@ function($, BaseView, template, LoadingTemplate) {
             },
             overallRating: function() {
                 var $rating = $('.pr-snippet');
-                $rating.find('.pr-snippet-link').text('Read reviews');
+                $rating.find('.pr-snippet-link').text(Translator.translate('read_reviews'));
                 $rating.find('.pr-snippet-write-review').addClass('u-visually-hidden');
                 return $rating;
             },
