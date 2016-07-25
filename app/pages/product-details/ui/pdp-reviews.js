@@ -7,7 +7,8 @@ function($) {
 
     // Changing Header position in reviews container
     var changeHeadingPosition = function() {
-        var $heading, $container;
+        var $heading; 
+        var $container;
         $container = $('#reviewsTabCon').find('.pr-review-wrap');
         if ($container === null) {
             changeHeadingPosition();
