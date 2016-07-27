@@ -307,6 +307,24 @@
         font-size: $small-font-size;
     }
 
+    .c-review-dropdown:after {
+        content: '';
+
+        position: absolute;
+        right: $unit-10;
+
+        display: block;
+        width: 12px;
+        height: 8px;
+        margin-top: -23px;
+
+        background-image: url('../img/expdate-dropdown.png');
+        background-size: 100% 100%;
+    }
+    .c-review-page-dropdown {
+        text-indent: $unit*2 !important; //1
+    }
+
     .ref2QIWidth.ref2Selected,
     .ref2QISize.ref2Selected {
         border: 1px solid $neutral-270;

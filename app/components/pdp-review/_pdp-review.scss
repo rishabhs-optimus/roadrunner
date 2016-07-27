@@ -145,7 +145,7 @@
             outline: none;
 
             line-height: 20px;
-            text-indent: 23%;
+            text-indent: 26%;
 
             -webkit-appearance: none;
 
@@ -354,7 +354,6 @@
         display: inline-block;
     }
     .c-review-ranges {
-
         .pr-snippet-review-count {
             + p + p {
                 display: block;
@@ -421,7 +420,6 @@
             margin-bottom: $unit - 1;
 
             background: $neutral-380;
-
         }
 
         .pr-other-attribute-value-histogram-barValue {
@@ -436,7 +434,6 @@
         }
         .pr-other-attribute-value-histogram-stats-pct {
             display: inline;
-
             margin: 0;
 
             color: $neutral-350;
