@@ -1,3 +1,5 @@
+// Add To Cart
+// ===
 
 .c-added-to-cart-pinny__body {
     .satisfactionGuaranteeMsg {
@@ -18,9 +20,8 @@
     }
     #addToCartVIPMsg {
         overflow: hidden;
-        margin-top: 1px;
-        padding: 7px 8px 8px 10px;
-        border-bottom: 1px solid #dadada;
+        padding: 7px $unit*2 $unit*2 $unit-10;
+        border-bottom: 1px solid $neutral-230;
     }
     #continueShoppingLink {
         width: 100%;
@@ -43,7 +44,7 @@
         height: 40px;
         margin: 0 $unit-10 0 $unit-10;
 
-        border-radius: 2.5px;
+        border-radius: 2px;
         background: linear-gradient(to bottom, #52b21c, #4aa914);
 
         line-height: 40px;
@@ -77,18 +78,18 @@
         display: flex;
         align-items: center;
         height: 45px;
-        padding: 0 0 0 40px;
+        padding: 0 0 0 $unit*10;
 
-        background-color: #d8f6c8;
+        background-color: $neutral-410;
         background-image: url('../img/greatchoiceICon.png');
         background-repeat: no-repeat;
         background-position: 10px 10px;
         background-size: 25px 25px;
 
-        font-size: 12px;
+        font-size: $smaller-font-size;
 
         b {
-            font-size: 14px;
+            font-size: $font-size-large-14;
         }
     }
 }
