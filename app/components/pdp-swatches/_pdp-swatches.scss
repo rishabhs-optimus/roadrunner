@@ -3,6 +3,7 @@
 
 .c-product-container {
     background: $white;
+
     .s7flyoutSwatches {
         position: static;
         top: 324px;
@@ -20,7 +21,7 @@
         width: 100%;
     }
 
-    #scene7DHTMLViewerFlyout {
+    [id="scene7DHTMLViewerFlyout"] {
         position: relative;
 
         display: inline-block;
@@ -60,7 +61,7 @@
         margin-bottom: $unit*2;
     }
 
-    #videoLinkButton {
+    [id="videoLinkButton"] {
         position: absolute;
         top: 0;
         right: 0;

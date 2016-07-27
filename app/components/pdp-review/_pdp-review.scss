@@ -496,7 +496,7 @@
 }
 
 
-#addToCartInfoMsg {
+[id="addToCartInfoMsg"] {
     display: flex;
 }
 
@@ -507,6 +507,7 @@
 .prod_detail_inventory {
     display: none;
 }
+
 .c-magnifik-image {
     max-width: 200% !important;
 }

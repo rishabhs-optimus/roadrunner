@@ -18,12 +18,14 @@
         overflow: hidden;
         padding: $space-xlarge 0;
     }
-    #addToCartVIPMsg {
+
+    [id="addToCartVIPMsg"] {
         overflow: hidden;
         padding: 7px $unit*2 $unit*2 $unit-10;
         border-bottom: 1px solid $neutral-230;
     }
-    #continueShoppingLink {
+
+    [id="continueShoppingLink"] {
         width: 100%;
 
         text-align: center;
@@ -48,11 +50,10 @@
         background: linear-gradient(to bottom, #52b21c, #4aa914);
 
         line-height: 40px;
-    }
 
-
-    #viewCartLink a:after {
-        content: 'View Cart';
+        a:after {
+            content: 'View Cart';
+        }
     }
 
     [id="viewCartLink"] div {
@@ -66,12 +67,13 @@
         text-align: center;
     }
 
-    #continueShoppingLink .prod_body {
+    [id="continueShoppingLink"] .prod_body {
         display: block;
         margin-top: $space-large;
 
         text-decoration: underline;
     }
+
     .c-added-to-cart-msg {
         position: relative;
 
