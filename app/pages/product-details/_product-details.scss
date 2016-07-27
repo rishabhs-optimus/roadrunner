@@ -7,7 +7,7 @@
     background-color: $neutral-230;
 
     .c-video-tab center > div {
-        width: 100% !important;
+        width: 100% !important; //overiding desktop property
     }
 
     .c-zoom-icon {
@@ -160,9 +160,9 @@
     .ref2QIWidth.refNotAvailable.ref2Selected {
         border: 1px solid $neutral-220;
 
-        background-color: $neutral-200 !important;
+        background-color: $neutral-200 !important; //overiding desktop property
 
-        color: $neutral-210 !important;
+        color: $neutral-210 !important; //overiding desktop property
     }
 
     .addToCartCon {
@@ -178,7 +178,7 @@
 
         background-color: $neutral-200 !important;
 
-        color: $neutral-210 !important;
+        color: $neutral-210 !important; //overiding desktop property
     }
 
     .c-bellows__content {
@@ -267,7 +267,7 @@
     .c-slideshow .s7flyoutSwatchActiveBorder {
         border-width: 2px;
         border-style: solid;
-        border-color: #0097c1;
+        border-color: $neutral-430;
 
         opacity: 0.9;
     }
@@ -275,7 +275,7 @@
     [id="ref2QISizeCont"] + .prodSelectRefCon {
         font-size: $font-size-large-14;
         img {
-            padding-left: $unit*3 !important;
+            padding-left: $unit*3 !important; //overiding desktop property
         }
         span {
             display: inline-block;
@@ -374,9 +374,9 @@
     }
 
     .mSizeChart {
-        float: none !important;
+        float: none !important; //overiding desktop property
 
-        margin: $unit*2 0 !important;
+        margin: $unit*2 0 !important; //overiding desktop property
 
         a {
             margin-bottom: $unit*2;
@@ -395,15 +395,15 @@
     .ref2QISize.refNotAvailable.ref2Selected {
         border: 1px solid $neutral-220;
 
-        background-color: $neutral-200 !important;
+        background-color: $neutral-200 !important; //overiding desktop property
 
-        color: $neutral-210 !important;
+        color: $neutral-210 !important; //overiding desktop property
     }
 
     .c-product-container > div {
         display: inline-block;
-        width: 100% !important;
-        height: auto !important;
+        width: 100% !important;  //overiding previous property
+        height: auto !important; //overiding previous property
     }
 
     .c-you-may-also-like {

@@ -410,7 +410,7 @@
             }
         }
         .c-main-review-heading {
-            font-size: $font-size !important;
+            font-size: $font-size !important; //overiding previous property
         }
 
         .pr-other-attribute-value-histogram-wrapper {
