@@ -7,9 +7,8 @@ function($) {
 
     // Changing Header position in reviews container
     var changeHeadingPosition = function() {
-        var $heading; 
-        var $container;
-        $container = $('#reviewsTabCon').find('.pr-review-wrap');
+        var $heading;
+        var $container = $('#reviewsTabCon').find('.pr-review-wrap');
         if ($container === null) {
             changeHeadingPosition();
         } else {
@@ -94,8 +93,15 @@ function($) {
         }
         return currentPage;
     };
+
     var createPaginationDropDown = function() {
-        var totalReviewCount, $paginationWrapper, totalPages, options = [], currentPage, $select, $dropDownContainer;
+        var totalReviewCount;
+        var $paginationWrapper;
+        var totalPages;
+        var options = [];
+        var currentPage;
+        var $select;
+        var $dropDownContainer;
         if ($('.pr-page-nav').html() === null) {
             return;
         }
@@ -105,7 +111,7 @@ function($) {
         totalPages = Math.ceil(totalReviewCount / 30);
         if (totalPages === 1) {
             return;
-        }options = [];
+        }
         $select = $('<select class="c-review-page-dropdown"></select>');
         currentPage = getCurentPage($paginationWrapper);
         for (var i = 1; i <= totalPages; i++) {

@@ -30,16 +30,20 @@ function($, Translator, BaseView, template, LoadingTemplate) {
             productTitle: function() {
                 return $('.prod_title h1').text();
             },
+
             productId: function() {
                 return $('.prod_itemid').text();
             },
+
             priceSection: function() {
                 return $('.prod_select_title3');
             },
+
             shopRunner: function() {
                 var $shopRunnerSection = $('#srd_pd');
                 return $shopRunnerSection;
             },
+
             productTabs: function() {
                 var _items = [];
                 _items.push({
@@ -73,8 +77,8 @@ function($, Translator, BaseView, template, LoadingTemplate) {
                 return {
                     bellows: _bellows
                 };
-
             },
+
             addToCartForm: function() {
                 var $form = $('#addToCartForm');
                 $form.find('#addToCartLink').append(Translator.translate('add_to_cart'));
@@ -85,6 +89,7 @@ function($, Translator, BaseView, template, LoadingTemplate) {
                     addToCart: $form.find('.addToCartCon')
                 };
             },
+
             imageSection: function() {
                 var $imageSection = $('#scene7DHTMLViewerFlyout').parent();
                 if ($imageSection.find('.prod_shoe_type').length) {
@@ -93,30 +98,38 @@ function($, Translator, BaseView, template, LoadingTemplate) {
                 $imageSection.find('br').remove();
                 return $imageSection;
             },
+
             price: function() {
                 return $('#ref2QIPriceTitleS');
             },
+
             imageSectionHiddenData: function() {
                 return $('.prodOverview1, .prodOverview2');
             },
+
             addToCartDiv: function() {
                 return $('#addToCartInfo');
             },
+
             cartSummary: function() {
                 return $('#shoppingCartSummaryNew');
             },
+
             youMayLikeSection: function() {
                 return $('#pdetails_suggestions');
             },
+
             overallRating: function() {
                 var $rating = $('.pr-snippet');
                 $rating.find('.pr-snippet-link').text(Translator.translate('read_reviews'));
                 $rating.find('.pr-snippet-write-review').addClass('u-visually-hidden');
                 return $rating;
             },
+
             hiddenData: function() {
                 return $('.prodLeftCon, .prodRightCon2');
             },
+
             magnifikImage: function(context) {
                 var $container;
                 new LoadingTemplate(true, function(err, html) {

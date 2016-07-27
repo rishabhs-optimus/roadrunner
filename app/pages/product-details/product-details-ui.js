@@ -62,12 +62,14 @@ define([
                 $.scrollTo($reviewBellow);
             }, 500);
         });
+
         $('.c-review-page-dropdown').on('change', function() {
             pdpReviews.reviewPaginationDropDownChangeFunc();
             setTimeout(function() {
                 $.scrollTo($reviewBellow);
             }, 1000);
         });
+
         $('body').on('click', '#videoLinkButton', function() {
             // Scroll to Video Bellows
             $.scrollTo($videoBellows);
@@ -123,6 +125,7 @@ define([
                 $container.prepend($heading);
             }
         }, 500);
+
         $('#pdetails_suggestions').addClass('u-visually-hidden');
     };
 
@@ -148,7 +151,6 @@ define([
             $addToCartPinny.addClass('js-rendered');
             return _override;
         };
-
     };
 
     var updateCartMessage = function updateCartMessage() {
@@ -175,6 +177,7 @@ define([
             $('html, body').animate({ scrollTop: 0 }, 'slow');
         });
     };
+
     var videoBellowState = function() {
         var $bellow = $('.js-product-bellows').find('.bellows__item.c-video-bellows');
         var $icon = $bellow.find('.c-bellows__header .c-icon');
@@ -185,9 +188,10 @@ define([
     };
 
     var createSwatchesSection = function() {
-        $('.s7flyoutSwatches').addClass('c-scroller');
-        $('.s7flyoutSwatches').find('div').first().addClass('c-scroller__content').removeAttr('style');
-        $('.s7flyoutSwatches').find('div').first().find('> div').last().addClass('c-slideshow').removeAttr('style');
+        var $swatches;
+        $swatches.addClass('c-scroller');
+        $swatches.find('div').first().addClass('c-scroller__content').removeAttr('style');
+        $swatches.find('div').first().find('> div').last().addClass('c-slideshow').removeAttr('style');
         $('.c-slideshow').find('> div > div').removeAttr('style');
         $('.s7flyoutSwatch').each(function() {
             $(this).addClass('c-slideshow__slide');
@@ -232,6 +236,7 @@ define([
             $zoomImg[0].addEventListener('load', loaded);
         }
     };
+
     var magnifikPinny = function() {
         var $magnificPinnyEl = $('.js-magnifik');
         var magnificPinny = sheet.init($magnificPinnyEl, {
