@@ -283,6 +283,8 @@
             display: inline-block;
             margin-bottom: $unit*2;
             padding-left: $unit;
+
+            font-size: $small-font-size;
         }
         span + div {
             display: none;
