@@ -1,5 +1,7 @@
 // PDP swatches
 // ===
+// 1 overiding desktop property
+// 2 overiding previous property
 
 .c-product-container {
     background: $white;
@@ -11,7 +13,7 @@
 
         display: inline-block;
         width: 100%;
-        height: auto !important; //overiding desktop property
+        height: auto !important; //1
         margin-bottom: $unit+1;
 
         text-align: left;
@@ -26,8 +28,8 @@
 
         display: inline-block;
         width: 438px;
-        width: 100% !important; //overiding desktop property
-        height: auto !important; //overiding desktop property
+        width: 100% !important; //1
+        height: auto !important; //1
 
         text-align: center;
     }
@@ -43,21 +45,21 @@
     }
 
     .s7flyoutSwatches .s7flyoutSwatch {
-        position: relative !important; //overiding desktop property
+        position: relative !important; //1
 
-        width: 54px !important; //overiding desktop property
-        height: 72px !important; //overiding desktop property
+        width: 54px !important; //1
+        height: 72px !important; //1
         border: 0;
     }
 
     .c-slideshow > div {
-        position: inherit !important; //overiding previous property
+        position: inherit !important; //2
     }
 
     .s7flyoutSwatches div {
-        left: 0 !important; //overiding desktop property
+        left: 0 !important; //1
 
-        display: inline-block !important; //overiding desktop property
+        display: inline-block !important; //1
         margin-bottom: $unit*2;
     }
 

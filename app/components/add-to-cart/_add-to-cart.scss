@@ -1,5 +1,6 @@
 // Add To Cart
 // ===
+// 1 overiding desktop property
 
 .c-added-to-cart-pinny__body {
     .satisfactionGuaranteeMsg {
@@ -57,7 +58,7 @@
     }
 
     [id="viewCartLink"] div {
-        float: none !important; //overiding desktop property
+        float: none !important; //1
     }
 
     [id="viewCartLink"] div a {

@@ -1,5 +1,7 @@
 // PDP
 // ===
+// 1 overiding desktop property
+// 2 overiding previous property
 
 .t-product-details-page {
     padding: $space-xlarge;
@@ -7,7 +9,7 @@
     background-color: $neutral-230;
 
     .c-video-tab center > div {
-        width: 100% !important; //overiding desktop property
+        width: 100% !important; //1
     }
 
     .c-zoom-icon {
@@ -160,9 +162,9 @@
     .ref2QIWidth.refNotAvailable.ref2Selected {
         border: 1px solid $neutral-220;
 
-        background-color: $neutral-200 !important; //overiding desktop property
+        background-color: $neutral-200 !important; //1
 
-        color: $neutral-210 !important; //overiding desktop property
+        color: $neutral-210 !important; //1
     }
 
     .addToCartCon {
@@ -178,7 +180,7 @@
 
         background-color: $neutral-200 !important;
 
-        color: $neutral-210 !important; //overiding desktop property
+        color: $neutral-210 !important; //1
     }
 
     .c-bellows__content {
@@ -275,7 +277,7 @@
     [id="ref2QISizeCont"] + .prodSelectRefCon {
         font-size: $font-size-large-14;
         img {
-            padding-left: $unit*3 !important; //overiding desktop property
+            padding-left: $unit*3 !important; //1
         }
         span {
             display: inline-block;
@@ -374,9 +376,9 @@
     }
 
     .mSizeChart {
-        float: none !important; //overiding desktop property
+        float: none !important; //1
 
-        margin: $unit*2 0 !important; //overiding desktop property
+        margin: $unit*2 0 !important; //1
 
         a {
             margin-bottom: $unit*2;
@@ -395,15 +397,15 @@
     .ref2QISize.refNotAvailable.ref2Selected {
         border: 1px solid $neutral-220;
 
-        background-color: $neutral-200 !important; //overiding desktop property
+        background-color: $neutral-200 !important; //1
 
-        color: $neutral-210 !important; //overiding desktop property
+        color: $neutral-210 !important; //1
     }
 
     .c-product-container > div {
         display: inline-block;
-        width: 100% !important;  //overiding previous property
-        height: auto !important; //overiding previous property
+        width: 100% !important;  //2
+        height: auto !important; //2
     }
 
     .c-you-may-also-like {
