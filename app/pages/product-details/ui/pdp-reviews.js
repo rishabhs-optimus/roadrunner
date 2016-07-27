@@ -101,7 +101,7 @@ function($) {
         var options = [];
         var currentPage;
         var $select;
-        var $dropDownContainer;
+        var $dropDownContainer = $('<div class="c-review-dropdown"></div>');
         if ($('.pr-page-nav').html() === null) {
             return;
         }
@@ -122,8 +122,8 @@ function($) {
                 $select.append('<option value=' + i + '>' + text + '</option>');
             }
         }
-        $dropDownContainer = $('<div class="c-review-dropdown"></div>');
         $dropDownContainer.append($select);
+        $('.pr-pagination-bottom').find('.c-review-dropdown').remove();
         $('.pr-pagination-bottom').append($dropDownContainer);
     };
 

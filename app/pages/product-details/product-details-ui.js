@@ -40,7 +40,6 @@ define([
         pdpReviews.transformSortBy();
         pdpReviews.createPaginationDropDown();
         pdpReviews.reviewPaginationDropDownChangeFunc();
-        pdpReviews.reviewPaginationDropDownChangeFunc();
     };
 
     // Handling click functionality
@@ -57,6 +56,7 @@ define([
             new LoadingTemplate(true, function(err, html) {
                 $container.empty().append($(html));
             });
+
             setTimeout(function() {
                 updateReviewsSection();
                 $.scrollTo($reviewBellow);
@@ -221,6 +221,7 @@ define([
             return _override;
         };
     };
+
     var centerZoomImg = function() {
         var $zoomImg = $('.js-magnifik-image');
         var loaded = function() {
